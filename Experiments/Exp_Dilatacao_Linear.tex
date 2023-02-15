@@ -20,15 +20,12 @@ Além de notarmos que a dilatação é proporcional às dimensões do objeto, ve
 	\Delta L = L_0\alpha\Delta T,
 \end{equation}
 %
-onde $\alpha$ é uma constante característica do material, $L_0$ é o comprimento inicial do objeto --- ou seja, seu comprimento antes de sofrer a variação de temperatura --- e $\Delta T = T - T_0$ ($T_0$ é a temperatura inicial e $T$ é a temperatura final do corpo). Podemos usar $\Delta L = L - L_0$ para reescrever esta expressão como
-\begin{equation}
-	L = L_0 + \alpha L_0 (T - T_0).
-\end{equation}
+onde $\alpha$ é uma constante característica do material, $L_0$ é o comprimento inicial do objeto --- ou seja, seu comprimento antes de sofrer a variação de temperatura --- e $\Delta T = T - T_0$ ($T_0$ é a temperatura inicial e $T$ é a temperatura final do corpo). 
 
 Se compararmos a expressão acima com a equação da reta $y = A + Bx$, podemos fazer a seguinte identificação entre as variáveis:
 \begin{align*}
-	y &= L & x &= (T - T_0)\\
-	A &= L_0 & B &= \alpha L_0
+	y &= \Delta L & x &= (T - T_0)\\
+	A &= 0 & B &= \alpha L_0
 \end{align*}
 
 \begin{margintable}
@@ -50,7 +47,7 @@ Material & $\alpha$ ($\nicefrac{1}{\tcdegree\textrm{C}}$) \\
 \label{TabelaCoeficientes}
 \end{margintable}
 
-\noindent{}Segundo as relações acima, se realizarmos um experimento no qual variamos a temperatura de --- por exemplo --- uma barra metálica, anotando os valores do comprimento em função da variação de temperatura, verificaremos ao fazer a regressão linear que o coeficiente linear não é zero. Nesse caso o valor obtido para $A$ será igual ao comprimento inicial da barra. O coeficiente angular $B$, por sua vez, será igual ao produto do coeficiente de expansão térmica $\alpha$ pelo comprimento inicial da barra.
+\noindent{}Segundo as relações acima, se realizarmos um experimento no qual variamos a temperatura de --- por exemplo --- uma barra metálica, anotando os valores do variação do comprimento em função da variação de temperatura, verificaremos ao fazer a regressão linear que o coeficiente angular $B$ será igual ao produto do coeficiente de expansão térmica $\alpha$ pelo comprimento inicial da barra.
 
 \begin{figure}
 \centering
@@ -208,7 +205,7 @@ Vamos aquecer tubos metálicos em forma de L através de um fluxo de vapor d'ág
 \end{marginfigure}
 
 \begin{enumerate}
-\item Coloque o tubo metálico com a extremidade em forma de L em contato com o dilatômetro, com o segmento menor disposto verticalmente para cima.
+\item Escolha um dos tubos metálicos e o coloque com a extremidade em forma de L em contato com o dilatômetro, com o segmento menor disposto verticalmente para cima.
 \item Posicione a extremidade do tubo de forma que ela pressione o pino do dilatômetro e fique a uma distância de aproximadamente \np[mm]{520,0} do parafuso de fixação (utilize a escala milimetrada do suporte). Prenda a outra extremidade do tubo utilizando o parafuso do suporte.
 \item Prenda a mangueira do aquecedor à extremidade horizontal do tubo (aquela oposta ao dilatômetro).
 \item Adicione água ao aquecedor até uma profundidade de aproximadamente \np[cm]{5,0}. \emph{Importante: o aquecedor não pode ficar sem água durante o experimento, pois isso pode causar um superaquecimento e a consequente queima do aparelho.}
@@ -221,7 +218,7 @@ Vamos aquecer tubos metálicos em forma de L através de um fluxo de vapor d'ág
 \item Desligue o aquecedor e aguarde até que o ponteiro do dilatômetro passe a se mover\footnote{Veja que o dilatômetro sofre uma variação negativa, pois a barra está encolhendo. Faça a leitura nos números pequenos do mostrador.}. Assim que ele o fizer, inicie o cronômetro.
 \item Quando a temperatura atingir \np[\tcdegree]{90}, faça a leitura do dilatômetro e do cronômetro e anote na Tabela~\ref{Tab:DadosTubo1}.
 \item Faça a leitura do dilatômetro e do cronômetro a cada \np[\tcdegree C]{5,0} perdidos. Anote os valores na Tabela~\ref{Tab:DadosTubo1}, incluindo a temperatura. Cesse a leitura quando a temperatura do tubo estiver a aproximadamente \np[\tcdegree]{15,0} acima da temperatura ambiente.
-\item Repita o procedimento para os outros tubos e anote os dados nas Tabelas~\ref{Tab:DadosTubo2} e~\ref{Tab:DadosTubo3}.
+\item Repita o procedimento para outro tubo e anote os dados na Tabela~\ref{Tab:DadosTubo2}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,49 +253,42 @@ Vamos aquecer tubos metálicos em forma de L através de um fluxo de vapor d'ág
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{question}[type={exam}]{1}
-Apresente os resultados de maneira clara e organizada. Mostre os cálculos requisitados de maneira clara e sucinta, evidenciando o raciocínio desenvolvido.
+Liste os instrumentos de medida utilizados. Descreva o tipo do equipamento, sua resolução, e seu erro de escala.
 \end{question}
 
-\begin{question}[type={exam}]{0.5}
-Liste os equipamentos utilizados. Para os instrumentos de medida, descreva o tipo do equipamento, sua resolução, e seu erro de escala.
-\end{question}
-
-\begin{question}[type={exam}]{0.5}
+\begin{question}[type={exam}]{2}
 Preencha as tabelas com o número adequado de algarismos significativos, unidades, e erros de escala apropriados. 
 \end{question}
 
-\begin{question}[type={exam}]{1.0}
-Elabore um gráfico\footnote{Os três conjuntos de dados devem ser representados no mesmo gráfico, possibilitando a comparação entre eles. Note ainda que o gráfico será decrescente, uma vez que estamos verificando o processo de encolhimento das barras conforme elas resfriam.} de $L \times |T - T_0|$ com os dados das Tabelas~\ref{Tab:DadosTubo1}, \ref{Tab:DadosTubo2} e~\ref{Tab:DadosTubo3}.
-\end{question}
+\begin{question}[type={exam}]{1.5}
+\begin{enumerate}[label=\roman*.]
+\item Elabore um gráfico\footnote{Os dois conjuntos de dados devem ser representados no mesmo gráfico, possibilitando a comparação entre eles. Note ainda que o gráfico será decrescente, uma vez que estamos verificando o processo de encolhimento das barras conforme elas resfriam.} de $\Delta L \times |T - T_0|$ com os dados das Tabelas~\ref{Tab:DadosTubo1} e~ \ref{Tab:DadosTubo2}.
 
-\begin{question}[type={exam}]{0.5}
-Para a questão anterior, calcule as retas que melhor representam os dados experimentais utilizando o método dos mínimos quadrados e as adicione ao gráfico.
-\end{question}
- 
-\begin{question}[type={exam}]{1}
-Calcule o valor do coeficiente de expansão térmica para os materiais através dos coeficientes angulares e lineares obtidos na questão anterior. Identifique os materiais utilizando os dados da Tabela~\ref{TabelaCoeficientes} e calcule o erro percentual obtido através da expressão
+\item Calcule as retas que melhor representam os dados experimentais utilizando o método dos mínimos quadrados e as adicione ao gráfico.
+\item Utilizando os coeficientes angulares, obtenha o valor do coeficiente de expansão térmica e determine o erro percentual em comparação aos valores de referência contidos na Tabela~\ref{TabelaCoeficientes} através da expressão
 \begin{equation}
 	E_{\%} = \left|\frac{x-x_{\textrm{ref}}}{x_{\textrm{ref}}}\right| \times 100.
 \end{equation}
+\end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{1}
-Para os dados da Tabela~\ref{Tab:DadosTubo1}, calcule o erro associado às constantes $A$ e $B$ e determine o erro associado ao coeficiente de expansão térmica.
+\begin{question}[type={exam}]{2}
+Para os dados da Tabela~\ref{Tab:DadosTubo1}, calcule o erro associado ao coeficiente angular $B$ e determine o erro associado ao coeficiente de expansão térmica. Apresente seus cálculos.
 \end{question}
 
-\begin{question}[type={exam}]{1}
-Elabore um gráfico de $T \times t$ para os dados das  Tabelas~\ref{Tab:DadosTubo1}, \ref{Tab:DadosTubo2} e~\ref{Tab:DadosTubo3}.
-\end{question}
-
-\begin{question}[type={exam}]{1}
-Elabore um gráfico linearizado de acordo com o conjunto de Equações~\eqref{Eq:LinResfriamentoNewton} para os dados das  Tabelas~\ref{Tab:DadosTubo1}, \ref{Tab:DadosTubo2} e~\ref{Tab:DadosTubo3}.
-\end{question}
-
-\begin{question}[type={exam}]{1}
-Para a questão anterior, calcule as melhores retas através do método de mínimos quadrados e as adicione ao gráfico linearizado. Calcule os valores da constante $k$ através dos coeficientes angulares.
-\end{question}
+%\begin{question}[type={exam}]{1}
+%Elabore um gráfico de $T \times t$ para os dados das  Tabelas~\ref{Tab:DadosTubo1} e~\ref{Tab:DadosTubo2}.
+%\end{question}
 
 \begin{question}[type={exam}]{1.5}
+\begin{enumerate}[label=\roman*.]
+\item Elabore um gráfico linearizado de acordo com o conjunto de Equações~\eqref{Eq:LinResfriamentoNewton} para os dados das  Tabelas~\ref{Tab:DadosTubo1} e~\ref{Tab:DadosTubo2}.
+\item Calcule as melhores retas através do método de mínimos quadrados e as adicione ao gráfico linearizado.
+\item Determine os valores da constante $k$ através dos coeficientes angulares.
+\end{enumerate}
+\end{question}
+
+\begin{question}[type={exam}]{2}
 Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosDilatacaoLinear}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do fracasso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
@@ -426,63 +416,6 @@ Considerando os objetivos do experimento, listados na Seção~\ref{Sec:Objetivos
 	\end{tabular}
 \end{table*}
 
-\begin{table*}[!ht]
-\caption[][1cm]{Dados para a dilatação do Tubo 3.}
-\label{Tab:DadosTubo3}
-\centering
-	\begin{tabular}{lllll}
-		\toprule
-		&\textbf{Dados Iniciais}\\
-		\cmidrule{2-3}
-		& \cellcolor[gray]{0.89}$L_0$ &\cellcolor[gray]{0.92}\\
-		& \cellcolor[gray]{0.95}$T_0$ & \cellcolor[gray]{0.97}\\
-		& \cellcolor[gray]{0.89}$T_a$ & \cellcolor[gray]{0.92}\\
-		\cmidrule{2-3}
-\\
-		&\multicolumn{3}{l}{\textbf{Dados para o resfriamento}} \\
-		\cmidrule{2-4}
-		& $T$ & $\Delta L$ & t &\\
-		\cmidrule{2-4}
-		& \cellcolor[gray]{0.89} \phantom{xxxxxxxxxxxxxxxxxxxx}& \cellcolor[gray]{0.92} \phantom{xxxxxxxxxxxxxxxxxxxx} &  \cellcolor[gray]{0.89} \phantom{xxxxxxxxxxxxxxxxxxxx} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		\cmidrule{2-4}
-\\
-		&\multicolumn{3}{l}{\textbf{Dados para elaboração dos gráficos}} \\
-		\cmidrule{2-4}
-		& $L$ & $T - T_0$ & $T - T_a$ \\
-		\cmidrule{2-4}
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-		\bottomrule
-	\end{tabular}
-\end{table*}
+
 
 
