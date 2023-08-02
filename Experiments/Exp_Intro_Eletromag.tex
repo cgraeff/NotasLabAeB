@@ -1,34 +1,158 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Eletricidade e medidas elétricas} % Sem "Experiência 01" ou qualquer outro número
+\chapter{Eletromagnetismo e medidas elétricas} % Sem "Experiência 01" ou qualquer outro número
 \label{Chap:EletEMedidas}        % para poder trocar a ordem com facilidade
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{fullwidth}\it
-	Que experimento faremos?
-	Qual é o objetivo?
-	O que veremos/revisaremos? (teoria física)
-	Quais conceitos/técnicas de análise de dados utilizaremos?
+	Faremos alguns experimentos demonstratrivos para verificar os conceitos mais fundamentais de eletricidade e magnetismo. Após isso, nos familiarizaremos com o multímetro, o que nos permitirá determinar propriedades importantes de alguns sistemas que empregam eletricidade.
 \end{fullwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Física do experimento}
+\section{Conceitos básicos de eletromagnetismo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Se necessário, usar subsections}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+O eletromagnetismo é a teoria física que descreve os fenômenos físicos que têm origem na interação entre partículas dotadas de carga elétrica. A força eletromagnética é uma das forças fundamentais da natureza e a carga elétrica é uma propriedade característica das partículas, sendo que ela não pode ser alterada. As interações eletromagnéticas determinam a formação dos elementos químicos e de suas propriedades e são de especial interesse por sua ampla aplicação prática.
+
+Verificaremos a seguir alguns experimentos demonstrativos simples, porém interessantes para começarmos a explorar os fenômenos eletromagnéticos. Inicialmente, no entanto, precisamos de algumas definições:
+\begin{description}
+    \item{Carga elétrica:} É uma propriedade\footnote{Quando precisamos representar quantidades de carga em equações geralmente usamos as letras $q$ ou $Q$.} intrínseca das partículas que interagem através de forças eletromagnéticas. Tem um valor numérico e pode ser positiva ou negativa. No caso de uma partícula que não interage através de forças eletromagnéticas, dizemos que sua carga é nula, ou que é neutra. A unidade de carga no SI é o coulomb, representado por C. É interessante notar que a carga elétrica é dada sempre em múltiplos da carga\footnote{Como a carga de um elétron é o valor elementar de carga, usamos $e$ como uma variável especial para designá-la.} de um elétron, sendo que $e = \np[C]{1.60217663E-19}$.
+    
+    \item{Corrente elétrica:} Quando um conjunto de partículas carregadas se desloca, temos uma corrente elétrica $i$. Medimos a intensidade da corrente elétrica como a razão entre a carga total e o tempo de duração do fluxo de carga, ou, adimitindo que tenhamos um fluxo contínuo de carga,
+    \begin{equation}
+        i = \frac{dq}{dt}.
+    \end{equation}
+    A unidade de corrente elétrica é o ampere, representado por A, definido como
+    \begin{equation}
+        \np[A]{1} = \np[C/s]{1}.
+    \end{equation}
+    %
+    Note que temos dois sinais possíveis para a carga elétrica, o que pode trazer algumas complicações para a análise da corrente. Convencionalmente, se assume que a corrente elétrica se dá no sentido em que se deslocariam cargas positivas (do pólo positivo de uma bateria em direção ao pólo negativo). No entanto, na maioria dos materiais temos uma corrente de elétrons, que são cargas negativas. Além disso, temos materiais semi-condutores, onde a corrente se dá por deslocamento de ``buracos'' (ausência de elétrons), que se comportam como partículas de carga positiva. Finalmente, no caso de soluções iônicas e de plasmas temos tanto o fluxo de partículas positivas, quanto o de partículas negativas.
+    
+    A corrente em circuitos é tratada como uma função do tempo $i(t)$ na maioria dos circuitos, com excessão dos mais simples. No caso do sistema de geração e distribuição de energia elétrica temos o que chamamos de \emph{corrente alternada}, onde temos uma corrente que varia com o tempo de forma senoidal.
+    
+    A corrente é um parâmetro importante em sistemas elétricos e nos preocuparemos em realizar medidas precisas de sua intensidade.
+    
+    \item{Campo elétrico:} O campo elétrico $\vec{E}$é um campo vetorial obtido através da verificação da direção da força eletrostática exercida por uma carga sobre uma carga de teste. Essa carga de teste deve ser pequena o suficiente para não perturbar apreciavelmente a carga cujo campo elétrico estamos tentando medir. A intensidade do campo elétrico é dado pela razão entre o módulo da força e o valor da carga de teste. Assim, seu valor é dado em newtons por coulomb, $\rm{N}/\rm{C}$.
+    
+    Ainda que o campo elétrico possa ser considerado somente um artifício de visualização da interação entre as cargas elétricas, todo o raciocínio físico e matemático é feito através de tal grandeza. Consequentemente, o campo elétrico aparece com frequência em equações envolvendo grandezas do eletromagnetismo\footnote{As Equações de Maxwell, que são as equações fundamentais do eletromagnetismo são descritas em termos dos campos elétricos e magnéticos e das relações entre esses dois.}
+    
+    \item{Campo magnético:} De maneira similar ao caso do campo elétrico, podemos definir a direção de um campo magnético $\vec{B}$ usando um bússola de teste. A direção do campo em um ponto do espaço é aquela para a qual aponta a agulha da bússola. Já a intensidade do campo magnético é algo mais complexo de se definir. Em termos práticos, é mais fácil utilizar a \emph{força magnética sobre uma carga elétrica em movimento}. Tal força é experimentada por uma partícula que se move em um campo magnético, sendo que sua direção é perpendicular tanto à direção do campo magnético, quanto à direção do vetor velocidade. A expressão para a força é
+    \begin{equation}\label{Eq:DefFMagChar}
+        \vec{F}_B = q \vec{v}\times\vec{B}.
+    \end{equation}
+    %
+    Consequentemente, definimos a intensidade do campo de forma que o produto vetorial acima descreva a intensidade de força experimentada pela partícula.
+    
+    A unidade no SI para o campo magnétido é o tesla, representado por T, sendo que
+    \begin{equation}
+        \np[T]{1} = \np[N/C\cdot m/s]{1} = \np[N/A\cdot m]{1}.
+    \end{equation}
+    
+    É interessante notar ainda que a força dada pela Equação~\ref{Eq:DefFMagChar} é perpendicular ao vetor velocidade instantânea da partícula. Consequentemente, ele não é capaz de causar uma aceleração tangencial e não pode mudar o módulo da velocidade, apenas a sua direção. Isso significa que a força realizada por um campo magnético sobre uma partícula não pode mudar a sua energia cinética, isto é, a força não realiza trabalho sobre a partícula.
+    
+    \item{Tensão:} De um ponto de vista energético, quando ocorre o deslocamento de uma quantidade de carga na presença de um campo elétrico temos a realização de certa quantidade de trabalho sobre as cargas. Se considerarmos a energia por quantidade de carga, temos o que chamamos de \emph{tensão}, ou \emph{diferença de potencial elétrico}.\footnote{A força entre cargas elétricas é conservativa, portanto existe um potencial eletrostático cuja variação é igual ao trabalho realizado.}.
+    
+    A tensão também é uma variável muito importante de um ponto de vista prático em todos os sistemas elétricos que usamos diariamente e será um dos parâmetros que nos preocuparemos em medir.
+    
+    \item{Resistência:} Sempre que um corpo condutor é submetido a uma diferença de potencial (tensão) entre suas extremidades, ocorre uma transferência de carga entre a região de alto potencial elétrico para a região de baixo potencial elétrico na forma de uma corrente elétrica. No entanto, cada corpo manifesta uma relação diferente entre a tensão a que está sujeito e a corrente registrada. Calculando a razão entre essas grandezas temos
+    \begin{equation}
+        R = \frac{V}{i}.
+    \end{equation}
+    %
+    A variável $R$ é denominada \emph{resistência} e a sua unidade de medida é o ohm, respresentado por \si{\ohm}. Note ainda que o valor da resistência pode ser constante ou variar de acordo com o valor da corrente elétrica. Caso ela seja constantante, o corpo é classificado como um \emph{resistor ôhmico}.\footnote{O termo `resistor' é comumente utilizado para designar um componente de um circuito elétrico cuja função é oferecer uma resistência à passagem de corrente.}
+    
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Experimentos demonstrativos em eletromagnetismo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Efeito triboelétrico}
+
+O efeito triboelétrico é um fenômeno em que elétrons são transferidos de um material para outro quando eles são esfregados. Diversos materiais apresentam tal propriedade e o nome ``elétron'' tem origem no grego `elektron' (\selectlanguage{greek}ἤλεκτρον\selectlanguage{brazil}), palavra para `âmbar', pois tal material é um dos que exibe este fenônemo. Observa-se que após a eletrização ocorre uma força atrativa entre os materiais que foram esfregados.
+
+Por outro lado, quando a carga de qualquer um desses corpos é transmitida a um eletroscópio ---~aparato que consiste em duas lâminas condutoras muito leves ligadas a um mesmo condutor e que podem se mover~--- observamos que ocorre um afastamento entre as lâminas. Consequentemente, conclui-se que existem dois tipos de carga, sendo que corpos que possuem a carga elétrica de mesmo tipo sofrem a ação de uma força repulsiva e corpos que possuem cargas elétricas de diferentes tipos estão sujeitos a uma força atrativa.
+
+\paragraph{Gerador de Van de Graaff}
+
+O gerador de Van de Graaff utiliza o efeito tribloelétrico entre um correia de borracha e um condutor para transferir continuamente elétrons para a parte interna de uma cúpula metálica. Devido às forças repulsivas entre os elétrons, eles se acumulam na parte externa da cúpula e sempre é possível adicionar mais elétrons na parte interna. Isso possibilita que uma carga elétrica muito grande possa ser armazenada na cúpula, levando a um potencial elétrico muito alto, suficiente para que o ar no entorno da cúpula seja ionizado e passe a se comportar como um condutor. A ionização do ar pode ser constatada pelas centelhas elétricas geradas, principalmente em terminais pontiagudos afixados à cúpula.
+
+\paragraph{Ímãs}
+
+Ímãs são corpos feitos de ligas que exibem o efeito de magnetismo permanente (ex.: AlNiCo, SmCo, NdFeB, ferrite, etc.). Observa-se que ímãs possuem sempre dois pólos, sendo que pólos de tipos opostos se atraem e pólos do mesmo tipo se afastam. Nota-se ainda que alguns materiais se tornam magnetizados quando na presença de um ímã e são fortemente atraídos por ele (ditos materiais ferromagnéticos). Outros materiais podem sofrer uma atração fraca (paramagnéticos), ou mesmo serem repelidos (diamagnéticos).
+
+\paragraph{Efeito Joule}
+
+Quando elétrons se movem em um condutor temos um aumento de temperatura conhecido como \emph{efeito Joule}. O aumento da temperatura está associado a uma potência dissipada dada por 
+\begin{equation}
+    P = R i^2
+\end{equation}
+%
+e à capacidade térmica do condutor (produto do volume pelo calor específico do material, se ele for homogêneo).
+
+\paragraph{Eletroímãs}
+
+Também é possível criar ímãs através de uma corrente elétrica. Uma maneira simples de fazer isso é  enrolar sobre uma haste ferromagnética um fio condutor com uma camada isolante ---~garantindo que a corrente percorra toda a extensão do fio em um caminho helicoidal~---. Ao fazermos passar pelo fio uma corrente, ocorre a geração de um campo magnético que induz um efeito ferromagnético na haste.
+
+\paragraph{Indução de corrente em uma espira/bobina}
+
+De maneira oposta ao caso de um eletroímã, onde utilizamos uma corrente elétrica para gerar um efeito magnético, também é possível utilizar um campo magnético que varia de alguma maneira para gerar uma corrente elétrica. Uma maneira simples de verificar tal fenômeno é aproximar um ímã permanente de uma espira de fio. Ao verificarmos as extremidades da espira temos uma tensão e, caso o circuito esteja fechado, uma corrente elétrica.
+
+\paragraph{Pêndulo freado por indução}
+
+Associada ao campo e corrente elétrica que ocorre no fenômeno de indução, ocorre também uma força contrária à direção do movimento. Tal força pode ser percebida em um pêndulo de material condutor: quando o pêndulo passa por uma região com um campo magnético é possível perceber uma desaceleração do pêndulo. De maneira similar, se um ímã é solto dentro de um tubo condutor vertical, a força terá o efeito de limitar a sua velocidade de queda.
+
+\paragraph{Aquecimento por indução}
+
+Ainda outro fenômeno causado pela indução de corrente em um condutor é o aquecimento. Isso se deve ao efeito joule devido à resistência do condutor à corrente.
+
+\paragraph{Transformadores}
+
+No caso de correntes alternadas, é possível utilizar uma bobina para gerar um campo que varia no tempo. Esse campo variável, por sua vez, pode ser utilizado para gerar um campo/corrente elétrica em uma segunda bobina. Tal princípio permite que a tensão em um circuito elétrico de corrente alternada seja alterada com relativa facilidade é a base de funcionamento de transformadores elétricos. Essa facilidade foi fundamental para que a corrente alternada fosse adotada como padrão de distribuição, pois é desejável que a tensão seja muito alta durante a transmissão e relativamente baixa durante sua utilização.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Medidas elétricas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A variáveis mais essenciais que podem ser medidas em circuitos elétricos são a corrente $i$ e a tensão $V$, sendo que os equipamentos utilizados para determiná-las são o amperímetro e o voltímetro. Embora outras propriedades possam de uma maneira ou de outra serem determinadas a partir de informações acerca dessas duas variáveis, o uso de instrumentos combinados que possam realizar diversos tipos de medidas é bastante comum.
+
+\paragraph{Uso do voltímetro}
+
+O voltímetro é um instrumento capaz de determinar a diferença de potencial elétrico (tensão) entre dois pontos quaisquer de um circuito. Para isso, basta ligar uma das pontas de prova em um dos pontos e a outra ponta no outro ponto. Devido a características construtivas de um voltímetro, é comum que ele possua diversas \emph{escalas}, isto é, faixas de medidas (0 a \np[mV]{200}, 0 a \np[mV]{2000}, 0 a \np[V]{20}, 0 a \np[V]{200}, etc.), sendo que a faixa mais adequada deve ser selecionada pelo usuário. Outro fator a ser considerado é se a medida deve ser feita para corrente contínua, ou para corrente alternada.
+
+Idealmente nenhuma corrente deve fluir através do voltímetro,\footnote{Dizemos, portanto, que o voltímetro ideal tem resistência infinita.} garantindo que o sistema se comporta durante a medida da mesma maneira que durante o seu funcionamento. Na prática, no entanto, uma pequena corrente passa através dele, o que torna necessário considerar qual é o equipamento e a escala mais indicados para cada situação.
+
+\paragraph{Uso do amperímetro}
+
+O amperímetro tem como função determinar a corrente que passa por uma região de um circuito. Portanto, ele deve ser ligado como se fosse parte do circuito, permitindo que a corrente flua por ele e possibilitando a realização da medida. Assim como no caso do voltímetro, muitos amperímetros possuem escalas de medidas diferentes, sendo responsabilidade do usuário selecionar a mais adequada.
+
+No caso ideal um amperímetro tem resistência nula, permitindo que a corrente flua da mesma maneira que faria caso um condutor ocupasse o lugar do aparelho. Na prática, no entanto, sempre existe uma resistência interna, embora ela seja pequena.
+
+\textbf{Atenção: não ligue o amperímetro diretamente a uma fonte de tensão! Como a resistência interna desse tipo de equipamento é muito baixa, o aparelho se comportará como um curto-circuito.}
+
+\paragraph{Uso do ohmímetro}
+
+A medida de resistência de um componente pode ser obtida através da razão entre a tensão aplicada a ele e a corrente obtida, porém isso implicaria em utilizar um voltímetro e um amperímetro concomitantemente. Na prática é mais simples utilizar um ohmímetro, que nos dá uma medida direta da resistência.
+
+\textbf{Atenção: O ohmímetro deverá ser utilizado diretamente no componente cuja resistência desejamos verificar. Se for utilizado em um circuito, a fonte de tensão do circuito deverá estar desligada.}
+
+\paragraph{Escala de cores de resistores}
+
+Resistores são componentes pequenos e muito abundantes em circuitos eletrônicos. Sua função é limitar a corrente em uma região do circuito de maneira a atender os requisitos do projeto elétrico/eletrônico. Para descrever a resistência nominal de um resistor ---~isto é, a resistência declarada pelo fabricante~---, é empregado um código de cores através de anéis coloridos desenhado no entorno do componente.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\emph{Vamos realizar um experimento simples para nos familiarizarmos com o uso do multímetro. Verificaremos como empregá-lo para obter medidas de tensão, corrente, e resistência.}
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Resultados concretos que devemos conseguir;
-	\item Observar a relação de tal coisa com outra coisa;
+	\item Familiarização com o funcionamento do multímetro;
+	\item Verificar os valores de resistência e capacitância de alguns componentes;
 	\item Calcular a constante $x$.
 \end{itemize}
 
@@ -37,8 +161,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Item 1;
-	\item Item 2.
+	\item Multímetro;
+	\item Fonte de tensão regulável;
+	\item Pilhas, resistores, e capacitores diversos;
+	\item Cabos de ligação.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,12 +172,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%
-%\subsection{Parte A} % Se necessário
+\subsection{Medidas de tensão} % Se necessário
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-	\item Passo 1;
-	\item Passo 2;
-	\item Passo 3.
+	\item Tome uma pilha AA;
+	\item Ajuste o voltímetro na maior escala disponível para tensão em corrente contínua (VCC, DCV, ou $\rm{V}\mathdirectcurrent$);
+	\item Verifique a tensão da pilha e anote na Tabela~\ref{Tab:TensaoPilha} observando a quantidade adequada de algarismos significativos;
+	\item Refaça a medida de tensão usando as demais escalas disponíveis para tensão em corrente contínua. Caso alguma das escalas não permita fazer a leitura, marque a célula da tabela com um traço horizontal.
+	\item Refaça o procedimento acima para a segunda pilha/bateria e anote os resultados na Tabela~\ref{Tab:TensaoPilha}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,65 +214,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{question}[type={exam}]{1}
-Apresente os resultados de maneira clara e organizada. Mostre os cálculos requisitados de maneira clara e sucinta, evidenciando o raciocínio desenvolvido.
+Considerando os dados presentes na Tabela~\ref{Tab:TensaoPilha}, qual escala é a mais adequada para determinar a tensão das pilhas/baterias?
 \end{question}
 
 \begin{question}[type={exam}]{1}
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \section{Tabelas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{table*}[!ht]
+\centering
+\begin{tabular}{lp{20mm}p{20mm}p{20mm}p{20mm}p{20mm}p{20mm}p{20mm}l}
+\toprule
+    & & \multicolumn{6}{c}{\textbf{Tensões}} \\
+    \cmidrule{3-8}
+    & Escala: & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+    & Pilha/bat. 1: & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97}  \\
+    & Pilha/bat. 2: & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+\bottomrule
+\end{tabular}
+\caption[][5mm]{Dados para a determinação do atrito estático.}
+\label{Tab:TensaoPilha}
+\end{table*}

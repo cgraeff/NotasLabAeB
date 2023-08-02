@@ -56,3 +56,20 @@ execute before day scope={ \ifdate{day of month=1}{%
 ]
 
 \makeatother%
+
+% Obtido de https://tex.stackexchange.com/questions/40624/howto-typeset-the-direct-current-symbol-in-latex
+\newcommand{\textdirectcurrent}{%
+  \settowidth{\dimen0}{$=$}%
+  \vbox to .85ex {\offinterlineskip
+    \hbox to \dimen0{\leaders\hrule\hfill}
+    \vskip.35ex
+    \hbox to \dimen0{%
+      \leaders\hrule\hskip.2\dimen0\hfill
+      \leaders\hrule\hskip.2\dimen0\hfill
+      \leaders\hrule\hskip.2\dimen0
+    }
+    \vfill
+  }%
+}
+\newcommand{\mathdirectcurrent}{\mathrel{\textdirectcurrent}}
+
