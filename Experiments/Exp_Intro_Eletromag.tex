@@ -32,6 +32,8 @@ Verificaremos a seguir alguns experimentos demonstrativos simples, porém intere
     
     A corrente é um parâmetro importante em sistemas elétricos e nos preocuparemos em realizar medidas precisas de sua intensidade.
     
+    \item{Ligações em série e em paralelo:} Os componentes elétricos podem ser conectados em dois tipos básicos: em série ou em paralelo. Uma conexão em série é aquela em que a corrente elétrica passa pelos componentes em sucessão. Já uma conexão em paralelo, a corrente se separa em duas ou mais partes e passa através dos componentes, voltado a se concentrar após passar pelos componentes.
+    
     \item{Campo elétrico:} O campo elétrico $\vec{E}$é um campo vetorial obtido através da verificação da direção da força eletrostática exercida por uma carga sobre uma carga de teste. Essa carga de teste deve ser pequena o suficiente para não perturbar apreciavelmente a carga cujo campo elétrico estamos tentando medir. A intensidade do campo elétrico é dado pela razão entre o módulo da força e o valor da carga de teste. Assim, seu valor é dado em newtons por coulomb, $\rm{N}/\rm{C}$.
     
     Ainda que o campo elétrico possa ser considerado somente um artifício de visualização da interação entre as cargas elétricas, todo o raciocínio físico e matemático é feito através de tal grandeza. Consequentemente, o campo elétrico aparece com frequência em equações envolvendo grandezas do eletromagnetismo\footnote{As Equações de Maxwell, que são as equações fundamentais do eletromagnetismo são descritas em termos dos campos elétricos e magnéticos e das relações entre esses dois.}
@@ -152,8 +154,7 @@ Resistores são componentes pequenos e muito abundantes em circuitos eletrônico
 
 \begin{itemize}
 	\item Familiarização com o funcionamento do multímetro;
-	\item Verificar os valores de resistência e capacitância de alguns componentes;
-	\item Calcular a constante $x$.
+	\item Verificar os valores de resistência de alguns componentes;
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,10 +162,11 @@ Resistores são componentes pequenos e muito abundantes em circuitos eletrônico
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Multímetro;
+	\item Multímetros e pontas de prova;
 	\item Fonte de tensão regulável;
-	\item Pilhas, resistores, e capacitores diversos;
-	\item Cabos de ligação.
+	\item Pilhas e resistores diversos;
+	\item Cabos de ligação;
+	\item Protoboard e fios de ligação.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -180,6 +182,25 @@ Resistores são componentes pequenos e muito abundantes em circuitos eletrônico
 	\item Verifique a tensão da pilha e anote na Tabela~\ref{Tab:TensaoPilha} observando a quantidade adequada de algarismos significativos;
 	\item Refaça a medida de tensão usando as demais escalas disponíveis para tensão em corrente contínua. Caso alguma das escalas não permita fazer a leitura, marque a célula da tabela com um traço horizontal.
 	\item Refaça o procedimento acima para a segunda pilha/bateria e anote os resultados na Tabela~\ref{Tab:TensaoPilha}.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Medidas de corrente e resistência}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+    \item Ligue três resistores aleatórios em série usando o protoboard;
+    \item Ajuste um multímetro na função de amperímetro e o ligue em série com os resistores. Esteja atento às marcações nas portas do multímetro: ligue um dos cabos à porta comum (\texttt{COM}) e o outro à porta marcada com \texttt{mA};
+    \item Ajuste os controles da fonte regulável de forma que a tensão esteja no mínimo e a corrente no máximo;
+    \item Ligue o circuito formado pelos resistores e pelo amperímetro à fonte regulável;
+    \item Ligue a fonte e aumente a tensão até que seja lido no multímetro uma corrente de aproximadamente \np[mA]{5,0}. Anote o valor de corrente na Tabela~\ref{Tab:MedidasResistencia1} (note que a corrente é a mesma para os três resistores, pois eles estão ligados em série).
+    \item Ajuste o outro multímetro na função voltímetro. Verifique a tensão $V$ entre os terminais de cada um dos resistores e anote na Tabela~\ref{Tab:MedidasResistencia1}.
+    \item Aumente o valor de tensão da fonte regulável de forma que  a corrente no circuito passe a ser de aproximadamente \np[mA]{10,0}. Anote o valor de corrente obtido na Tabela~\ref{Tab:MedidasResistencia1}.
+    \item Repita as medidas de tensão entre os terminais de cada resistor e anote os valores na Tabela~\ref{Tab:MedidasResistencia1}.
+    \item Finalmente, ajuste a tensão na fonte de forma a atingir uma corrente de aproximadamente \np[mA]{15} e anote o valor de corrente na Tabela~\ref{Tab:MedidasResistencia1}.
+    \item Mais uma vez, repita as medidas de tensão entre os terminais de cada resistor e anote os valores na Tabela~\ref{Tab:MedidasResistencia1}.
+    \item Ajuste o multímetro na função ohmímetro. Verifique os valores de resistência e anote na coluna $R_m$ da Tabela~\ref{Tab:MedidasResistencia2}.
+    \item Verifique os valores de resistência nominal $R_n$ de cada um dos resistores e anote na Tabela~\ref{Tab:MedidasResistencia2}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -213,14 +234,26 @@ Resistores são componentes pequenos e muito abundantes em circuitos eletrônico
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{1}
-Considerando os dados presentes na Tabela~\ref{Tab:TensaoPilha}, qual escala é a mais adequada para determinar a tensão das pilhas/baterias?
-\end{question}
-
-\begin{question}[type={exam}]{1}
+\begin{question}[type={exam}]{2.5}
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
+\begin{question}[type={exam}]{2.5}
+Considerando os dados presentes na Tabela~\ref{Tab:TensaoPilha}, qual escala é a mais adequada para determinar a tensão das pilhas/baterias?
+\end{question}
+
+\begin{question}[type={exam}]{2.5}
+Determine o valor das resistências através da expressão
+\begin{equation}
+    R = \frac{V}{i}
+\end{equation}
+%
+e preencha os valores $R_c$ na Tabela~\ref{Tab:MedidasResistencia1}.
+\end{question}
+
+\begin{question}[type={exam}]{2.5}
+Determine os erros percentuais entre os valores de resistência calculada $R_c$ e os valores nominais $R_n$. 
+\end{question}
 
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -232,13 +265,49 @@ Preencha as colunas de dados experimentais das tabelas com o número adequado de
 \centering
 \begin{tabular}{lp{20mm}p{20mm}p{20mm}p{20mm}p{20mm}p{20mm}p{20mm}l}
 \toprule
-    & & \multicolumn{6}{c}{\textbf{Tensões}} \\
-    \cmidrule{3-8}
-    & Escala: & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
-    & Pilha/bat. 1: & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97}  \\
-    & Pilha/bat. 2: & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+    & \multicolumn{5}{l}{\textbf{Tensões em diversas escalas}} \\
+    \cmidrule{2-8}
+    & Escala: \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+    & Pilha/bat. 1: \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} &  \cellcolor[gray]{0.95} \\
+    & Pilha/bat. 2: \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
 \bottomrule
 \end{tabular}
-\caption[][5mm]{Dados para a determinação do atrito estático.}
+\caption[][5mm]{Dados obtidos para a tensão em diversas escalas.}
 \label{Tab:TensaoPilha}
 \end{table*}
+
+\vspace{3cm}
+
+\begin{table*}[!ht]
+\centering
+\begin{tabular}{lp{13mm}p{13mm}p{13mm}cp{13mm}p{13mm}p{13mm}cp{13mm}p{13mm}p{13mm}l}
+\toprule
+    & \multicolumn{3}{c}{$R_1$} & & \multicolumn{3}{c}{$R_2$} & & \multicolumn{3}{c}{$R_3$} \\
+    \cmidrule{2-4} \cmidrule{6-8} \cmidrule{10-12}
+    & $V$ & $i$ & $R_c$ & & $V$ & $i$ & $R_c$ & & $V$ & $i$ & $R_c$ \\
+    \cmidrule{2-4} \cmidrule{6-8} \cmidrule{10-12}
+    & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} && \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} && \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+    & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} && \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} && \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95}  \\
+    & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} && \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} && \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+\bottomrule
+\end{tabular}
+\caption[][5mm]{Dados para a determinação da resistência calculada $R_c$ para os três resistores.}
+\label{Tab:MedidasResistencia1}
+\end{table*}
+
+\vspace{3cm}
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{lp{13mm}p{13mm}p{13mm}p{13mm}p{13mm}l}
+\toprule
+    && $R_m$ & $R_n$ & $\mean{R_c}$ & $E_{\%}$ \\
+    \cmidrule{2-6}
+    & $R_1$: \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+    & $R_2$: \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+    & $R_3$: \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+\bottomrule
+\end{tabular}
+\caption[][5mm]{Dados para a determinação do erro percentual em relação ao valor nominal.}
+\label{Tab:MedidasResistencia2}
+\end{table}
