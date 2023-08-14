@@ -11,15 +11,22 @@
 \section{Sistema massa-mola}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Sabemos que a força exercida por uma mola é proporcional à sua distensão:
-\begin{align}
-	F &= -k\Delta x \\
-	&= -kx,
-\end{align}
+Sabemos que a força exercida por uma mola é proporcional à sua distensão $\ell$:
+\begin{equation}
+	|F| = k \ell,
+\end{equation}
 %
-onde assumimos que $x_i = 0$ e $x_f = x$, que $k$ é uma constante de proporcionalidade, e onde o sinal negativo significa que a força é no sentido contrário à distensão da mola.
+onde $k$ é uma constante de proporcionalidade cujo valor varia de mola para mola. Adotando um sistema de referência cujo eixo $x$ aponta verticalmente para cima, podemos escrever a expressão para a força como
+\begin{equation}
+    F = -k \Delta x,
+\end{equation}
+%
+onde o sinal negativo significa que a força é no sentido contrário à distensão da mola. Note que $x$ representa a posição do bloco, de forma que $\delta x$ corresponde à distensão $\ell$. Se adotarmos a origem do eixo $x$ na posição inicial do bloco, temos que $x_i = 0$ e $x_f = x$, o que nos permite escrever a expressão para a força como
+\begin{equation}
+    F = -kx.
+\end{equation}
 
-\begin{marginfigure}
+\begin{marginfigure}[-2cm]
 	\includegraphics[width=\textwidth]{Ilustrations/Massa-Mola.png}
 	\caption{Sistema massa-mola.}
 \end{marginfigure}
@@ -47,7 +54,7 @@ onde assumimos que $x_i = 0$ e $x_f = x$, que $k$ é uma constante de proporcion
     
     \draw[<-] (1,-1.9)node[below right]{$x$} -- (1,-3.9);
 \end{tikzpicture}
-\caption{Direção e sentido das forças em um sistema massa-mola.\label{Fig:BlocoEquilDevidoForcaElastica}}
+\caption{Direção e sentido das forças em um sistema massa-mola em equilíbrio.\label{Fig:BlocoEquilDevidoForcaElastica}}
 \end{marginfigure}
 
 Vamos considerar um sistema onde penduramos uma mola em um suporte, de forma que ela se disponha verticalmente, e prendemos um corpo de massa $m$ à extremidade inferior. Deixamos o corpo descer até que a força exercida pela mola equilibre o peso. A partir dessa posição de equilíbrio, qualquer deslocamento exercido fará com que atue sobre o corpo uma força proporcional ao deslocamento, porém com sentido contrário a ele, tendendo a restaurá-lo à posição de equilíbrio. Utilizando a segunda lei de Newton, podemos descrever a dinâmica do corpo através de
@@ -59,7 +66,7 @@ Vamos considerar um sistema onde penduramos uma mola em um suporte, de forma que
 	-kx' &= ma_x,
 \end{align}
 %
-onde o eixo $x$ aponta verticalmente para cima e $x' \equiv x + mg/k$. A constante $mg/k$ na expressão acima representa a distensão da mola em relação à posição de equilíbrio. Note também que
+onde o eixo $x$ aponta verticalmente para cima e $x' \equiv x + mg/k$. A constante $mg/k$ na expressão acima representa a distensão da mola após a adição da massa $m$ em relação relação ao tamanho que ela tinha quando relaxada. Note também que
 \begin{align}
     a_x &= \frac{d^2}{dt^2}x \\
     a'_x &= \frac{d^2}{dt^2}x',
@@ -67,9 +74,9 @@ onde o eixo $x$ aponta verticalmente para cima e $x' \equiv x + mg/k$. A constan
 %
 porém
 \begin{align}
-    a'_x &= \frac{d}{dt} x' \\
-    &= \frac{d}{dt} \left(x - \frac{mg}{k}\right) \\
-    &= \frac{d}{dt}x \\
+    a'_x &= \frac{d^2}{dt^2} x' \\
+    &= \frac{d^2}{dt^2} \left(x - \frac{mg}{k}\right) \\
+    &= \frac{d^2}{dt^2}x + 0\\
     &= a_x,
 \end{align}
 %
@@ -92,7 +99,7 @@ ou, rearranjando os termos,
 	\frac{d^2x'}{dt^2} + \frac{k}{m} x' = 0.
 \end{equation}
 
-\begin{figure*}[b]
+\begin{figure*}[t]\forcerectofloat
 \centering
 \begin{tikzpicture}[>=Stealth, scale = 0.75,
      interface/.style={
@@ -278,15 +285,15 @@ Através da equação acima, percebemos que a posição $x$' como função do te
 %
 verificamos que
 \begin{align}
-	\frac{d}{dt}x'(t) &= v'(t) = A\omega\cos\omega t \\
-	\frac{d^2}{dt^2} x'(t) &= a'(t) = -A\omega^2\sen\omega t.
+	\frac{d}{dt}x'(t) &= v'(t) = A\omega\cos(\omega t + \phi) \\
+	\frac{d^2}{dt^2} x'(t) &= a'(t) = -A\omega^2\sen(\omega t + \phi).
 \end{align}
 
 
 %
 Substituindo as expressões para a posição e para a aceleração na Equação~\eqref{Eq:EquacaoDiferencialOHS}, obtemos
 \begin{equation}
-	-A\omega^2\sen(\omega t + \phi) + \frac{k}{m}A\sen(\omega t + \phi)=0
+	-A\omega^2\sen(\omega t + \phi) + \frac{k}{m}A\sen(\omega t + \phi) = 0
 \end{equation}
 %
 o que pode ser simplificado a
@@ -351,22 +358,21 @@ Expressões como a Equação~\eqref{Eq:EquacaoDiferencialOHS} são comuns em fí
 \section{Pêndulo Simples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Podemos tratar um objeto que oscila preso a uma corda de massa desprezível como uma oscilação harmônica desde que o ângulo máximo de oscilação --- isto é, a amplitude --- seja pequena. Se essa condição for garantida, o pêndulo é denominado \emph{pêndulo simples}.
-
-\begin{marginfigure}
+\begin{marginfigure}[-3cm]
 	\centering
 %	\forcerectofloat
 	\includegraphics[width=\textwidth]{Ilustrations/Pendulo_simples.png}
 	\caption{Pêndulo simples.}
 \end{marginfigure}
 
+Podemos tratar um objeto que oscila preso a uma corda de massa desprezível como uma oscilação harmônica desde que o ângulo máximo de oscilação --- isto é, a amplitude --- seja pequena. Se essa condição for garantida, o pêndulo é denominado \emph{pêndulo simples}.
 
 Se deslocarmos um pêndulo para a direita, como na Figura~\ref{Fig:Pendulo}, teremos uma componente da força peso que sempre tende a restaurar o pêndulo à posição de equilíbrio, o que dá origem a um movimento oscilatório. De acordo com a segunda lei de Newton para a rotação,
 \begin{equation}
     \tau = I\alpha.
 \end{equation}
 
-\begin{marginfigure}
+\begin{marginfigure}[1cm]
 \centering
 \begin{tikzpicture}[>=Stealth,
         interface/.style={
@@ -596,7 +602,7 @@ Preencha as tabelas com o número adequado de algarismos significativos, unidade
 \end{question}
 
 \begin{question}[type={exam}]{1}
-Deduza a equação para o erro em uma divisão
+Deduza a equação para o erro em uma potenciação
 \begin{equation}
     (q \pm \delta q) = (x \pm \delta x)^n
 \end{equation}
