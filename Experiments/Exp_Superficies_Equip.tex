@@ -11,7 +11,72 @@
 \section{Potencial elétrico de um arranjo dipolar de cargas elétricas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Começar de energia potencial, depois definir o potencial elétrico, depois falar o que é um dipolo.
+O trabalho realizado por uma força $\vec{F}$ pode ser calculado no caso mais geral através da \emph{integral de linha}\footnote{Também chamada de \emph{integral de caminho}.}
+\begin{equation}
+    W = \int_C \vec{F}(\vec{r}) \cdot d\vec{r},
+\end{equation}
+%
+onde $C$ representa um caminho no espaço. Além disso, se a força é conservativa, podemos calcular o trabalho como o negativo da diferença de valores de uma função escalar $U(\vec{r})$ conhecida como energia potencial:
+\begin{align}
+    W &= \Delta U(\vec{r}) \\
+    &= U(\vec{r}_f) - U(\vec{r}_i).
+\end{align}
+
+No caso particular da força eletrostática, é conveniente denotar a força $F(\vec{r})$ como sendo o produto entre o campo elétrico e o valor $q_0$ da carga que se desloca e cujo trabalho estamos interessados em determinar. Assim, podemos escrever
+\begin{equation}\label{Eq:EnergiaPotencialParaDeslEmCampoEletrico}
+    \Delta U(\vec{r}) = - \int_C q_0 \cdot \vec{E}(\vec{r}) \cdot d\vec{r}.
+\end{equation}
+
+Em fenômenos eletromagnéticos é bastante comum que não haja um interesse particular na quantidade de trabalho realizado em uma carga específica, mas sim na quantidade de trabalho realizada \emph{por unidade de carga}. Dessa maneira, definimos uma nova grandeza, conhecida como \emph{potencial elétrico},\footnote{Geralmente só dizemos \emph{potencial}, deixando o `elétrico' subentendido.} definida como
+\begin{equation}
+    V(\vec{r}) \equiv \frac{U(\vec{r})}{q_0}.
+\end{equation}
+%
+Substituindo essa definição na expressão~\eqref{Eq:EnergiaPotencialParaDeslEmCampoEletrico}, obtemos
+\begin{equation}\label{Eq:ExprPotencialEletrico}
+    \Delta V(\vec{r}) = - \int_C \vec{E}(\vec{r}) \cdot d\vec{r}. \mathnote{Definição de potencial elétrico.}
+\end{equation}
+
+O potencial elétrico $V(\vec{r})$ é um campo escalar cujo valor é de especial interesse em aplicações práticas. Devido a características dos sistemas elétricos que empregamos no dia a dia, raramente nos preocupamos com sua dependência na posição $\vec{r}$ e estamos simplesmente interessados na \emph{diferença} de potencial $\Delta V$ entre dois pontos quaisquer de um circuito elétrico. Essa diferença é o que medimos com um multímetro e denominamos como \emph{tensão}, ou \emph{diferença de potencial}, ou ainda \emph{voltagem} (os três termos são equivalentes). Suas unidades são $\rm{J}/\rm{C}$ (`joule por coulomb'). 
+
+Note que, da mesma maneira que o trabalho está relacionado à \emph{diferença de energia potencial} entre dois pontos, a tensão está relacionada à \emph{diferença de potencial elétrico}, isto é, não há interesse no valor particular de potencial elétrico, mas sim na diferença de valores entre dois pontos quaisquer de um circuito.\footnote{Isso é um reflexo do fato de que se o potencial é igual entre dois pontos, então a energia potencial também é, o que faz com que não haja trabalho algum realizado no deslocamento de uma carga entre as duas posições.} Quando tratamos um sistema de cargas de um ponto de vista da Física, costumamos escolher $\vec{r} = \infty$ como sendo o ponto onde o potencial é nulo. Em circuitos, é comum adotar o polo negativo de baterias como sendo o ponto de potencial nulo, ou no caso de sistemas mais complexos, \emph{o potencial do solo} é considerado nulo: essa é a razão pela qual dizemos que há um \emph{aterramento} de um sistema.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Superfícies equipotenciais}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se considerarmos uma configuração qualquer de cargas, existe uma superfície contígua formada por pontos onde o potencial tem o mesmo valor. Tal superfície é o que denominamos de \emph{superfície equipotencial}. No caso de uma carga pontual, por exemplo, é relativamente simples entender que as superfícies equipotenciais são esferas concentricas e em cujos centros se encontra a carga elétrica em questão: como a força eletrostática e, consequentemente, o campo elétrico são funções somente da distância $r$ entre a carga que gera o campo e a carga de teste, o trabalho por unidade de carga efetuado no deslocamento entre uma posição qualquer e qualquer dos pontos de uma superfície esférica centrada na carga que gera o campo é sempre o mesmo. Logo, todos os pontos dessa superfície se encontram sob o mesmo valor de potencial. Realizando a integração para esse caso particular, obtemos
+\begin{align}
+    \Delta V(\vec{r}) &= - \int_C \vec{E}(\vec{r}) \cdot d\vec{r} \\
+    &= - \int_C \frac{kq}{r^2} \hat{r} \cdot d\vec{r}.
+\end{align}
+%
+Como a força depende somente da distância entre as cargas, podemos tratar a integral acima como unidimensional, o que pode ser verificado matematicamente pelo produto escalar $\hat{r}\cdot d\vec{r} = dr$. Considerando um caminho que leve de um ponto $\vec{r}_A = \infty$ a um ponto qualquer $r_B = r$, temos\footnote{Estamos considerando que a carga que gera o campo se encontra na origem do sistema de coordenadas.} 
+\begin{align}
+    \Delta V(\vec{r}) &= - \int_{r_A}^{r_B} \frac{kq}{r^2} \,dr \\
+    V(r_B) - V(r_A) &= - kq \int_{\infty}^{r} (r')^{-2} \,dr' \\
+    &= kq [(r')^{-1} + C]_{\infty}^{r} \\
+    &= \frac{kq}{r}.
+\end{align}
+%
+Note que o potencial na posição $r_A = \infty$ é nulo, assim podemos escrever que o potencial elétrico devido a uma carga é dado por
+\begin{equation}
+    V(r) = \frac{kq}{r}.
+\end{equation}
+
+No caso uma configuração de cargas mais complexa, a visualização do potencial elétrico não é simples. Nesse caso precisamos calcular o potencial através da Equação~\eqref{Eq:ExprPotencialEletrico}, porém somando sobre todas as cargas elétricas:
+\begin{equation}\label{Eq:ExprPotencialEletricoConjCargas}
+    \Delta V_T(\vec{r}) = - \sum_{i=1}^{N}\int_C \vec{E}_i(\vec{r}_i) \cdot d\vec{r}. \mathnote{Potencial elétrico de um conjunto de cargas.}
+\end{equation}
+%
+Note que o potencial elétrico $V_T$ devido a uma distribuição de várias cargas pode ser calculado através de uma simples soma, pois ele é definido como sendo o trabalho total realizado sobre a carga de teste devido às diferentes cargas da distrituição e \emph{o trabalho é uma grandeza aditiva}. Alternativamente, podemos calcular o campo elétrico total $E_T(\vec{r}) = \sum_{i = 1}^{N}$ e depois determinar o resultado da integral.
+
+Para o caso de um \emph{dipolo elétrico}, isto é, uma distribuição de cargas elétricas formada por uma carga positiva e uma negativa ---~ambas de mesmo valor $q$~---, temos a soma dos potenciais de duas cargas pontuais. Considerando que as cargas estão nas posições $a$ e $-a$ de um eixo $x$ cuja origem se encontra no ponto médio entre as cargas, é possível escrever uma expressão simples para o potencial ao longo do eixo:
+\begin{align}
+    V(x) &= \frac{k\cdot(-q)}{x-a} + \frac{k\cdot q}{x + a} \\
+    &= -\frac{2kqa}{x^2 - a}.
+\end{align}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Se necessário, usar subsections}
