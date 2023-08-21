@@ -4,19 +4,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{fullwidth}\it
-	Que experimento faremos?
-	Qual é o objetivo?
-	O que veremos/revisaremos? (teoria física)
-	Quais conceitos/técnicas de análise de dados utilizaremos?
+	Vamos realizar um experimento usando um capacitor de placas paralelas cuja distância entre as placas é regulável. Isso nos permitirá observar a relação entre a capacitância e a distância, verificanco a expressão teórica para a relação entre essas duas grandezas, bem como empregar um outro meio dielétrico entre as placas que não seja o ar, permitindo que determinemos sua constante dielétrica.
 \end{fullwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Física do experimento}
+\section{Capacitância}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Se necessário, usar subsections}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Descrever o que é capacitância.
+
+\subsection{Capacitores de placas paralelas}
+
+Calcular a capacitância de um capacitor de placas paralelas.
+
+\paragraph{Dielétricos}
+
+Descrever e calcular o que acontece quando colocamos um dielétrico.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
@@ -27,9 +30,8 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Resultados concretos que devemos conseguir;
-	\item Observar a relação de tal coisa com outra coisa;
-	\item Calcular a constante $x$.
+	\item Observar a relação entre a capacitância e a distância entre as placas condutoras;
+	\item Determinar a constante dielétrica do material inserido entre as placas;
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,8 +39,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Item 1;
-	\item Item 2.
+	\item Capacitor de placas paralelas móveis;
+	\item Multímetro e cabos de conexão;
+	\item Lâmina dielétricas;
+	\item Micrômetro e paquímetro.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,9 +53,11 @@
 %\subsection{Parte A} % Se necessário
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-	\item Passo 1;
-	\item Passo 2;
-	\item Passo 3.
+	\item Utilizando um paquímetro, verifique as dimensões das placas do capacitor;
+	\item Utilizando um micrômetro, meça a espessura de uma lâmina dielétrica e a coloque entre as placas do capacitor de formaque que não reste ar entre as placas e a lâmina. Anote o valor obtido na Tabela~\ref{Tab:ValoresCapacitancia};\label{Item:CapPlacasPar:MedidaMicrometroLamina}
+	\item Afira o valor de capacitância e o anote na Tabela~\ref{Tab:ValoresCapacitancia};
+	\item Tomando cuidado para não mover as placas do capacitor, remova a lâmina dielétrica e afira o novo valor de capacitância e o anote na Tabela~\ref{Tab:ValoresCapacitancia}
+	\item Repita os passos acima a partir do item \ref{Item:CapPlacasPar:MedidaMicrometroLamina}, anotando o valor de distância total entre as placas e as capacitâncias com e sem dielétrico na Tabela~\ref{Tab:ValoresCapacitancia}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,13 +100,11 @@ Preencha as colunas de dados experimentais das tabelas com o número adequado de
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{enumerate}[label=\roman*.]
+    \item Faça um gráfico do valor de capacitância em função da distância de separação entre as placas.
+    \item Faça um ajuste de uma curva do tipo $y = A + B \cdot x^{-1}$ para os dados obtidos.\footnote{Nem todo software é capaz de realizar esse tipo de ajuste, porém as calculadoras geralmente têm suporte a esse procedimento. Alternativamente, vocês podem fazer uma linearização dos dados e realizar uma regressão linear.} 
+    \item Determine o valor da permissividade do vácuo $\epsilon_0$ através dos valores dos  coeficientes $A$ e $B$ calculados. 
+\end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
@@ -113,25 +117,7 @@ et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
 metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 
 \begin{question}[type={exam}]{2}
 Lorem ipsum dolor sit amet, consectetuer adi-
@@ -147,4 +133,35 @@ metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
 \pagebreak
 \section{Tabelas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table*}[!h]
+\centering
+\begin{tabular}{lp{25mm}p{25mm}p{25mm}l}
+\toprule
+	& \multicolumn{2}{l}{\textbf{Dimensões}} \\
+	\cmidrule{2-3}
+	& Diâmetro: \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+	& Espessura: \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+	\cmidrule{2-3}
+\\
+	& \multicolumn{4}{l}{\textbf{Dados experimentais}} \\
+	\cmidrule{2-4}
+	& $C$ & $C_0$ & $d$ & \\
+	\cmidrule{2-4}
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+	\cmidrule{2-4}
+\bottomrule
+\end{tabular}
+\caption[][5mm]{Dados para o movimento efetuado pela esfera sob ação da gravidade e do arrasto.}
+\label{Tab:ValoresCapacitancia}
+\end{table*}
 
