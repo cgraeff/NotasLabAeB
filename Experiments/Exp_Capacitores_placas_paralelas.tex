@@ -11,13 +11,52 @@
 \section{Capacitância}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Descrever o que é capacitância.
+Se conectarmos uma bateria a dois condutores\footnote{Na verdade, mesmo um só condutor também tem uma capacitância.} quaisques ---~dispostos um próximo ao outro, porém desconectados~---, haverá um fluxo de cargas elétricas até que se estabeleça uma diferença de potencial entre os dois condutores igual à diferença de potencial entre os polos da bateria.
 
+Dependendo de características geométricas desses dois condutores, como formato, área, e distância entre eles, a quantidade de carga necessária para estabelecer uma diferença de potencial igual à da bateria será diferente. Para uma dada configuração geométrica dos condutores, damos à razão entre a quantidade de carga $Q$ e a diferença de potencial $V$ correspondente o nome de \emph{capacitância}:
+\begin{equation}
+	C = \frac{Q}{V}.
+\end{equation}
+%
+Podemos considerar a capacitância como uma medida da quantidade de carga que um corpo condutor pode armazenar por unidade de potencial elétrico. A unidade da capacitância é o \emph{farad}, representado por $\rm{F}$, sendo que
+\begin{equation}
+	\np[F]{1} = \np[C/V]{1}.
+\end{equation}
+%
+Ao conjunto de condutores damos o nome de \emph{capacitor}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Capacitores de placas paralelas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Calcular a capacitância de um capacitor de placas paralelas.
+Se considerarmos um capacitor cujos condutores são duas placas paralelas de área $A$, separadas por uma distância $d$, podemos determinar a sua capacitância analiticamente.
 
+Para isso, basta considerarmos que uma das placas tem carga $Q$ e a outra tem carga $-Q$. Nesse caso, podemos dizer que a densidade superficial de carga $\sigma$ é dada por
+\begin{equation}
+	\sigma = \frac{Q}{A}.
+\end{equation}
+%
+Usando a Lei de Gauss, obtemos
+\begin{align}
+	E &= \frac{\sigma}{\epsilon_0} \\
+	&= \frac{Q}{\epsilon_0 A}.
+\end{align}
+%
+Como o potencial no espaço entre as placas é dado por $Ed$, podemos escrever
+\begin{equation}
+	V = \frac{Qd}{\epsilon_0 A}.
+\end{equation}
+%
+Finalmente, substituindo na equação para a capacitância
+\begin{align}
+	C = \frac{Q}{V} \\
+	&= \frac{Q}{Qd/(\epsilon_0 A)} \\
+	&= \frac{\epsilon_0 A}{d}.
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Dielétricos}
+%%%%%%%%%%%%%%%%%%%%%%%
 
 Descrever e calcular o que acontece quando colocamos um dielétrico.
 
@@ -91,43 +130,28 @@ Descrever e calcular o que acontece quando colocamos um dielétrico.
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{1}
-Apresente os resultados de maneira clara e organizada. Mostre os cálculos requisitados de maneira clara e sucinta, evidenciando o raciocínio desenvolvido.
-\end{question}
-
-\begin{question}[type={exam}]{1}
+\begin{question}[type={exam}]{2}
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]{4} Considerando os dados de capacitância quando há \emph{somente ar} entre as placas do capacitor,
 \begin{enumerate}[label=\roman*.]
     \item Faça um gráfico do valor de capacitância em função da distância de separação entre as placas.
     \item Faça um ajuste de uma curva do tipo $y = A + B \cdot x^{-1}$ para os dados obtidos.\footnote{Nem todo software é capaz de realizar esse tipo de ajuste, porém as calculadoras geralmente têm suporte a esse procedimento. Alternativamente, vocês podem fazer uma linearização dos dados e realizar uma regressão linear.} 
-    \item Determine o valor da permissividade do vácuo $\epsilon_0$ através dos valores dos  coeficientes $A$ e $B$ calculados. 
+    \item Determine o valor da permissividade do vácuo $\epsilon_0$ através dos valores dos  coeficientes $A$ e $B$ calculados.
+    \item Considerando o valor obtido no item anterior, calcule o erro percentual em relação ao valor de referência para $\epsilon_0$.
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{question}[type={exam}]{4}
+Considerando os dados de capacitância quando as placas do capacitor estão separadas pelas \emph{lâminas dielétricas},
+\begin{enumerate}[label=\roman*.]
+    \item Faça um gráfico do valor de capacitância em função da distância de separação entre as placas.
+    \item Faça um ajuste de uma curva do tipo $y = A + B \cdot x^{-1}$ para os dados obtidos.\footnote{Novamente, pode ser necessário fazer uma linearização dos dados e realizar uma regressão linear, caso o software utilizado não tenha suporte a ajustes do tipo $y = A + B \cdot x^{-1}$.} 
+    \item Através dos coeficientes $A$ e $B$ obtidos no item anterior, determine o valor da constante dielétrica $\kappa$ para o material utilizado. 
+\end{enumerate}
 \end{question}
 
-
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
