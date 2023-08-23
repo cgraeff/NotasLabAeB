@@ -14,7 +14,7 @@
 Se conectarmos uma bateria a dois condutores\footnote{Na verdade, mesmo um só condutor também tem uma capacitância.} quaisques ---~dispostos um próximo ao outro, porém desconectados~---, haverá um fluxo de cargas elétricas até que se estabeleça uma diferença de potencial entre os dois condutores igual à diferença de potencial entre os polos da bateria.
 
 Dependendo de características geométricas desses dois condutores, como formato, área, e distância entre eles, a quantidade de carga necessária para estabelecer uma diferença de potencial igual à da bateria será diferente. Para uma dada configuração geométrica dos condutores, damos à razão entre a quantidade de carga $Q$ e a diferença de potencial $V$ correspondente o nome de \emph{capacitância}:
-\begin{equation}
+\begin{equation}\label{Eq:DefCapacitancia}
 	C = \frac{Q}{V}.
 \end{equation}
 %
@@ -49,16 +49,50 @@ Como o potencial no espaço entre as placas é dado por $Ed$, podemos escrever
 %
 Finalmente, substituindo na equação para a capacitância
 \begin{align}
-	C = \frac{Q}{V} \\
+	C &= \frac{Q}{V} \\
 	&= \frac{Q}{Qd/(\epsilon_0 A)} \\
 	&= \frac{\epsilon_0 A}{d}.
 \end{align}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Dielétricos}
-%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dielétricos}
+%%%%%%%%%%%%%%%%%%%%%%%%
 
-Descrever e calcular o que acontece quando colocamos um dielétrico.
+Vamos considerar agora a inserção de um meio não condutor qualquer entre as placas do capacitor. Se carregarmos as placas de um capacitor de placas paralelas e as conectarmos a um voltímetro ideal ---~isto é, um voltímetro com resistência infinita e que por isso não permite que corrente flua através dele~--- vamos verificar um valor de diferença de potencial dada pela relação
+\begin{equation}
+    V = \frac{Q}{C}.
+\end{equation}
+%
+Se inserirmos o material não-condutor entre as placas, verificaremos que \emph{ocorre uma diminuição na diferença de potencial registrada pelo voltímetro}. Se calcularmos a razão entre a tensão $V_0$ antes da inserção do dielétrico e a tensão $V$ depois da inserção, obtemos
+\begin{equation}
+    \kappa = \frac{V_0}{V}.
+\end{equation}
+%
+A constante $\kappa$ é denominada como \emph{constante dielétrica} e é característica de cada material não-condutor, sendo que $\kappa > 1$.
+
+Calculando o novo valor de capacitância através da Equação~\eqref{Eq:DefCapacitancia} e usando a relação $V = V_0 / \kappa$ que podemos obter da equação acima, resulta em
+\begin{align}
+    C &= \frac{Q}{V} \\
+    &= \frac{Q}{V_0 / \kappa} \\
+    &=\kappa \frac{Q}{V_0}.
+\end{align}
+%
+Como não ocorre mudança na quantidade de carga armazenada nas placas ao inserirmos o dielétrico, temos que
+\begin{equation}
+    Q = Q_0,
+\end{equation}
+%
+assim,
+\begin{align}
+    C &= \kappa \frac{Q_0}{V_0} \\
+    &= \kappa \, C_0.
+\end{align}
+%
+O valor $C_0$ representa o valor de capacitância antes da inserção do dielétrico. Como $\kappa > 1$, verificamos que ocorre a insersão do dielétrico leva a um \emph{aumento da capacitância}.
+
+O aumento da capacitância pode ser entendido através de uma análise microscópica do comportamento das cargas que compõe o dielétrico: quando ele é inserido entre as placas carregadas do capacitor, as eletrosferas e núcleos atômicos sofrem um pequeno deslocamento no sentido de se aproximar das placas carregadas positiva e negativamente, respectivamente. Isso dá origem a um campo elétrico devido ao próprio dielétrico e que tem sentido oposto ao campo gerado pelas placas do capacitor ---~denominamos esse fenômeno como uma \emph{polarização} do dielétrico~---. Portanto, o campo elétrico do dielétrico polarizado ``compensa'' parcialmente o campo gerado pelas placas do capacitor, o que diminui o campo elétrico total e, consequentemente, a diferença de potencial entre as placas.\footnote{A combinação do campo elétrico devido às placas do capacitor e devido à polarização do dielétrico é conhecido como \emph{deslocamento elétrico}.}
+
+É importante notar que na discussão para definir a capacitância não consideramos a existência do ar como um meio polarizável. Na verdade, o ar é um dielétrico que sofre uma polarização como outro qualquer, portanto existe um valor de $\kappa_{\text{ar}}$ que relaciona a capacitância $C_{\text{ar}}$ de um capacitor quando há ar entre as suas placas, com o seu valor de capacitância no vácuo. No entanto, o valor de $\kappa_{\text{ar}}$ é muito próximo de 1 e podemos desprezar os efeitos do ar como um meio dielétrico na maior parte dos casos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
