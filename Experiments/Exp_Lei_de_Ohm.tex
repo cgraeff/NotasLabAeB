@@ -27,9 +27,8 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Resultados concretos que devemos conseguir;
-	\item Observar a relação de tal coisa com outra coisa;
-	\item Calcular a constante $x$.
+	\item Verificar a relação entre tensão e corrente para resistores ôhmicos e não ôhmicos;
+	\item Verificar a resistência de associações de resistores em série e em paralelo.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,22 +36,50 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Item 1;
-	\item Item 2.
+	\item Multímetro;
+	\item Fonte de tensão ajustável;
+	\item Protoboard e resistores;
+	\item Lâmpadas incandescentes e soquetes; 
+	\item Cabos de ligação.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Procedimento Experimental}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Parte A} % Se necessário
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Resistores ôhmicos e não-ôhmicos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Coleta de dados para um resistor:
 \begin{enumerate}
-	\item Passo 1;
-	\item Passo 2;
-	\item Passo 3.
+	\item Ajuste a fonte de tensão regulável em seu valor mínimo de tensão e máximo de corrente; 
+	\item Ajuste o multímetro na função de amperímetro, na escala de \np[mA]{200};
+	\item Ligue um dos terminais da fonte ao multímetro, na porta marcada como \texttt{COM};
+	\item Conecte um cabo ao terminal do multímetro marcado como \texttt{mA} e o ligue a um resistor;
+	\item Ligue o outro terminal da fonte ao resistor;
+	\item Ligue a fonte e ajuste a tensão para aproximadamente \np[V]{1,0} e anote o valor na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
+	\item Verifique o valor correspondente de corrente e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
+	\item Calcule o valor de potência dissipada e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos}. \textbf{Atenção:} o valor de potência não deve exceder \np[W]{0,5} durante toda a tomada de dados, caso contrário, o componente poderá ficar muito quente e causar queimaduras e/ou ser danificado;
+	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{1,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{10}, ou até que a potência exceda \np[W]{0,5}. 
 \end{enumerate}
+
+Coleta de dados para uma lâmpada incandescente:
+\begin{enumerate}
+	\item Ajuste a fonte de tensão regulável em seu valor mínimo de tensão e máximo de corrente; 
+	\item Ajuste o multímetro na função de amperímetro, na escala de \np[A]{20};
+	\item Ligue um dos terminais da fonte ao multímetro, na porta marcada como \texttt{COM};
+	\item Conecte um cabo ao terminal do multímetro marcado como \texttt{20A} e o ligue aos cabos do soquete da lâmpada;
+	\item Ligue o outro terminal da fonte ao resistor;
+	\item Ligue a fonte e ajuste a tensão para aproximadamente \np[V]{2,0} e anote o valor na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
+	\item Verifique o valor correspondente de corrente e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
+	\item Calcule o valor de potência dissipada e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
+	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{2,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{20}. 
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Associação de resistores}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,66 +112,54 @@
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{1}
-Apresente os resultados de maneira clara e organizada. Mostre os cálculos requisitados de maneira clara e sucinta, evidenciando o raciocínio desenvolvido.
-\end{question}
-
-\begin{question}[type={exam}]{1}
+\begin{question}[type={exam}]{2}
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{question}[type={exam}]{4}
+\begin{enumerate}[label=\roman*.]
+\item Faça um gráfico para os dados de corrente $i$ em função da tensão $V$ para o resistor.
+\item Realize uma regressão linear dos dados experimentais contidos no gráfico.
+\item Através dos coeficientes da regressão linear, determine a resistência.
+\end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Faça um gráfico para os dados de corrente $i$ em função da tensão $V$ para a lâmpada.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \section{Tabelas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table*}
+	\begin{center}
+		\begin{tabular}{lp{20mm}p{20mm}p{20mm}lp{20mm}p{20mm}p{20mm}l}
+		\toprule
+		& \multicolumn{3}{l}{\textbf{Resistor}} & & \multicolumn{3}{l}{\textbf{Lâmpada}} \\
+		\cmidrule{2-4} \cmidrule{6-8}
+		& $V$ & $i$ & $P$ & & $V$ & $i$ & $P$ \\
+		\cmidrule{2-4} \cmidrule{6-8}
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
+\bottomrule
+		\end{tabular}
+	\caption[][2mm]{Dados obtidos para o comprimento do elástico e a massa correspondente.}\label{Tab:ResistoresOhmicosENaoOhmicos}
+	\end{center}
+\end{table*}
 
