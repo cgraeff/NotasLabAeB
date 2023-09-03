@@ -8,7 +8,7 @@
 \end{fullwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Potencial elétrico de um arranjo dipolar de cargas elétricas}
+\section{Potencial elétrico}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 O trabalho realizado por uma força $\vec{F}$ pode ser calculado no caso mais geral através da \emph{integral de linha}\footnote{Também chamada de \emph{integral de caminho}.}
@@ -41,11 +41,16 @@ O potencial elétrico $V(\vec{r})$ é um campo escalar cujo valor é de especial
 
 Note que, da mesma maneira que o trabalho está relacionado à \emph{diferença de energia potencial} entre dois pontos, a tensão está relacionada à \emph{diferença de potencial elétrico}, isto é, não há interesse no valor particular de potencial elétrico, mas sim na diferença de valores entre dois pontos quaisquer de um circuito.\footnote{Isso é um reflexo do fato de que se o potencial é igual entre dois pontos, então a energia potencial também é, o que faz com que não haja trabalho algum realizado no deslocamento de uma carga entre as duas posições.} Quando tratamos um sistema de cargas de um ponto de vista da Física, costumamos escolher $\vec{r} = \infty$ como sendo o ponto onde o potencial é nulo. Em circuitos, é comum adotar o polo negativo de baterias como sendo o ponto de potencial nulo, ou no caso de sistemas mais complexos, \emph{o potencial do solo} é considerado nulo: essa é a razão pela qual dizemos que há um \emph{aterramento} de um sistema.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Superfícies equipotenciais}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Potencial de uma carga pontual}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Se considerarmos uma configuração qualquer de cargas, existe uma superfície contígua formada por pontos onde o potencial tem o mesmo valor. Tal superfície é o que denominamos de \emph{superfície equipotencial}. No caso de uma carga pontual, por exemplo, é relativamente simples entender que as superfícies equipotenciais são esferas concentricas e em cujos centros se encontra a carga elétrica em questão: como a força eletrostática e, consequentemente, o campo elétrico são funções somente da distância $r$ entre a carga que gera o campo e a carga de teste, o trabalho por unidade de carga efetuado no deslocamento entre uma posição qualquer e qualquer dos pontos de uma superfície esférica centrada na carga que gera o campo é sempre o mesmo. Logo, todos os pontos dessa superfície se encontram sob o mesmo valor de potencial. Realizando a integração para esse caso particular, obtemos
+O potencial de uma carga pontual pode ser calculado de maneira simples através da Equação~\eqref{Eq:ExprPotencialEletrico} e da expressão para o campo elétrico gerado por ela, isto é,
+\begin{equation}
+    \vec{E}(\vec{r}) = \frac{kq}{r^2}.
+\end{equation}
+%
+Realizando a integração para esse caso particular, obtemos
 \begin{align}
     \Delta V(\vec{r}) &= - \int_C \vec{E}(\vec{r}) \cdot d\vec{r} \\
     &= - \int_C \frac{kq}{r^2} \hat{r} \cdot d\vec{r}.
@@ -69,13 +74,136 @@ No caso uma configuração de cargas mais complexa, a visualização do potencia
     \Delta V_T(\vec{r}) = - \sum_{i=1}^{N}\int_C \vec{E}_i(\vec{r}_i) \cdot d\vec{r}. \mathnote{Potencial elétrico de um conjunto de cargas.}
 \end{equation}
 %
-Note que o potencial elétrico $V_T$ devido a uma distribuição de várias cargas pode ser calculado através de uma simples soma, pois ele é definido como sendo o trabalho total realizado sobre a carga de teste devido às diferentes cargas da distrituição e \emph{o trabalho é uma grandeza aditiva}. Alternativamente, podemos calcular o campo elétrico total $E_T(\vec{r}) = \sum_{i = 1}^{N}$ e depois determinar o resultado da integral.
+Note que o potencial elétrico $V_T$ devido a uma distribuição de várias cargas pode ser calculado através de uma simples soma, pois ele é definido como sendo o trabalho total realizado sobre a carga de teste devido às diferentes cargas da distribuição e \emph{o trabalho é uma grandeza aditiva}. Alternativamente, podemos calcular o campo elétrico total $E_T(\vec{r}) = \sum_{i = 1}^{N}$ e depois determinar o resultado da integral.
 
-Para o caso de um \emph{dipolo elétrico}, isto é, uma distribuição de cargas elétricas formada por uma carga positiva e uma negativa ---~ambas de mesmo valor $q$~---, temos a soma dos potenciais de duas cargas pontuais. Considerando que as cargas estão nas posições $a$ e $-a$ de um eixo $x$ cuja origem se encontra no ponto médio entre as cargas, é possível escrever uma expressão simples para o potencial ao longo do eixo:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Dipolo elétrico}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Para o caso de um \emph{dipolo elétrico}, isto é, uma distribuição de cargas elétricas formada por uma carga negativa e uma positiva ---~ambas de mesmo valor $q$~---, temos a soma dos potenciais de duas cargas pontuais.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=Stealth]
+    \draw[->] (-3,0) -- (3,0) node[below left]{$x$};
+    \draw[->] (0,-1) -- (0,2) node[below left]{$y$};
+    
+    \draw(3,2) circle (1pt);
+    \draw[->] (0,0) -- node[sloped, below]{$\vec{r}$} (3,2);
+    \draw[->] (-2,0) -- node[sloped, above]{$\vec{r}_{-}$} (3,2);
+    \draw[->] (2,0) -- node[right]{$\vec{r}_{+}$} (3,2);
+    
+    \fill[white] (-2,0) circle (2mm);
+    \fill[white] (2,0) circle (2mm);
+    \draw[pattern = north west lines, pattern color = gray] (-2,0) circle (2mm) node{$-$};
+    \draw[pattern = north west lines, pattern color = gray] (2,0) circle (2mm) node{$+$};
+    
+    \draw[|<->] (-2, -0.5) -- node[below]{$a$}(0, -0.5);
+    \draw[<->|] (0, -0.5) -- node[below]{$a$}(2, -0.5);
+    
+\end{tikzpicture}
+\caption{Dipolo elétrico.}
+\end{figure}
+
+\noindent{}Considerando que as cargas estão nas posições $-a$ e $a$ de um eixo $x$ cuja origem se encontra no ponto médio entre as cargas, podemos escrever o potencial como
+\begin{align}
+    V(\vec{r}) &= \frac{k(-q)}{r_{-}} + \frac{kq}{r_{+}} \\
+    &= kq \cdot\left(\frac{-1}{\sqrt{(r_x+a)^2 + r_y^2}} + \frac{1}{\sqrt{(r_x-a)^2 + r_y^2}}\right), \label{Eq:PotDipoloEletricoXY}
+\end{align}
+%
+onde $r_x$ e $r_y$ são as componentes do vector $\vec{r}$. Para o caso particular do potencial sobre o eixo $x$, é possível escrever uma expressão simples:
 \begin{align}
     V(x) &= \frac{k\cdot(-q)}{x-a} + \frac{k\cdot q}{x + a} \\
-    &= -\frac{2kqa}{x^2 - a}.
+    &= -\frac{2kqa}{x^2 - a^2}.
 \end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Superfícies equipotenciais}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se considerarmos uma configuração qualquer de cargas, existe uma superfície contígua formada por pontos onde o potencial tem o mesmo valor. Tal superfície é o que denominamos de \emph{superfície equipotencial}. No caso de um campo elétrico uniforme, por exemplo, o trabalho realizado sobre uma carga em um deslocamento ao longo do campo é dado por
+\begin{align}
+    \Delta V(\vec{r}) &= - \int_C \vec{E}(\vec{r}) \cdot d\vec{r} \\
+    &= - \int_C E \versi \cdot d\vec{r} \\
+    &= - E \int_{x_i}^{x_f} dx \\
+    &= - E \, \Delta x.
+\end{align}
+
+\begin{marginfigure}
+\centering
+\begin{tikzpicture}[>=Stealth]
+    \foreach \y in {0, 0.5, ..., 4}
+        \draw[->] (0, \y) -- (3,\y);
+        
+    \draw[->] (0,-0.5) -- (3, -0.5) node[below left]{$\vec{E}$};
+    
+    \foreach \x in {0.5, 1, ..., 2.5}
+        \draw[dashed] (\x, -1) -- (\x, 4.5);
+        
+\end{tikzpicture}
+\caption{Equipotenciais no caso de um campo elétrico uniforme. Como a figura é bidimensional, as superfícies se reduzem a linhas equipotenciais.}
+\end{marginfigure}
+%
+\noindent{}É possível notar através dessa expressão que o potencial é o mesmo em planos perpendiculares ao campo elétrico. Na verdade, localmente ---~isto é, se considerarmos uma região pequena do espaço~--- \emph{a superfície equipotencial sempre será perpendicular ao campo elétrico}. Essa observação é bastante importante pois uma vez conhecida uma dessas duas grandezas, ela nos trás informação sobre a outra.
+    
+\begin{marginfigure}
+\begin{tikzpicture}[>=Stealth]
+
+    \draw[->] (-2.5,0) -- (2.5,0) node[below left]{$x$};
+    \draw[->] (0,-2.5) -- (0,2.5) node[below left]{$y$};
+    
+    \fill[white] (0,0) circle (2mm);
+    \draw[pattern = north west lines, pattern color = gray] (0,0) circle (2mm) node{$+$};
+    
+    \foreach \V in {1, ..., 8}{
+        \def\radius{(2/\V)}
+        \draw (0,0) circle (\radius);
+    }
+        
+\end{tikzpicture}
+\caption{Em um plano $xy$ as equipotenciais são linhas círculos concêntricos, no caso de uma carga pontual.\label{Fig:EquipotenciaisCargaPontualXY}}
+\end{marginfigure}
+
+Outro caso em que as superfícies equipotenciais são relativamente simples é o de uma carga pontual: como o potencial depende somente da distância até a carga, as superfícies equipotenciais são esferas concêntricas e em cujos centros se encontra a carga elétrica em questão. Na Figura~\ref{Fig:EquipotenciaisCargaPontualXY} temos a representação das equipotenciais de uma carga pontual para o caso bidimensional. Note ainda que quanto mais próximas estão as equipotenciais em uma dada região do figura, maior é a intensidade do campo elétrico.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Potencial de um dipolo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Um caso mais interessante é o das superfícies equipotenciais de um dipolo elétrico. Devido ao fato de que temos uma interação com duas cargas, uma exercendo uma força atrativa sobre a carga de teste e outra exercendo uma força negativa, temos um potencial mais complexo, onde as equipotenciais não são simples de calcular. A Figura~\ref{Fig:EquipotenciaisDipoloXY} mostra a configuração das equipotenciais para o caso bidimensional.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=Stealth, scale = 0.35]
+    
+    % Polos
+    \fill[white] (-5,0) circle (5mm);
+    \fill[white] (5,0) circle (5mm);
+    \draw[pattern = north west lines, pattern color = gray] (-5,0) circle (5mm) node{$-$};
+    \draw[pattern = north west lines, pattern color = gray] (5,0) circle (5mm) node{$+$};
+    
+    % Equipotenciais
+    \draw[thick] (0,-10) -- (0,10);
+    \clip (-15,10) rectangle (15,-10);
+    
+    \def\ddp{22}
+    \def\a{5}
+    \def\ds{5.01} % Na verdade ds = a, mas precisa ser um pouco maior por causa de erros de arredondamento
+        
+    \foreach \V in {2,4,6,8,10,12,14,16,18,20,22,24,26,28}{
+        \def\c{(2 * \V / (\ddp * \a))}
+        
+        \def\di{(sqrt(\a * \a * \c * \c + 1) / \c - 1 / \c)}
+        
+        \draw [thick,  domain=\di:\ds, samples=1000] plot ({\x*sqrt(\x*\x + 2*\x/\c)/\a},{sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+        \draw [thick,  domain=\di:\ds, samples=1000] plot ({\x*sqrt(\x*\x + 2*\x/\c)/\a},{-sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+        \draw [thick,  domain=\di:\ds, samples=1000] plot ({-\x*sqrt(\x*\x + 2*\x/\c)/\a},{sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+        \draw [thick,  domain=\di:\ds, samples=1000] plot ({-\x*sqrt(\x*\x + 2*\x/\c)/\a},{-sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+    }
+    
+\end{tikzpicture}
+\caption{Equipotenciais de um dipolo em um plano $xy$ que contém as cargas. \label{Fig:EquipotenciaisDipoloXY}}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,13 +252,60 @@ Para o caso de um \emph{dipolo elétrico}, isto é, uma distribuição de cargas
 	\item Disponha os eletrodos na placa de Petri de forma que eles estejam localizados sobre o eixo $x$, a uma distância de \np[cm]{5,00} da origem;
 	\item Ajuste o multímetro para a função de voltímetro e ligue o terminal comum ao eletrodo negativo usando o cabo fornecido;
 	\item Ligue a ponta de prova ao terminal marcado com \texttt{V$\mathdirectcurrent$} do multímetro;
-	\item Ligue a fonte regulável e a ajuste para uma tensão de \np[V]{4,0};
+	\item Ligue a fonte regulável e a ajuste para uma tensão de \np[V]{22,0};
 	\item Coloque água na placa de Petri;
 	\item Com a ponta de prova do multímetro, afira a tensão na origem do sistema de coordenadas e a cada \np[cm]{1,00} ao longo do eixo $y$ (tanto para valores positivos, quanto negativos). Na outra folha de papel milimetrado, marque um ponto na posição correspondente à da medida e anote os valores de tensão ao lado dos pontos;
 	\item Afira a tensão ao longo do eixo $x$ desde o eletrodo negativo até o positivo a cada \np[cm]{1,00}.\footnote{Use as próprias marcas do eixo $x$ e os pontos intermediários entre elas, assim os valores ficarão mais simples e a origem do sistema de referência também estará incluída nos dados.} Anote os valores obtidos na Tabela~\ref{Tab:ValoresPotencialEletricoEixoX};
-	\item Para a coluna $x = \np[cm]{-4,00}$ inicie com a ponta de prova em $y = \np[cm]{-5,00}$ e busque os valores de tensão dos pontos aferidos sobre o eixo $y$;
+	\item Para a coluna $x = \np[cm]{-4,00}$ inicie com a ponta de prova em $y = \np[cm]{-5,00}$ e busque os valores de tensão dos pontos aferidos sobre o eixo $x$, percorrendo a coluna paralelamente ao eixo $y$. Note que talvez não seja possível encontrar todos os pontos;
 	\item Repita o procedimento do item acima varrendo todas as colunas até $x = \np[cm]{+4,0}$.
 \end{enumerate}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=Stealth]
+
+
+    
+    % Grid + eixos
+    \draw[->] (-6, 0) -- (6, 0) node[below left]{$x$};
+    \draw[->] (0, -6) -- (0, 6) node[below left]{$y$};
+    
+    \foreach \x in {-5, -4, ..., 5}
+        \foreach \y in {-5, -4, ..., 5}
+            \draw[draw = black, fill=white](\x, \y) circle (1pt);
+%    \draw (0,0) circle (1pt);
+    
+    % Polos
+    \fill[white] (-5,0) circle (3mm);
+    \fill[white] (5,0) circle (3mm);
+    \draw[pattern = north west lines, pattern color = gray] (-5,0) circle (3mm) node{$-$};
+    \draw[pattern = north west lines, pattern color = gray] (5,0) circle (3mm) node{$+$};
+    
+    % Equipotenciais
+    \clip (-5.3,5.3) rectangle (5.3,-5.3);
+    
+    \def\ddp{22}
+    \def\a{5}
+        
+    \foreach \V in {2,4,6,8,10,12,14,16,18,20,22,24,26,28}{
+        \def\c{(2 * \V / (\ddp * \a))}
+        
+        \def\di{(sqrt(\a * \a * \c * \c + 1) / \c - 1 / \c)}
+        
+        \draw [gray, thick,  domain=\di:\a, samples=1000] plot ({\x*sqrt(\x*\x + 2*\x/\c)/\a},{sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+        \draw [gray, thick,  domain=\di:\a, samples=1000] plot ({\x*sqrt(\x*\x + 2*\x/\c)/\a},{-sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+        \draw [gray, thick,  domain=\di:\a, samples=1000] plot ({-\x*sqrt(\x*\x + 2*\x/\c)/\a},{sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+        \draw [gray, thick,  domain=\di:\a, samples=1000] plot ({-\x*sqrt(\x*\x + 2*\x/\c)/\a},{-sqrt(max(0, -(\x*\x + 2*\x/\c - \a*\a)*(\x*\x - \a*\a)))/\a});
+    }
+    
+    % Varredura
+    \draw[dashed, ->] (-4, -5.5) -- (-4, -2.5);
+    \draw[dashed, ->] (-3, -5.5) -- (-3, -3.5);
+    \draw[dashed, ->] (-2, -5.5) -- (-2, -4.5);
+    
+\end{tikzpicture}
+\caption{Varredura da área entre os dois polos em busca das linhas equipotenciais. Inicie no canto inferior esquerdo e varra as colunas verticalmente, como mostrado na figura. Busque os valores encontrados no eixo $x$. Note que nem todos os valores serão encontrados na região de varredura.}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
