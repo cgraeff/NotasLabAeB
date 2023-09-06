@@ -4,15 +4,104 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{fullwidth}\it
-	Que experimento faremos?
-	Qual é o objetivo?
-	O que veremos/revisaremos? (teoria física)
-	Quais conceitos/técnicas de análise de dados utilizaremos?
+	Faremos um experimento simples onde verificaremos a corrente em função da tensão para dois tipos de resistores, um ôhmico e outro não-ôhmico. Buscaremos observar que a resistência pode ser ou não uma constante, dependendo do material em questão. Veremos um modelo físico para materiais condutores e para a resistência, obtendo uma expressão para a velocidade de deriva dos elétrons. Definiremos a densidade de corrente $J$ e sua relação com o campo elétrico em um condutor e consequente classificação dos condutores como ôhmicos e não-ôhmicos. Definiremos também os conceitos de resistividade e condutibilidade. Para analisar os dados obtidos, usaremos gráficos e regressões lineares.
 \end{fullwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Física do experimento}
+\section{Modelo microscópico para a corrente elétrica}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Microscopicamente, a corrente elétrica nada mais é do que o deslocamento de portadores de carga ---~geralmente elétrons livres, mas podendo ser íons positivos ou mesmo, no caso de semicondutores, ``buracos'' onde não há um elétron~---. Quando não há corrente, podemos considerar que os portadores de carga se comportam de uma maneira similar a um gás, movendo-se aleatoriamente devido a colisões com a rede de átomos que compõe o condutor.
+
+Quando o condutor é sujeito a um campo elétrico, as cargas se deslocam de maneira a neutralizá-lo, porém se ele se deve à diferença de potencial elétrico dos polos de uma bateria, por exemplo, o campo nunca é neutralizado e a corrente se mantém fluindo. Esse fluxo de portadores de corrente não é livre, mas ainda está sujeito às sucessivas colisões com os átomos que compõe o condutor. No entanto, devido ao campo elétrico e à consequente força que atua sobre as cargas, o movimento tem uma direção na qual as cargas são aceleradas até uma eventual nova colisão. Devido às colisões, a velocidade não aumenta indefinidamente, mas atinge um valor denominado \emph{velocidade de deriva}. Uma consequência notável dessas colisões é o \emph{efeito joule}, isto é, o aquecimento característico de um condutor sujeito a uma corrente.
+
+A velocidade de deriva pode ser calculada ao considerarmos uma seção cilíndrica com área de seção reta $A$ e comprimento $\ell$ de um condutor portanto corrente. A quantidade total de carga $Q$ contida nesse segmento é dada por
+\begin{equation}
+    Q = n A \ell q,
+\end{equation}
+%
+onde $n$ é a densidade de portadores por unidade de volume e $q$ é a carga de cada portador. Se considerarmos que os portadores se movem com velocidade $v_d$, então em um tempo $\Delta t$ eles se deslocam uma distância $\ell = v_d \Delta$. Assim, podemos escrever
+\begin{equation}
+    Q = nA v_d \Delta t q.
+\end{equation}
+%
+Dividindo ambos os lados da equação por $\Delta t$, obtemos a corrente média no condutor:
+\begin{equation}
+    \mean{i} = \frac{Q}{\Delta t} = nqv_d A,
+\end{equation}
+%
+De onde podemos escrever, fazendo $\mean{i} = i = \text{cte}$
+\begin{equation}
+    v_d = \frac{i}{nqA}.
+\end{equation}
+%
+Note que a velocidade de deriva não é constante, mas depende do valor de corrente e do material condutor utilizado, uma vez que a densidade de portadores de corrente $n$ é diferente para cada material.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Condutividade, resistividade, e resistência}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Podemos definir a densidade de corrente $J$ como sendo a razão entre a corrente e a área de seção reta do condutor
+\begin{equation}
+    J = \frac{i}{A},
+\end{equation}
+%
+ou, em termos da densidade de portadores e da velocidade de deriva,\footnote{Note que essa definição para a densidade de corrente assume que ela é uniforme em toda a área $A$.}
+\begin{equation}
+    J = nqv_d.
+\end{equation}
+%
+Para alguns materiais, a relação entre a densidade de corrente $J$ e o campo elétrico $E$ dentro do condutor pode ser descrita de acordo com
+\begin{equation}
+    J = \sigma E,
+\end{equation}
+%
+onde $\sigma$ representa a \emph{condutividade} do material. Caso o condutor obedeça a essa relação, dizemos que ele é um \emph{condutor ôhmico}. Caso contrário, dizemos que ele é um \emph{condutor não ôhmico}.
+
+Podemos obter uma relação mais prática se observarmos que para um segmento de um material condutor com área de seção reta $A$ e comprimento $\ell$ a diferença de potencial entre suas extremidades pode ser escrita como
+\begin{equation}
+    \Delta V = E\ell.
+\end{equation}
+%
+Logo, a densidade de corrente pode ser escrita como
+\begin{align}
+    J &= \sigma E \\
+    &= \sigma \frac{\Delta V}{\ell}.
+\end{align}
+%
+Isolando $\Delta V$ e substituindo $J = i / A$, obtemos
+\begin{equation}
+    \Delta V = \left(\frac{\ell}{\sigma A}\right) i.
+\end{equation}
+%
+A quantidade entre parêntesis na equação acima é o que denominamos como \emph{resistência} do segmento de material condutor:
+\begin{equation}
+    R = \frac{\ell}{\sigma A}.
+\end{equation}
+%
+Em circuitos eletrônicos, é comum que se usem componentes denominados como \emph{resistores} e que são feitos de um material com baixa condutibilidade, como grafite, algumas cerâmicas, ou óxidos metálicos. Considerando a resistência $R$, podemos escrever a relação
+\begin{equation}
+    R = \frac{\Delta V}{i},
+\end{equation}
+%
+que é comumente empregada quando tratamos um sistema que inclui um resistor.
+
+Note que no caso de materias ôhmicos, o valor de condutividade é constante. Consequentemente, a resistência $R$ de um resistor feito de um material ôhmico também é constante e denominamos tal componente como um \emph{resistor ôhmico}. Podemos identificar um resistor desse tipo facilmente, bastanto verificar se a relação entre a corrente que passa por ele e a tensão a que ele é submetido é linear.
+
+Finalmente, é interessante notar que o inverso da condutibilidade é denominado como \emph{resistividade} $\rho$:
+\begin{equation}
+    \rho \equiv \frac{1}{\sigma}.
+\end{equation}
+%
+Em termos da resistividade, temos que a resistência é dada por
+\begin{equation}
+    R = \frac{\rho \ell}{A}.
+\end{equation}
+%
+Essa grandeza pode ser mais conveniente para a análise da resistência de um material longo, como um fio, uma vez que podemos estar interessados em conhecer a resistência por unidade de comprimento. Nesse caso,
+\begin{equation}
+    \frac{R}{\ell} = \frac{\rho}{A}.
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Se necessário, usar subsections}
@@ -24,11 +113,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
+\label{Sec:ObjetivosLeiDeOhm}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Verificar a relação entre tensão e corrente para resistores ôhmicos e não ôhmicos;
-	\item Verificar a resistência de associações de resistores em série e em paralelo.
+	\item Verificar a relação linear entre tensão e corrente para resistores ôhmicos;
+	\item Determinar a resistência de um resistor ôhmico através de uma regressão linear;
+	\item Verificar a relação não entre tensão e corrente para resistores não ôhmicos;
+	\item Observar a relação entre resistência e corrente, assim como a relação entre a resistência e a tensão, buscando determinar se há ou não algum padrão claro de comportamento;
+	%\item Verificar a resistência de associações de resistores em série e em paralelo.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,11 +167,11 @@ Coleta de dados para uma lâmpada incandescente:
 	\item Ligue a fonte e ajuste a tensão para aproximadamente \np[V]{2,0} e anote o valor na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
 	\item Verifique o valor correspondente de corrente e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
 	\item Calcule o valor de potência dissipada e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
-	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{2,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{20}. 
+	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{1,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{15}. 
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Associação de resistores}
+%\subsection{Associação de resistores} % Na real, seria muito melhor fazermos um experimento de resistividade
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,7 +209,7 @@ Coleta de dados para uma lâmpada incandescente:
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{4}
+\begin{question}[type={exam}]{3}
 \begin{enumerate}[label=\roman*.]
 \item Faça um gráfico para os dados de corrente $i$ em função da tensão $V$ para o resistor.
 \item Realize uma regressão linear dos dados experimentais contidos no gráfico.
@@ -124,10 +217,18 @@ Preencha as colunas de dados experimentais das tabelas com o número adequado de
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Faça um gráfico para os dados de corrente $i$ em função da tensão $V$ para a lâmpada.
+\begin{question}[type={exam}]{3}
+Considerando os dados obtidos para a lâmpada incandescente, elabore os seguintes gráficos:
+\begin{enumerate}[label=\roman*.]
+\item Um gráfico para os dados de corrente $i$ em função da tensão $V$.
+\item Um gráfico para os dados de resistência $R$ em função da tensão $V$.
+\item Um gráfico para os dados de resistência $R$ em função da corrente $i$.
+\end{enumerate}
 \end{question}
 
+\begin{question}[type={exam}]{2}
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosLeiDeOhm}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
+\end{question}
 
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,7 +242,7 @@ Faça um gráfico para os dados de corrente $i$ em função da tensão $V$ para 
 		\toprule
 		& \multicolumn{3}{l}{\textbf{Resistor}} & & \multicolumn{3}{l}{\textbf{Lâmpada}} \\
 		\cmidrule{2-4} \cmidrule{6-8}
-		& $V$ & $i$ & $P$ & & $V$ & $i$ & $P$ \\
+		& $V$ & $i$ & $P$ & & $V$ & $i$ & $R = V/i$ \\
 		\cmidrule{2-4} \cmidrule{6-8}
 		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \\
 		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \\
