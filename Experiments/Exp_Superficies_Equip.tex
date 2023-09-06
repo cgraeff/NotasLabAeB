@@ -173,6 +173,72 @@ Um caso mais interessante é o das superfícies equipotenciais de um dipolo elé
 
 \begin{figure}
 \centering
+%
+% Gráficos das linhas de campo:
+%
+% Para fazer os gráficos, preciso escrever x e y como funções de um
+% parâmetro (o \x nos comandos abaixo). Para isso, fazermos a seguinte
+% mudança de variáveis (vi isso nesse site: https://math.stackexchange.com/questions/1262174/area-enclosed-by-an-equipotential-curve-for-an-electric-dipole-on-the-plane):
+%
+% \sqrt{(x + a)^2 + y^2} = u + v
+% \sqrt{(x - a)^2 + y^2} = u - v,
+%
+% de onde vem que
+%
+% x = uv/a
+% y = \pm \sqrt{-(a^2-u^2)(a^2-v^2)}/a.
+%
+% Como o argumento da raíz tem que ser positivo, ou v = [0, a] e u = [a, \infty], ou o
+% contrário. Vamos usar só o primeiro quadrante, por isso y > 0. Usando a mudança de
+% variáveis, podemos reescrever a soma dos dois potenciais das cargas do dipolo
+%
+% V = kq (1/\sqrt{(x - a)^2 + y^2} - 1/\sqrt{(x + a) + y^2})
+%
+% como
+%
+% V/kq = c = 1/(u-v) - 1/(u+v).
+%
+% Resolvendo para u, temos
+%
+% u = \sqrt{v^2 - 2v/c}.
+%
+% Podemos usar v como um parâmetro para desenhar a curva no primeiro quadrante
+% se usarmos as expressões para x e y como funções de u e v, e a relação acima.
+% Para obter os resultados nos outros quadrantes, precisamos simplesmente fazer
+% a mesma curva refletida nos eixos, usando sinais. O domínio utilizado para v
+% é de 0 até a, mas sempre pode dar dá problema numérico no cálculo da raíz, por
+% isso temos que calcular o valor para o qual o argumento da raíz é maior que zero.
+% Fazendo um gráfico do argumento da raíz,
+%
+% f(v) = - (v^2 + 2v/c - a^2)(v^2 - a^2)
+%
+% Verificamos que ele é positivo entre a única raíz v_0 que há no intervalo [0,a] e o valor de a. Calculando a raíz, obtemos
+%
+% \sqrt{a^2c^2 + 1}/c - 1/c.
+%
+% No entanto, como sempre podemos ter algum problema de precisão, a raíz pode
+% dar negativa para um ponto ou outro. Assim é interessante usar um max(0, f(v))
+% dentro da raíz, garantindo que não haja nenhum problema. Por outro lado, usando
+% o valor de a como sendo o limite superior do domínio, também pode haver algum
+% problema de arredondamento e as linhas não ficam fechadas certinho pois a curva
+% não chega a tocar o eixo horizontal. Nesse caso, podemos resolver usando um limite
+% um pouco maior, mas não podemos exagerar pois aparece uma linha horizontal no gráfico
+% (pois a coordenada x continua mudando e y permanece constante, eu acho).
+%
+% Para determinar o valor da constante c, precisamos saber o valor da carga q.
+% Não é a melhor solução do mundo, mas considerei que os polos têm diferença de
+% potencial ddp e estão separados por uma distância 2a. Assim c = 2V / (ddp \cdot a)
+% e temos algo relativamente simples. Se considerarmos dois cilindros condutores,
+% a condição de contorno correta é que o potencial seja zero na superfície de um
+% deles e V na superfície do outro, então o mais indicado seria determinar q usando
+% o valor de potencial V a uma distância (a - R) da origem, sobre o eixo x, onde R
+% é o raio do cilindro condutor. 
+%
+% Finalmente, se quisermos fazer um gráfico pra duas cargas de mesmo sinal, no
+% potencial o sinal entre os termos vai mudar. Considerando o que tem no site,
+% o que deve acontecer é que será possível escrever v em função de u, assim u
+% passará a ser o parâmetro para desenhar as curvas.
+%
 \begin{tikzpicture}[>=Stealth, scale = 0.35]
     
     % Polos
