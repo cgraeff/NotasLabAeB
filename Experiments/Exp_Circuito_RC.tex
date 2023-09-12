@@ -19,8 +19,77 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experimento}
+\section{Circuito RC}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}
+\centering
+\begin{circuitikz}[american]
+	\draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$] (0,0);
+\end{circuitikz}
+\caption{Circuito $RC$.}
+\end{marginfigure}
+
+Os circuitos formados por uma fonte de tensão, um resistor, e um capacitor, ou por um resistor e um capacitor carregado, são os exemplos mais simples de circuitos onde a corrente não é constante. Podemos determinar a corrente como uma função do tempo para o primeiro caso considerando que o capacitor está inicialmente descarregado e aplicando a lei de Kirchhoff:
+\begin{equation}
+	V - \frac{q}{C} - iR = 0.
+\end{equation}
+%
+Como
+\begin{equation}
+	i = \frac{dq}{dt},
+\end{equation}
+%
+podemos escrever
+\begin{equation}
+	V - \frac{q}{C} - R\frac{dq}{dt} = 0.
+\end{equation}
+%
+Reordenando os termos, obtemos
+\begin{align}
+	\frac{dq}{dt} &= \frac{V}{R} - \frac{q}{RC}\\
+	&= \frac{VC - q}{RC} \\
+	&= - \frac{q - VC}{RC}
+\end{align}
+%
+Podemos reescrever a equação acima e integrar os dois lados:
+\begin{align}
+	\frac{dq}{q - VC} &= -\frac{1}{RC} dt \\
+	\int_0^q \frac{dq}{q - VC} &= -\frac{1}{RC} \int_0^t dt \\
+	\int \frac{dq'}{q'} &= -\frac{1}{RC} \\
+	\ln(q') + \alpha &= -\frac{1}{RC} \\
+	\left[\ln(q - VC) + \alpha\right]_0^q &= -\frac{t}{RC} \\
+	\ln\left(\frac{q - VC}{-VC}\right) &= -\frac{t}{RC}.
+\end{align}
+%
+Tomando a exponencial de ambos os lados, resulta em
+\begin{align}
+	\frac{q-VC}{-VC} &= e^{-t/(RC)} \\
+	q - VC &= -VC e^{-t/(RC)} \\
+	q &= VC - VC e^{-t/(RC)} \\
+	q(t) &= VC \cdot (1 - e^{-t/(RC)}).
+\end{align}
+
+% discutir o resultado e fazer um gráfico. Explicar como chegamos no valor de V que será o que de fato mediremos
+% calcular a descarga (fazer a primeira figura sem a bateria e por aqui)
+% Explicar o procedimento experimental (usar as versões com os cap eletrolíticos e o voltímetro)
+\begin{marginfigure}
+\centering
+\begin{circuitikz}[american]
+	\draw (0,0) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[R, l=$R$] (2,0) to[eC, l=$C$] (0,0);
+	\draw (2,3) -- (3.5,3) to[smeter, t=V] (3.5,0) -- (2,0);
+\end{circuitikz}
+\caption{Carga de um capacitor eletrolítico.}
+\end{marginfigure}
+
+\begin{marginfigure}
+\centering
+\begin{circuitikz}[american]
+	\draw (0,0) -- (0,3) to[switch] (2,3) to[R, l=$R$] (2,0) to[eC, l=$C$, i<=$i$] (0,0);
+	\draw (2,3) -- (3.5,3) to[smeter, t=V] (3.5,0) -- (2,0);
+\end{circuitikz}
+\caption{Descarga de um capacitor eletrolítico.}
+\end{marginfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
