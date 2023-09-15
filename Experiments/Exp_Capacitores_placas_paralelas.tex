@@ -11,7 +11,15 @@
 \section{Capacitância}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Se conectarmos uma bateria a dois condutores\footnote{Na verdade, mesmo um só condutor também tem uma capacitância.} quaisques ---~dispostos um próximo ao outro, porém desconectados~---, haverá um fluxo de cargas elétricas até que se estabeleça uma diferença de potencial entre os dois condutores igual à diferença de potencial entre os polos da bateria.
+Se conectarmos uma bateria a dois condutores\footnote{Na verdade, mesmo um só condutor também tem uma capacitância.} quaisquer ---~dispostos um próximo ao outro, porém desconectados~---, haverá um fluxo de cargas elétricas até que se estabeleça uma diferença de potencial entre os dois condutores igual à diferença de potencial entre os polos da bateria.
+
+\begin{marginfigure}
+\centering
+\begin{circuitikz}[american]
+	\draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$] (0,0);
+\end{circuitikz}
+\caption{Circuito para a carga de um capacitor.}
+\end{marginfigure}
 
 Dependendo de características geométricas desses dois condutores, como formato, área, e distância entre eles, a quantidade de carga necessária para estabelecer uma diferença de potencial igual à da bateria será diferente. Para uma dada configuração geométrica dos condutores, damos à razão entre a quantidade de carga $Q$ e a diferença de potencial $V$ correspondente o nome de \emph{capacitância}:
 \begin{equation}\label{Eq:DefCapacitancia}
@@ -62,8 +70,23 @@ Vamos considerar agora a inserção de um meio não condutor qualquer entre as p
 \begin{equation}
     V = \frac{Q}{C}.
 \end{equation}
-%
-Se inserirmos o material não-condutor entre as placas, verificaremos que \emph{ocorre uma diminuição na diferença de potencial registrada pelo voltímetro}. Se calcularmos a razão entre a tensão $V_0$ antes da inserção do dielétrico e a tensão $V$ depois da inserção, obtemos
+
+\begin{marginfigure}
+    \centering
+    \begin{circuitikz}[american, scale = 0.6]          	
+        \draw (0,0) to[battery1, v=$V$] (0,3) to[switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$] (0,0);
+    	\draw (2,3) -- (4.5,3) to[smeter, t=V] (4.5,0) -- (2,0);
+    	
+        \begin{scope}[shift={(0,-6)}]
+            \draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$, fill=gray!20] (0,0);
+        	\draw (2,3) -- (4.5,3) to[smeter, t=V] (4.5,0) -- (2,0);
+        	\draw[-Stealth] (1,-0.3) -- (1,0.3);
+    	\end{scope}
+    \end{circuitikz}
+    \caption{Ao desligarmos o interruptor e inserirmos um material dielétrico no capacitor observamos uma queda na diferença de potencial medida pelo voltímetro. }
+\end{marginfigure}
+        
+\noindent{}Se inserirmos o material não-condutor entre as placas, verificaremos que \emph{ocorre uma diminuição na diferença de potencial registrada pelo voltímetro}. Se calcularmos a razão entre a tensão $V_0$ antes da inserção do dielétrico e a tensão $V$ depois da inserção, obtemos
 \begin{equation}
     \kappa = \frac{V_0}{V}.
 \end{equation}
@@ -90,6 +113,35 @@ assim,
 %
 O valor $C_0$ representa o valor de capacitância antes da inserção do dielétrico. Como $\kappa > 1$, verificamos que ocorre a insersão do dielétrico leva a um \emph{aumento da capacitância}.
 
+\begin{marginfigure}
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale = 0.7]
+
+        % capacitor
+        \draw[very thick] (0,-3.1) -- (0,3.1);
+        \draw[very thick] (3,-3.1) -- (3,3.1);
+        \draw (-2,0) -- (0,0) node[above left]{$+$};
+        \draw (3,0) node[above right]{$-$} -- (5,0);
+        
+        % retângulo limite dielétrico
+        \draw[dashed](0.05, -3.05) rectangle (2.95,3.05);
+        
+        % átomos
+        \foreach \x in {0.3, 0.9, ..., 3}{
+            \foreach \y in {-2.8, -2.5, ..., 3}{
+                \shadedraw[left color=gray, right color=gray!20, draw=gray] (\x,\y) ellipse [x radius=2mm, y radius=1mm];
+            }
+        }
+        
+        % campos
+        \foreach \y in {-3, -2.5, ..., 3}{
+            \draw[->, very thick] (0,\y) -- (3,\y);
+        }
+        \node (E) at (2,-3.5) {$\vec{E}$};
+        
+    \end{tikzpicture}
+    \caption{O campo elétrico devido às placas do capacitor polarizam o dielétrico. Tal polarização geram um campo elétrico no material que faz com que o campo total seja diminuido.}
+\end{marginfigure}
 O aumento da capacitância pode ser entendido através de uma análise microscópica do comportamento das cargas que compõe o dielétrico: quando ele é inserido entre as placas carregadas do capacitor, as eletrosferas e núcleos atômicos sofrem um pequeno deslocamento no sentido de se aproximar das placas carregadas positiva e negativamente, respectivamente. Isso dá origem a um campo elétrico devido ao próprio dielétrico e que tem sentido oposto ao campo gerado pelas placas do capacitor ---~denominamos esse fenômeno como uma \emph{polarização} do dielétrico~---. Portanto, o campo elétrico do dielétrico polarizado ``compensa'' parcialmente o campo gerado pelas placas do capacitor, o que diminui o campo elétrico total e, consequentemente, a diferença de potencial entre as placas.\footnote{A combinação do campo elétrico devido às placas do capacitor e devido à polarização do dielétrico é conhecido como \emph{deslocamento elétrico}.}
 
 É importante notar que na discussão para definir a capacitância não consideramos a existência do ar como um meio polarizável. Na verdade, o ar é um dielétrico que sofre uma polarização como outro qualquer, portanto existe um valor de $\kappa_{\text{ar}}$ que relaciona a capacitância $C_{\text{ar}}$ de um capacitor quando há ar entre as suas placas, com o seu valor de capacitância no vácuo. No entanto, o valor de $\kappa_{\text{ar}}$ é muito próximo de 1 e podemos desprezar os efeitos do ar como um meio dielétrico na maior parte dos casos.
