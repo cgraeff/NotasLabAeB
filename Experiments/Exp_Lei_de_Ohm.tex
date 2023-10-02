@@ -144,6 +144,18 @@ Essa grandeza pode ser mais conveniente para a análise da resistência de um ma
 \subsection{Resistores ôhmicos e não-ôhmicos}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{marginfigure}
+    \centering
+    \begin{circuitikz}[american, scale = 0.9]          	
+        \draw (0,0) to[battery1, v=$V$] (0,3)
+                    to[switch] (2,3)
+                    to[R, l=$R$] (2,0)
+                    to[smeter, t=$A$] (0,0);
+    	\draw (2,3) -- (4,3) to[smeter, t=V] (4,0) -- (2,0);
+    \end{circuitikz}
+    \caption{Circuito para a verificação do comportamento de um resistor ôhmico.}
+\end{marginfigure}
+
 Coleta de dados para um resistor:
 \begin{enumerate}
 	\item Ajuste a fonte de tensão regulável em seu valor mínimo de tensão e máximo de corrente; 
@@ -156,6 +168,18 @@ Coleta de dados para um resistor:
 	\item Calcule o valor de potência dissipada e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos}. \textbf{Atenção:} o valor de potência não deve exceder \np[W]{0,5} durante toda a tomada de dados, caso contrário, o componente poderá ficar muito quente e causar queimaduras e/ou ser danificado;
 	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{1,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{10}, ou até que a potência exceda \np[W]{0,5}. 
 \end{enumerate}
+
+\begin{marginfigure}
+    \centering
+    \begin{circuitikz}[american, scale = 0.9]          	
+        \draw (0,0) to[battery1, v=$V$] (0,3)
+                    to[switch] (2,3)
+                    to[bulb, l=$R$] (2,0)
+                    to[smeter, t=$A$] (0,0);
+    	\draw (2,3) -- (4,3) to[smeter, t=V] (4,0) -- (2,0);
+    \end{circuitikz}
+    \caption{Circuito para a verificação do comportamento de um resistor não-ôhmico.}
+\end{marginfigure}
 
 Coleta de dados para uma lâmpada incandescente:
 \begin{enumerate}
@@ -209,7 +233,7 @@ Coleta de dados para uma lâmpada incandescente:
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{3}
+\begin{question}[type={exam}]{2}
 \begin{enumerate}[label=\roman*.]
 \item Faça um gráfico para os dados de corrente $i$ em função da tensão $V$ para o resistor.
 \item Realize uma regressão linear dos dados experimentais contidos no gráfico.
@@ -217,13 +241,17 @@ Preencha as colunas de dados experimentais das tabelas com o número adequado de
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{3}
+\begin{question}[type={exam}]{2}
 Considerando os dados obtidos para a lâmpada incandescente, elabore os seguintes gráficos:
 \begin{enumerate}[label=\roman*.]
 \item Um gráfico para os dados de corrente $i$ em função da tensão $V$.
 \item Um gráfico para os dados de resistência $R$ em função da tensão $V$.
 \item Um gráfico para os dados de resistência $R$ em função da corrente $i$.
 \end{enumerate}
+\end{question}
+
+\begin{question}[type={exam}]{2}
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosLeiDeOhm}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
 \begin{question}[type={exam}]{2}
