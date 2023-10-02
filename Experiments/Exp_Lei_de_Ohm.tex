@@ -144,7 +144,7 @@ Essa grandeza pode ser mais conveniente para a análise da resistência de um ma
 \subsection{Resistores ôhmicos e não-ôhmicos}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{marginfigure}
+\begin{marginfigure}[2cm]
     \centering
     \begin{circuitikz}[american, scale = 0.9]          	
         \draw (0,0) to[battery1, v=$V$] (0,3)
@@ -156,7 +156,7 @@ Essa grandeza pode ser mais conveniente para a análise da resistência de um ma
     \caption{Circuito para a verificação do comportamento de um resistor ôhmico.}
 \end{marginfigure}
 
-Coleta de dados para um resistor:
+\paragraph{Coleta de dados para um resistor:}
 \begin{enumerate}
 	\item Ajuste a fonte de tensão regulável em seu valor mínimo de tensão e máximo de corrente; 
 	\item Ajuste o multímetro na função de amperímetro, na escala de \np[mA]{200};
@@ -169,7 +169,8 @@ Coleta de dados para um resistor:
 	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{1,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{10}, ou até que a potência exceda \np[W]{0,5}. 
 \end{enumerate}
 
-\begin{marginfigure}
+\paragraph{Coleta de dados para uma lâmpada incandescente:}
+\begin{marginfigure}[3cm]
     \centering
     \begin{circuitikz}[american, scale = 0.9]          	
         \draw (0,0) to[battery1, v=$V$] (0,3)
@@ -181,7 +182,6 @@ Coleta de dados para um resistor:
     \caption{Circuito para a verificação do comportamento de um resistor não-ôhmico.}
 \end{marginfigure}
 
-Coleta de dados para uma lâmpada incandescente:
 \begin{enumerate}
 	\item Ajuste a fonte de tensão regulável em seu valor mínimo de tensão e máximo de corrente; 
 	\item Ajuste o multímetro na função de amperímetro, na escala de \np[A]{20};
