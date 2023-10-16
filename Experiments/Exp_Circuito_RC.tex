@@ -207,23 +207,25 @@ Se fizermos $t_ = 0$, $t_f = t$, e $q_i = q_0$, podemos representar a carga como
 	
 \begin{enumerate}
     \item Conecte o capacitor ao protoboard;
-	\item \textbf{Atenção:} Note que o capacitor eletrolítico tem seus terminais marcados como `$+$' e `$-$', ou pelo menos um dos terminais é marcado. Conecte o resistor ao protoboard de maneira que um de seus terminais esteja na mesma linha condutora que o terminal \emph{negativo}\footnote{Tanto faz, na verdade, mas nos próximos passos eu vou assumir que ele esteja ligado ao terminal negativo.} do capacitor;
-	\item Use os cabos para ligar o multímetro aos terminais do capacitor (iremos medir valores de tensão em corrente contínua);
+	\item \textbf{Atenção:} Note que o capacitor eletrolítico tem seus terminais marcados como `$+$' e `$-$', ou pelo menos um dos terminais é marcado. Conecte um ou mais resistores em série ao protoboard de maneira que um dos terminais esteja na mesma linha condutora que o terminal \emph{negativo}\footnote{Tanto faz, na verdade, mas nos próximos passos eu vou assumir que ele esteja ligado ao terminal negativo.} do capacitor;
+	\item Anote o valor total de resistência na Tabela~\ref{Tab:CargaEDescargaCapacitor}, na seção de valores nominais.
+	\item Use os cabos banana-jacaré para ligar o multímetro aos terminais do capacitor (iremos medir valores de tensão em corrente contínua);
 	\item \textbf{Atenção:} Vamos preparar a ligação do circuito à fonte. Como estamos usando um capacitor eletrolítico, não podemos ligá-lo com as polaridades invertidas, pois isso fará com que o componente seja destruído.
 	    \begin{enumerate}
-	        \item Ligue um cabo do terminal negativo da fonte ao terminal livre do resistor;
-	        \item Ligue um cado ao terminal positivo do capacitor, deixando a outra extremidade desconectada. Adiante ela será ligada ao terminal positivo da fonte.
+	        \item Ligue um cabo banana-jacaré do terminal negativo da fonte ao terminal livre do resistor;
+	        \item Ligue um cabo banana-jacaré ao terminal positivo do capacitor, deixando a outra extremidade desconectada. Adiante ela será ligada ao terminal positivo da fonte.
         \end{enumerate}
-    \item Ligue a fonte. Ajuste os limitadores de corrente para os seus valores máximos e ajuste a tensão para um valor de \textbf{VALOR DE TENSÃO AQUI};
+    \item Ligue a fonte. Ajuste os limitadores de corrente para os seus valores máximos e ajuste a tensão para um valor de \np[V]{5,0};
 	\item Ajuste o multímetro na função voltímetro de corrente contínua, escolhendo uma escala que permita medir o valor de tensão ajustado na fonte regulável.
 	\item Zere o cronômetro;
-	\item Início do processo de carregamento:
+    \item Na primeira linha da Tabela~\ref{Tab:CargaEDescargaCapacitor}, na seção de carregamento, anote o valor de tempo de \np[s]{0} e o valor correspondente de tensão de \np[V]{0}; 
+    \item Prepare-se para anotar os valores de tempo e de tensão a cada \np[s]{15,0};
+	\item Início do processo de carregamento:\footnote{Os valores de tempo sugeridos foram calculados com base em um valor de $RC$ de aproximadamente \np[s]{140}.}
 	    \begin{enumerate}
-	        \item Prepare-se para anotar os valores de tempo e de tensão a cada \textbf{ESCOLHER UM INTERVALO};
-	        \item Ao mesmo tempo que a extremidade livre do cabo ligado ao terminal positivo do capacitor é ligado ao terminal positivo da fonte, acione o cronômetro.
-	        \item Quando o cronômetro atingir \textbf{INTERVALO}, registre o valor de tempo $t$ registrado pelo cronômetro e o valor de tensão $V_C$ registrado pelo multímetro na Tabela~\ref{Tab:CargaEDescargaCapacitor};
-	        \item Continue anotando os valores de $t$ e $V_C$ a cada \textbf{INTERVALO}, anotando-os na tabela, interrompendo as medidas após \textbf{ESCOLHER TEMPO MÁXIMO}.
-	        \item A finalizar o carregamento, remova os cabos dos terminais do resistor e do capacitor.
+	        \item Ao mesmo tempo que a extremidade livre do cabo banana-jacaré ligado ao terminal positivo do capacitor é conectado ao terminal positivo da fonte, acione o cronômetro.
+	        \item Quando o cronômetro atingir \np[s]{15,0}, registre o valor de tempo $t$ registrado pelo cronômetro e o valor de tensão $V_C$ registrado pelo multímetro na Tabela~\ref{Tab:CargaEDescargaCapacitor};
+	        \item Continue anotando os valores de $t$ e $V_C$ a cada \np[s]{15,0}, anotando-os na tabela, interrompendo as medidas após \np[s]{300}.
+	        \item A finalizar o carregamento, remova os cabos dos terminais do resistor e do capacitor. Tome cuidado para que nenhum condutor toque o circuito pois vamos utilizar o capacitor carregado no processo de descarga na seção seguinte.
 	        \item Desconecte os cabos da fonte e a desligue.
         \end{enumerate}
 \end{enumerate}
@@ -246,13 +248,14 @@ Ao final do procedimento da seção anterior, o capacitor estará carregado, ain
 }
 \begin{enumerate}
 	\item Zere o cronômetro;
-	\item Conecte um cabo ao terminal do resistor;
+	\item Conecte um cabo jacaré-jacaré ao terminal do resistor;
+	\item Na primeira linha da Tabela~\ref{Tab:CargaEDescargaCapacitor}, na seção de descarregamento, anote o valor de tempo de \np[s]{0} e o valor correspondente de tensão lido no multímetro;\footnote{Como o multímetro não é ideal, a tensão do capacitor sempre estará diminuindo, uma vez que existe uma pequana corrente. Procure não demorar para iniciar o processo de descarga após verificar o valor inicial de tensão.}
+	\item Prepare-se para anotar os valores de tempo e de tensão a cada \np[s]{15};
 	\item Início do processo de descarregamento:
 	\begin{enumerate}
-	    \item Prepare-se para anotar os valores de tempo e de tensão a cada \textbf{ESCOLHER UM INTERVALO};
 	    \item Ao mesmo tempo que a extremidade livre do cabo é ligada ao terminal positivo do capacitor, acione o cronômetro;
-	    \item Quando o cronômetro atingir \textbf{INTERVALO}, registre o valor de tempo $t$ registrado pelo cronômetro e o valor de tensão $V_C$ registrado pelo multímetro na Tabela~\ref{Tab:CargaEDescargaCapacitor};
-        \item Continue anotando os valores de $t$ e $V_C$ a cada \textbf{INTERVALO}, anotando-os na tabela, interrompendo as medidas após \textbf{ESCOLHER TEMPO MÁXIMO}.
+	    \item Quando o cronômetro atingir \np[s]{15}, registre o valor de tempo $t$ registrado pelo cronômetro e o valor de tensão $V_C$ registrado pelo multímetro na Tabela~\ref{Tab:CargaEDescargaCapacitor};
+        \item Continue anotando os valores de $t$ e $V_C$ a cada \np[s]{15}, anotando-os na tabela, interrompendo as medidas após \np[s]{300}.
     \end{enumerate}
 \end{enumerate}
 
@@ -352,6 +355,11 @@ Considerando os objetivos do experimento, listados na Seção~\ref{Sec:Objetivos
 		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
 		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
 		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
 \bottomrule
 		\end{tabular}
 	\caption[][2mm]{Dados obtidos para o comprimento do elástico e a massa correspondente.}\label{Tab:CargaEDescargaCapacitor}
