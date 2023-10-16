@@ -4,36 +4,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{fullwidth}\it
-	Que experimento faremos?
-	Qual é o objetivo?
-	O que veremos/revisaremos? (teoria física)
-	Quais conceitos/técnicas de análise de dados utilizaremos?
+	Realizaremos um experimento de carregamento e descarregamento de um capacitor com o objetivo de observar o comportamento de um sistema onde a corrente não é constante.
 \end{fullwidth}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Física do experimento}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Se necessário, usar subsections}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Circuito RC}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Os circuitos formados por uma fonte de tensão, um resistor, e um capacitor, ou por um resistor e um capacitor carregado, são os exemplos mais simples de circuitos onde a corrente não é constante. Vericaremos abaixo como determinar a carga do capacitor em cada uma dessas situações como funções do tempo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cargarregamento de um capacitor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{marginfigure}
 \centering
 \begin{circuitikz}[american]
-	\draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$] (0,0);
+	\draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (3,3) to[R, l=$R$] (3,0) to[C, l=$C$] (0,0);
 \end{circuitikz}
-\caption{Circuito $RC$.}
+\caption{Circuito $RC$ para a análise do processo de carregamento do capacitor.\label{Fig:CircuitoRCCarga}}
 \end{marginfigure}
 
-Os circuitos formados por uma fonte de tensão, um resistor, e um capacitor, ou por um resistor e um capacitor carregado, são os exemplos mais simples de circuitos onde a corrente não é constante. Podemos determinar a corrente como uma função do tempo para o primeiro caso considerando que o capacitor está inicialmente descarregado e aplicando a lei de Kirchhoff:
+
+Podemos determinar a corrente como uma função do tempo para o primeiro caso considerando que o capacitor está inicialmente descarregado e aplicando a lei de Kirchhoff ao circuito mostrado na Figura~\ref{Fig:CircuitoRCCarga}:
 \begin{equation}
-	V - \frac{q}{C} - iR = 0.
+	V_b - \frac{q}{C} - iR = 0,
 \end{equation}
+%
+onde $V_b$ representa a tensão da bateria, $R$ a resistência do resistor, $q$ a carga contida no capacitor, $C$ a capacitância do capacitor, e $i$ representa a corrente que flui no circuito.
 %
 Como
 \begin{equation}
@@ -42,63 +40,134 @@ Como
 %
 podemos escrever
 \begin{equation}
-	V - \frac{q}{C} - R\frac{dq}{dt} = 0.
+	V_b - \frac{q}{C} - R\frac{dq}{dt} = 0.
 \end{equation}
 %
 Reordenando os termos, obtemos
 \begin{align}
-	\frac{dq}{dt} &= \frac{V}{R} - \frac{q}{RC}\\
-	&= \frac{VC - q}{RC} \\
-	&= - \frac{q - VC}{RC}
+	\frac{dq}{dt} &= \frac{V_b}{R} - \frac{q}{RC}\\
+	&= \frac{V_bC - q}{RC} \\
+	&= - \frac{q - V_bC}{RC}
 \end{align}
 %
 Podemos reescrever a equação acima e integrar os dois lados:
 \begin{align}
-	\frac{dq}{q - VC} &= -\frac{1}{RC} dt \\
-	\int_0^q \frac{dq}{q - VC} &= -\frac{1}{RC} \int_0^t dt \\
+	\frac{dq}{q - V_bC} &= -\frac{1}{RC} dt \\
+	\int_0^q \frac{dq}{q - V_bC} &= -\frac{1}{RC} \int_0^t dt \\
 	\int \frac{dq'}{q'} &= -\frac{1}{RC} \\
 	\ln(q') + \alpha &= -\frac{1}{RC} \\
-	\left[\ln(q - VC) + \alpha\right]_0^q &= -\frac{t}{RC} \\
-	\ln\left(\frac{q - VC}{-VC}\right) &= -\frac{t}{RC}.
+	\left[\ln(q - V_bC) + \alpha\right]_0^q &= -\frac{t}{RC} \\
+	\ln\left(\frac{q - V_bC}{-V_bC}\right) &= -\frac{t}{RC}.
 \end{align}
 %
 Tomando a exponencial de ambos os lados, resulta em
 \begin{align}
-	\frac{q-VC}{-VC} &= e^{-t/(RC)} \\
-	q - VC &= -VC e^{-t/(RC)} \\
-	q &= VC - VC e^{-t/(RC)} \\
-	q(t) &= VC \cdot (1 - e^{-t/(RC)}).
+	\frac{q-V_bC}{-V_bC} &= \exp\left(-\frac{t}{RC}\right) \\
+	q - V_bC &= -V_bC \exp\left(-\frac{t}{RC}\right) \\
+	q &= V_bC - V_bC \exp\left(-\frac{t}{RC}\right) \\
+	q(t) &= V_bC \cdot \left[1 - \exp\left(-\frac{t}{RC}\right)\right].
 \end{align}
-
-% discutir o resultado e fazer um gráfico. Explicar como chegamos no valor de V que será o que de fato mediremos
-% calcular a descarga (fazer a primeira figura sem a bateria e por aqui)
-% Explicar o procedimento experimental (usar as versões com os cap eletrolíticos e o voltímetro)
-\begin{marginfigure}
-\centering
-\begin{circuitikz}[american]
-	\draw (0,0) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[R, l=$R$] (2,0) to[eC, l=$C$] (0,0);
-	\draw (2,3) -- (3.5,3) to[smeter, t=V] (3.5,0) -- (2,0);
-\end{circuitikz}
-\caption{Carga de um capacitor eletrolítico.}
-\end{marginfigure}
+%
+Note que a tensão em um capacitor está relacionada à carga através de
+\begin{equation}
+    V_C = \frac{q}{C}.
+\end{equation}
 
 \begin{marginfigure}
 \centering
-\begin{circuitikz}[american]
-	\draw (0,0) -- (0,3) to[switch] (2,3) to[R, l=$R$] (2,0) to[eC, l=$C$, i<=$i$] (0,0);
-	\draw (2,3) -- (3.5,3) to[smeter, t=V] (3.5,0) -- (2,0);
-\end{circuitikz}
-\caption{Descarga de um capacitor eletrolítico.}
+\begin{tikzpicture}[>=Stealth, yscale = 1.5, extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=3mm]] 
+    \draw[->] (0,0) -- (0,1.75) node[below left] {$V$};
+	\draw[->] (0,0) -- (4,0) node[below left] {$t$};
+
+    % Desenhar função:
+    \draw[smooth, name path=plot,samples=1000,domain=0:3.5]
+    plot(\x,{1 * (1 - exp(-\x/1))});
+    
+    \draw[dotted] (0,1) node[left]{$V_b$} -- (3.5,1);
+
+	\end{tikzpicture}
+\caption{Gráfico da tensão como função do tempo registrada no capacitor durante o processo de carregamento.\label{Fig:GraficoCargaCapacitor}}
 \end{marginfigure}
 
-%%%%%%%%%%%%%%%%%%%%%%
+\noindent{}se dividirmos a expressão para $q(t)$ por $C$ de ambos os lados da equação, obtemos finalmente
+\begin{equation}
+    V_C(t) = V_b \cdot \left[1 - \exp\left(-\frac{t}{RC}\right)\right].
+\end{equation}
+%
+Fazendo um gráfico da expressão acima, obtemos a Figura~\ref{Fig:GraficoCargaCapacitor}. Note que no processo de carregamento a tensão registrada no capacitor tende à tensão $V$ da bateria. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Descarregamento de um capacitor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}[4cm]
+\centering
+\begin{circuitikz}[american]
+	\draw (0,0) -- (0,3) to[normal open switch] (3,3) to[R, l=$R$] (3,0) to[C, l=$C$] (0,0);
+\end{circuitikz}
+\caption{Circuito $RC$ para a análise do processo de descarregamento do capacitor.\label{Fig:CircuitoRCDescarga}}
+\end{marginfigure}
+
+Para o processo de descarregamento do capacitor ao aplicarmos a lei de Kirchhoff temos que
+\begin{equation}
+    -\frac{q}{C} - i R = 0.
+\end{equation}
+%
+Novamente, usando $i = dq/dt$, e reorganizando os termos obtemos
+\begin{align}
+    R\frac{dq}{dt} + \frac{q}{C} &= 0 \\
+    \frac{dq}{dt} + \frac{q}{RC} &= 0 \\
+    \frac{dq}{dt} &= - \frac{q}{RC} \\
+    \frac{dq}{q} &= - \frac{dt}{RC}.
+\end{align}
+%
+Integrando ambos os lados da equação acima, temos
+\begin{align}
+    \int_{q_i}^{q_f} \frac{dq}{q} &= -\frac{1}{RC} \int_{t_i}^{t_f} dt \\
+    \left[\ln q + C\right]_{q_i}^{q_f} &= - \frac{q}{RC} \left[t + C\right]_{t_i}^{t_f} \\
+    \ln \frac{q_f}{q_i} &= -\frac{\Delta t}{RC} \\
+    \frac{q_f}{q_i} &= \exp\left(-\frac{\Delta t}{RC}\right) \\
+    q_f &= q_i \exp\left(-\frac{\Delta t}{RC}\right).
+\end{align}
+%
+Se fizermos $t_ = 0$, $t_f = t$, e $q_i = q_0$, podemos representar a carga como uma função do tempo através de
+\begin{equation}
+    q(t) = q_0 \exp\left(-\frac{t}{RC}\right).
+\end{equation}
+
+\begin{marginfigure}
+\centering
+\begin{tikzpicture}[>=Stealth, yscale = 1.5, extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=3mm]] 
+    \draw[->] (0,0) -- (0,1.75) node[below left] {$V$};
+	\draw[->] (0,0) -- (4,0) node[below left] {$t$};
+
+    % Desenhar função:
+    \draw[smooth, name path=plot,samples=1000,domain=0:3.5]
+    plot(\x,{1 * exp(-\x/1)});
+    
+    \draw[dotted] (0,1) node[left]{$V$} -- (3.5,1);
+
+	\end{tikzpicture}
+\caption{Gráfico da tensão como função do tempo registrada no capacitor durante o processo de descarregamento.\label{Fig:GraficoDescargaCapacitor}}
+\end{marginfigure}
+
+\noindent{}Novamente, se dividirmos ambos os lados da equação por $C$, obtemos a tensão no capacitor:
+\begin{equation}
+    V_C(t) = V_0 \exp\left(-\frac{t}{RC}\right).
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
-%%%%%%%%%%%%%%%%%%%%%%
+\label{Sec:ObjetivosCargaEDescargaCapacitor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Resultados concretos que devemos conseguir;
-	\item Observar a relação de tal coisa com outra coisa;
-	\item Calcular a constante $x$.
+	\item Verificar a validade da expressão para a tensão durante o carregamento do capacitor;
+	\item Verificar a validade da expressão para a tensão durante o descarregamento do capacitor;
+	\item Determinar o valor do produto da resistência e capacitância do circuito, isto é, o valor de $RC$, a partir dos dados experimentais;
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,21 +175,85 @@ Tomando a exponencial de ambos os lados, resulta em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Item 1;
-	\item Item 2.
+	\item Fonte de tensão regulável;
+	\item Protoboard;
+	\item Resistores;
+	\item Capacitores eletrolíticos;
+	\item Multímetro;
+	\item Cabos para ligações;
+	\item Cronômetro.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Procedimento Experimental}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Parte A} % Se necessário
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Carregamento de um capacitor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}[2cm]
+\centering
+\begin{circuitikz}[american]
+	\draw (0,0) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[eC, l=$C$] (2,0) to[R, l=$R$] (0,0);
+	\draw (2,3) -- (3.5,3) to[smeter, t=V] (3.5,0) -- (2,0);
+\end{circuitikz}
+\caption{Carga de um capacitor eletrolítico.}
+\end{marginfigure}
+
+{\it
+\textbf{Atenção:} Não ligue a fonte de tensão ao circuito antes de se certificar que as ligações estejam corretas, pois há risco de o capacitor ser danificado, entrar em combustão, e mesmo explodir.\footnote{Provavelmente o risco de ferimentos é menor do que o de se queimar no experimento de dilatação térmica, mas mesmo assim, tomem cuidado.} Verifique o valor máximo de tensão que o capacitor suporta e nunca exceda esse valor.
+}
+	
 \begin{enumerate}
-	\item Passo 1;
-	\item Passo 2;
-	\item Passo 3.
+    \item Conecte o capacitor ao protoboard;
+	\item \textbf{Atenção:} Note que o capacitor eletrolítico tem seus terminais marcados como `$+$' e `$-$', ou pelo menos um dos terminais é marcado. Conecte o resistor ao protoboard de maneira que um de seus terminais esteja na mesma linha condutora que o terminal \emph{negativo}\footnote{Tanto faz, na verdade, mas nos próximos passos eu vou assumir que ele esteja ligado ao terminal negativo.} do capacitor;
+	\item Use os cabos para ligar o multímetro aos terminais do capacitor (iremos medir valores de tensão em corrente contínua);
+	\item \textbf{Atenção:} Vamos preparar a ligação do circuito à fonte. Como estamos usando um capacitor eletrolítico, não podemos ligá-lo com as polaridades invertidas, pois isso fará com que o componente seja destruído.
+	    \begin{enumerate}
+	        \item Ligue um cabo do terminal negativo da fonte ao terminal livre do resistor;
+	        \item Ligue um cado ao terminal positivo do capacitor, deixando a outra extremidade desconectada. Adiante ela será ligada ao terminal positivo da fonte.
+        \end{enumerate}
+    \item Ligue a fonte. Ajuste os limitadores de corrente para os seus valores máximos e ajuste a tensão para um valor de \textbf{VALOR DE TENSÃO AQUI};
+	\item Ajuste o multímetro na função voltímetro de corrente contínua, escolhendo uma escala que permita medir o valor de tensão ajustado na fonte regulável.
+	\item Zere o cronômetro;
+	\item Início do processo de carregamento:
+	    \begin{enumerate}
+	        \item Prepare-se para anotar os valores de tempo e de tensão a cada \textbf{ESCOLHER UM INTERVALO};
+	        \item Ao mesmo tempo que a extremidade livre do cabo ligado ao terminal positivo do capacitor é ligado ao terminal positivo da fonte, acione o cronômetro.
+	        \item Quando o cronômetro atingir \textbf{INTERVALO}, registre o valor de tempo $t$ registrado pelo cronômetro e o valor de tensão $V_C$ registrado pelo multímetro na Tabela~\ref{Tab:CargaEDescargaCapacitor};
+	        \item Continue anotando os valores de $t$ e $V_C$ a cada \textbf{INTERVALO}, anotando-os na tabela, interrompendo as medidas após \textbf{ESCOLHER TEMPO MÁXIMO}.
+	        \item A finalizar o carregamento, remova os cabos dos terminais do resistor e do capacitor.
+	        \item Desconecte os cabos da fonte e a desligue.
+        \end{enumerate}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Descarregamento de um capacitor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}
+\centering
+\begin{circuitikz}[american]
+	\draw (0,0) -- (0,3) to[switch] (2,3) to[eC, l=$C$, i<=$i$] (2,0) to[R, l=$R$] (0,0);
+	\draw (2,3) -- (3.5,3) to[smeter, t=V] (3.5,0) -- (2,0);
+\end{circuitikz}
+\caption{Descarga de um capacitor eletrolítico.}
+\end{marginfigure}
+
+{\it
+Ao final do procedimento da seção anterior, o capacitor estará carregado, ainda que parcialmente. Vamos agora realizar o descarregamento.
+}
+\begin{enumerate}
+	\item Zere o cronômetro;
+	\item Conecte um cabo ao terminal do resistor;
+	\item Início do processo de descarregamento:
+	\begin{enumerate}
+	    \item Prepare-se para anotar os valores de tempo e de tensão a cada \textbf{ESCOLHER UM INTERVALO};
+	    \item Ao mesmo tempo que a extremidade livre do cabo é ligada ao terminal positivo do capacitor, acione o cronômetro;
+	    \item Quando o cronômetro atingir \textbf{INTERVALO}, registre o valor de tempo $t$ registrado pelo cronômetro e o valor de tensão $V_C$ registrado pelo multímetro na Tabela~\ref{Tab:CargaEDescargaCapacitor};
+        \item Continue anotando os valores de $t$ e $V_C$ a cada \textbf{INTERVALO}, anotando-os na tabela, interrompendo as medidas após \textbf{ESCOLHER TEMPO MÁXIMO}.
+    \end{enumerate}
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,66 +287,74 @@ Tomando a exponencial de ambos os lados, resulta em
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{1}
-Apresente os resultados de maneira clara e organizada. Mostre os cálculos requisitados de maneira clara e sucinta, evidenciando o raciocínio desenvolvido.
-\end{question}
-
-\begin{question}[type={exam}]{1}
+\begin{question}[type={exam}]{2}
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{question}[type={exam}]{3}
+Para o carregamento do capacitor:
+    \begin{enumerate}[label=\roman*.]
+        \item Elabore um gráfico de tensão em função do tempo para o capacitor.
+        \item Faça um ajuste dos dados experimentais e obtenha o valor do produto $RC$. Você pode optar por fazer algum tipo de mudança de variáveis, se necessário. Nesse caso, faça um gráfico mostrando o resultado considerando a mudança de variáveis adotada.
+    \end{enumerate}
+\end{question}
+
+\begin{question}[type={exam}]{3}
+Para o descarregamento do capacitor:
+    \begin{enumerate}[label=\roman*.]
+        \item Elabore um gráfico de tensão em função do tempo para o capacitor.
+        \item Faça um ajuste dos dados experimentais e obtenha o valor do produto $RC$. Você pode optar por fazer algum tipo de mudança de variáveis, se necessário. Nesse caso, faça um gráfico mostrando o resultado considerando a mudança de variáveis adotada.
+    \end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosCargaEDescargaCapacitor}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \section{Tabelas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table*}
+	\begin{center}
+		\begin{tabular}{lp{25mm}p{25mm}lp{25mm}p{25mm}l}
+		\toprule
+		& \multicolumn{2}{l}{\textbf{Valores nominais}} \\
+		\cmidrule{2-3}
+		& $R$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+		& $C$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+		& $V_b$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+		\cmidrule{2-3}
+\\
+		& \multicolumn{2}{l}{\textbf{Carregamento}} & & \multicolumn{2}{l}{\textbf{Descarregamento}} \\
+		\cmidrule{2-3} \cmidrule{5-6}
+		& $t$ & $V_C$ & & $t$ & $V_C$ \\
+		\cmidrule{2-3} \cmidrule{5-6}
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+		& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \\
+		& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \\
+\bottomrule
+		\end{tabular}
+	\caption[][2mm]{Dados obtidos para o comprimento do elástico e a massa correspondente.}\label{Tab:CargaEDescargaCapacitor}
+	\end{center}
+\end{table*}
 
