@@ -11,7 +11,7 @@
 \section{Circuito RC}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Os circuitos formados por uma fonte de tensão, um resistor, e um capacitor, ou por um resistor e um capacitor carregado, são os exemplos mais simples de circuitos onde a corrente não é constante. Vericaremos abaixo como determinar a carga do capacitor em cada uma dessas situações como funções do tempo.
+Os circuitos formados por uma fonte de tensão, um resistor, e um capacitor, ou por um resistor e um capacitor carregado, são os exemplos mais simples de circuitos onde a corrente não é constante. Verificaremos abaixo como determinar a carga do capacitor em cada uma dessas situações como funções do tempo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cargarregamento de um capacitor}
@@ -32,7 +32,7 @@ Podemos determinar a corrente como uma função do tempo para o primeiro caso co
 \end{equation}
 %
 onde $V_b$ representa a tensão da bateria, $R$ a resistência do resistor, $q$ a carga contida no capacitor, $C$ a capacitância do capacitor, e $i$ representa a corrente que flui no circuito.
-%
+
 Como
 \begin{equation}
 	i = \frac{dq}{dt},
@@ -68,7 +68,7 @@ Tomando a exponencial de ambos os lados, resulta em
 	q(t) &= V_bC \cdot \left[1 - \exp\left(-\frac{t}{RC}\right)\right].
 \end{align}
 %
-Note que a tensão em um capacitor está relacionada à carga através de
+Note que a tensão em um capacitor está relacionada à sua carga através de
 \begin{equation}
     V_C = \frac{q}{C}.
 \end{equation}
@@ -90,7 +90,7 @@ Note que a tensão em um capacitor está relacionada à carga através de
 \caption{Gráfico da tensão como função do tempo registrada no capacitor durante o processo de carregamento.\label{Fig:GraficoCargaCapacitor}}
 \end{marginfigure}
 
-\noindent{}se dividirmos a expressão para $q(t)$ por $C$ de ambos os lados da equação, obtemos finalmente
+\noindent{}Se dividirmos a expressão para $q(t)$ por $C$ de ambos os lados da equação, obtemos finalmente
 \begin{equation}
     V_C(t) = V_b \cdot \left[1 - \exp\left(-\frac{t}{RC}\right)\right].
 \end{equation}
@@ -146,18 +146,18 @@ Se fizermos $t_ = 0$, $t_f = t$, e $q_i = q_0$, podemos representar a carga como
 
     % Desenhar função:
     \draw[smooth, name path=plot,samples=1000,domain=0:3.5]
-    plot(\x,{1 * exp(-\x/1)});
+    plot(\x,{1 * exp(-\x/1)}) node[above]{$V_C(t)$};
     
-    \draw[dotted] (0,1) node[left]{$V$} -- (3.5,1);
+    \draw[dotted] (0,1) node[left]{$V_0$} -- (3.5,1);
 
 	\end{tikzpicture}
 \caption{Gráfico da tensão como função do tempo registrada no capacitor durante o processo de descarregamento.\label{Fig:GraficoDescargaCapacitor}}
 \end{marginfigure}
 
 \noindent{}Novamente, se dividirmos ambos os lados da equação por $C$, obtemos a tensão no capacitor:
-\begin{equation}
+\begin{equation*}
     V_C(t) = V_0 \exp\left(-\frac{t}{RC}\right).
-\end{equation}
+\end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
