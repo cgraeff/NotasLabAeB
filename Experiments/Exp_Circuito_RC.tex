@@ -27,7 +27,7 @@ Os circuitos formados por uma fonte de tensão, um resistor, e um capacitor, ou 
 
 
 Podemos determinar a corrente como uma função do tempo para o primeiro caso considerando que o capacitor está inicialmente descarregado e aplicando a lei de Kirchhoff ao circuito mostrado na Figura~\ref{Fig:CircuitoRCCarga}:
-\begin{equation}
+\begin{equation}\label{Eq:EDOCargaCapacitor}
 	V_b - \frac{q}{C} - iR = 0,
 \end{equation}
 %
@@ -42,33 +42,66 @@ podemos escrever
 \begin{equation}
 	V_b - \frac{q}{C} - R\frac{dq}{dt} = 0.
 \end{equation}
-%
-Reordenando os termos, obtemos
+
+Equações como essa são o que denominamos como \emph{equações diferenciais ordinárias}. Suas soluções não são valores numéricos específicos, mas sim \emph{funções} da variável em relação a qual está sendo realizada a derivada. Assim como para as integrais, não existe um método único para solucioná-las e cada classe de equações exigirá caminhos diferentes.
+
+No caso específico da equação acima, a solução consiste em encontrar uma função $q(t)$ para a carga do capacitor como função do tempo. O método de solução é um dos mais simples dentre os diversos empregados para resolver equações diferenciais e consiste em uma integração. Reordenando os termos, obtemos
 \begin{align}
 	\frac{dq}{dt} &= \frac{V_b}{R} - \frac{q}{RC}\\
 	&= \frac{V_bC - q}{RC} \\
 	&= - \frac{q - V_bC}{RC}
 \end{align}
 %
-Podemos reescrever a equação acima e integrar os dois lados:
+Reescrevendo a equação acima e integrando o lado esquerdo entre o valor inicial de carga $q_i = 0$ e o valor final $q_f = q$ e o lado direito entre o valor inicial de tempo $t_i = 0$ e o valor final $t_f = t$ obtemos:
 \begin{align}
 	\frac{dq}{q - V_bC} &= -\frac{1}{RC} dt \\
-	\int_0^q \frac{dq}{q - V_bC} &= -\frac{1}{RC} \int_0^t dt \\
-	\int \frac{dq'}{q'} &= -\frac{1}{RC} \\
-	\ln(q') + \alpha &= -\frac{1}{RC} \\
-	\left[\ln(q - V_bC) + \alpha\right]_0^q &= -\frac{t}{RC} \\
-	\ln\left(\frac{q - V_bC}{-V_bC}\right) &= -\frac{t}{RC}.
+	\int_0^q \frac{dq}{q - V_bC} &= -\frac{1}{RC} \int_0^t dt.
+\end{align}
+
+Para solucionarmos a integral do lado esquerdo, precisamos fazer a mudança de variáveis
+\begin{equation}
+	q' = q - V_b C,
+\end{equation}
+%
+o que implica em
+\begin{align}
+	\frac{dq'}{dq} &= \frac{d}{dq}(q - V_b C) \\
+	&= 1,
 \end{align}
 %
-Tomando a exponencial de ambos os lados, resulta em
+ou seja, 
+\begin{equation}
+	dq' = dq.
+\end{equation}
+%
+Consequentemente,
+\begin{equation}
+	\int \frac{dq}{q - V_bC} = \int \frac{dq'}{q'}.
+\end{equation}
+
+Realizando as integrações, obtemos
+\begin{align}
+	\int \frac{dq'}{q'} &= -\frac{1}{RC} \cdot [t + C]_0^t\\
+	\ln(q') + \alpha &= -\frac{1}{RC} \cdot t,
+\end{align}
+%
+onde $\alpha$ representa a constante característica da integração indefinida. Substituindo a variável $q'$ pela expressão original e substituindo os limites de integração originais, a expressão acima se torna
+\begin{align}
+	\left[\ln(q - V_bC) + \alpha\right]_0^q &= -\frac{t}{RC} \\
+	\ln\left(\frac{q - V_bC}{-V_bC}\right) &= -\frac{t}{RC},
+\end{align}
+%
+onde usamos a propriedade $\ln a - \ln b = \ln a/b$.
+
+Finalmente, para que possamos expressar a carga do capacitor como uma função do tempo $q(t)$, basta tomarmos a exponencial de ambos os lados, o que resulta em
 \begin{align}
 	\frac{q-V_bC}{-V_bC} &= \exp\left(-\frac{t}{RC}\right) \\
 	q - V_bC &= -V_bC \exp\left(-\frac{t}{RC}\right) \\
 	q &= V_bC - V_bC \exp\left(-\frac{t}{RC}\right) \\
 	q(t) &= V_bC \cdot \left[1 - \exp\left(-\frac{t}{RC}\right)\right].
 \end{align}
-%
-Note que a tensão em um capacitor está relacionada à sua carga através de
+
+Embora a determinação da função $q(t)$ seja a solução da Equação~\eqref{Eq:EDOCargaCapacitor}, não temos meios de determinar a carga de um capacitor experimentalmente de uma maneira direta. No entanto, a tensão  em um capacitor ---~que é uma variável que pode ser medida facilmente com o uso de um voltímetro~--- está relacionada à sua carga através de
 \begin{equation}
     V_C = \frac{q}{C}.
 \end{equation}
@@ -90,12 +123,12 @@ Note que a tensão em um capacitor está relacionada à sua carga através de
 \caption{Gráfico da tensão como função do tempo registrada no capacitor durante o processo de carregamento.\label{Fig:GraficoCargaCapacitor}}
 \end{marginfigure}
 
-\noindent{}Se dividirmos a expressão para $q(t)$ por $C$ de ambos os lados da equação, obtemos finalmente
+\noindent{}Se dividirmos a expressão para $q(t)$ por $C$ de ambos os lados da equação, obtemos
 \begin{equation}
     V_C(t) = V_b \cdot \left[1 - \exp\left(-\frac{t}{RC}\right)\right].
 \end{equation}
 %
-Fazendo um gráfico da expressão acima, obtemos a Figura~\ref{Fig:GraficoCargaCapacitor}. Note que no processo de carregamento a tensão registrada no capacitor tende à tensão $V$ da bateria. 
+Fazendo um gráfico da expressão acima, obtemos a Figura~\ref{Fig:GraficoCargaCapacitor}. Note que no processo de carregamento a tensão registrada no capacitor tende à tensão $V_b$ da bateria. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
