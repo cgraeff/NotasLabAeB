@@ -11,12 +11,109 @@
 \end{fullwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Física do experimento}
+\section{Campo magnético terrestre}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Se necessário, usar subsections}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+fazer uma introdução curta
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Campo magnético devido a uma espira}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Determinar o campo magnético de uma espira ao longo do eixo $z$.
+
+Podemos determinar o campo magnético de uma espira circular ao longo do eixo $z$ que passa por seu centro, perpendicularmente ao plano que contém a espira, através da lei de Biot-Savart:
+\begin{equation}
+    d\vec{B} = \frac{\mu_0}{4\pi} \frac{I\, d\vec{\ell} \times \hat{r}}{r^2}.
+\end{equation}
+%
+No caso particular da espira circular, a equação acima descreve o campo $d\vec{B}$ gerado por um segmento de comprimento $d\vec{\ell}$ do condutor que porta uma corrente $I$.
+
+Note que devido à simetria rotacional do problema, verificamos que sobre o eixo $z$ as componentes $B_x$ e $B_y$ do campo magnético são nulas, restando somente a componente $B_z$. Por essa razão, vamos nos preocupar somente com a determinação de $dB_z$ de agora em diante. Esta componente pode ser deteminada ao projetarmos o campo $dB$ na direção do eixo $z$ através de 
+\begin{equation}
+    dB_z = dB \sen\theta.
+\end{equation}
+%
+Podemos determinar o módulo do campo magnético ao tomarmos a lei de Biot-Savart em módulo:
+\begin{equation}
+    dB = \frac{\mu_0}{4\pi} \frac{I\, |d\vec{\ell} \times \hat{r}|}{r^2}.
+\end{equation}
+%
+Como $d\vec{\ell} \perp \hat{r}$, o módulo do produto vetorial entre esses dois vetores resulta em
+\begin{equation}
+    |d\vec{\ell} \times \hat{r}| = d\ell.
+\end{equation}
+%
+Além disso, ainda que a distância $r$ entre o ponto onde estamos calculando campo e a posição do segmento $d\vec{\ell}$ pode ser escrita em termos de $z$ e do raio $R$ da espira:
+\begin{equation}
+    r = \sqrt{z^2 + R^2}.
+\end{equation}
+%
+Assim,
+\begin{align}
+    dB_z &= dB \cdot \sin\theta \\
+    &= \left(\frac{\mu_0}{4\pi} \cdot \frac{I \,d\ell}{z^2 + R^2}\right) \cdot \sen\theta \\
+    &= \left(\frac{\mu_0}{4\pi} \cdot \frac{I \,d\ell}{z^2 + R^2}\right) \cdot \left(\frac{R}{\sqrt{z^2+R^2}}\right) \\
+    &= \frac{\mu_0}{4\pi} \cdot \frac{IR \,d\ell}{(z^2 + R^2)^{\nicefrac{3}{2}}}.
+\end{align}
+%
+Para determinarmos o campo total na direção do eixo $z$, basta agora realizarmos a integração ao longo do caminho formado pela espira:
+\begin{align}
+    B_z(z) &= \oint \frac{\mu_0}{4\pi} \cdot \frac{IR \,d\ell}{(z^2 + R^2)^{\nicefrac{3}{2}}} \\
+    &= \frac{\mu_0}{4\pi} \cdot \frac{IR}{(z^2 + R^2)^{\nicefrac{3}{2}}} \oint d\ell \\
+    &= \frac{\mu_0}{2} \cdot \frac{IR}{(z^2 + R^2)^{\nicefrac{3}{2}}}. \label{Eq:CampoMagneticoEspiraCircular}
+\end{align}
+
+No caso de um grupo de $N$ espiras de mesmas dimensões, próximas umas das outras, podemos escrever o campo magnético em termos da corrente $i$ de uma espira como
+\begin{equation}\label{Eq:CampoMagneticoGrupoEspiras}
+    B_z(z) = \frac{\mu_0}{2} \cdot \frac{iNR}{(z^2 + R^2)^{\nicefrac{3}{2}}}.
+\end{equation}
+    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bobinas de Helmholtz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As bobinas de Helmholtz são uma configuração particular de dois grupos paralelos de espiras de mesmas dimensões, separadas por uma distância $h = R$. A corrente $i$ nas espiras e seu sentido  devem ser iguais nos dois grupos de espiras. Nesse caso, o campo na região central dos grupos de espiras é bastante uniforme, tornando esse tipo de aparato útil para diversos tipos de aplicação. 
+
+Para determinarmos o campo na região central, basta somarmos o campo $B_1$ ---~devido ao primeiro grupo de espiras~--- e o campo $B_2$ ---~devido ao segundo grupo~---. Para que possamos fazer isso de maneira mais simples, podemos reescrever a Equação~\eqref{Eq:CampoMagneticoGrupoEspiras} como
+\begin{equation}
+    B_z(z) = \frac{\mu_0 N i}{2R} \cdot \xi(z),
+\end{equation}
+%
+onde
+\begin{equation}
+    \xi(z) = \frac{1}{(1+(z/R)^2)^{\nicefrac{3}{2}}}.
+\end{equation}
+
+Assim, 
+\begin{align}
+    B_H(z) &= B_1 + B_2 \\
+    &= \frac{\mu_0 N i}{2R} \cdot \xi(z - R/2) + \frac{\mu_0 N i}{2R} \cdot \xi(z + R/2) \\
+    &= \frac{\mu_0 N i}{2R} \cdot (\xi(z - R/2) + \xi(z + R/2)).
+\end{align}
+%
+Nas expressões acima, os fatores $\pm R/2$ atuam de maneira a deslocar a origem para o ponto central entre os grupos de espiras, lembrando que a expressão original ---~Equação~\eqref{Eq:CampoMagneticoEspiraCircular}~---usava como origem o centro da espira.
+
+%%%
+%%% Fazer um gráfico da expressão acima para que possamos ver a região de campo uniforme.
+%%%
+
+Expandindo o termo entre parentesis da expressão acima usando uma série de Taylor resulta em
+\begin{equation}
+    (\xi(z - R/2) + \xi(z + R/2)) = \frac{16\sqrt{5}}{25} - \frac{2304\sqrt{5}}{3125}\cdot \left(\frac{z}{R}\right)^4 + \mathcal{O}((z/R)^6).
+\end{equation}
+%
+Assim, podemos escrever para $z = 0$, isto é, para a região central das espiras
+\begin{equation}
+    B_H = \frac{16\sqrt{5}}{25} \cdot \frac{\mu_0 N i}{2R}.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Determinação do campo magnético terrestre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Determinar a relação entre o campo magnético da terra e o campo magnético da bobina
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
