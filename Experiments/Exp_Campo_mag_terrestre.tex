@@ -96,7 +96,7 @@ No caso de um grupo de $N$ espiras de mesmas dimensões, próximas umas das outr
 
 As bobinas de Helmholtz são uma configuração particular de dois grupos paralelos de espiras de mesmas dimensões, separadas por uma distância $h = R$. A corrente $i$ nas espiras e seu sentido  devem ser iguais nos dois grupos de espiras. Nesse caso, o campo na região central dos grupos de espiras é bastante uniforme, tornando esse tipo de aparato útil para diversos tipos de aplicação. 
 
-\begin{figure}\forcerectofloat
+\begin{figure*}\forcerectofloat
 \centering
 \begin{tikzpicture}[>=Stealth, scale = 4, rotate around y = -15]
 
@@ -104,7 +104,7 @@ As bobinas de Helmholtz são uma configuração particular de dois grupos parale
 	\draw[dashed,->] (0,0,0) -- (0,0.8,0); % y
 	\draw[dashed,->] (0,0,0) -- (0,0,0.7); % z
 	
-	\draw[->] (0.25,0,0) -- (1.5,0,0) node[below left]{$z$}; % x
+	\draw[->] (0.25,0,0) -- (1.25,0,0) node[below left]{$z'$}; % x
 	\draw[->] (0.25,0,0) -- (0.25,0.8,0) node[below left]{$x$}; % y
 	\draw[->] (0.25,0,0) -- (0.25,0,0.7) node[below right]{$y$}; % z
 	
@@ -115,7 +115,7 @@ As bobinas de Helmholtz são uma configuração particular de dois grupos parale
 
 		%\draw[->, dashed] (0,0) -- node[below right]{$R$} (-30:0.48);
 
-		\draw[->] (60:0.55) arc(60:40:0.55) node[midway, above]{$i$};
+		\draw[->] (-30:0.55) arc(-30:-50:0.55) node[midway, below left]{$i$};
 	\end{scope}
 	
  	\begin{scope}[canvas is zy plane at x=0.5]
@@ -128,7 +128,7 @@ As bobinas de Helmholtz são uma configuração particular de dois grupos parale
 
 		%\draw[->, dashed] (0,0) -- node[below right]{$R$} (-30:0.48);
 
-		\draw[->] (60:0.55) arc(60:40:0.55) node[midway, above]{$i$};
+		\draw[->] (-30:0.55) arc(-30:-50:0.55) node[midway, below left]{$i$};
 	\end{scope}
 	
  	\begin{scope}[canvas is xy plane at z=0]
@@ -141,10 +141,52 @@ As bobinas de Helmholtz são uma configuração particular de dois grupos parale
 	\draw[fill = white, draw = black] (0.5,0,0) circle (0.15mm);
 	\fill (0.25,0,0) circle (0.15mm);
 
+	\begin{scope}[rotate around y = 3, shift = {(2.25,0.17,0)}]
+		\draw[dashed] (0,0,0) -- (0.25,0,0); % x
+		\draw[dashed,->] (0,0,0) -- (0,0.8,0); % y
+		\draw[dashed,->] (0,0,0) -- (0,0,0.7); % z
+		
+		\draw[->] (0.25,0,0) -- (1.25,0,0) node[below left]{$z'$}; % x
+		\draw[->] (0.25,0,0) -- (0.25,0.8,0) node[below left]{$x$}; % y
+		\draw[->] (0.25,0,0) -- (0.25,0,0.7) node[below right]{$y$}; % z
+		
+	 	\begin{scope}[canvas is zy plane at x=0]
+			\draw[densely dotted, gray, very thin, step=2mm] (-0.6,-0.6) grid (0.6,0.6);
+			\draw (0,0) circle (0.5cm);
+			\draw (0,0) circle (0.48cm);
 
+			%\draw[->, dashed] (0,0) -- node[below right]{$R$} (-30:0.48);
+
+			\draw[->] (-30:0.55) arc(-30:-50:0.55) node[midway, below left]{$i$};
+		\end{scope}
+		
+	 	\begin{scope}[canvas is zy plane at x=0.5]
+	 		\draw[dashed, ->] (0,0) -- (0,0.8);
+	 		\draw[dashed, ->] (0,0) -- (0.7,0);
+	 		
+			% \draw[densely dotted, gray, very thin, step=2mm] (-0.6,-0.6) grid (0.6,0.6);
+			\draw (0,0) circle (0.5cm);
+			\draw (0,0) circle (0.48cm);
+
+			%\draw[->, dashed] (0,0) -- node[below right]{$R$} (-30:0.48);
+
+			\draw[->] (-30:0.55) arc(-30:-50:0.55) node[midway, below left]{$i$};
+		\end{scope}
+		
+	 	\begin{scope}[canvas is xy plane at z=0]
+			\draw[<->] (0,0.9) -- node[above]{$h=R$} (0.5,0.9);
+			\draw (0.5,0.92) -- (0.5,0.88);
+			\draw (0,0.92) -- (0,0.88);
+		\end{scope}
+		
+		\draw[fill = white, draw = black] (0,0,0) circle (0.15mm);
+		\draw[fill = white, draw = black] (0.5,0,0) circle (0.15mm);
+		\fill (0.25,0,0) circle (0.15mm);
+	
+	\end{scope}
 \end{tikzpicture}
-\caption{Bobinas de Helmholtz.}
-\end{figure}
+\caption{\emph{Figura estereoscópica:} Bobinas de Helmholtz.}
+\end{figure*}
 
 Para determinarmos o campo na região central, basta somarmos o campo $B_1$ ---~devido ao primeiro grupo de espiras~--- e o campo $B_2$ ---~devido ao segundo grupo~---. Note que a Equação~\eqref{Eq:CampoMagneticoGrupoEspiras} foi deduzida considerando que a origem do sistema de coordenadas estava localizada no centro da espira. Agora gostaríamos que a posição central entre as espiras fosse a origem de um eixo $z'$ e que as bobinas estivessem localizadas nas posições $\pm R/2$. Nesse caso, temos que as variáveis $z_1$ e $z_2$ das expressões originais podem ser escritas em termos de $z'$ como
 \begin{align}
@@ -280,19 +322,33 @@ Note que podemos inverter o sentido da corrente nas bobinas, com uma consequente
 \begin{marginfigure}[2cm]
 \centering
 \begin{circuitikz}[american]
-	\draw (0,1) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[L, l=$L$] (2,1) to[L, l=$L$] (2,-1) to[smeter, t=A] (0,-1) to[R, l=$R$] (0,1);
+	\draw (0,1) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[L, l=$L$] (2,1) to[L, l=$L$] (2,-1) to[smeter, t=A] (0,-1) to[vR, l=$R$] (0,1);
 	%\draw (2,3) -- (3.5,3)  (3.5,0) -- (2,0);
 \end{circuitikz}
-\caption{Circuito para as bobinas de Helmholtz.}
+\caption{Circuito para as bobinas de Helmholtz. Note que o resistor variável mostrado na figura pode estar dentro da própria fonte de tensão, se ela tiver controle de corrente.}
 \end{marginfigure}
 
 %%%%%%%%%%%%%%%%%%%%%
 %\subsection{Parte A} % Se necessário
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-	\item Passo 1;
-	\item Passo 2;
-	\item Passo 3.
+	\item Ligue a fonte e ajuste um valor de tensão de \np[V]{1,0} e torne a desligá-la. Não alteraremos mais esse valor;\footnote{Nesse experimento, vamos usar os controles de corrente. Durante o experimento, você verificará que os valores de tensão lidos não corresponderão ao que foi ajustado nesse passo, mas tal valor funcionará como um teto de tensão.}
+	\item Disponha a bússola sobre a mesa. Note que é necessário que a superfície da mesa esteja razoavelmente bem nivelada.
+	\item Certifique-se de que não haja nenhum material magnético próximo da bússola.\footnote{Como o experimento é bastante sensível, mesmo materiais ferromagnéticos podem atrapalhar as medidas. Note ainda que alguns relógios de pulso contém ímãs, podendo distorcer a direção do campo ao fazermos os ajustes.}
+	\item Verifique a direção do norte com a bússola;
+	\item Disponha as bobinas de Helmholtz de forma que o eixo das bobinas estejam perpendiculares à direção do norte;
+	\item Coloque o apoio de madeira entre as bobinas e coloque a bússola sobre ele. Tome cuidado para que a marca do norte na escala da bússola esteja apontando na direção norte indicada pela agulha. Provavelmente será necessário fazer pequenos ajustes, mas isso pode ser feito adiante, uma vez que ao conectar os cabos inevitavelmente serão feitos pequenos deslocamentos do conjunto;
+	\item Ligue o terminal negativo da fonte de tensão ao terminal negativo de uma das bobinas;
+	\item Ligue o terminal positivo da bobina ao terminal negativo da outra bobina;
+	\item Ligue o terminal positivo da bobina ao terminal comum do multímetro;
+	\item Ligue o terminal marcado como $\texttt{mA}\mathdirectcurrent$ ao terminal positivo da fonte;
+	\item Ajuste os controles de corrente para o \emph{mínimo};
+	\item Verifique a posição da bússola e das bobinas de Helmholtz, certificando-se de que marca do norte coincida com a direção apontada pela agulha da bússola e que o eixo das bobinas aponta perpendicularmente à direção indicada pela agulha.
+	\item Ligue a fonte e proceda a ajustar a corrente lentamente, até que ocorra um desvio de \degree{10} na direção da agulha da bússola em relação à direção inicial.
+	\item Anote o valor do ângulo e a corrente correspondente na Tabela~\ref{Tab:DadosCampoMagneticoTerrestre}.
+	\item Volte a aumentar a corrente, registrando seu valor a cada \degree{10}.
+	\item Após atingir \degree{80}, ajuste os controles de corrente para o valor mínimo, desligue a fonte e inverta os cabos ligados a ela.
+	\item Religue a fonte e aumente o valor de corrente progressivamente, anotando seu valor a cada \degree{10} até que sejam atingidos \degree{80}. Note que os sinais do ângulo e da corrente devem ser opostos aos obtidos antes de invertermos as conexões, não esqueça de registrá-los. 
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -388,4 +444,43 @@ metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
 \pagebreak
 \section{Tabelas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table*}[!h]
+\centering
+\begin{tabular}{lp{25mm}p{25mm}cp{25mm}l}
+\toprule
+	& \multicolumn{2}{l}{\textbf{Dados da bobinas}} \\
+	\cmidrule{2-3}
+	& Diâmetro: \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+	& $N$: \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+	\cmidrule{2-3}
+\\
+	& \multicolumn{2}{l}{\textbf{Dados experimentais}} & & \multicolumn{2}{l}{\textbf{Campo}}\\
+	\cmidrule{2-3}
+	& $\phi$ & $i$ && $B_H$ & \\
+	\cmidrule{2-3}
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
+	\cmidrule{2-6}
+\bottomrule
+\end{tabular}
+\caption[][5mm]{Dados a deflexão da agulha de uma bússola em função da corrente nas bobinas de Helmholtz.}
+\label{Tab:DadosCampoMagneticoTerrestre}
+\end{table*}
 
