@@ -4,23 +4,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{fullwidth}\it
-	Que experimento faremos?
-	Qual é o objetivo?
-	O que veremos/revisaremos? (teoria física)
-	Quais conceitos/técnicas de análise de dados utilizaremos?
+	Vamos utilizar as bobinas de Helmholtz para gerar um campo magnético perpendicular ao campo magnético da Terra, possibilitando que determinemos a intensidade da componente horizontal deste último. Vamos calcular a intensidade do campo gerado por uma espira circular portando corrente e estender esse resultado para determinar o campo gerado pelas bobinas de Helmholtz. Finalmente, vamos usar uma linearização e uma regressão linear para determinar o resultado para a intensidade do camp magnético terrestre. 
 \end{fullwidth}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Campo magnético terrestre}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-fazer uma introdução curta
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Campo magnético devido a uma espira}
+\section{Campo magnético devido a uma espira}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Determinar o campo magnético de uma espira ao longo do eixo $z$.
 
 Podemos determinar o campo magnético de uma espira circular ao longo do eixo $z$ que passa por seu centro, perpendicularmente ao plano que contém a espira, através da lei de Biot-Savart:
 \begin{equation}
@@ -28,6 +17,36 @@ Podemos determinar o campo magnético de uma espira circular ao longo do eixo $z
 \end{equation}
 %
 No caso particular da espira circular, a equação acima descreve o campo $d\vec{B}$ gerado por um segmento de comprimento $d\vec{\ell}$ do condutor que porta uma corrente $I$.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=Stealth, scale = 4, rotate around y = -25]
+	\draw[->] (0,0,0) -- (2,0,0) node[below left]{$z$};
+	\draw[->] (0,0,0) -- (0,0.75,0) node[below left]{$x$};
+	\draw[->] (0,0,0) -- (0,0,0.7) node[left]{$y$};
+	
+ 	\begin{scope}[canvas is zy plane at x=0]
+		\draw[densely dotted, gray, very thin, step=2mm] (-0.6,-0.6) grid (0.6,0.6);
+		\draw (0,0) circle (0.5cm);
+		\draw (0,0) circle (0.48cm);
+
+		\fill (85:0.48) rectangle node[above left]{$d\vec{\ell}$}(95:0.5);
+		
+		\draw[->, dashed] (0,0) -- node[below right]{$R$} (-30:0.48);
+
+		\draw[->] (70:0.55) arc(70:50:0.55) node[midway, above]{$I$};
+	\end{scope}
+	
+ 	\begin{scope}[canvas is xy plane at z=0]
+		\draw[->] (0,0.5) coordinate (dl) -- node[above]{$\vec{r}$} (1.5,0) coordinate (Z);
+		\draw[->] (1.5,0) -- +(0.17,0.25) coordinate (dB) node[right]{$d\vec{B}$};
+		
+		\pic[draw, "$\cdot$", angle radius = 3mm, angle eccentricity = 0.5]{angle = dB--Z--dl};
+	\end{scope}
+
+\end{tikzpicture}
+\caption{Campo $d\vec{B}$ devido à corrente $I$ no segmento $d\vec{\ell}$ da espira.}
+\end{figure}
 
 Note que devido à simetria rotacional do problema, verificamos que sobre o eixo $z$ as componentes $B_x$ e $B_y$ do campo magnético são nulas, restando somente a componente $B_z$. Por essa razão, vamos nos preocupar somente com a determinação de $dB_z$ de agora em diante. Esta componente pode ser deteminada ao projetarmos o campo $dB$ na direção do eixo $z$ através de 
 \begin{equation}
@@ -76,6 +95,56 @@ No caso de um grupo de $N$ espiras de mesmas dimensões, próximas umas das outr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 As bobinas de Helmholtz são uma configuração particular de dois grupos paralelos de espiras de mesmas dimensões, separadas por uma distância $h = R$. A corrente $i$ nas espiras e seu sentido  devem ser iguais nos dois grupos de espiras. Nesse caso, o campo na região central dos grupos de espiras é bastante uniforme, tornando esse tipo de aparato útil para diversos tipos de aplicação. 
+
+\begin{figure}\forcerectofloat
+\centering
+\begin{tikzpicture}[>=Stealth, scale = 4, rotate around y = -15]
+
+	\draw[dashed] (0,0,0) -- (0.25,0,0); % x
+	\draw[dashed,->] (0,0,0) -- (0,0.8,0); % y
+	\draw[dashed,->] (0,0,0) -- (0,0,0.7); % z
+	
+	\draw[->] (0.25,0,0) -- (1.5,0,0) node[below left]{$z$}; % x
+	\draw[->] (0.25,0,0) -- (0.25,0.8,0) node[below left]{$x$}; % y
+	\draw[->] (0.25,0,0) -- (0.25,0,0.7) node[below right]{$y$}; % z
+	
+ 	\begin{scope}[canvas is zy plane at x=0]
+		\draw[densely dotted, gray, very thin, step=2mm] (-0.6,-0.6) grid (0.6,0.6);
+		\draw (0,0) circle (0.5cm);
+		\draw (0,0) circle (0.48cm);
+
+		%\draw[->, dashed] (0,0) -- node[below right]{$R$} (-30:0.48);
+
+		\draw[->] (60:0.55) arc(60:40:0.55) node[midway, above]{$i$};
+	\end{scope}
+	
+ 	\begin{scope}[canvas is zy plane at x=0.5]
+ 		\draw[dashed, ->] (0,0) -- (0,0.8);
+ 		\draw[dashed, ->] (0,0) -- (0.7,0);
+ 		
+		% \draw[densely dotted, gray, very thin, step=2mm] (-0.6,-0.6) grid (0.6,0.6);
+		\draw (0,0) circle (0.5cm);
+		\draw (0,0) circle (0.48cm);
+
+		%\draw[->, dashed] (0,0) -- node[below right]{$R$} (-30:0.48);
+
+		\draw[->] (60:0.55) arc(60:40:0.55) node[midway, above]{$i$};
+	\end{scope}
+	
+ 	\begin{scope}[canvas is xy plane at z=0]
+		\draw[<->] (0,0.9) -- node[above]{$h=R$} (0.5,0.9);
+		\draw (0.5,0.92) -- (0.5,0.88);
+		\draw (0,0.92) -- (0,0.88);
+	\end{scope}
+	
+	\draw[fill = white, draw = black] (0,0,0) circle (0.15mm);
+	\draw[fill = white, draw = black] (0.5,0,0) circle (0.15mm);
+	\fill (0.25,0,0) circle (0.15mm);
+
+
+\end{tikzpicture}
+\caption{Bobinas de Helmholtz.}
+\end{figure}
 
 Para determinarmos o campo na região central, basta somarmos o campo $B_1$ ---~devido ao primeiro grupo de espiras~--- e o campo $B_2$ ---~devido ao segundo grupo~---. Note que a Equação~\eqref{Eq:CampoMagneticoGrupoEspiras} foi deduzida considerando que a origem do sistema de coordenadas estava localizada no centro da espira. Agora gostaríamos que a posição central entre as espiras fosse a origem de um eixo $z'$ e que as bobinas estivessem localizadas nas posições $\pm R/2$. Nesse caso, temos que as variáveis $z_1$ e $z_2$ das expressões originais podem ser escritas em termos de $z'$ como
 \begin{align}
