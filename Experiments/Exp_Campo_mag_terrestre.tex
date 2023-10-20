@@ -61,12 +61,13 @@ Para determinarmos o campo total na direção do eixo $z$, basta agora realizarm
 \begin{align}
     B_z(z) &= \oint \frac{\mu_0}{4\pi} \cdot \frac{IR \,d\ell}{(z^2 + R^2)^{\nicefrac{3}{2}}} \\
     &= \frac{\mu_0}{4\pi} \cdot \frac{IR}{(z^2 + R^2)^{\nicefrac{3}{2}}} \oint d\ell \\
-    &= \frac{\mu_0}{2} \cdot \frac{IR}{(z^2 + R^2)^{\nicefrac{3}{2}}}. \label{Eq:CampoMagneticoEspiraCircular}
+    &= \frac{\mu_0}{4\pi} \cdot \frac{IR}{(z^2 + R^2)^{\nicefrac{3}{2}}} \cdot 2\pi R \\
+    &= \frac{\mu_0}{2} \cdot \frac{IR^2}{(z^2 + R^2)^{\nicefrac{3}{2}}}. \label{Eq:CampoMagneticoEspiraCircular}
 \end{align}
 
 No caso de um grupo de $N$ espiras de mesmas dimensões, próximas umas das outras, podemos escrever o campo magnético em termos da corrente $i$ de uma espira como
 \begin{equation}\label{Eq:CampoMagneticoGrupoEspiras}
-    B_z(z) = \frac{\mu_0}{2} \cdot \frac{iNR}{(z^2 + R^2)^{\nicefrac{3}{2}}}.
+    B_z(z) = \frac{\mu_0}{2} \cdot \frac{iNR^2}{(z^2 + R^2)^{\nicefrac{3}{2}}}.
 \end{equation}
     
 
@@ -76,44 +77,109 @@ No caso de um grupo de $N$ espiras de mesmas dimensões, próximas umas das outr
 
 As bobinas de Helmholtz são uma configuração particular de dois grupos paralelos de espiras de mesmas dimensões, separadas por uma distância $h = R$. A corrente $i$ nas espiras e seu sentido  devem ser iguais nos dois grupos de espiras. Nesse caso, o campo na região central dos grupos de espiras é bastante uniforme, tornando esse tipo de aparato útil para diversos tipos de aplicação. 
 
-Para determinarmos o campo na região central, basta somarmos o campo $B_1$ ---~devido ao primeiro grupo de espiras~--- e o campo $B_2$ ---~devido ao segundo grupo~---. Para que possamos fazer isso de maneira mais simples, podemos reescrever a Equação~\eqref{Eq:CampoMagneticoGrupoEspiras} como
-\begin{equation}
-    B_z(z) = \frac{\mu_0 N i}{2R} \cdot \xi(z),
-\end{equation}
-%
-onde
-\begin{equation}
-    \xi(z) = \frac{1}{(1+(z/R)^2)^{\nicefrac{3}{2}}}.
-\end{equation}
-
-Assim, 
+Para determinarmos o campo na região central, basta somarmos o campo $B_1$ ---~devido ao primeiro grupo de espiras~--- e o campo $B_2$ ---~devido ao segundo grupo~---. Note que a Equação~\eqref{Eq:CampoMagneticoGrupoEspiras} foi deduzida considerando que a origem do sistema de coordenadas estava localizada no centro da espira. Agora gostaríamos que a posição central entre as espiras fosse a origem de um eixo $z'$ e que as bobinas estivessem localizadas nas posições $\pm R/2$. Nesse caso, temos que as variáveis $z_1$ e $z_2$ das expressões originais podem ser escritas em termos de $z'$ como
 \begin{align}
-    B_H(z) &= B_1 + B_2 \\
-    &= \frac{\mu_0 N i}{2R} \cdot \xi(z - R/2) + \frac{\mu_0 N i}{2R} \cdot \xi(z + R/2) \\
-    &= \frac{\mu_0 N i}{2R} \cdot (\xi(z - R/2) + \xi(z + R/2)).
+    z_1 &= z' + R/2 \\
+    z_2 &= z' - R/2,
 \end{align}
 %
-Nas expressões acima, os fatores $\pm R/2$ atuam de maneira a deslocar a origem para o ponto central entre os grupos de espiras, lembrando que a expressão original ---~Equação~\eqref{Eq:CampoMagneticoEspiraCircular}~---usava como origem o centro da espira.
+para as bobinas localizadas nas posições $z'_1 = -R/2$ e $z'_2 = R/2$. Assim,
+\begin{align}
+    B_H(z') &= B_1 + B_2 \\
+    &= \frac{\mu_0 N i}{2} \cdot \frac{R^2}{[(z' + R/2)^2 + R^2]^{\nicefrac{3}{2}}} + \frac{\mu_0 N i}{2} \cdot \frac{R^2}{[(z' - R/2)^2 + R^2]^{\nicefrac{3}{2}}} \\
+    &= \frac{\mu_0 N i}{2} \cdot \left(\frac{R^2}{[(z' + R/2)^2 + R^2]^{\nicefrac{3}{2}}} + \frac{R^2}{[(z' - R/2)^2 + R^2]^{\nicefrac{3}{2}}}\right). \label{Eq:CampoMagneticoBobinasDeHelmholtz}
+\end{align}
 
-%%%
-%%% Fazer um gráfico da expressão acima para que possamos ver a região de campo uniforme.
-%%%
+\begin{marginfigure}
+\centering
+\begin{tikzpicture}[>=Stealth, yscale = 1.5, xscale = 1.25, extended line/.style={shorten >=-#1,shorten <=-#1},
+ extended line/.default=3mm]] 
+    \draw[->] (0,0) -- (0,1.25) node[below left] {$B_z$};
+	\draw[->] (-1.75,0) -- (1.75,0) node[below left] {$z$};
 
-Expandindo o termo entre parentesis da expressão acima usando uma série de Taylor resulta em
-\begin{equation}
-    (\xi(z - R/2) + \xi(z + R/2)) = \frac{16\sqrt{5}}{25} - \frac{2304\sqrt{5}}{3125}\cdot \left(\frac{z}{R}\right)^4 + \mathcal{O}((z/R)^6).
-\end{equation}
+    % Desenhar função:
+    \def\R{1}
+    \draw[smooth, name path=plot,samples=1000,domain=-1.5:1.5]
+    plot(\x,{pow(\R, 2)/(2 * pow(pow(\x - \R/2, 2) + pow(\R, 2), 3/2)) + pow(\R, 2)/(2 * pow(pow(\x + \R/2, 2) + pow(\R, 2), 3/2))});
+
+    \draw[smooth, dashed, name path=plot2,samples=1000,domain=-1.5:1.5]
+    plot(\x,{pow(\R, 2)/(2 * pow(pow(\x - \R/2, 2) + pow(\R, 2), 3/2))});
+    
+    \draw[smooth, dashed, name path=plot3,samples=1000,domain=-1.5:1.5]
+    plot(\x,{pow(\R, 2)/(2 * pow(pow(\x + \R/2, 2) + pow(\R, 2), 3/2))});
+    
+    % Note que o 1 abaixo na verdade corresponde ao valor de \R acima
+    \draw (0, 0.0) -- +(0,-0.1) node[below]{$0$};
+    \draw (1, 0.0) -- +(0,-0.1) node[below]{$R$};
+    \draw (-1, 0.0) -- +(0,-0.1) node[below]{$-R$};
+    
+	\end{tikzpicture}
+\caption{Intensidade do campo magnético no espaço entre as bobinas. As linhas tracejadas denotam os campos devidos às duas bobinas separadamente. Note que o as intensidades máximas dessas duas curvas correspondem às posições $\pm R/2$, que são as posições das bobinas no eixo $z$. A linha cheia denota o campo total devido às duas bobinas. Note que entre $z = -R/2$ e $z = R/2$ temos que a intensidade é aproximadamente contante. \label{Fig:CampoMagneticoBobinasDeHelmholtz}}
+\end{marginfigure}
+
+Na Figura~\ref{Fig:CampoMagneticoBobinasDeHelmholtz} temos um gráfico da intensidade do campo magnético na região central entre as bobinas e podemos verificar que seu valor é aproximadamente constante. Para determinar tal valor, basta fazermos $z' = 0$ na Equação~\eqref{Eq:CampoMagneticoBobinasDeHelmholtz}:
+\begin{align}
+    B_H(z'=0) &=  \frac{\mu_0 N i}{2} \cdot \left(\frac{R^2}{[(z' + R/2)^2 + R^2]^{\nicefrac{3}{2}}} + \frac{R^2}{[(z' - R/2)^2 + R^2]^{\nicefrac{3}{2}}}\right) \\
+    &= \frac{\mu_0 N i}{2} \cdot \left(\frac{R^2}{[(0 + R/2)^2 + R^2]^{\nicefrac{3}{2}}} + \frac{R^2}{[(0 - R/2)^2 + R^2]^{\nicefrac{3}{2}}}\right) \\
+    &=  \frac{\mu_0 N i}{2} \cdot \left(\frac{R^2}{[R^2/4 + R^2]^{\nicefrac{3}{2}}} + \frac{R^2}{[R^2/4)^2 + R^2]^{\nicefrac{3}{2}}}\right) \\
+    &= \frac{\mu_0 N i}{2} \cdot \left(\frac{R^2}{[5R^2/4]^{\nicefrac{3}{2}}} + \frac{R^2}{[5R^2/4)^2]^{\nicefrac{3}{2}}}\right).
+\end{align}
 %
-Assim, podemos escrever para $z = 0$, isto é, para a região central das espiras
-\begin{equation}
-    B_H = \frac{16\sqrt{5}}{25} \cdot \frac{\mu_0 N i}{2R}.
-\end{equation}
+Note que os dois termos dentro dos parêntesis são iguais, logo,
+\begin{align}
+    B_H(z'=0) &= \frac{\mu_0 N i}{2} \cdot \left(2\frac{R^2}{[5R^2/4]^{\nicefrac{3}{2}}}\right) \\
+    &= \frac{\mu_0 N i}{2} \cdot \left(2\frac{R^2}{R^3[5/4]^{\nicefrac{3}{2}}}\right) \\
+    &= \frac{\mu_0 N i}{R} \cdot \left(\frac{1}{[5/4]^{\nicefrac{3}{2}}}\right) \\
+    &= \frac{\mu_0 N i}{R} \cdot \left(\frac{4}{5}\right)^{\rlap{\nicefrac{3}{2}}}.
+\end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Determinação do campo magnético terrestre}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Determinar a relação entre o campo magnético da terra e o campo magnético da bobina
+Podemos utilizar uma bússola e as bobinas de Helmholtz para determinar a intensidade da componente horizontal do campo magnético da Terra. Isso é possível pois uma bússola na verdade simplesmente aponta na direção do campo magnético total no ponto onde está localizada, não necessariamente para o verdadeiro norte magnético.
+
+\begin{marginfigure}
+\centering
+\begin{tikzpicture}[>=Stealth] 
+    \draw[->] (0,0) -- (0,3) node[below left] {$x'$};
+	\draw[->] (0,0) -- (4,0) node[below left] {$z'$};
+
+    \draw[thick, ->] (0,0) -- (0,2) node[below left] {$\vec{B}_H$};
+	\draw[thick, ->] (0,0) -- (2.5,0) node[below left] {$\vec{B}_T$};
+	
+	\draw[thick, ->] (0,0) -- (2.5,2) node[right] {$\vec{B}$};
+	
+	\draw[dotted] (0,2) -- (2.5,2) -- (2.5,0);
+	
+	\draw[->] (1,0) arc (0:38.66:1) node[midway, right]{$\phi$};
+
+\end{tikzpicture}
+\caption{O campo total $\vec{B}$ é dado pela soma vetorial dos campos da Terra $\vec{B}_T$ e das bobinas $\vec{B}_H$. \label{Fig:CampoMagneticoTotalSobreBussola}}
+\end{marginfigure}
+
+Nesse caso, se dispusermos a bússola e as bobinas de forma que:
+\begin{itemize}
+    \item A bússola esteja localizada na região central entre as bobinas e aponte inicialmente para o norte;
+    \item O eixo das bobinas (denotado por $z'$ na discussão acima) aponte perpendicularmente à direção da bússola;
+\end{itemize}
+%
+teremos uma situação como a mostrada na Figura~\ref{Fig:CampoMagneticoTotalSobreBussola}. Note que ao controlarmos a corrente que passa pelas bobinas, determinamos o campo magnético $\vec{B}_H$ e a direção do vetor $\vec{B}$, uma vez que o campo $\vec{B}_T$ é constante.
+
+Para determinarmos o campo magnético da Terra, verificamos que ---~usando a definição da função tangente~---
+\begin{equation}
+    \tan \phi = \frac{B_H}{B_T}.
+\end{equation}
+%
+Consequentemente, podemos escrever a relação
+\begin{equation}
+    B_H = B_T \cdot \tan \phi.
+\end{equation}
+%
+Portanto, se fizermos medidas da deflexão da agulha da bússola e do campo magnético $B_H$ correspondente, podemos determinar o campo magnético $B_T$ da Terra ao fazermos uma regressão linear dos dados de um gráfico $B_H \times \tan\phi$.
+
+Note que podemos inverter o sentido da corrente nas bobinas, com uma consequente alteração no sentido do campo $\vec{B}_H$, o que causará uma deflexão da agulha da bússola no sentido oposto ao registrado com o sentido inicial para a corrente. Podemos usar desse artifício para obter mais dados experimentais e melhorar o resultado obtido para o valor do campo magnético $B_T$. Para isso, vamos registrar os dados para o ângulo $\phi$ contidos no quarto quadrante como ângulos negativos, medidos no sentido horário a partir do eixo $z'$. Correspondentemente, vamos considerar os valores de $B_H$ que apontam no sentido negativo de $x'$ como negativos.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
@@ -124,9 +190,7 @@ Determinar a relação entre o campo magnético da terra e o campo magnético da
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Resultados concretos que devemos conseguir;
-	\item Observar a relação de tal coisa com outra coisa;
-	\item Calcular a constante $x$.
+	\item Determinar a componente horizontal do campo magnético da Terra.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -134,13 +198,24 @@ Determinar a relação entre o campo magnético da terra e o campo magnético da
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Item 1;
-	\item Item 2.
+	\item Bobinas de Helmholtz;
+	\item Fonte de tensão regulável;
+	\item Multímetro;
+	\item Cabos para ligação.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Procedimento Experimental}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}[2cm]
+\centering
+\begin{circuitikz}[american]
+	\draw (0,1) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[L, l=$L$] (2,1) to[L, l=$L$] (2,-1) to[smeter, t=A] (0,-1) to[R, l=$R$] (0,1);
+	%\draw (2,3) -- (3.5,3)  (3.5,0) -- (2,0);
+\end{circuitikz}
+\caption{Circuito para as bobinas de Helmholtz.}
+\end{marginfigure}
 
 %%%%%%%%%%%%%%%%%%%%%
 %\subsection{Parte A} % Se necessário
