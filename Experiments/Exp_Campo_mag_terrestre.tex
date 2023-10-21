@@ -105,8 +105,8 @@ As bobinas de Helmholtz são uma configuração particular de dois grupos parale
 	\draw[dashed,->] (0,0,0) -- (0,0,0.7); % z
 	
 	\draw[->] (0.25,0,0) -- (1.25,0,0) node[below left]{$z'$}; % x
-	\draw[->] (0.25,0,0) -- (0.25,0.8,0) node[below left]{$x$}; % y
-	\draw[->] (0.25,0,0) -- (0.25,0,0.7) node[below right]{$y$}; % z
+	\draw[->] (0.25,0,0) -- (0.25,0.8,0) node[below left]{$x'$}; % y
+	\draw[->] (0.25,0,0) -- (0.25,0,0.7) node[below right]{$y'$}; % z
 	
  	\begin{scope}[canvas is zy plane at x=0]
 		\draw[densely dotted, gray, very thin, step=2mm] (-0.6,-0.6) grid (0.6,0.6);
@@ -147,8 +147,8 @@ As bobinas de Helmholtz são uma configuração particular de dois grupos parale
 		\draw[dashed,->] (0,0,0) -- (0,0,0.7); % z
 		
 		\draw[->] (0.25,0,0) -- (1.25,0,0) node[below left]{$z'$}; % x
-		\draw[->] (0.25,0,0) -- (0.25,0.8,0) node[below left]{$x$}; % y
-		\draw[->] (0.25,0,0) -- (0.25,0,0.7) node[below right]{$y$}; % z
+		\draw[->] (0.25,0,0) -- (0.25,0.8,0) node[below left]{$x'$}; % y
+		\draw[->] (0.25,0,0) -- (0.25,0,0.7) node[below right]{$y'$}; % z
 		
 	 	\begin{scope}[canvas is zy plane at x=0]
 			\draw[densely dotted, gray, very thin, step=2mm] (-0.6,-0.6) grid (0.6,0.6);
@@ -206,7 +206,7 @@ para as bobinas localizadas nas posições $z'_1 = -R/2$ e $z'_2 = R/2$. Assim,
 \begin{tikzpicture}[>=Stealth, yscale = 1.5, xscale = 1.25, extended line/.style={shorten >=-#1,shorten <=-#1},
  extended line/.default=3mm]] 
     \draw[->] (0,0) -- (0,1.25) node[below left] {$B_z$};
-	\draw[->] (-1.75,0) -- (1.75,0) node[below left] {$z$};
+	\draw[->] (-1.75,0) -- (1.75,0) node[below left] {$z'$};
 
     % Desenhar função:
     \def\R{1}
@@ -225,7 +225,7 @@ para as bobinas localizadas nas posições $z'_1 = -R/2$ e $z'_2 = R/2$. Assim,
     \draw (-1, 0.0) -- +(0,-0.1) node[below]{$-R$};
     
 	\end{tikzpicture}
-\caption{Intensidade do campo magnético no espaço entre as bobinas. As linhas tracejadas denotam os campos devidos às duas bobinas separadamente. Note que o as intensidades máximas dessas duas curvas correspondem às posições $\pm R/2$, que são as posições das bobinas no eixo $z$. A linha cheia denota o campo total devido às duas bobinas. Note que entre $z = -R/2$ e $z = R/2$ temos que a intensidade é aproximadamente contante. \label{Fig:CampoMagneticoBobinasDeHelmholtz}}
+\caption{Intensidade do campo magnético no espaço entre as bobinas. As linhas tracejadas denotam os campos devidos às duas bobinas separadamente. Note que o as intensidades máximas dessas duas curvas correspondem às posições $\pm R/2$, que são as posições das bobinas no eixo $z$. A linha cheia denota o campo total devido às duas bobinas. Note que entre $z' = -R/2$ e $z' = R/2$ temos que a intensidade é aproximadamente contante. \label{Fig:CampoMagneticoBobinasDeHelmholtz}}
 \end{marginfigure}
 
 Na Figura~\ref{Fig:CampoMagneticoBobinasDeHelmholtz} temos um gráfico da intensidade do campo magnético na região central entre as bobinas e podemos verificar que seu valor é aproximadamente constante. Para determinar tal valor, basta fazermos $z' = 0$ na Equação~\eqref{Eq:CampoMagneticoBobinasDeHelmholtz}:
@@ -298,6 +298,7 @@ Note que podemos inverter o sentido da corrente nas bobinas, com uma consequente
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
+\label{Sec:ObjetivosCampoMagneticoTerrestre}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
@@ -382,63 +383,26 @@ Note que podemos inverter o sentido da corrente nas bobinas, com uma consequente
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{1}
-Apresente os resultados de maneira clara e organizada. Mostre os cálculos requisitados de maneira clara e sucinta, evidenciando o raciocínio desenvolvido.
-\end{question}
-
-\begin{question}[type={exam}]{1}
+\begin{question}[type={exam}]{2}
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Determine o valor do campo magnético $B_H$ e preencha a terceira coluna da Tabela~\ref{Tab:DadosCampoMagneticoTerrestre}.
+\end{question}
+
+\begin{question}[type={exam}]{4}
+Considerando os dados de $B_H$ e de $\phi$
+\begin{enumerate}[label=\roman*.]
+    \item Elabore um gráfico linearizado dos dados.
+    \item Determine a componente horizontal do campo magnético terrestre através de uma regressão linear dos dados. 
+\end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosCampoMagneticoTerrestre}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
-
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
@@ -456,9 +420,9 @@ metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
 	\cmidrule{2-3}
 \\
 	& \multicolumn{2}{l}{\textbf{Dados experimentais}} & & \multicolumn{2}{l}{\textbf{Campo}}\\
-	\cmidrule{2-3}
+	\cmidrule{2-3}\cmidrule{5-5}
 	& $\phi$ & $i$ && $B_H$ & \\
-	\cmidrule{2-3}
+	\cmidrule{2-3}\cmidrule{5-5}
 	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
 	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & &\cellcolor[gray]{0.95} & \\
 	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & &\cellcolor[gray]{0.89} & \\
@@ -480,7 +444,7 @@ metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
 	\cmidrule{2-6}
 \bottomrule
 \end{tabular}
-\caption[][5mm]{Dados a deflexão da agulha de uma bússola em função da corrente nas bobinas de Helmholtz.}
+\caption[][5mm]{Dados para a deflexão da agulha de uma bússola em função da corrente nas bobinas de Helmholtz.}
 \label{Tab:DadosCampoMagneticoTerrestre}
 \end{table*}
 
