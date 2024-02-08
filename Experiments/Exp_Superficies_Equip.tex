@@ -282,6 +282,7 @@ Um caso mais interessante é o das superfícies equipotenciais de um dipolo elé
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
+\label{Sec:ObjetivosSupEquip}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
@@ -312,15 +313,16 @@ Um caso mais interessante é o das superfícies equipotenciais de um dipolo elé
 %\subsection{Parte A} % Se necessário
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-	\item Tome duas folhas de papel milimetrado e desenhe sistemas de referência cujas origens se encontrem no centro e cujas marcas estejam distanciadas de 1 em \np[cm]{1,00}. Ambos os eixos devem variar de \np[cm]{-5,00} a \np[cm]{+5,00};
+	\item Tome duas folhas de papel milimetrado e desenhe sistemas de referência cujas origens se encontrem no centro e cujas marcas estejam distanciadas de \np{1,00} em \np[cm]{1,00}. Ambos os eixos devem variar de \np[cm]{-5,00} a \np[cm]{+5,00};
 	\item Disponha a placa de Petri sobre o papel milimetrado de forma que seu centro coincida com a origem do sistema de referência;
 	\item Ligue os eletrodos à fonte usando os cabos fornecidos;
 	\item Disponha os eletrodos na placa de Petri de forma que eles estejam localizados sobre o eixo $x$, a uma distância de \np[cm]{5,00} da origem;
 	\item Ajuste o multímetro para a função de voltímetro e ligue o terminal comum ao eletrodo negativo usando o cabo fornecido;
-	\item Ligue a ponta de prova ao terminal marcado com \texttt{V$\mathdirectcurrent$} do multímetro;
-	\item Ligue a fonte regulável e a ajuste para uma tensão de \np[V]{22,0};
+	\item Ligue a ponta de prova ao terminal marcado com \texttt{V} do multímetro;
+	\item Ajuste o multímetro para a escala de \np[V]{20}, corrente contínua (\np[V\mathdirectcurrent]{20}).
+	\item Ligue a fonte regulável e a ajuste para uma tensão de \np[V]{15,0};
 	\item Coloque água na placa de Petri;
-	\item Com a ponta de prova do multímetro, afira a tensão na origem do sistema de coordenadas e a cada \np[cm]{1,00} ao longo do eixo $y$ (tanto para valores positivos, quanto negativos). Na outra folha de papel milimetrado, marque um ponto na posição correspondente à da medida e anote os valores de tensão ao lado dos pontos;
+	\item Com a ponta de prova do multímetro,\footnote{Tome cuidado para que a ponta de prova seja inserida na cuba verticalmente, perpendicular ao plano da mesa.} afira a tensão na origem do sistema de coordenadas e a cada \np[cm]{1,00} ao longo do eixo $y$ (tanto para valores positivos, quanto negativos). Na outra folha de papel milimetrado, marque um ponto na posição correspondente à da medida e anote os valores de tensão ao lado dos pontos;
 	\item Afira a tensão ao longo do eixo $x$ desde o eletrodo negativo até o positivo a cada \np[cm]{1,00}.\footnote{Use as próprias marcas do eixo $x$ e os pontos intermediários entre elas, assim os valores ficarão mais simples e a origem do sistema de referência também estará incluída nos dados.} Anote os valores obtidos na Tabela~\ref{Tab:ValoresPotencialEletricoEixoX};
 	\item Para a coluna $x = \np[cm]{-4,00}$ inicie com a ponta de prova em $y = \np[cm]{-5,00}$ e busque os valores de tensão dos pontos aferidos sobre o eixo $x$, percorrendo a coluna paralelamente ao eixo $y$. Note que talvez não seja possível encontrar todos os pontos;
 	\item Repita o procedimento do item acima varrendo todas as colunas até $x = \np[cm]{+4,0}$.
@@ -370,7 +372,7 @@ Um caso mais interessante é o das superfícies equipotenciais de um dipolo elé
     \draw[dashed, ->] (-2, -5.5) -- (-2, -4.5);
     
 \end{tikzpicture}
-\caption{Varredura da área entre os dois polos em busca das linhas equipotenciais. Inicie no canto inferior esquerdo e varra as colunas verticalmente, como mostrado na figura. Busque os valores encontrados no eixo $x$. Note que nem todos os valores serão encontrados na região de varredura.}
+\caption{Varredura da área entre os dois polos em busca das linhas equipotenciais. Inicie no canto inferior esquerdo e varra as colunas verticalmente, como mostrado na figura. Busque os valores encontrados no eixo $x$. Note que nem todos os valores serão encontrados na região de varredura.\label{Fig:EquipotenciaisDipolo}}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -408,21 +410,28 @@ Um caso mais interessante é o das superfícies equipotenciais de um dipolo elé
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{3}
-Ligue os pontos equipotenciais obtidos de uma maneira suave. Considerando que as superfícies equipotenciais são sempre perpendiculares às linhas de campo elétrico, desenhe as linhas de campo, de uma maneira estimada.
+\begin{question}[type={exam}]{2}
+\begin{enumerate}[label=\roman*.]
+    \item Na folha de papel milimetrado onde foram marcados os valores de potencial, ligue os pontos equipotenciais obtidos de uma maneira suave.\footnote{Estamos interessados em verificar se obtemos uma figura similar à Figura~\ref{Fig:EquipotenciaisDipolo}}
+    \item Considerando que as superfícies equipotenciais são sempre perpendiculares às linhas de campo elétrico, desenhe as linhas de campo de uma maneira estimada.
+\end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{7}
+\begin{question}[type={exam}]{2}
 Faça um gráfico do potencial elétrico em função da posição $x$ para os dados contidos na Tabela~\ref{Tab:ValoresPotencialEletricoEixoX}.
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Estime o campo elétrico ao longo do eixo $x$ através de
+Usando os dados da Tabela~\ref{Tab:ValoresPotencialEletricoEixoX}, estime a intensidade do campo elétrico ao longo do eixo $x$ através de
 \begin{equation}
-    E = -\frac{\partial V}{\partial x} \approx \frac{\Delta V}{\Delta x}.
+    |E| = \left|\frac{\partial V}{\partial x}\right| \approx \left|\frac{\Delta V}{\Delta x}\right|.
 \end{equation}
 %
-Faça um gráfico de $E(x)$ para o resultado obtido.
+Faça um gráfico de $E(x)$ para o resultado obtido. Para os pontos das extremidades, use os valores de potencial dos eletrodos ao calcular o valor de $\Delta V$.
+\end{question}
+
+\begin{question}[type={exam}]{2}
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosSupEquip}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
 \vfill

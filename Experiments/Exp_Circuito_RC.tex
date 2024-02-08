@@ -81,11 +81,11 @@ Consequentemente,
 
 Realizando as integrações, obtemos
 \begin{align}
-	\int \frac{dq'}{q'} &= -\frac{1}{RC} \cdot [t + C]_0^t\\
-	\ln(q') + \alpha &= -\frac{1}{RC} \cdot t,
+	\int \frac{dq'}{q'} &= -\frac{1}{RC} \cdot [t + \alpha_1]_0^t\\
+	\ln(q') + \alpha_2 &= -\frac{1}{RC} \cdot t,
 \end{align}
 %
-onde $\alpha$ representa a constante característica da integração indefinida. Substituindo a variável $q'$ pela expressão original e substituindo os limites de integração originais, a expressão acima se torna
+onde $\alpha_1$ e $\alpha_2$ representam as constantes características da integração indefinida. Substituindo a variável $q'$ pela expressão original e substituindo os limites de integração originais, a expressão acima se torna
 \begin{align}
 	\left[\ln(q - V_bC) + \alpha\right]_0^q &= -\frac{t}{RC} \\
 	\ln\left(\frac{q - V_bC}{-V_bC}\right) &= -\frac{t}{RC},
@@ -159,13 +159,13 @@ Novamente, usando $i = dq/dt$, e reorganizando os termos obtemos
 Integrando ambos os lados da equação acima, temos
 \begin{align}
     \int_{q_i}^{q_f} \frac{dq}{q} &= -\frac{1}{RC} \int_{t_i}^{t_f} dt \\
-    \left[\ln q + C\right]_{q_i}^{q_f} &= - \frac{q}{RC} \left[t + C\right]_{t_i}^{t_f} \\
+    \left[\ln q + \alpha_1\right]_{q_i}^{q_f} &= - \frac{q}{RC} \left[t + \alpha_2\right]_{t_i}^{t_f} \\
     \ln \frac{q_f}{q_i} &= -\frac{\Delta t}{RC} \\
     \frac{q_f}{q_i} &= \exp\left(-\frac{\Delta t}{RC}\right) \\
     q_f &= q_i \exp\left(-\frac{\Delta t}{RC}\right).
 \end{align}
 %
-Se fizermos $t_ = 0$, $t_f = t$, e $q_i = q_0$, podemos representar a carga como uma função do tempo através de
+Se fizermos $t_i = 0$, $t_f = t$, e $q_i = q_0$, podemos representar a carga como uma função do tempo através de
 \begin{equation}
     q(t) = q_0 \exp\left(-\frac{t}{RC}\right).
 \end{equation}
@@ -214,6 +214,7 @@ Se fizermos $t_ = 0$, $t_f = t$, e $q_i = q_0$, podemos representar a carga como
 	\item Capacitores eletrolíticos;
 	\item Multímetro;
 	\item Cabos para ligações;
+	\item Tabela de cores de resistores;
 	\item Cronômetro.
 \end{itemize}
 
@@ -235,7 +236,7 @@ Se fizermos $t_ = 0$, $t_f = t$, e $q_i = q_0$, podemos representar a carga como
 \end{marginfigure}
 
 {\it
-\textbf{Atenção:} Não ligue a fonte de tensão ao circuito antes de se certificar que as ligações estejam corretas, pois há risco de o capacitor ser danificado, entrar em combustão, e mesmo explodir.\footnote{Provavelmente o risco de ferimentos é menor do que o de se queimar no experimento de dilatação térmica, mas mesmo assim, tomem cuidado.} Verifique o valor máximo de tensão que o capacitor suporta e nunca exceda esse valor.
+\textbf{Atenção:} Não ligue a fonte de tensão ao circuito antes de se certificar que as ligações estejam corretas, pois há risco de o capacitor ser danificado, entrar em combustão, e mesmo explodir.\footnote[][3cm]{Provavelmente o risco de ferimentos é menor do que o de se queimar no experimento de dilatação térmica, mas mesmo assim, tomem cuidado.} Verifique o valor máximo de tensão que o capacitor suporta e nunca exceda esse valor.
 }
 	
 \begin{enumerate}

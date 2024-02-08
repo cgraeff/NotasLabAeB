@@ -70,7 +70,7 @@ Além disso, ainda que a distância $r$ entre o ponto onde estamos calculando ca
 %
 Assim,
 \begin{align}
-    dB_z &= dB \cdot \sin\theta \\
+    dB_z &= dB \cdot \sen\theta \\
     &= \left(\frac{\mu_0}{4\pi} \cdot \frac{I \,d\ell}{z^2 + R^2}\right) \cdot \sen\theta \\
     &= \left(\frac{\mu_0}{4\pi} \cdot \frac{I \,d\ell}{z^2 + R^2}\right) \cdot \left(\frac{R}{\sqrt{z^2+R^2}}\right) \\
     &= \frac{\mu_0}{4\pi} \cdot \frac{IR \,d\ell}{(z^2 + R^2)^{\nicefrac{3}{2}}}.
@@ -313,6 +313,7 @@ Note que podemos inverter o sentido da corrente nas bobinas, com uma consequente
 	\item Bobinas de Helmholtz;
 	\item Fonte de tensão regulável;
 	\item Multímetro;
+	\item Resistor de \np[W]{20};
 	\item Cabos para ligação.
 \end{itemize}
 
@@ -320,36 +321,73 @@ Note que podemos inverter o sentido da corrente nas bobinas, com uma consequente
 \section{Procedimento Experimental}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{marginfigure}[2cm]
+\begin{marginfigure}[8cm]
 \centering
 \begin{circuitikz}[american]
-	\draw (0,1) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[L, l=$L$] (2,1) to[L, l=$L$] (2,-1) to[smeter, t=A] (0,-1) to[vR, l=$R$] (0,1);
+	\draw (0,1) to[battery1, v=$V$, i=$i$] (0,3) to[switch] (2,3) to[L, l=$L$] (2,1) to[L, l=$L$] (2,-1) to[smeter, t=A] (0,-1) to[R, l=$R$] (0,1);
 	%\draw (2,3) -- (3.5,3)  (3.5,0) -- (2,0);
 \end{circuitikz}
-\caption{Circuito para as bobinas de Helmholtz. Note que o resistor variável mostrado na figura pode estar dentro da própria fonte de tensão, se ela tiver controle de corrente.}
+\caption{Circuito para as bobinas de Helmholtz (representados por $L$).}
 \end{marginfigure}
 
-%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Parte A} % Se necessário
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ligações das bobinas} % Se necessário
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{enumerate}
-	\item Ligue a fonte e ajuste um valor de tensão de \np[V]{1,0} e torne a desligá-la. Não alteraremos mais esse valor;\footnote{Nesse experimento, vamos usar os controles de corrente. Durante o experimento, você verificará que os valores de tensão lidos não corresponderão ao que foi ajustado nesse passo, mas tal valor funcionará como um teto de tensão.}
+    \item Mantenha a fonte desligada até o início do processo de tomada de dados;
+	\item Ligue o terminal negativo da fonte de tensão a um dos terminais do resistor;
+	\item Ligue o outro terminal do resistor ao terminal negativo de uma das bobinas;
+	\item Ligue o terminal positivo da bobina ao terminal negativo da outra bobina;
+	\item Ligue o terminal positivo da bobina ao terminal comum do multímetro;
+	\item Ligue o terminal marcado como $\texttt{mA}\mathdirectcurrent$ ao terminal positivo da fonte;
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Disposição da bussola e das bobinas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
 	\item Disponha a bússola sobre a mesa. Note que é necessário que a superfície da mesa esteja razoavelmente bem nivelada.
 	\item Certifique-se de que não haja nenhum material magnético próximo da bússola.\footnote{Como o experimento é bastante sensível, mesmo materiais ferromagnéticos podem atrapalhar as medidas. Note ainda que alguns relógios de pulso contém ímãs, podendo distorcer a direção do campo ao fazermos os ajustes.}
 	\item Verifique a direção do norte com a bússola;
 	\item Disponha as bobinas de Helmholtz de forma que o eixo das bobinas estejam perpendiculares à direção do norte;
-	\item Coloque o apoio de madeira entre as bobinas e coloque a bússola sobre ele. Tome cuidado para que a marca do norte na escala da bússola esteja apontando na direção norte indicada pela agulha. Provavelmente será necessário fazer pequenos ajustes, mas isso pode ser feito adiante, uma vez que ao conectar os cabos inevitavelmente serão feitos pequenos deslocamentos do conjunto;
-	\item Ligue o terminal negativo da fonte de tensão ao terminal negativo de uma das bobinas;
-	\item Ligue o terminal positivo da bobina ao terminal negativo da outra bobina;
-	\item Ligue o terminal positivo da bobina ao terminal comum do multímetro;
-	\item Ligue o terminal marcado como $\texttt{mA}\mathdirectcurrent$ ao terminal positivo da fonte;
-	\item Ajuste os controles de corrente para o \emph{mínimo};
+	\item Coloque o apoio de madeira entre as bobinas e coloque a bússola sobre ele. Tome cuidado para que a marca do norte na escala da bússola esteja apontando na direção norte indicada pela agulha. Provavelmente será necessário fazer pequenos ajustes.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tomada de dados}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}[4cm]
+\centering
+\begin{tikzpicture}[>=Stealth] 
+    \draw[->] (0,0) -- (0,3.5) node[below left] {$x'$};
+	\draw[->] (0,0) -- (4,0) node[below left] {$z'$};
+
+    \draw[thick, ->] (0,0) -- (0,2.5) node[below left] {$\vec{B}_H$};
+	\draw[thick, ->] (0,0) -- (2.5,0) node[below left] {$\vec{B}_T$};
+
+	\draw[thick, gray, ->] (0,0) -- (2.5,0.5);
+	\draw[thick, gray, ->] (0,0) -- (2.5,1);
+	\draw[thick, gray, ->] (0,0) -- (2.5,1.5);
+	\draw[thick, gray, ->] (0,0) -- (2.5,2);
+	\draw[thick, ->] (0,0) -- (2.5,2.5);
+	
+	\draw[dotted] (0,2.5) -- (2.5,2.5) -- (2.5,0);
+	
+	\draw[->] (1,0) arc (0:45:1) node[midway, right]{$\phi$};
+
+\end{tikzpicture}
+\caption{O campo total $\vec{B}$ é o responsável pela deflexão da bússola. Como o campo magnético terrestre $B_T$ é constante, o campo devido àss bobinas de Helmholtz $B_H$ é o responsável indireto pela deflexão da agulha da bússola.}
+\end{marginfigure}
+
+\begin{enumerate}
+	\item Ajuste os controles de corrente para o \emph{máximo} e os valores de tensão para o \emph{mínimo};
 	\item Verifique a posição da bússola e das bobinas de Helmholtz, certificando-se de que marca do norte coincida com a direção apontada pela agulha da bússola e que o eixo das bobinas aponta perpendicularmente à direção indicada pela agulha.
-	\item Ligue a fonte e proceda a ajustar a corrente lentamente, até que ocorra um desvio de \degree{10} na direção da agulha da bússola em relação à direção inicial.
+	\item Ligue a fonte e proceda a ajustar a tensão lentamente, até que ocorra um desvio de \degree{5} na direção da agulha da bússola em relação à direção inicial.
 	\item Anote o valor do ângulo e a corrente correspondente na Tabela~\ref{Tab:DadosCampoMagneticoTerrestre}.
-	\item Volte a aumentar a corrente, registrando seu valor a cada \degree{10}.
-	\item Após atingir \degree{80}, ajuste os controles de corrente para o valor mínimo, desligue a fonte e inverta os cabos ligados a ela.
-	\item Religue a fonte e aumente o valor de corrente progressivamente, anotando seu valor a cada \degree{10} até que sejam atingidos \degree{80}. Note que os sinais do ângulo e da corrente devem ser opostos aos obtidos antes de invertermos as conexões, não esqueça de registrá-los. 
+	\item Volte a aumentar a tensão, registrando o ângulo de deflexão e o valor da correte a cada \degree{5}. Cesse as medidas ao atingir um ângulo de deflexão de \degree{70}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

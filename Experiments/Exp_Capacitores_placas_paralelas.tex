@@ -18,7 +18,7 @@ Se conectarmos uma bateria a dois condutores\footnote{Na verdade, mesmo um só c
 \begin{circuitikz}[american]
 	\draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$] (0,0);
 \end{circuitikz}
-\caption{Circuito para a carga de um capacitor.}
+\caption{Esquema de um circuito formado por uma fonte de tensão, um interruptor, um resistor e um capacitor. Note que o símbolo para o capacitor se baseia na forma de um capacitor de placas paralelas.}
 \end{marginfigure}
 
 Dependendo de características geométricas desses dois condutores, como formato, área, e distância entre eles, a quantidade de carga necessária para estabelecer uma diferença de potencial igual à da bateria será diferente. Para uma dada configuração geométrica dos condutores, damos à razão entre a quantidade de carga $Q$ e a diferença de potencial $V$ correspondente o nome de \emph{capacitância}:
@@ -73,14 +73,15 @@ Vamos considerar agora a inserção de um meio não condutor qualquer entre as p
 
 \begin{marginfigure}
     \centering
+    \ctikzset{resistors/scale=0.6}
     \begin{circuitikz}[american, scale = 0.6]          	
-        \draw (0,0) to[battery1, v=$V$] (0,3) to[switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$] (0,0);
+        \draw (0,0) to[battery1, v=$V$] (0,3) to[switch] (2,3) to[C, l=$C$] (2,0) to[R, l=$R$] (0,0);
     	\draw (2,3) -- (4.5,3) to[smeter, t=V] (4.5,0) -- (2,0);
     	
         \begin{scope}[shift={(0,-6)}]
-            \draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (2,3) to[R, l=$R$] (2,0) to[C, l=$C$, fill=gray!20] (0,0);
+            \draw (0,0) to[battery1, v=$V$] (0,3) to[normal open switch] (2,3) to[C, l=$C$, fill=gray!20] (2,0) to[R, l=$R$] (0,0);
         	\draw (2,3) -- (4.5,3) to[smeter, t=V] (4.5,0) -- (2,0);
-        	\draw[-Stealth] (1,-0.3) -- (1,0.3);
+        	\draw[-Stealth] (2.3,1.5) -- (1.7,1.5);
     	\end{scope}
     \end{circuitikz}
     \caption{Ao desligarmos o interruptor e inserirmos um material dielétrico no capacitor observamos uma queda na diferença de potencial medida pelo voltímetro. }
@@ -152,6 +153,7 @@ O aumento da capacitância pode ser entendido através de uma análise microscó
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
+\label{Sec:ObjetivosCapPlacasPar}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
@@ -174,15 +176,26 @@ O aumento da capacitância pode ser entendido através de uma análise microscó
 \section{Procedimento Experimental}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{marginfigure}[4cm]
+    \centering
+    \ctikzset{resistors/scale=0.6}
+    \begin{circuitikz}[american, scale = 0.6]          	
+        \draw (0,0) to[cC, l=$C$] (0,3) to (3,3) to[smeter, t=C] (3,0) to (0,0);
+    \end{circuitikz}
+    \caption{Capacitor ligado ao mulímetro na função de medição de capacitância. O símbolo mostrado para o capacitor é o de um capacitor polarizado, isto é, que tem polaridades definidas para os terminais. O terminal positivo é representado pela linha reta, enquanto a linha curva representa o terminal negativo. \label{Fig:EsquemaLigCapacitor}}
+\end{marginfigure}
+
 %%%%%%%%%%%%%%%%%%%%%
 %\subsection{Parte A} % Se necessário
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
 	\item Utilizando um paquímetro, verifique as dimensões das placas do capacitor;
-	\item Utilizando um micrômetro, meça a espessura de uma lâmina dielétrica e a coloque entre as placas do capacitor de formaque que não reste ar entre as placas e a lâmina. Anote o valor obtido na Tabela~\ref{Tab:ValoresCapacitancia};\label{Item:CapPlacasPar:MedidaMicrometroLamina}
+	\item Ajuste o multímetro para a escala de \np[nF]{20} da função de medição de capacitância (essa função está marcada com o símbolo de capacitor mostrado na Figura~\ref{Fig:EsquemaLigCapacitor}.)
+	\item Ligue cada uma das placas do capacitor aos terminais do multímetro (terminal \texttt{COM} e aquele que tem o símbolo de capacitor mostrado na Figura~\ref{Fig:EsquemaLigCapacitor}).
+	\item Utilizando um micrômetro, meça a espessura de uma lâmina dielétrica e a coloque entre as placas do capacitor de forma que que não reste ar entre as placas e a lâmina.\footnote{Tomem cuidado para não pressionar muito as folhas dielétricas, pois isso deixará a placa deslizante do capacitor tensionada, o que vai fazer com que a placa se desloque ao retirarmos as lâminas dielétricas. Como estamos interessados em determinar as capacitâncias para \emph{uma mesma distância}, a separação entre as placas deve permanecer a mesma.}  Anote o valor obtido na Tabela~\ref{Tab:ValoresCapacitancia};\label{Item:CapPlacasPar:MedidaMicrometroLamina}
 	\item Afira o valor de capacitância e o anote na Tabela~\ref{Tab:ValoresCapacitancia};
 	\item Tomando cuidado para não mover as placas do capacitor, remova a lâmina dielétrica e afira o novo valor de capacitância e o anote na Tabela~\ref{Tab:ValoresCapacitancia}
-	\item Repita os passos acima a partir do item \ref{Item:CapPlacasPar:MedidaMicrometroLamina}, anotando o valor de distância total entre as placas e as capacitâncias com e sem dielétrico na Tabela~\ref{Tab:ValoresCapacitancia}.
+	\item Repita os passos acima a partir do item \ref{Item:CapPlacasPar:MedidaMicrometroLamina}, adicionando mais uma folha de dilétrico e anotando na Tabela~\ref{Tab:ValoresCapacitancia} os valores de \emph{distância total} entre as placas e as capacitâncias com e sem as lâminas dielétricas.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,7 +233,7 @@ O aumento da capacitância pode ser entendido através de uma análise microscó
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{4} Considerando os dados de capacitância quando há \emph{somente ar} entre as placas do capacitor,
+\begin{question}[type={exam}]{3} Considerando os dados de capacitância quando há \emph{somente ar} entre as placas do capacitor,
 \begin{enumerate}[label=\roman*.]
     \item Faça um gráfico do valor de capacitância em função da distância de separação entre as placas.
     \item Faça um ajuste de uma curva do tipo $y = A + B \cdot x^{-1}$ para os dados obtidos.\footnote{Nem todo software é capaz de realizar esse tipo de ajuste, porém as calculadoras geralmente têm suporte a esse procedimento. Alternativamente, vocês podem fazer uma linearização dos dados e realizar uma regressão linear.} 
@@ -229,13 +242,17 @@ Preencha as colunas de dados experimentais das tabelas com o número adequado de
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{4}
+\begin{question}[type={exam}]{3}
 Considerando os dados de capacitância quando as placas do capacitor estão separadas pelas \emph{lâminas dielétricas},
 \begin{enumerate}[label=\roman*.]
     \item Faça um gráfico do valor de capacitância em função da distância de separação entre as placas.
     \item Faça um ajuste de uma curva do tipo $y = A + B \cdot x^{-1}$ para os dados obtidos.\footnote{Novamente, pode ser necessário fazer uma linearização dos dados e realizar uma regressão linear, caso o software utilizado não tenha suporte a ajustes do tipo $y = A + B \cdot x^{-1}$.} 
     \item Através dos coeficientes $A$ e $B$ obtidos no item anterior, determine o valor da constante dielétrica $\kappa$ para o material utilizado. 
 \end{enumerate}
+\end{question}
+
+\begin{question}[type={exam}]{2}
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosCapPlacasPar}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
 \vfill
@@ -251,7 +268,6 @@ Considerando os dados de capacitância quando as placas do capacitor estão sepa
 	& \multicolumn{2}{l}{\textbf{Dimensões}} \\
 	\cmidrule{2-3}
 	& Diâmetro: \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& Espessura: \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
 	\cmidrule{2-3}
 \\
 	& \multicolumn{4}{l}{\textbf{Dados experimentais}} \\
