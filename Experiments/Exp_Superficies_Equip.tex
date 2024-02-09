@@ -296,22 +296,41 @@ Um caso mais interessante é o das superfícies equipotenciais de um dipolo elé
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
+    \item Placa de Petri;
+	\item Eletrodos com suporte;
+    \item Becker com água;
 	\item Papel milimetrado;
 	\item Fonte regulável;
 	\item Multímetro;
-	\item Placa de Petri com água;
-	\item Eletrodos com suporte;
-	\item Cabos de ligação (1 ponta de prova, 3 banana-jacaré);
-	\item Becker com água.
+	\item Cabos para ligações: banana-jacaré (3), ponta de prova (1);
+	
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Procedimento Experimental}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Parte A} % Se necessário
-%%%%%%%%%%%%%%%%%%%%%
+\ctikzset{resistors/scale=0.7}
+\begin{marginfigure}
+    \centering
+    \begin{circuitikz}[american, scale = 1, >=Stealth]
+        \draw (0,0) circle (2cm);
+        \draw (-1.5,0) to[short, *-] (-2.5,0) to (-2.5,4) to[battery1, v=$V$] (2.5,4) to (2.5,0) to[short, -*] (1.5,0);
+        \draw (-1,4) to[short,*-] (-1,3) to[smeter, t=V,-*] (1,3);
+        
+        \draw (1,3) .. controls (2,4) and (2.5,3) .. (1.5,2);
+        
+        \draw[very thick,->] (1.5,2) -- (1, 0.5);
+        
+        \clip (0,0) circle (2cm);
+        \draw[step=.3cm,very thin, densely dotted] (-2,-2) grid (2,2);
+        
+        \draw[thin] (-1.25,0) -- (1.25,0);
+        \draw[thin] (0,-1.25) -- (0,1.25);
+    \end{circuitikz}
+    \caption{Esquema do circuito elétrico para o experimento de superfícies equipotenciais.}
+\end{marginfigure}
+
 \begin{enumerate}
 	\item Tome duas folhas de papel milimetrado e desenhe sistemas de referência cujas origens se encontrem no centro e cujas marcas estejam distanciadas de \np{1,00} em \np[cm]{1,00}. Ambos os eixos devem variar de \np[cm]{-5,00} a \np[cm]{+5,00};
 	\item Disponha a placa de Petri sobre o papel milimetrado de forma que seu centro coincida com a origem do sistema de referência;

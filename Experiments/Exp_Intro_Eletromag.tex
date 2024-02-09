@@ -232,11 +232,12 @@ O protoboard consiste em um corpo plástico com diversos furos nos quais podem s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Multímetros e pontas de prova;
+	\item Multímetros (2);
 	\item Fonte de tensão regulável;
 	\item Pilhas e resistores diversos;
-	\item Cabos de ligação;
-	\item Protoboard e fios de ligação.
+	\item Tabela de cores de resistores;
+	\item Protoboard;
+	\item Cabos para ligações: banana-banana (1), banana-jacaré (2), pontas de prova (1 par).
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -246,6 +247,16 @@ O protoboard consiste em um corpo plástico com diversos furos nos quais podem s
 %%%%%%%%%%%%%%%%%%%%%
 \subsection{Medidas de tensão} % Se necessário
 %%%%%%%%%%%%%%%%%%%%%
+
+\ctikzset{resistors/scale=0.7}
+\begin{marginfigure}
+    \centering
+    \begin{circuitikz}[american, scale = 1]          	
+        \draw (0,0) to[battery1, v=$V$] (0,3) to (3,3) to[smeter, t=V] (3,0) to (0,0);
+    \end{circuitikz}
+    \caption{Esquema do circuito formado pela fonte de tensão e pelo multímetro ao verificarmos o valor de tensão da fonte.}
+\end{marginfigure}
+
 \begin{enumerate}
 	\item Tome uma pilha AA;
 	\item Ligue uma das pontas de prova ao terminal \texttt{COM} do multímetro e a outra ao terminal \texttt{V};
@@ -258,6 +269,31 @@ O protoboard consiste em um corpo plástico com diversos furos nos quais podem s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Medidas de corrente e resistência}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ctikzset{resistors/scale=0.7}
+\begin{marginfigure}
+    \centering
+    \begin{circuitikz}[american, scale = 1]          	
+        \draw (0,0) to[battery1, v=$V$] (0,4) to[short, i=$i$] (2,4) to[R, l=$R_1$] (2,2.66) to[R, l=$R_2$] (2,1.33) to[R, l=$R_3$] (2,0) to[smeter, t=A] (0,0);
+        \draw (2,4) to[short,*-] ++(1.5,0);
+        \draw (2,2.66) to[short,*-] ++(1.5,0);
+        \draw (2,1.33) to[short,*-] ++(1.5,0);
+        \draw (2,0) to[short,*-] ++(1.5,0);
+        \draw (3.5,4) to[smeter, t=$V_1$] (3.5,2.66);
+        \draw (3.5,2.66) to[smeter, t=$V_2$] (3.5,1.33);
+        \draw (3.5,1.33) to[smeter, t=$V_3$] (3.5,0);
+    \end{circuitikz}
+    \caption{Esquema do circuito elétrico formado pela fonte de tensão e pelos três resistores.}
+\end{marginfigure}
+
+\ctikzset{resistors/scale=0.7}
+\begin{marginfigure}
+    \centering
+    \begin{circuitikz}[american, scale = 1]          	
+        \draw (0,0) to[R, l=$R$] (0,3) to (3,3) to[smeter, t=$\Omega$] (3,0) to (0,0);
+    \end{circuitikz}
+    \caption{Esquema do circuito formado pelo resistor e pelo multímetro para a medição da resistência através da função ohmímetro.}
+\end{marginfigure}
 
 \begin{enumerate}
     \item Ligue três resistores aleatórios em série usando o protoboard;
