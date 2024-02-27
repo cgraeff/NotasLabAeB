@@ -86,7 +86,7 @@ Em circuitos eletrônicos, é comum que se usem componentes denominados como \em
 %
 que é comumente empregada quando tratamos um sistema que inclui um resistor.
 
-Note que no caso de materias ôhmicos, o valor de condutividade é constante. Consequentemente, a resistência $R$ de um resistor feito de um material ôhmico também é constante e denominamos tal componente como um \emph{resistor ôhmico}. Podemos identificar um resistor desse tipo facilmente, bastanto verificar se a relação entre a corrente que passa por ele e a tensão a que ele é submetido é linear.
+Note que no caso de materiais ôhmicos, o valor de condutividade é constante. Consequentemente, a resistência $R$ de um resistor feito de um material ôhmico também é constante e denominamos tal componente como um \emph{resistor ôhmico}. Podemos identificar um resistor desse tipo facilmente, bastando verificar se a relação entre a corrente que passa por ele e a tensão a que ele é submetido é linear.
 
 Finalmente, é interessante notar que o inverso da condutibilidade é denominado como \emph{resistividade} $\rho$:
 \begin{equation}
@@ -159,14 +159,14 @@ Essa grandeza pode ser mais conveniente para a análise da resistência de um ma
 \paragraph{Coleta de dados para um resistor:}
 \begin{enumerate}
 	\item Ajuste a fonte de tensão regulável em seu valor mínimo de tensão e máximo de corrente; 
-	\item Ajuste o multímetro na função de amperímetro, na escala de \np[mA]{200};
+	\item Ajuste o multímetro na função de amperímetro, na escala de \np[A]{20};
 	\item Ligue um dos terminais da fonte ao multímetro, na porta marcada como \texttt{COM};
-	\item Conecte um cabo ao terminal do multímetro marcado como \texttt{mA} e o ligue a um resistor;
-	\item Ligue o outro terminal da fonte ao resistor;
+	\item Conecte um cabo ao terminal do multímetro marcado como \texttt{20A} e o ligue ao resistor de \np[\si{\ohm}]{5,6};
+	\item Ligue um cabo ao outro terminal do resistor, porém não conecte a outra extremidade do cabo à fonte, faremos isso após ajustarmos a fonte;
 	\item Ligue a fonte e ajuste a tensão para aproximadamente \np[V]{1,0} e anote o valor na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
-	\item Verifique o valor correspondente de corrente e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
-	\item Calcule o valor de potência dissipada e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos}. \textbf{Atenção:} o valor de potência não deve exceder \np[W]{0,5} durante toda a tomada de dados, caso contrário, o componente poderá ficar muito quente e causar queimaduras e/ou ser danificado;
-	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{1,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{10}, ou até que a potência exceda \np[W]{0,5}. 
+	\item Conecte o cabo restante ao terminal da fonte. Verifique rapidamente\footnote{O resistor não pode ficar muito tempo conectado à fonte pois aquecerá e poderá causar queimaduras e até mesmo danificar a bancada.} o valor correspondente de corrente, desconecte o cabo do terminal da fonte e o anote o valor de corrente na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos};
+	\item Calcule o valor de potência dissipada e o anote na Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos}.
+	\item Aumente o valor de tensão da fonte regulável em aproximadamente \np[V]{1,0} e repita os passos acima, completando a Tabela~\ref{Tab:ResistoresOhmicosENaoOhmicos} até \np[V]{10}, ou até que a potência exceda \np[W]{20}. 
 \end{enumerate}
 
 \paragraph{Coleta de dados para uma lâmpada incandescente:}
@@ -237,7 +237,10 @@ Preencha as colunas de dados experimentais das tabelas com o número adequado de
 \begin{enumerate}[label=\roman*.]
 \item Faça um gráfico para os dados de corrente $i$ em função da tensão $V$ para o resistor.
 \item Realize uma regressão linear dos dados experimentais contidos no gráfico.
-\item Através dos coeficientes da regressão linear, determine a resistência.
+\item Através dos coeficientes da regressão linear, determine a resistência. Determine o erro percentual em relação ao valor nominal $R_n = \np[\si{\ohm}]{5,6}$ usando a expressão
+    \begin{equation*}
+        E_\% = \left|\frac{R_n - R}{R_n}\right|\times 100.
+    \end{equation*}
 \end{enumerate}
 \end{question}
 
