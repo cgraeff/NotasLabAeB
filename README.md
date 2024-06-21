@@ -69,6 +69,7 @@ texlive-titlesec
 texlive-tkz-euclide
 texlive-tufte-latex
 texlive-units
+texlive-mnsymbol
 gnuplot-latex
 biber
 ```
