@@ -1,4 +1,4 @@
-# Notas de Aula de Laboratório
+# Notas de Aula de Laboratório A e B
 Este livro/apostila tem como objetivo facilitar o desenvolvimento das atividades de laboratório de Física da UTFPR-PB. Para isso, todo o conteúdo de análise de dados e os próprios experimentos foram reunidos em um conjunto único. 
 
 Na primeira parte, as técnicas de análise de dados são introduzidas e discutidas. Nenhuma técnica muito avançada é apresentada, somente o básico, já que o texto é de nível introdutório. Os assuntos cobertos são medidas, erros, erros propagados, gráficos, regressão linear, e um pouco sobre desvio padrão e erros aleatórios.
@@ -21,7 +21,7 @@ Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional
 
 ## Obtenção de uma cópia, produção do PDF
 Para obter uma cópia, você pode baixá-la em
-`http://github.com/cgraeff/NotasLab` (tanto em versão PDF, quanto os arquivos
+`http://github.com/cgraeff/NotasLabAeB` (tanto em versão PDF, quanto os arquivos
 para gerar o PDF).
 
 Para gerar o PDF, é necessária uma distribuição TeX. Versões existem para todos
@@ -33,7 +33,7 @@ tenho ideia de como fazer isso, ou de quanto trabalho isso vai dar.
 ### Como obter uma cópia dos arquivos
 Para obter uma cópia mais facilmente, basta executar em um terminal o comando
 ```
-git clone git@github.com:cgraeff/NotasLab.git
+git clone https://github.com/cgraeff/NotasLabAeB.git
 ```
 
 ### Pacotes necessários para gerar o arquivo PDF
@@ -42,6 +42,7 @@ necessários para poder gerar o arquivo PDF. Em particular no Fedora tenho os
 seguintes pacotes (nem todos são necessários para essas notas de aula):
 ```
 texlive
+texlive-collection-fontsrecommended
 texlive-beamertheme-metropolis
 texlive-biblatex
 texlive-braket
@@ -70,6 +71,7 @@ texlive-tkz-euclide
 texlive-tufte-latex
 texlive-units
 texlive-mnsymbol
+texlive-wasysym
 gnuplot-latex
 biber
 ```
@@ -77,7 +79,7 @@ biber
 ### Como gerar o arquivo PDF
 Para gerar o arquivo PDF, é necessário executar o comando `pdflatex` com a opção `-shell-escape`:
 ```
-pdflatex -shel-escape NotasLaboratorio.tex
+pdflatex --shell-escape NotasLaboratorio.tex
 ```
 A primeira execução será mais demorada, uma vez que é necessário gerar todas
 as figuras. Ao modificar o texto de um capítulo, é interessante desabilitar
