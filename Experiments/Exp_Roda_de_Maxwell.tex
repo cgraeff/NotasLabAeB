@@ -116,303 +116,137 @@ e suas unidades são $[I] = \rm{M}\cdot\rm{L}^2$, ou, dentro do SI, $[I] = \rm{k
     \tau_R^{\rm{ext}} = I \alpha. \mathnote{Segunda Lei de Newton para a rotação}
 \end{equation}
 
-É importante notar que o momento de inércia, definido pela Equação~\eqref{Eq:MomentoInerciaConjPart}, tem uma dependência na \emph{forma} do objeto: devido ao fato de que existe uma dependência no quadrado da distância $r_i$ entre a partícula e o eixo de rotação, temos uma dependência na forma como a massa está distribuída. Se, por exemplo, temos um disco girando em torno de um eixo que passa por seu centro de massa, perpendicularmente à sua face plana, temos partículas distribuídas por toda a distância entre o eixo e a borda externa do disco. Se tomarmos um aro sustentado por raios finos, de forma que a massa e o diâmetro sejam iguais aos do disco, devemos ter um momento de inércia maior para uma rotação em torno de um eixo que também passe pelo centro de massa, perpendicularmente à face plana. Isso se deve ao fato de que a maior parte das partículas se localizará a uma distância maior do eixo de rotação.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cálculo do momento de inércia}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure*}[b]\forceversofloat
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale = 0.9]
+    
+    \draw[fill] (0,0) circle (0.6pt);
+    \draw[fill] (0,-0.2) circle (1pt) node[above left] {CM};
+    \draw (0,0) ellipse (1.25 and 0.5);
+    \draw[fill] (0,-0.4) circle (0.6pt);
+    
+    \draw (-1.25,0) -- (-1.25,-0.4);
+    \draw (1.25,-0.4) -- (1.25,0);  
+    
+    \draw (-1.25,-0.4) arc (180:360:1.25 and 0.5);
+    \draw[densely dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.5);
+    
+    % Eixo z
+    \draw[dashdotted,->] (0,0) -- (0,1.5) node[below left]{$z$};
+    \draw[dashdotted] (0,-1.5) -- (0,-0.9);
+    \draw[loosely dotted] (0,-0.9) -- (0,0);
+    
+    \draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
+    
+    % Eixo x
+    \draw[dashdotted, ->] (0,-0.2)++(15:-1.05) -- +(15:-0.75) node[below right]{$x$};
+    \draw[fill] (0,-0.2)+(15:-1.05) circle (0.6pt);
+    \draw[loosely dotted] (0,-0.2)+(15:-1.05) -- (0,-0.2) -- +(15:1.05);
+    \draw[fill] (0,-0.2) +(15:1.05) circle (0.6pt);
+    
+    \draw[dashdotted] (0,-0.2) ++(15:1.25) -- +(15:0.75);
+    
+    \draw[->, rotate=15] (0,-0.2)++(0:-1.5) [partial ellipse=-130:160:0.105cm and 0.3cm];
+    
+    % Eixo w
+    \draw[dashdotted, <-] (0,-0.2)+(60:-1.38) node[below right]{$w$} -- +(60:-0.78);
+    \draw[fill] (0,-0.2)+(60:-0.78) circle (0.6pt);
+    \draw[loosely dotted] (0,-0.2)+(60:-0.78) -- +(60:0.78);
+    \draw[fill] (0,-0.2)+(60:0.78) circle (0.6pt);
+    \draw[dashdotted] (0,-0.2)+(60:0.78) -- +(60:1.18);
+    
+    \draw[->, rotate=60] (0,-0.2)++(-4:-1.2) [partial ellipse=-150:150:0.15cm and 0.3cm];
+    
+    \begin{scope}[shift={(7,0)}]
+        %%% Figura superior
+    
+        \draw[fill] (0,0) circle (0.6pt);
+        \draw[fill] (0,-0.2) circle (1pt) node[above left] {CM};
+        \draw (0,0) ellipse (1.25 and 0.5);
+        \draw[fill] (0,-0.4) circle (0.6pt);
+        
+        \draw (-1.25,0) -- (-1.25,-0.4);
+        \draw (1.25,-0.4) -- (1.25,0);  
+        
+        \draw (-1.25,-0.4) arc (180:360:1.25 and 0.5);
+        \draw[densely dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.5);
+        
+        % Eixo z
+        \draw[dashdotted,->] (0,0) -- (0,1.5) node[below left]{$z$};
+        \draw[dashdotted] (0,-1.5) -- (0,-0.9);
+        \draw[dotted] (0,-0.9) -- (0,0);
+        
+        \draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
+        
+        % Eixos z', z''
+        
+        \draw[dashdotted, ->] (-1.25,-1.5) -- (-1.25,1.5) node[below left]{$z'$};
+        \draw[->] (-1.25,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
+        
+        \draw[dashdotted, ->] (-2.5,-1.5) -- (-2.5,1.5) node[below left]{$z''$};
+        \draw[->] (-2.5,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
+    \end{scope}
+
+    \begin{scope}[shift={(12.5,0)}]
+        %%% Figura superior
+    
+        \draw[fill] (0,0) circle (0.6pt);
+        \draw[fill] (0,-0.2) circle (1pt) node[right] {CM};
+        \draw (0,0) ellipse (1.25 and 0.5);
+        \draw[fill] (0,-0.4) circle (0.6pt);
+        
+        \draw (-1.25,0) -- (-1.25,-0.4);
+        \draw (1.25,-0.4) -- (1.25,0);  
+        
+        %% arco inferior
+        \draw (-1.25,-0.4) arc (180:219:1.25 and 0.5);
+        \draw (1.25,-0.4) arc (0:-135:1.25 and 0.5);
+        \draw[densely dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.5);
+        
+        % Eixo z
+        \draw[dashdotted,->] (0,0) -- (0,1.5) node[below left]{$z$};
+        \draw[dashdotted] (0,-1.5) -- (0,-0.9);
+        \draw[dotted] (0,-0.9) -- (0,0);
+        
+        \draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
+        
+        % haste
+        \draw (0,-0.2)+(30:-2) ellipse (0.45mm and 0.5mm);
+        \draw (0,-0.25)+(30:-0.82) arc[start angle = -90, end angle = 90, radius = 0.5mm];
+        \draw (0,-0.146)+(30:-2) -- +(30:-0.82);
+        \draw (0,-0.254)+(30:-2) -- +(30:-0.82);
+    \end{scope}
+
+    \end{tikzpicture}
+    \caption{A orientação do eixo de rotação em relação ao objeto e a distância entre o objeto e o eixo de rotação são aspectos importantes para a determinação do momento de inércia. Felizmente, podemos utilizar a aditividade do momento de inércia para dividir o corpo em partes cujos momentos de inércia são tabelados.\label{Fig:MomInerciaPropriedades}}
+\end{figure*}
+
 Para que possamos aplicar a Segunda Lei de Newton para a rotação, é fundamental que saibamos qual é o momento de inércia do corpo em questão para o eixo em torno do qual a rotação ocorre. Como é possível verificar na Expressão~\ref{Eq:MomentoInerciaConjPart}, o momento de inércia depende da distância de cada uma das partículas em relação ao eixo de rotação. Isso nos indica que é importante determinar uma série de características particulares a cada situação que estivermos analisando.
 
-\begin{marginfigure}[-2cm]
-\centering
-\begin{tikzpicture}[>=Stealth, rotate = -90,
-     interface/.style={
-        % superfície
-        postaction={draw,decorate,decoration={border,angle=-45,
-                    amplitude=0.2cm,segment length=2mm}}},
-    ]
-
-%%% Disco
-
-\draw (0,0) ellipse (1.25 and 0.75);
-
-\draw (-1.25,0) -- (-1.25,-0.4);
-\draw (1.25,-0.4) -- (1.25,0);  
-
-\draw (-1.25,-0.4) arc (180:360:1.25 and 0.75);
-\draw[dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.75);
-
-\draw[dashdotted,<-] (-2,-0.2) node[below left]{$z$} -- (-1.25,-0.2);
-\draw[loosely dotted] (-1.25,-0.2) -- (1.25,-0.2);
-\draw[dashdotted] (1.25,-0.2) -- (1.75, -0.2);
-
-\draw[->] (-1.5,-0.2) [partial ellipse=-120:150:0.125cm and 0.3cm];
-
-%%% aro
-
-\draw (4,0) ellipse (1.25 and 0.75);
-\draw (4,0) ellipse (1 and 0.55);
-\draw[dotted] (4,-0.4) ellipse (1 and 0.55);
-\draw (4,-0.4) [partial ellipse=22:158:1cm and 0.55cm];
-
-\draw (2.75,0) -- (2.75,-0.4);
-\draw (5.25,-0.4) -- (5.25,0);  
-
-\draw (2.75,-0.4) arc (180:360:1.25 and 0.75);
-\draw[dotted] (2.75,-0.4) arc (180:360:1.25 and -0.75);
-
-\draw[dashdotted,<-] (2,-0.2) node[below left]{$z$} -- (2.75,-0.2);
-\draw[dotted] (2.75,-0.2) -- (3.15,-0.2);
-\draw[dashdotted] (3.15,-0.2) -- (4.9,-0.2);
-\draw[loosely dotted] (4.9,-0.2) -- (5.25,-0.2);
-\draw[dashdotted] (5.25,-0.2) -- (5.75, -0.2);
-
-\draw[->] (2.5,-0.2) [partial ellipse=-120:150:0.125cm and 0.3cm];
-
-\end{tikzpicture}
-\caption{Um disco e um anel de mesma massa e raio têm momentos de inércia diferentes em virtude das diferentes \emph{distribuições} de massa.\label{Fig:CompMomInerciaDiscoAnel}}
-\end{marginfigure}
-
-Dentre as principais características do momento de inércia, temos as seguintes dependências, cuja origem é a própria dependência na distância entre o eixo de rotação e a posição de cada partícula do corpo:
-\begin{description}
-    \item[Dependência na forma do objeto:] Se tomarmos um disco e um anel de mesma massa e raio, como na Figura~\ref{Fig:CompMomInerciaDiscoAnel}, o momento de inércia em torno do eixo $z$ mostrado acima é maior para o anel. Podemos compreender esse fato ao verificarmos que no caso do disco uma parte da massa, localizada na região central, se encontra próxima ao eixo de rotação. No caso do anel, essa massa está localizada a uma distância maior do eixo de rotação. Note que para que ambos os corpos possam ter a mesma massa e o mesmo raio, o material de que é feito o anel deve ser mais denso que o material do disco.
+Dentre as principais características do momento de inércia, temos as seguintes dependências, cuja origem é a própria dependência na distância entre o eixo de rotação e a posição de cada partícula do corpo (veja a Figura~\ref{Fig:MomInerciaPropriedades}):
+\begin{itemize}
+    \item Dependência na forma do objeto;
+    \item Dependência no eixo em que ocorre a rotação;
+    \item Dependência na distância ao eixo de rotação;
     
-\begin{marginfigure}[-1.0cm]
-\centering
-\begin{tikzpicture}[>=Stealth, scale = 1.2,
-     interface/.style={
-        % superfície
-        postaction={draw,decorate,decoration={border,angle=-45,
-                    amplitude=0.2cm,segment length=2mm}}},
-    ]
+    \item Aditividade do momento de inércia.
+\end{itemize}
 
-\draw[fill] (0,0) circle (0.6pt);
-\draw[fill] (0,-0.2) circle (1pt) node[above left] {CM};
-\draw (0,0) ellipse (1.25 and 0.5);
-\draw[fill] (0,-0.4) circle (0.6pt);
-
-\draw (-1.25,0) -- (-1.25,-0.4);
-\draw (1.25,-0.4) -- (1.25,0);  
-
-\draw (-1.25,-0.4) arc (180:360:1.25 and 0.5);
-\draw[densely dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.5);
-
-% Eixo z
-\draw[dashdotted,->] (0,0) -- (0,1.5) node[below left]{$z$};
-\draw[dashdotted] (0,-1.5) -- (0,-0.9);
-\draw[loosely dotted] (0,-0.9) -- (0,0);
-
-\draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
-
-% Eixo x
-\draw[dashdotted, ->] (0,-0.2)++(15:-1.05) -- +(15:-0.75) node[below right]{$x$};
-\draw[fill] (0,-0.2)+(15:-1.05) circle (0.6pt);
-\draw[loosely dotted] (0,-0.2)+(15:-1.05) -- (0,-0.2) -- +(15:1.05);
-\draw[fill] (0,-0.2) +(15:1.05) circle (0.6pt);
-
-\draw[dashdotted] (0,-0.2) ++(15:1.25) -- +(15:0.75);
-
-\draw[->, rotate=15] (0,-0.2)++(0:-1.5) [partial ellipse=-130:160:0.105cm and 0.3cm];
-
-% Eixo w
-\draw[dashdotted, <-] (0,-0.2)+(60:-1.38) node[below right]{$w$} -- +(60:-0.78);
-\draw[fill] (0,-0.2)+(60:-0.78) circle (0.6pt);
-\draw[loosely dotted] (0,-0.2)+(60:-0.78) -- +(60:0.78);
-\draw[fill] (0,-0.2)+(60:0.78) circle (0.6pt);
-\draw[dashdotted] (0,-0.2)+(60:0.78) -- +(60:1.18);
-
-\draw[->, rotate=60] (0,-0.2)++(-4:-1.2) [partial ellipse=-150:150:0.15cm and 0.3cm];
-
-\end{tikzpicture}
-\caption{A orientação do eixo de rotação em relação ao objeto determina a distância entre as partículas e o próprio eixo, o que faz com que o momento de inércia seja diferente para cada orientação. Na figura, os pequenos círculos pretos mostram pontos onde os eixos saem/entram no objeto. \label{Fig:MomInerciaDiscoVariosEixos}}
-\end{marginfigure}
-
-    \item[Dependência no eixo em que ocorre a rotação:] Mesmo para um corpo só, podemos ter diversos momentos de inércia diferentes. Na Figura~\ref{Fig:MomInerciaDiscoVariosEixos}, temos três eixos que atravessam um disco de maneiras diferentes, e que passam pelo centro de massa do corpo. Como a orientação do eixo muda a distância entre as partículas que compõe o corpo e o eixo de rotação, ocorre uma mudança do momento de inércia. Dentre os três eixos mostrados, o momento de inércia é maior em relação ao eixo $z$, uma vez que ele minimiza a quantidade de massa próxima ao eixo.
-    
-\begin{marginfigure}[2cm]
-\centering
-\begin{tikzpicture}[>=Stealth, scale = 1.1,
-     interface/.style={
-        % superfície
-        postaction={draw,decorate,decoration={border,angle=-45,
-                    amplitude=0.2cm,segment length=2mm}}},
-    ]
-
-%%% Figura superior
-
-\draw[fill] (0,0) circle (0.6pt);
-\draw[fill] (0,-0.2) circle (1pt) node[above left] {CM};
-\draw (0,0) ellipse (1.25 and 0.5);
-\draw[fill] (0,-0.4) circle (0.6pt);
-
-\draw (-1.25,0) -- (-1.25,-0.4);
-\draw (1.25,-0.4) -- (1.25,0);  
-
-\draw (-1.25,-0.4) arc (180:360:1.25 and 0.5);
-\draw[densely dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.5);
-
-% Eixo z
-\draw[dashdotted,->] (0,0) -- (0,1.5) node[below left]{$z$};
-\draw[dashdotted] (0,-1.5) -- (0,-0.9);
-\draw[dotted] (0,-0.9) -- (0,0);
-
-\draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
-
-% Eixos z', z''
-
-\draw[dashdotted, ->] (-1.25,-1.5) -- (-1.25,1.5) node[below left]{$z'$};
-\draw[->] (-1.25,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
-
-\draw[dashdotted, ->] (-2.5,-1.5) -- (-2.5,1.5) node[below left]{$z''$};
-\draw[->] (-2.5,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
-
-\end{tikzpicture}
-\caption{Mesmo que a orientação de diversos eixos em relação a um corpo seja a mesma, a distância em relação ao corpo também determina a distância das partículas em relação ao eixo de rotação. Veja que quando um corpo faz parte de um conjunto mais complexo, podemos ter uma rotação em relação a um eixo que não o atravessa. \label{Fig:MomInerciaRotEixosParalelos}}
-\end{marginfigure}
-
-    \item[Dependência na distância ao eixo de rotação:] Mesmo que tenhamos o cuidado de escolher eixos cuja orientação em relação ao corpo é a mesma, a distância entre o eixo de rotação e o próprio corpo é um fator determinante no cálculo do momento de inércia, já que isso causa uma variação da distância entre as partículas e o eixo. Na Figura~\ref{Fig:MomInerciaRotEixosParalelos} temos três eixos distintos, paralelos uns aos outros, em torno dos quais o corpo pode efetuar uma rotação. Devido a alteração das distâncias entre as partículas e o eixo, cada um deles terá um momento de inércia diferente. Devemos destacar em especial o eixo $z''$, pois ele não atravessa o corpo. Esse tipo de situação é relativamente comum quando analisamos corpos compostos de diversas partes, e tem grande influência no valor do momento de inércia. Verificaremos adiante que os momentos de inércia em eixos paralelos estão relacionados de forma bastante simples e essa relação deixará evidente que o momento de inércia mínimo é aquele associado ao eixo que passa pelo centro de massa do corpo.
-    
-\begin{marginfigure}[2cm]
-\centering
-\begin{tikzpicture}[>=Stealth]
-
-%%% Figura superior
-
-\draw[fill] (0,0) circle (0.6pt);
-\draw[fill] (0,-0.2) circle (1pt) node[right] {CM};
-\draw (0,0) ellipse (1.25 and 0.5);
-\draw[fill] (0,-0.4) circle (0.6pt);
-
-\draw (-1.25,0) -- (-1.25,-0.4);
-\draw (1.25,-0.4) -- (1.25,0);  
-
-%% arco inferior
-\draw (-1.25,-0.4) arc (180:219:1.25 and 0.5);
-\draw (1.25,-0.4) arc (0:-135:1.25 and 0.5);
-\draw[densely dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.5);
-
-% Eixo z
-\draw[dashdotted,->] (0,0) -- (0,1.5) node[below left]{$z$};
-\draw[dashdotted] (0,-1.5) -- (0,-0.9);
-\draw[dotted] (0,-0.9) -- (0,0);
-
-\draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
-
-% haste
-\draw (0,-0.2)+(30:-2) ellipse (0.45mm and 0.5mm);
-\draw (0,-0.25)+(30:-0.82) arc[start angle = -90, end angle = 90, radius = 0.5mm];
-\draw (0,-0.146)+(30:-2) -- +(30:-0.82);
-\draw (0,-0.254)+(30:-2) -- +(30:-0.82);
-
-\end{tikzpicture}
-\caption{Para um corpo complexo, podemos determinar o momento de inércia separando-o em partes simples, cujo momento de inércia sabemos determinar. \label{Fig:AditividadeMomInercia}}
-\end{marginfigure}
-
-    \item[Aditividade do momento de inércia:] Através da Equação~\ref{Eq:MomentoInerciaConjPart}, podemos mostrar que o momento de inércia de um corpo extenso é aditivo: sabemos que
-\begin{equation}
-    I = \sum_i m_i (r_\perp^i)^2,
-\end{equation}
-%
-ou, se separarmos a soma em diferentes regiões,
-\begin{align}
-    I &= \sum_{i}^{R_1} m_i (r_\perp^i)^2 + \sum_{i}^{R_1} m_i (r_\perp^i)^2 + \sum_{i}^{R_1} m_i (r_\perp^i)^2 + \dots \\
-    &= I_1 + I_2 + I_3 + \dots \\
-    &= \sum_i I_i.
-\end{align}
-
-Isso significa que podemos dividir o corpo em regiões cujo momento de inércia sabemos calcular, e, após isso, determinamos o momento de inércia total simplesmente somando os resultados. É importante destacar que a posição das regiões em relação ao eixo de rotação não muda, isto é, apesar de separarmos o corpo de diversas partes, a posição que elas ocupam no corpo altera o valor obtido para o momento de inércia. No caso da Figura~\ref{Fig:AditividadeMomInercia}, por exemplo, podemos calcular separadamente o momento de inércia do disco e da haste, mas devemos levar em conta que a haste gira em torno de um eixo que está distante da extremidade.
-\end{description}
-
+\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Momento de inércia de uma distribuição contínua de massa}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{marginfigure}
-\centering
-\begin{tikzpicture}[scale = 1.2,
-    interface/.style={
-        % superfície
-        postaction={draw,decorate,decoration={border,angle=-45,
-                    amplitude=0.2cm,segment length=2mm}}},
-    ]
-    
-% topo
-\draw (0,0) ellipse (1.3 and 0.55);
-\draw (-1.3, 0) -- (-1.3,-0.25);
-\draw (1.3, 0) -- (1.3, -0.25);
-\draw (-1.3,-0.25) arc (180:360:1.3 and 0.55);
-\draw[dotted] (-1.3,-0.25) arc (180:360:1.3 and -0.55);
-
-%\draw[<->] (0,0) -- node[above]{$R$} (1.25,0);
-
-% laterais
-\draw[densely dotted] (-1.3,-0.25) arc[start angle = 90, end angle = -14, radius = 0.25];
-\draw[densely dashed] (-1.3,-0.75) arc[start angle = -90, end angle = -14, radius = 0.25];
-
-\draw[densely dotted] (1.3,-0.25) arc[start angle = 90, end angle = 194, radius = 0.25];
-\draw[densely dashed] (1.3,-0.75) arc[start angle = -90, end angle = -166, radius = 0.25];
-
-% fundo
-\draw (-1.3,-0.75) arc (180:153:1.3 and 0.55);
-\draw (1.3,-0.75) arc (0:27:1.3 and 0.55);
-\draw (-1.3,-0.75) arc (180:360:1.3 and 0.55);
-\draw[dotted] (-1.3,-0.75) arc (180:360:1.3 and -0.55);
-\draw (-1.3,-0.75) -- (-1.3,-1);
-\draw (1.3,-0.75) -- (1.3,-1);
-\draw (-1.3,-1) arc (180:360:1.3 and 0.55);
-\draw[dotted] (-1.3,-1) arc (180:360:1.3 and -0.55);
-\draw[fill] (0,-1) circle (0.6pt);
-
-% Eixo z
-\draw[fill] (0,0) circle (0.6pt);
-\draw[dashdotted,-Stealth] (0,0) -- (0,1.5) node[below left]{$z$};
-\draw[densely dotted] (0,0) -- (0,-1.55);
-\draw[dashdotted] (0,-1.55) -- (0,-2);
-
-\draw[fill] (0,-0.5) circle (1pt);
-
-\draw[-Stealth] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
-
-% dm
-\begin{scope}[scale = 0.15, rotate around y = -7, shift = {(-5, -1)}]
-
-    \draw[fill, lightgray, draw = black] (1,1,1) -- (1,1,0) -- (0,1,0) -- (0,1,1) -- cycle;
-    \draw[fill, lightgray, draw = black] (1,1,1) -- (1,1,0) -- (1,0,0) -- (1,0,1) -- cycle;
-    \draw[fill, lightgray, draw = black] (1,1,1) -- (0,1,1) -- (0,0,1) -- (1,0,1) -- cycle;
-
-\end{scope}
-
-\draw[-Stealth] (0,-0.18) coordinate (brcmc) -- node[above]{$r_\perp$} (-0.68,-0.09) coordinate (cmc);
-\draw[fill] (brcmc) circle (0.3pt);
-\draw[fill] (cmc) circle (0.6pt);
-\coordinate (O) at (0,0);
-
-\pic [draw, "$\cdot$", angle radius = 1.7mm, angle eccentricity = 0.5] {angle = O--brcmc--cmc};
-
-% Visão lateral
-
-\draw (-1.3,-3) rectangle (1.3,-3.25);
-\draw (-1.3,-3.25) arc[start angle = 90, end angle = -90, radius = 0.25];
-\draw (1.3,-3.25) arc[start angle = 90, end angle = 270, radius = 0.25];
-\draw (-1.3,-4) rectangle (1.3, -3.75);
-
-\draw[dashdotted, -Stealth] (0,-3) -- +(0,0.75) node[below left]{$z$};
-\draw[dotted] (0,-3) -- +(0,-1);
-\draw[dashdotted] (0,-4) -- +(0,-0.75);
-
-\draw[fill] (0,-3.5) circle (1pt);
-
-\end{tikzpicture}
-\caption{Roldana formada por um cilindro com uma ``calha'' semi-circular.}
-\end{marginfigure}
 
 A determinação do momento de inércia através da Equação \eqref{Eq:MomentoInerciaConjPart} para um corpo extenso não é possível devido ao grande número de partículas que compõe um corpo rígido. Para contornar esse problema, vamos dividimos o corpo em uma série de regiões cúbicas e vamos considerar que toda a massa está localizada no centro de massa do cubo. Assim, temos que
 \begin{equation}
     I = \sum_{i = 1}^N M_{R_i} (r_\perp^i)^2.
 \end{equation}
 %
-Como no caso do centro de massa, a divisão em cubos pode não ser muito precisa para um corpo qualquer cujos limites não se alinhem com os cubos, porém sempre podemos melhorar a precisão ao aumentar o número de cubos, diminuindo assim o volume de cada um deles. Ao tomarmos o limite de infinitos cubos, recaímos na definição de uma integral em duas ou três dimensões:\footnote[][3cm]{O caso bidimensional é um caso especial do tridimensional, e se aplica aos casos onde temos objetos em que uma das dimensões é constante para todo o objeto --~ou seja, uma figura plana, como uma placa metálica, por exemplo~--.}
+Como no caso do centro de massa, a divisão em cubos pode não ser muito precisa para um corpo qualquer cujos limites não se alinhem com os cubos, porém sempre podemos melhorar a precisão ao aumentar o número de cubos, diminuindo assim o volume de cada um deles. Ao tomarmos o limite de infinitos cubos, recaímos na definição de uma integral em duas ou três dimensões:\footnote{O caso bidimensional é um caso especial do tridimensional, e se aplica aos casos onde temos objetos em que uma das dimensões é constante para todo o objeto --~ou seja, uma figura plana, como uma placa metálica, por exemplo~--.}
 \begin{align}
     I &= \lim_{N \to \infty} \sum_{i = 1}^N M_{R_i} (r_\perp^i)^2 \\
     &= \int r_\perp^2 dm. \label{Eq:MomInerciaDistContinua}
@@ -425,50 +259,49 @@ A interpretação da expressão acima é mais simples se escrevermos $dm$ em ter
     dm &= \rho(\vec{r}) \; dV. \label{Eq:DiferencialDeMassaVolume}
 \end{align}
 
-Mais uma vez, o uso de expressões integrais como a Equação~\eqref{Eq:MomInerciaDistContinua} acima depende de podermos descrever a forma de um corpo matematicamente, o que só pode ser feito facilmente para formas simples. Nesse caso, as expressões resultantes para o momento de inércia dos corpos serão diferentes para cada tipo de corpo, porém são razoavelmente simples.
+Mais uma vez, o uso de expressões integrais como a Equação~\eqref{Eq:MomInerciaDistContinua} acima depende de podermos descrever a forma de um corpo matematicamente, o que só pode ser feito facilmente para formas simples. Nesses casos, as expressões resultantes para os momentos de inércia dos corpos serão diferentes para cada tipo de corpo, porém são razoavelmente simples e são frequentemente sumarizados em tabelas.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Momento de inércia de um disco/cilindro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Para determinarmos o momento de inércia de um disco/cilindro de massa $M$, raio $R$ e altura $L$, em torno do eixo que passa pelo centro de massa, perpendicularmente à face plana, basta empregarmos a Equação~\eqref{Eq:MomInerciaDistContinua} e escrever $dm$ de acordo com a Equação~\eqref{Eq:DiferencialDeMassaVolume}:
-%
-\begin{marginfigure}
-\centering
-\begin{tikzpicture}[>=Stealth]
-    
-% topo
-\draw (0,0) ellipse (1.5 and 0.7);
-
-\draw[<->] (0,0) -- node[above]{$R$} (-20:1.25);
-
-% laterais
-\draw (-1.5,0) -- (-1.5,-1.5);
-\draw[|<->|] (-1.75,0) -- node[left]{$L$} (-1.75,-1.5);
-\draw (1.5,-1.5) -- (1.5,0);  
-
-% fundo
-\draw[dotted] (-1.5,-1.5) arc (180:360:1.5 and -0.7);
-\draw (-1.5,-1.5) arc (180:360:1.5 and 0.7);
-
-% Eixo z
-\draw[dashdotted,->] (0,-0.5) -- (0,1.5) node[below left]{$z$};
-\draw[dotted] (0,-0.5) -- (0,-2.2);
-\draw[dashdotted] (0,-2.2) -- (0,-2.9);
-
-\draw[fill] (0,-0.8) circle (1pt) node[below right] {CM};
-\draw[fill] (0,0) circle (0.5pt);
-\draw[fill] (0, -1.5) circle (0.5pt);
-
-\draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
-
-\end{tikzpicture}
-\caption{Cilíndro de massa $M$, raio $R$, e altura $L$. \label{Fig:MomInerciaDiscoCilindro}}
-\end{marginfigure}
-%
 \begin{equation}
     I = \iiint_V r_\perp^2 \, \rho(\vec{r}) \, dV.
 \end{equation}
+%
+\begin{marginfigure}
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        
+    % topo
+    \draw (0,0) ellipse (1.5 and 0.7);
+    
+    \draw[<->] (0,0) -- node[above]{$R$} (-20:1.25);
+    
+    % laterais
+    \draw (-1.5,0) -- (-1.5,-1.5);
+    \draw[|<->|] (-1.75,0) -- node[left]{$L$} (-1.75,-1.5);
+    \draw (1.5,-1.5) -- (1.5,0);  
+    
+    % fundo
+    \draw[dotted] (-1.5,-1.5) arc (180:360:1.5 and -0.7);
+    \draw (-1.5,-1.5) arc (180:360:1.5 and 0.7);
+    
+    % Eixo z
+    \draw[dashdotted,->] (0,-0.5) -- (0,1.5) node[below left]{$z$};
+    \draw[dotted] (0,-0.5) -- (0,-2.2);
+    \draw[dashdotted] (0,-2.2) -- (0,-2.9);
+    
+    \draw[fill] (0,-0.8) circle (1pt) node[below right] {CM};
+    \draw[fill] (0,0) circle (0.5pt);
+    \draw[fill] (0, -1.5) circle (0.5pt);
+    
+    \draw[->] (0,1.05) [partial ellipse=-225:60:0.3cm and 0.125cm];
+    
+    \end{tikzpicture}
+    \caption{Cilíndro de massa $M$, raio $R$, e altura $L$. \label{Fig:MomInerciaDiscoCilindro}}
+\end{marginfigure}
 %
 Se a densidade do corpo é homogênea, podemos escrever $\rho(\vec{r}) \equiv \rho$. O volume $V$ sobre o qual a integração é realizada é o próprio volume determinado pelo cilindro. Claramente uma integração em coordenadas cilíndricas é mais conveniente, logo, reescrevemos $dV$ como $dV = r \, dr \, d\theta \, dz$ e utilizamos os limites $r = (0, R)$, $\theta = (0, 2\pi)$ e $z = (0,L)$. Note ainda que a coordenada $r$ das coordenadas cilíndricas é a própria distância ao eixo de rotação e podemos omitir o índice $\perp$. Assim:
 \begin{align}
