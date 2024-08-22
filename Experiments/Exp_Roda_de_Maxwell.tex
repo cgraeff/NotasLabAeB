@@ -120,7 +120,17 @@ e suas unidades são $[I] = \rm{M}\cdot\rm{L}^2$, ou, dentro do SI, $[I] = \rm{k
 \section{Cálculo do momento de inércia}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure*}[b]\forceversofloat
+Para que possamos aplicar a Segunda Lei de Newton para a rotação, é fundamental que saibamos qual é o momento de inércia do corpo em questão para o eixo em torno do qual a rotação ocorre. Como é possível verificar na Expressão~\ref{Eq:MomentoInerciaConjPart}, o momento de inércia depende da distância de cada uma das partículas em relação ao eixo de rotação. Isso nos indica que é importante determinar uma série de características particulares a cada situação que estivermos analisando.
+
+Dentre as principais características do momento de inércia, temos as seguintes dependências, cuja origem é a própria dependência na distância entre o eixo de rotação e a posição de cada partícula do corpo (veja a Figura~\ref{Fig:MomInerciaPropriedades}):
+\begin{itemize}
+    \item Dependência na forma do objeto;
+    \item Dependência no eixo em que ocorre a rotação;
+    \item Dependência na distância ao eixo de rotação;
+    \item Aditividade do momento de inércia.
+\end{itemize}
+
+\begin{figure*}[tb]\forcerectofloat
     \centering
     \begin{tikzpicture}[>=Stealth, scale = 1.1]
     
@@ -224,16 +234,6 @@ e suas unidades são $[I] = \rm{M}\cdot\rm{L}^2$, ou, dentro do SI, $[I] = \rm{k
     \end{tikzpicture}
     \caption{A orientação do eixo de rotação em relação ao objeto e a distância entre o objeto e o eixo de rotação são aspectos importantes para a determinação do momento de inércia. Felizmente, podemos utilizar a aditividade do momento de inércia para dividir o corpo em partes cujos momentos de inércia são tabelados.\label{Fig:MomInerciaPropriedades}}
 \end{figure*}
-
-Para que possamos aplicar a Segunda Lei de Newton para a rotação, é fundamental que saibamos qual é o momento de inércia do corpo em questão para o eixo em torno do qual a rotação ocorre. Como é possível verificar na Expressão~\ref{Eq:MomentoInerciaConjPart}, o momento de inércia depende da distância de cada uma das partículas em relação ao eixo de rotação. Isso nos indica que é importante determinar uma série de características particulares a cada situação que estivermos analisando.
-
-Dentre as principais características do momento de inércia, temos as seguintes dependências, cuja origem é a própria dependência na distância entre o eixo de rotação e a posição de cada partícula do corpo (veja a Figura~\ref{Fig:MomInerciaPropriedades}):
-\begin{itemize}
-    \item Dependência na forma do objeto;
-    \item Dependência no eixo em que ocorre a rotação;
-    \item Dependência na distância ao eixo de rotação;
-    \item Aditividade do momento de inércia.
-\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Momento de inércia de uma distribuição contínua de massa}
@@ -501,6 +501,28 @@ A partir dessa relação, também temos
 %
 Note que as relações acima podem ou não ter um sinal negativo, dependendo da escolha do sistema de referência. Se adotarmos um eixo vertical apontando para cima, as expressões acima estão adequadas.
 
+\begin{marginfigure}[7.5cm]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale = 0.8]
+    
+        \draw[pattern = north west lines] (0,2) -- (0.5, 2) -- (0.5,1.5) -- (0.25,1.5) -- (0.25,0.25) -- (3,0.25) -- (3,-0.25) -- (0.25,-0.25) -- (0.25, -1.5) -- (0.5, -1.5) -- (0.5, -2) -- (-0.5, -2) -- (-0.5, -1.5) -- (-0.25, -1.5) -- (-0.25, -0.25) -- (-3, -0.25) -- (-3, 0.25) -- (-0.25, 0.25) -- (-0.25,1.5) --(-0.5,1.5) -- (-0.5, 2) -- cycle;
+        
+        \draw[|<->|] (-3,0.875) -- node[above]{$L$} (-0.25,0.875);
+        \draw[|<->|] (3,0.875) -- node[above]{$L$} (0.25,0.875);
+        \draw[dotted] (-3,0.875) -- (-3,0.25);
+        \draw[dotted] (3,0.875) -- (3,0.25);
+        
+        \draw[|<->|] (-0.5, 2.5) -- node[above]{$\ell_e$} (0.5,2.5);
+        \draw[dotted] (-0.5, 2) -- (-0.5, 2.5);
+        \draw[dotted] (0.5, 2) -- (0.5, 2.5);
+        
+        \draw[->] (-1,-0.875) -- node[below]{$\ell_i$} (-0.25,-0.875);
+        \draw[->] (1,-0.875) -- (0.25,-0.875);
+    
+    \end{tikzpicture}
+    \caption{Roda de Maxwell, seção frontal.\label{Fig:RodaDeMaxwellSecaoFrontal}}
+    \end{marginfigure}
+
 Aplicando a Segunda Lei de Newton para translação ao centro de massa, obtemos
 \begin{description}
 \item[Eixo $y$:]
@@ -518,33 +540,6 @@ Aplicando a Segunda Lei de Newton para a rotação, temos
     -Tr &= I\alpha.
 \end{align}
 
-\begin{marginfigure}[3.5cm]
-\centering
-\begin{tikzpicture}[>=Stealth, scale = 0.8]
-
-    \draw[pattern = north west lines] (0,2) -- (0.5, 2) -- (0.5,1.5) -- (0.25,1.5) -- (0.25,0.25) -- (3,0.25) -- (3,-0.25) -- (0.25,-0.25) -- (0.25, -1.5) -- (0.5, -1.5) -- (0.5, -2) -- (-0.5, -2) -- (-0.5, -1.5) -- (-0.25, -1.5) -- (-0.25, -0.25) -- (-3, -0.25) -- (-3, 0.25) -- (-0.25, 0.25) -- (-0.25,1.5) --(-0.5,1.5) -- (-0.5, 2) -- cycle;
-    
-    \draw[|<->|] (-3,0.875) -- node[above]{$L$} (-0.25,0.875);
-    \draw[|<->|] (3,0.875) -- node[above]{$L$} (0.25,0.875);
-    \draw[dotted] (-3,0.875) -- (-3,0.25);
-    \draw[dotted] (3,0.875) -- (3,0.25);
-    
-    \draw[|<->|] (-0.5, 2.5) -- node[above]{$\ell_e$} (0.5,2.5);
-    \draw[dotted] (-0.5, 2) -- (-0.5, 2.5);
-    \draw[dotted] (0.5, 2) -- (0.5, 2.5);
-    
-    \draw[->] (-1,-0.875) -- node[below]{$\ell_i$} (-0.25,-0.875);
-    \draw[->] (1,-0.875) -- (0.25,-0.875);
-
-\end{tikzpicture}
-\caption{Roda de Maxwell, seção frontal.\label{Fig:RodaDeMaxwellSecaoFrontal}}
-\end{marginfigure}
-
-O momento de inércia total é dado pela soma do momento de inércia do disco central e dos dois semieixos:
-\begin{equation}
-    I = \frac{1}{2} MR^2 + 2\frac{1}{2} m r^2.
-\end{equation}
-
 Através dos resultados obtidos acima, podemos montar um sistema de equações
 \begin{equation}
 \begin{system}
@@ -556,73 +551,31 @@ Através dos resultados obtidos acima, podemos montar um sistema de equações
 %
 cuja solução é
 \begin{align}
-    a &= \frac{m_t g}{m_t + I / r^2} \label{Eq:AcelRodaDeMaxwellGenerica}\\
-    &= \frac{m_tg}{m_t + M(R/r)^2/2 + m} \\
-    &= \frac{M + 2m}{M + 2m + M(R/r)^2/2 + m} \cdot g \\
-    &= \frac{M + 2m}{3m + M \cdot [1 + (R/r)^2/2]} \cdot g \\
-    &= \frac{2 + M/m}{3 + (M/m) \cdot [1 + (R/r)^2/2]} \cdot g
+    a &= \frac{m_t g}{m_t + I / r^2} \\
+    &= \frac{1}{1+\frac{I}{m_t r^2}} \cdot g. \label{Eq:AcelRodaDeMaxwellGenerica}
 \end{align}
 
-\begin{marginfigure}[1.5cm]
-\centering
-\begin{tikzpicture}[>=Stealth, scale = 0.95,
-     interface/.style={
-        % superfície
-        postaction={draw,decorate,decoration={border,angle=-45,
-                    amplitude=0.2cm,segment length=2mm}}},
-    ]
-
-    \def\hL{0.5};
-    \def\l{2};
-    \def\R{2};
-    \def\r{0.15};
-    \def\d{0.3}
-    \draw (-\hL,-\R) rectangle (\hL,\R);
-    \draw (-\hL,\r) rectangle +(-\l,-\d);
-    \draw (\hL,-\r) rectangle +(\l,\d);
-    
-    \draw[|<->|] (-\hL, 2.2) -- node[above]{$L$} (\hL, 2.2);
-    \draw[|<->] (-\hL, 0.35) +(-\l,0) -- node[above]{$\ell$} (-\hL,0.35);
-    \draw[|<->] (\hL,0.35) +(\l,0) -- node[above]{$\ell$} (\hL,0.35);
-    
-\end{tikzpicture}
-\caption{Roda de Maxwell, visão frontal.\label{Fig:RodaDeMaxwellVisaoFrontal}}
-\end{marginfigure}
-
-Se assumirmos que os eixos laterais e o disco central são feitos do mesmo material, podemos escrever as massas como
+Para determinar o momento de inércia total, podemos dividir a roda de Maxwell em três partes: os dois semieixos, o disco central, e o ``tubo'' externo. Como não sabemos a massa de cada uma das partes separadamente, teremos que determiná-la através da densidade e do volume de cada uma das partes. Assim, obtemos
 \begin{align}
-    M &= \rho V_d \\
-    &= \rho \pi R^2 L \\
-    m &= \rho V_e \\
-    &= \rho \pi r^2 \ell,
+    I_{\text{eixos}} &= 2\cdot\frac{1}{2} MR^2 \\
+    &=2\cdot \frac{1}{2} \rho V_e \cdot r^2 \\
+    I_{\text{disco}} &= \frac{1}{2} \cdot MR^2 \\
+    &= \frac{1}{2} \cdot\rho V_d \cdot R_i^2 \\
+    I_{\text{tubo}} &= \frac{1}{2} \cdot M (R_e^2 - R_i^2) \\
+    &= \frac{1}{2} \cdot \rho V_t \cdot (R_e^2 - R_i^2),
 \end{align}
 %
-onde $L$ e $\ell$ representam a espessura do disco e o comprimento dos semieixos, respectivamente, e $\rho$ representa a densidade do material. Calculando a razão $M/m$, obtemos
+onde os volumes são dados por
 \begin{align}
-    \frac{M}{m} &= \frac{\rho \pi R^2 L}{\rho \pi r^2 \ell} \\
-    &= \left(\frac{R}{r}\right)^2\frac{L}{\ell}.
+    V_e &= \pi r^2 L \\
+    V_d &= \pi R_i^2 \ell_i \\
+    V_t &= \pi (R_e^2 - R_i^2)\ell_e.
 \end{align}
 %
-Se substituirmos os resultados acima na expressão para a aceleração, podemos escrever
-\begin{equation}
-    a = \frac{2 + \lambda^2\gamma}{3 + (1 + \lambda^2/2) \lambda^2 \gamma} \cdot g,
+Somando as expressões acima, obtemos o momento de inércia total:
+\begin{equation}\label{eq:MomentoDeInerciaTotal}
+    I = \frac{1}{2} \rho [V_e r^2 + V_d R_i^2 + V_t (R_e^2 - R_i^2)].
 \end{equation}
-%
-onde definimos
-\begin{align}
-    \lambda &\equiv R/r \\
-    \gamma &\equiv L/\ell.
-\end{align}
-
-Um caso particular da expressão obtida acima para a aceleração é aquele em que $\lambda = R/r \to 1$, ou seja, temos um simples cilindro. Nesse caso temos que
-\begin{align}
-    a &\to \frac{2 + \gamma}{3 + (1 + 1/2)\gamma} \cdot g \\
-    &\to \frac{2 + \gamma}{3 + 3\gamma/2} \cdot g \\
-    &\to \frac{2}{3} \cdot \frac{ 1 + \gamma/2}{1 + \gamma/2} \cdot g \\
-    &\to \frac{2}{3} \cdot g.
-\end{align}
-%
-Note que esse é o mesmo resultado que se obtém ao usar $I = MR^2 / 2$, com $M = m_t$ e $R = r$ na Equação~\eqref{Eq:AcelRodaDeMaxwellGenerica}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
@@ -633,9 +586,10 @@ Note que esse é o mesmo resultado que se obtém ao usar $I = MR^2 / 2$, com $M 
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Resultados concretos que devemos conseguir;
-	\item Observar a relação de tal coisa com outra coisa;
-	\item Calcular a constante $x$.
+	\item Determinar a densidade do material que compõe a roda de Maxwell;
+	\item Determinar o momento de inércia e a aceleração do centro de massa através das Equações~\eqref{eq:MomentoDeInerciaTotal} e~\eqref{Eq:AcelRodaDeMaxwellGenerica};
+	\item Determinar a aceleração do centro de massa experimentalmente, através da cinemática;
+    \item Determinar o erro percentual entre o valor teórico e o valor experimental para a aceleração do centro de massa.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -643,8 +597,10 @@ Note que esse é o mesmo resultado que se obtém ao usar $I = MR^2 / 2$, com $M 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Item 1;
-	\item Item 2.
+	\item Aparato da roda de Maxwell;
+    \item Réguas;
+    \item Paquímetro;
+	\item Balança digital.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -652,12 +608,21 @@ Note que esse é o mesmo resultado que se obtém ao usar $I = MR^2 / 2$, com $M 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%
-%\subsection{Parte A} % Se necessário
+\subsection{Determinação da densidade}
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-	\item Passo 1;
-	\item Passo 2;
-	\item Passo 3.
+	\item Afira o valor da massa total $m_t$ da roda de Maxwell usando a balança. Anote o valor obtido na Tabela~\ref{DadosRodaDeMaxwell};
+	\item Meça os valores de $r$, $R_i$, $R_e$, $L$, $\ell_i$, e $\ell_e$ e os anote na Tabela~\ref{DadosRodaDeMaxwell};
+	\item Determine os resultados para os volumes $V_e$, $V_d$, e $V_t$. Anote os resultados na Tabela~\ref{DadosRodaDeMaxwell}.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Determinação da aceleração do centro de massa através da cinemática}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+	\item Afira o valor da massa total $m_t$ da roda de Maxwell usando a balança. Anote o valor obtido na Tabela~\ref{DadosRodaDeMaxwell};
+	\item Meça os valores de $r$, $R_i$, $R_e$, $L$, $\ell_i$, e $\ell_e$ e os anote na Tabela~\ref{DadosRodaDeMaxwell};
+	\item Determine os resultados para os volumes $V_e$, $V_d$, e $V_t$. Anote os resultados na Tabela~\ref{DadosRodaDeMaxwell}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -754,3 +719,43 @@ metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
 \section{Tabelas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{table*}[!ht]
+    \centering
+    \begin{tabular}{lp{25mm}p{25mm}p{25mm}p{25mm}p{25mm}l}
+    \toprule
+        &\multicolumn{4}{l}{\textbf{Dados Experimentais}} \\
+        \cmidrule{2-6}
+        & $x_0$ & $x_f$ & $t_1$ & $t_2$ & $t_3$ & \\
+        \cmidrule{2-6}
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        \cmidrule{2-6}
+    \\
+        & \multicolumn{3}{l}{\textbf{Dados calculados}} \\
+        \cmidrule{2-3}
+        & $\Delta x$ & $\mean{t}$ \\
+        \cmidrule{2-3}
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\ 
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\ 
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\ 
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\ 
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\ 
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\ 
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\ 
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\ 
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\ 
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\ 
+        \cmidrule{2-3}
+    \bottomrule
+    \end{tabular}
+    \caption[][5mm]{Dados do MRUV}
+    \label{DadosRodaDeMaxwell}
+    \end{table*}
