@@ -70,15 +70,15 @@
 Para verificar a relação entre o torque e aceleração, podemos analisar um objeto como o da Figura~\ref{Fig:CalculoSegundaLeiRotacoes}. Vamos supor que sobre cada partícula do corpo sejam exercidas forças internas e externas, sendo que cada força que atua sobre a $i$-ésima partícula é representada por $F_j^i$, onde $j$ é um índice que enumera cada uma das forças que atuam sobre tal partícula. Se analisarmos o torque devido a $j$-ésima força que atua sobre a $i$-ésima partícula, temos
 \begin{align}
 	\tau_j^i &= r_\perp^i F_j^i \sen\phi_j^i \\
-	&= r_\perp^i F_{j,t}^i
+	&= r_\perp^i F_{j,t}^i.
 \end{align}
 %
-mas
+Note que
 \begin{equation}
 	F_{j,t}^{i} = m_i a_{j,t}^{i},
 \end{equation}
 %
-onde $a_{j,t}^i$ é a aceleração  tangencial que a $i$-ésima partícula teria se fosse submetida à $j$-ésima força isoladamente.
+onde $a_{j,t}^i$ é a aceleração tangencial que a $i$-ésima partícula teria se fosse submetida à $j$-ésima força isoladamente.
 %
 Logo,
 \begin{equation}
@@ -122,7 +122,7 @@ e suas unidades são $[I] = \rm{M}\cdot\rm{L}^2$, ou, dentro do SI, $[I] = \rm{k
 
 \begin{figure*}[b]\forceversofloat
     \centering
-    \begin{tikzpicture}[>=Stealth, scale = 0.9]
+    \begin{tikzpicture}[>=Stealth, scale = 1.1]
     
     \draw[fill] (0,0) circle (0.6pt);
     \draw[fill] (0,-0.2) circle (1pt) node[above left] {CM};
@@ -232,11 +232,9 @@ Dentre as principais características do momento de inércia, temos as seguintes
     \item Dependência na forma do objeto;
     \item Dependência no eixo em que ocorre a rotação;
     \item Dependência na distância ao eixo de rotação;
-    
     \item Aditividade do momento de inércia.
 \end{itemize}
 
-\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Momento de inércia de uma distribuição contínua de massa}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -270,7 +268,7 @@ Para determinarmos o momento de inércia de um disco/cilindro de massa $M$, raio
     I = \iiint_V r_\perp^2 \, \rho(\vec{r}) \, dV.
 \end{equation}
 %
-\begin{marginfigure}
+\begin{marginfigure}[-4cm]
     \centering
     \begin{tikzpicture}[>=Stealth]
         
@@ -375,7 +373,7 @@ podemos reecrever a expressão para o momento de inércia como
     I = [\pi \cdot (R_e^2 - R_i^2) \cdot L \cdot \rho] \cdot \frac{R_e^2 + R_i^2}{2}.
 \end{equation}
 %
-Como no caso do cilíndro, verificamos que o termo entre colchetes corresponde ao produto do volume do tubo e de sua densidade, equivalendo à massa do corpo. Consequentemente, podemos escrever para o momento de inércia
+Como no caso do cilíndro, verificamos que o termo entre colchetes corresponde ao produto do volume do corpo e de sua densidade, equivalendo à massa do corpo. Consequentemente, podemos escrever para o momento de inércia
 \begin{equation}
     I = M \; \frac{R_e^2 + R_i^2}{2}. \mathnote{Momento de inércia de um tubo cilíndrico em torno do eixo central do tubo.}
 \end{equation}
@@ -387,7 +385,7 @@ Como no caso do cilíndro, verificamos que o termo entre colchetes corresponde a
 % Pra essa figura ficar boa, precisaria fazer
 % os traços sobre uma foto, assim a perspectiva
 % ficaria correta
-\begin{marginfigure}
+\begin{marginfigure}[3cm]
 \centering
 \begin{tikzpicture}[>=Stealth, rotate = -95,
      interface/.style={
@@ -458,33 +456,39 @@ Como no caso do cilíndro, verificamos que o termo entre colchetes corresponde a
 
 \begin{marginfigure}[1.5cm]
 \centering
-\begin{tikzpicture}[>=Stealth,
+\begin{tikzpicture}[>=Stealth, scale = 0.8,
      interface/.style={
         % superfície
         postaction={draw,decorate,decoration={border,angle=-45,
                     amplitude=0.2cm,segment length=2mm}}},
     ]
 
+    \draw[fill] (0,0) circle (0.75pt);
+    
     \draw (0,0) circle (2cm);
     \draw (0,0) circle (1.5cm);
     \draw (0,0) circle (0.25cm);
     
     \draw (-0.25,0) -- (-0.25,3);
-    \draw[interface] (1,3) -- (-1,3);
+    \draw[interface] (2,3) -- (-2,3);
     
-    \draw[dotted] (0,0.25) -- (1,0.25);
-    \draw[dotted] (0,-0.25) -- (1,-0.25);
-    \draw[|<->|] (1,0.25) -- node[right]{$2r$} (1,-0.25);
+    \draw[dashdotted] (0,0) -- (3.75,0);
     
-    \draw[dotted] (0,2) -- (2.5,2);
-    \draw[dotted] (0,-2) -- (2.5,-2);
-    \draw[|<->|] (2.5,2) -- node[right]{$2R$} (2.5,-2);
+    \draw[dotted] (0,0.25) -- (0.75,0.25);
+    \draw[|<-] (0.75,0.25) -- (0.75,0.75);
+    \draw[|<-] (0.75,0) -- node[below right]{$r$} (0.75,-0.5);
+    
+    \draw[dotted] (0,2) -- (3.5,2);
+    \draw[|<->|] (2.5,1.5) -- node[right]{$R_i$} (2.5,0);
+
+    \draw[dotted] (0,1.5) -- (2.5,1.5);
+    \draw[|<->|] (3.5,2) -- node[right]{$R_e$} (3.5,0);
 
 \end{tikzpicture}
 \caption{Roda de Maxwell, visão lateral.\label{Fig:RodaDeMaxwellVisaoLateral}}
 \end{marginfigure}
 
-Um dos sistemas mais simples que exibe rotação e translação é o que denominamos como ``Roda de Maxwell'', e que consiste em um disco ligado a um eixo suspenso por cordas. As cordas são enroladas no eixo e o sistema é liberado a partir do repouso, deixando o disco descer e desenrolar a corda, de maneira similar a um ioiô. Apesar de o disco exibir uma rotação e uma translação, esses movimentos não são independentes, uma vez que a distância percorrida pelo centro de massa está ligada ao comprimento de corda que é desenrolado do eixo. A relação entre o deslocamento do centro de massa e o deslocamento angular, que determina a quantidade $\ell$ de corda desenrolada, é
+Um dos sistemas mais simples que exibe rotação e translação é o que denominamos como ``Roda de Maxwell'', que consiste em um disco ligado a um eixo suspenso por cordas. As cordas são enroladas no eixo e o sistema é liberado a partir do repouso, deixando o disco descer e desenrolar a corda, de maneira similar a um ioiô. Apesar de o disco exibir uma rotação e uma translação, esses movimentos não são independentes, uma vez que a distância percorrida pelo centro de massa está ligada ao comprimento de corda que é desenrolado do eixo. A relação entre o deslocamento do centro de massa e o deslocamento angular, que determina a quantidade $\ell$ de corda desenrolada, é
 \begin{equation}
     \Delta y_{\text{CM}} \equiv \ell = r \Delta \theta.
 \end{equation}
@@ -495,7 +499,7 @@ A partir dessa relação, também temos
     a_{\text{CM}} &= r \alpha.
 \end{align}
 %
-Note que as relações acima podem ou não ter um sinal negativo, dependendo da escolha do sistema de referência. Se adotarmos um eixo vertical apontando para cima, as expressões acima estão adequadas. %\textbf{Se tirar a máquina de atwood lá do começo, vou precisar explicar a questão dos sinais aqui.}
+Note que as relações acima podem ou não ter um sinal negativo, dependendo da escolha do sistema de referência. Se adotarmos um eixo vertical apontando para cima, as expressões acima estão adequadas.
 
 Aplicando a Segunda Lei de Newton para translação ao centro de massa, obtemos
 \begin{description}
@@ -513,7 +517,29 @@ Aplicando a Segunda Lei de Newton para a rotação, temos
     \tau &= I\alpha \\
     -Tr &= I\alpha.
 \end{align}
-%
+
+\begin{marginfigure}[3.5cm]
+\centering
+\begin{tikzpicture}[>=Stealth, scale = 0.8]
+
+    \draw[pattern = north west lines] (0,2) -- (0.5, 2) -- (0.5,1.5) -- (0.25,1.5) -- (0.25,0.25) -- (3,0.25) -- (3,-0.25) -- (0.25,-0.25) -- (0.25, -1.5) -- (0.5, -1.5) -- (0.5, -2) -- (-0.5, -2) -- (-0.5, -1.5) -- (-0.25, -1.5) -- (-0.25, -0.25) -- (-3, -0.25) -- (-3, 0.25) -- (-0.25, 0.25) -- (-0.25,1.5) --(-0.5,1.5) -- (-0.5, 2) -- cycle;
+    
+    \draw[|<->|] (-3,0.875) -- node[above]{$L$} (-0.25,0.875);
+    \draw[|<->|] (3,0.875) -- node[above]{$L$} (0.25,0.875);
+    \draw[dotted] (-3,0.875) -- (-3,0.25);
+    \draw[dotted] (3,0.875) -- (3,0.25);
+    
+    \draw[|<->|] (-0.5, 2.5) -- node[above]{$\ell_e$} (0.5,2.5);
+    \draw[dotted] (-0.5, 2) -- (-0.5, 2.5);
+    \draw[dotted] (0.5, 2) -- (0.5, 2.5);
+    
+    \draw[->] (-1,-0.875) -- node[below]{$\ell_i$} (-0.25,-0.875);
+    \draw[->] (1,-0.875) -- (0.25,-0.875);
+
+\end{tikzpicture}
+\caption{Roda de Maxwell, seção frontal.\label{Fig:RodaDeMaxwellSecaoFrontal}}
+\end{marginfigure}
+
 O momento de inércia total é dado pela soma do momento de inércia do disco central e dos dois semieixos:
 \begin{equation}
     I = \frac{1}{2} MR^2 + 2\frac{1}{2} m r^2.
