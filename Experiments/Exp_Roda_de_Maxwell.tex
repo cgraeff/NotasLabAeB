@@ -583,13 +583,15 @@ Somando as expressões acima, obtemos o momento de inércia total:
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
+\label{Sec:ObjetivosRodaDeMaxwell}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
 	\item Determinar a densidade do material que compõe a roda de Maxwell;
 	\item Determinar o momento de inércia e a aceleração do centro de massa através das Equações~\eqref{eq:MomentoDeInerciaTotal} e~\eqref{Eq:AcelRodaDeMaxwellGenerica};
 	\item Determinar a aceleração do centro de massa experimentalmente, através da cinemática;
-    \item Determinar o erro percentual entre o valor teórico e o valor experimental para a aceleração do centro de massa.
+    \item Determinar o erro percentual entre o valor teórico e o valor experimental para a aceleração do centro de massa;
+    \item Verificar a validade das expressões para o momento de inércia e para a segunda lei de Newton para a rotação.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -620,9 +622,12 @@ Somando as expressões acima, obtemos o momento de inércia total:
 \subsection{Determinação da aceleração do centro de massa através da cinemática}
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-	\item Afira o valor da massa total $m_t$ da roda de Maxwell usando a balança. Anote o valor obtido na Tabela~\ref{DadosRodaDeMaxwell};
-	\item Meça os valores de $r$, $R_i$, $R_e$, $L$, $\ell_i$, e $\ell_e$ e os anote na Tabela~\ref{DadosRodaDeMaxwell};
-	\item Determine os resultados para os volumes $V_e$, $V_d$, e $V_t$. Anote os resultados na Tabela~\ref{DadosRodaDeMaxwell}.
+	\item Ajuste o indicador de posição inicial para que ele coincida com a posição inicial do eixo da roda de Maxwell. Anote o valor na Tabela~\ref{DadosRodaDeMaxwell};
+	\item Ajuste a posição do sensor para uma distância de \np[cm]{5,00} abaixo da posição inicial do sensor, anotando tal valor na Tabela~\ref{DadosRodaDeMaxwell};
+	\item Gire a roda manualmente de forma que os fios de sustentação enrolem sobre os eixos até que a roda toque o eletroímã e ligue a chave de acionamento do eletroímã para que a roda fique presa.
+	\item Acionando a chave, libere a roda para que ela possa se mover. Anote o valor registrado pelo cronômetro na Tabela~\ref{DadosRodaDeMaxwell}. Não pare a roda após ela passar pelo sensor, pois ao chegar ao final do curso permitido pelos fios que a sustentam, ela voltará a subir e facilitará o processo de ajuste para a tomada do próximo valor de tempo. Termine de enrolar os fios girando a roda manualmente até que ela volte a tocar o eletroímã e acione a chave para que ela fique presa.
+	\item Mova o sensor para uma posição \np[cm]{5,00} abaixo da posição anterior. Libere a roda para que ela possa se mover e anote o resuldado registrado pelo cronômetro na Tabela~\ref{DadosRodaDeMaxwell}.
+	\item Repita os dois itens anteriores até que a posição do sensor exceda o limite máximo de movimento da roda.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -631,7 +636,7 @@ Somando as expressões acima, obtemos o momento de inércia total:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cleardoublepage
 
-\noindent{}{\huge\textit{Nome do Experimento}}
+\noindent{}{\huge\textit{Roda de Maxwell}}
 
 \vspace{15mm}
 
@@ -656,63 +661,32 @@ Somando as expressões acima, obtemos o momento de inércia total:
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{1}
-Apresente os resultados de maneira clara e organizada. Mostre os cálculos requisitados de maneira clara e sucinta, evidenciando o raciocínio desenvolvido.
-\end{question}
-
-\begin{question}[type={exam}]{1}
+\begin{question}[type={exam}]{2}
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Determine os volumes $V_e$, $V_c$ e $V_t$ e os dados calculados $\Delta y$ e $t^2$, completando a Tabela~\ref{DadosRodaDeMaxwell}. Utilize o número adequado de algarismos significativos.
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{enumerate}[label=\roman*.]
+    \item Elabore um gráfico de $\Delta y \times t^2$ com os dados obtidos.
+    \item Faça uma regressão linear e a adicione ao gráfico.
+\end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{enumerate}[label=\roman*.]
+    \item Determine o significado físico do coeficiente angular, isto é, determine o que tal coeficiente representa.
+    \item Determine o valor da aceleração do centro de massa usando o coeficiente angular e calcule o erro percentual em relação ao valor determinado através das Equações~\eqref{Eq:AcelRodaDeMaxwellGenerica} e~\eqref{eq:MomentoDeInerciaTotal}.
+\end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosRodaDeMaxwell}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
-\end{question}
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
@@ -721,27 +695,44 @@ metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
 
 \begin{table*}[!ht]
     \centering
-    \begin{tabular}{lp{25mm}p{25mm}p{25mm}p{25mm}p{25mm}l}
+    \begin{tabular}{lp{25mm}p{25mm}p{25mm}l}
     \toprule
+        &\multicolumn{4}{l}{\textbf{Raios e Comprimentos}} \\
+        \cmidrule{2-3}
+        & $r$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $R_i$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $R_e$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $L$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $\ell_i$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $\ell_e$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        \cmidrule{2-3}
+        \\
+        &\multicolumn{4}{l}{\textbf{Volumes}} \\
+        \cmidrule{2-3}
+        & $V_e$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $V_d$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $V_t$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        \cmidrule{2-3}
+        \\
         &\multicolumn{4}{l}{\textbf{Dados Experimentais}} \\
-        \cmidrule{2-6}
-        & $x_0$ & $x_f$ & $t_1$ & $t_2$ & $t_3$ & \\
-        \cmidrule{2-6}
-        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-        \cmidrule{2-6}
+        \cmidrule{2-4}
+        & $y_i$ & $y_f$ & $t$ & \\
+        \cmidrule{2-4}
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        \cmidrule{2-4}
     \\
         & \multicolumn{3}{l}{\textbf{Dados calculados}} \\
         \cmidrule{2-3}
-        & $\Delta x$ & $\mean{t}$ \\
+        & $\Delta y$ & $t^2$ \\
         \cmidrule{2-3}
         & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\ 
         & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\ 
@@ -756,6 +747,6 @@ metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
         \cmidrule{2-3}
     \bottomrule
     \end{tabular}
-    \caption[][5mm]{Dados do MRUV}
+    \caption[][5mm]{Dados para a Roda de Maxwell}
     \label{DadosRodaDeMaxwell}
     \end{table*}
