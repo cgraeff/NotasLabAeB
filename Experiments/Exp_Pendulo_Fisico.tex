@@ -21,14 +21,14 @@
     \draw[pattern = north west lines, rotate = -75] (0,-0.1) rectangle (3, 0.1);
     \draw[dashed] (0,0) coordinate (A) -- (-75:3.5) coordinate (B);
     \draw[dashed] (0,0) -- (0,-3.5) coordinate (C);
-    \draw[fill = white, draw = black, rotate = -75] (1.5,0) circle (1 pt) node[above right]{CM};
+    \draw[fill = white, draw = black, rotate = -75] (1.5,0) coordinate (CM) circle (1 pt) node[above right]{CM};
     
     \pic[draw, "$\theta$", angle eccentricity = 1.05, angle radius = 3.25 cm]{angle = C--A--B};
     \draw[fill] (0,0) circle (1 pt);
     
     \draw[dotted] (0,0) -- (15:1.25);
-    \draw[|<->|] (15:1.25) -- node[right]{$L$} +(-75:3) coordinate (D);
-    \draw[dotted] (D) -- (-75:3);
+    \draw[|<->|] (15:1.25) -- node[right]{$L$} +(-75:1.5) coordinate (D);
+    \draw[dotted] (D) -- (CM);
     
 \end{tikzpicture}
 \caption{Oscilação de uma haste. \label{Fig:TeoremaTrabalhoEnergiaRotacaoHaste}}
@@ -36,15 +36,122 @@
 
 Embora o pêndulo simples forneça uma descrição simples de um movimento oscilatório sujeito à força gravitacional, ele não é uma boa aproximação para um corpo extenso. Nesse caso, precisamos abordar o movimento do ponto de vista de rotações. Se tomarmos, por exemplo, uma haste que pode girar em torno de um eixo que passa por sua extremidade e que é perpendicular ao eixo da haste, ao a deslocarmos por um ângulo $\theta$ em relação ao ponto inferior e a liberarmos para que se mova, obteremos um movimento oscilatório. Tal movimento se deve ao torque gerado pela força peso, cujo valor pode ser determinado através de
 \begin{align}
-    |\tau_{\text{Res}}^{\text{Ext}} | &= |\vec{r} \times \vec{F}| \\
-    &= mg \cdot \frac{L}{2} \cdot \sen\theta.
+    |\tau_P| &= |\vec{r} \times \vec{P}| \\
+    &= mg \ell \cdot \sen\theta.
+\end{align}
+%
+Para ângulos pequenos, podemos expandir $\sen\theta$ em uma série de potências, obtendo
+\begin{equation}
+    \sen\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} + \dots,
+\end{equation}
+%
+o que nos permite usar $\sen\theta \approx \theta$. Note ainda que o torque sempre tem o sentido oposto ao do deslocamento angular $\theta$, por isso devemos utilizar um sinal negativo e escrever
+\begin{equation}
+    \tau_P = - mg\ell \cdot \theta.
+\end{equation}
+
+Aplicando a Segunda Lei de Newton para a rotação, obtemos
+\begin{align}
+    \tau_{\text{Res}}^{\text{Ext}} &= I\alpha \\
+    \tau_P &= I \frac{d^2}{d\theta^2} \\
+    -mg\ell \cdot \theta &= I \frac{d^2}{d\theta^2} \\
+    \frac{-mg\ell}{I} \cdot \theta &= \frac{d^2}{d\theta^2},
+\end{align}
+%
+o que pode ser reescrito como
+\begin{equation}
+    \frac{d^2}{d\theta^2} + \frac{mg\ell}{I} \cdot \theta = 0.
+\end{equation}
+
+O resultado acima é análogo à Equação~\eqref{Eq:EquacaoDiferencialOHS}, que obtivemos no Experimento de Oscilações. Procedendo da mesma maneira, é possível verificar que a solução para a equação acima é
+\begin{equation}
+    \theta(t) = \theta_{\text{Max}} \sen(\omega t + \phi),
+\end{equation}
+%
+onde $\theta_{\text{Max}}$ representa a amplitude de oscilação e
+\begin{equation}
+    \omega = \sqrt{\frac{mg\ell}{I}}.
+\end{equation}
+%
+Utilizando a relação
+\begin{equation}
+    f = \frac{\omega}{2\pi} = \frac{1}{T},
+\end{equation}
+%
+obtemos uma relação entre o período e o momento de inércia:
+\begin{equation}
+    T = 2 \pi \sqrt{\frac{I}{mg\ell}}. \mathnote{Relação para o período de um pêndulo físico.}
+\end{equation}
+
+Através do resultado acima, podemos verificar que o período de oscilação não depende apenas da distância entre o centro de massa e o eixo de rotação, mas da própria forma do objeto. Nas seções seguintes determinaremos as expressões para os momentos de inércia dos corpos que utilizaremos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cálculo do momento de inércia}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Expr geral. Falar que a do disco e do tubo usadas na roda de maxwell podem ser usadas, referenciar.
+
+O momento de inércia de uma distribuição contínua de massa pode ser determinada através da integral
+\begin{equation}
+    I = \int r_{\perp}^2 \;dm,
+\end{equation}
+%
+onde $r_{\perp}$ representa a distância do diferencial de massa $dm$ ao eixo de rotação. A expressão acima é mais conveniente de se trabalhar ao realizarmos uma substituição utilizando uma densidade de massa linear $\lambda(x)$, superficial $\sigma(\vec{r})$, ou volumétrica $\rho(\vec{r})$. Assim,
+\begin{align}
+    dm &= \lambda(x) \; dx \\
+    dm &= \sigma(\vec{r}) \; dA \\
+    dm &= \rho(\vec{r}) \; dV.
 \end{align}
 
-Aplicando a Segunda Lei de Newton para a rotação
+Para a placa em formato de disco e para a placa circular, podemos utilizar as Expressões~\eqref{Eq:MomentoDeInerciaDisco} e~\eqref{Eq:MomentoDeInerciaTuboCilindrico} obtidos no Experimento da Roda de Maxwell. Restam, portanto, determinar os momento de inércia da placa retangular e da placa triangular.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Se necessário, usar subsections}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Placa retangular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}[2cm]
+\centering
+\begin{tikzpicture}[>=Stealth]
+
+    \draw[gray, pattern = north west lines, pattern color = gray] (0,0) rectangle (3, 1);
+    
+    \draw[dashed, ->] (-0.25,0.5) -- (3.75,0.5) node[below left]{$x$};
+    \draw[dashed, ->] (1.5,-0.25) --(1.5, 1.75) node[below left]{$y$};
+    \draw[fill] (1.5,0.5) coordinate (O) circle (1pt);
+    
+    \draw[|<->|] (-0.5,0) -- node[left]{$b$} (-0.5, 1);
+    \draw[|<->|] (0,-0.5) -- node[below]{$a$} (3, -0.5);
+\end{tikzpicture}
+\caption{Placa retangular. \label{Fig:PlacaRetangularMomentoInercia}}
+\end{marginfigure}
+
+Para uma placa retangular com densidade superficial de massa uniforme $\sigma(\vec{r}) \equiv \sigma$, o centro de massa se localiza em seu centro, devido às suas simetrias. Considerando que o eixo de rotação passa pelo centro de massa, perpendicular à face plana da placa, e que a origem de um sistema de coordenadas está localizada no centro de massa (veja a Figura~\ref{Fig:PlacaRetangularMomentoInercia}), podemos determinar o momento de inércia através de
+\begin{align}
+    I &= \int r_{\perp}^2 \;dm \\
+    &= \sigma \int_{-\nicefrac{a}{2}}^{\nicefrac{a}{2}} \int_{-\nicefrac{b}{2}}^{\nicefrac{b}{2}} r_\perp^2 \; dy\;dx.  
+\end{align}
+%
+Note que $\vec{r}_\perp \equiv \vec{r}$, uma vez que o vetor $\vec{r}$ descreve a posição do diferencial de massa $dm$ em relação ao eixo de rotação, pois escolhemos a origem no mesmo local por onde passa o eixo de rotação. Assim,
+\begin{equation}
+    r_\perp^2 = r^2 = x^2 + y^2.
+\end{equation}
+%
+Substituindo a expressão acima na integral e realizando a integração, obtemos
+\begin{align}
+    I &= \sigma \int_{-\nicefrac{a}{2}}^{\nicefrac{a}{2}} \int_{-\nicefrac{b}{2}}^{\nicefrac{b}{2}} r_\perp^2 \; dy\;dx. \\
+    &= \sigma \frac{a^3b + b^3a}{12}.
+\end{align}
+%
+Finalmente, usando $\sigma = M/(ab)$, obtemos
+\begin{equation}
+    I = M \frac{a^2 + b^2}{12}. \mathnote{Momento de inércia de uma placa em torno de um eixo que passa pelo centro de massa, perpendicularmente à face plana.}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Placa triangular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
