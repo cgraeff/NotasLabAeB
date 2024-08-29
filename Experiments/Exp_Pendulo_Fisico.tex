@@ -11,8 +11,36 @@
 \end{fullwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Física do experimento}
+\section{Pêndulo Físico}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}[2cm]
+\centering
+\begin{tikzpicture}[>=Stealth]
+
+    \draw[pattern = north west lines, rotate = -75] (0,-0.1) rectangle (3, 0.1);
+    \draw[dashed] (0,0) coordinate (A) -- (-75:3.5) coordinate (B);
+    \draw[dashed] (0,0) -- (0,-3.5) coordinate (C);
+    \draw[fill = white, draw = black, rotate = -75] (1.5,0) circle (1 pt) node[above right]{CM};
+    
+    \pic[draw, "$\theta$", angle eccentricity = 1.05, angle radius = 3.25 cm]{angle = C--A--B};
+    \draw[fill] (0,0) circle (1 pt);
+    
+    \draw[dotted] (0,0) -- (15:1.25);
+    \draw[|<->|] (15:1.25) -- node[right]{$L$} +(-75:3) coordinate (D);
+    \draw[dotted] (D) -- (-75:3);
+    
+\end{tikzpicture}
+\caption{Oscilação de uma haste. \label{Fig:TeoremaTrabalhoEnergiaRotacaoHaste}}
+\end{marginfigure}
+
+Embora o pêndulo simples forneça uma descrição simples de um movimento oscilatório sujeito à força gravitacional, ele não é uma boa aproximação para um corpo extenso. Nesse caso, precisamos abordar o movimento do ponto de vista de rotações. Se tomarmos, por exemplo, uma haste que pode girar em torno de um eixo que passa por sua extremidade e que é perpendicular ao eixo da haste, ao a deslocarmos por um ângulo $\theta$ em relação ao ponto inferior e a liberarmos para que se mova, obteremos um movimento oscilatório. Tal movimento se deve ao torque gerado pela força peso, cujo valor pode ser determinado através de
+\begin{align}
+    |\tau_{\text{Res}}^{\text{Ext}} | &= |\vec{r} \times \vec{F}| \\
+    &= mg \cdot \frac{L}{2} \cdot \sen\theta.
+\end{align}
+
+Aplicando a Segunda Lei de Newton para a rotação
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Se necessário, usar subsections}
