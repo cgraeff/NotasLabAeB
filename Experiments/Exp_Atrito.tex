@@ -359,7 +359,6 @@ Em um segundo momento, vamos utilizar o aparato mostrado na Figura~\ref{Fig:Apar
     \item Coloque no gancho o menor número de anilhas capaz de fazer com que o bloco deslize. Afira a massa do conjunto formado pelas anilhas e pelo gancho e anote os valores na Tabela~\ref{DadosAtritoCinetico};
     \item Ligue/zere o cronômetro e volte a colocar o gancho na extremidade da corda, deixando-o suspenso. Alinhe o bloco novamente ao início da superfície e o segure, impedindo que o sistema se mova;\label{Item:LoopAtritoCineticoInicio}
     \item Solte o bloco e verifique o tempo cronometrado para a passagem entre os dois sensores. Anote o valor obtido na Tabela~\ref{DadosAtritoCinetico};
-    \item Reinicie o cronômetro e volte a determinar o tempo para a passagem do bloco entre os dois sensores mais duas vezes, tomando o cuidado de alinhar a extremidade do bloco ao início da superfície. Anote os valores de tempo obtidos na Tabela~\ref{DadosAtritoCinetico}.
     \item Desloque a posição do segundo sensor em \np[cm]{10,00} em relação ao valor inicial, afastando-o do primeiro sensor;\label{Item:LoopAtritoCineticoFim}
     \item Repita os itens \ref{Item:LoopAtritoCineticoInicio} a \ref{Item:LoopAtritoCineticoFim} anteriores e anote os valores na Tabela~\ref{DadosAtritoCinetico}.
     \item Continue afastando o segundo sensor de \np[cm]{10,00} em \np[cm]{10,00}, coletando os dados de tempo para o deslocamento entre os sensores. A coleta de dados cessará quando a nova posição do segundo sensor for tal que não permita a passagem do bloco pelo sensor antes que o gancho com as anilhas atinja o chão.\footnote{Precisamos garantir que o movimento é acelerado em toda sua extensão. Se o gancho atingir o chão antes de o bloco passar pelo segundo sensor, teremos uma parte do movimento com velocidade constante.}
@@ -405,7 +404,7 @@ Determine os valores médios do coeficiente de atrito estático para cada par de
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Faça um gráfico $x \times \mean{t}$ para os dados obtidos para o movimento do bloco sujeito ao atrito cinético.
+Faça um gráfico $x \times t$ para os dados obtidos para o movimento do bloco sujeito ao atrito cinético.
 \end{question}
 
 \begin{question}[type={exam}]{4}
@@ -495,33 +494,39 @@ e determine o valor da aceleração do bloco e sua velocidade inicial, isto é, 
 
 \begin{table*}[!ht]
 \centering
-\begin{tabular}{lp{25mm}p{25mm}p{25mm}p{25mm}p{25mm}l}
+\begin{tabular}{lp{25mm}p{25mm}p{25mm}l}
 \toprule
-    & \textbf{Massas} & & & \textbf{Superfícies} \\
-    \cmidrule{2-3} \cmidrule{5-6}
-    & \cellcolor[gray]{0.89} $m_{\text{bloco}}$ & \cellcolor[gray]{0.92} & & \cellcolor[gray]{0.89} Bloco: & \cellcolor[gray]{0.92} \\
-    & \cellcolor[gray]{0.95} $m_{\text{gancho e anilhas}}$ & \cellcolor[gray]{0.97} & & \cellcolor[gray]{0.95} Prancha: & \cellcolor[gray]{0.97} \\
-    \cmidrule{2-3} \cmidrule{5-6}
+    & \textbf{Massas} & \\
+    \cmidrule{2-3}
+    & \cellcolor[gray]{0.89} $m_{\text{bloco}}$ & \cellcolor[gray]{0.92} & \\
+    & \cellcolor[gray]{0.95} $m_{\text{gancho e anilhas}}$ & \cellcolor[gray]{0.97} & \\
+    \cmidrule{2-3}
     \\
-	&\multicolumn{4}{l}{\textbf{Dados Experimentais}} \\
-	\cmidrule{2-6}
-	& $x_0$ & $x_f$ & $t_1$ & $t_2$ & $t_3$ & \\
-	\cmidrule{2-6}
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
-	\cmidrule{2-6}
+    & \textbf{Superfícies} \\
+    \cmidrule{2-3}
+    & \cellcolor[gray]{0.89} Bloco: & \cellcolor[gray]{0.92} \\
+    & \cellcolor[gray]{0.95} Prancha: & \cellcolor[gray]{0.97} \\
+    \cmidrule{2-3}
+    \\
+	&\multicolumn{3}{l}{\textbf{Dados Experimentais}} \\
+	\cmidrule{2-4}
+	& $x_0$ & $x_f$ & $t$ & \\
+	\cmidrule{2-4}
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	\cmidrule{2-4}
 \\
 	& \multicolumn{3}{l}{\textbf{Dados calculados}} \\
 	\cmidrule{2-3}
-	& $\Delta x$ & $\mean{t}$ \\
+	& $\Delta x$ & $t$ \\
 	\cmidrule{2-3}
 	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92}  \\ 
 	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97}  \\ 
