@@ -4,10 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{fullwidth}\it
-	Que experimento faremos?
-	Qual é o objetivo?
-	O que veremos/revisaremos? (teoria física)
-	Quais conceitos/técnicas de análise de dados utilizaremos?
+	Realizaremos um experimento usando pêndulo físicos, isto é, pêndulos que não seguem a descrição idealizada do pêndulo simples. Nossos objetivos incluem verificar os efeitos da distribuição não puntual de massa e determinar o valor da aceleração da gravidade com maior precisão. Verificaremos o cálculo de momentos de inércia de alguns corpos, considerando suas distribuições de massa como distribuições contínuas. Para a coleta, interpretação, e análise de dados, utilizaremos algarismos significativos, erros percentuais, gráficos, e regressões lineares. 
 \end{fullwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,11 +110,11 @@ Para a placa em formato de disco e para a placa circular, podemos utilizar as Ex
 \centering
 \begin{tikzpicture}[>=Stealth]
 
-    \draw[gray, pattern = north west lines, pattern color = gray] (0,0) rectangle (3, 1);
+    \draw[gray, pattern = north west lines, pattern color = lightgray] (0,0) rectangle (3, 1);
     
     \draw[dashed, ->] (-0.25,0.5) -- (3.75,0.5) node[below left]{$x$};
     \draw[dashed, ->] (1.5,-0.25) --(1.5, 1.75) node[below left]{$y$};
-    \draw[fill] (1.5,0.5) coordinate (O) circle (1pt);
+    \draw[draw = black, fill = white] (1.5,0.5) coordinate (O) circle (1pt);
     
     \draw[|<->|] (-0.5,0) -- node[left]{$b$} (-0.5, 1);
     \draw[|<->|] (0,-0.5) -- node[below]{$a$} (3, -0.5);
@@ -152,6 +149,138 @@ Finalmente, usando $\sigma = M/(ab)$, obtemos
 \paragraph{Placa triangular}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{marginfigure}[4cm]
+\centering
+\begin{tikzpicture}[>=Stealth]
+
+    \draw[gray, pattern = north east lines, pattern color = lightgray] (0,0) -- (3,0) -- (0,2) -- cycle;
+    
+    \draw[dashed, ->] (-0.25,0) -- (3.75,0) node[below left]{$x$};
+    \draw[dashed, ->] (0,-0.25) --(0, 2.5) node[below left]{$y$};
+    
+    \draw[|<->|] (-0.5,0) -- node[left]{$b$} (-0.5, 2);
+    \draw[|<->|] (0,-0.5) -- node[below]{$a$} (3, -0.5);
+\end{tikzpicture}
+\caption{Placa triangular. \label{Fig:PlacaTriangularMomentoInercia}}
+\end{marginfigure}
+
+Para uma placa triangular, precisamos primeiramente determinar a posição do centro de massa, possibilitando que o teorema dos eixos paralelos seja usado para outros eixos perpendiculares à placa. Considerando o eixo $x$ (veja a Figura~\ref{Fig:PlacaTriangularMomentoInercia}), temos
+\begin{align}
+    x_{\text{CM}} &= \frac{1}{M} \int x \; dm \\
+    &=\frac{1}{M} \int x\cdot\sigma \; dA \\
+    &= \frac{\sigma}{M} \int_0^a \int_0^{y(x)} x \; dy\;dx.
+\end{align}
+%
+Para determinar a função $y(x)$, basta verificarmos que temos uma reta
+\begin{equation}
+    y(x) = A + B \cdot x,
+\end{equation}
+
+\begin{marginfigure}
+\centering
+\begin{tikzpicture}[>=Stealth]
+
+    \draw[gray, pattern = north east lines, pattern color = lightgray] (0,0) -- (3,0) -- (0,2) -- cycle;
+    
+    \draw[dashed, ->] (-0.25,0) -- (3.75,0) node[below left]{$x$};
+    \draw[dashed, ->] (0,-0.25) --(0, 2.75) node[below left]{$y$};
+    
+    \draw[|<->|] (3.25,0) -- node[right]{$b$} (3.25, 2);
+    \draw[|<->|] (0,2.25) -- node[above]{$a$} (3, 2.25);
+    
+    \draw[thick] (0,2) coordinate (A2) -- (3,0) coordinate (A1);
+    \draw[dotted] (0,2) -- (3,2) coordinate (A3) -- (3,0);
+    \pic[draw, "$\gamma$", angle eccentricity = 1.5, angle radius = 6mm]{angle = A1--A2--A3};
+    
+\end{tikzpicture}
+\caption{Determinação da função $y(x)$ para o limite superior de integração no eixo $y$. \label{Fig:PlacaTriangularMomentoInercia2}}
+\end{marginfigure}
+
+\noindent{}que $y(0) = b$, que $|B| = \tan \gamma = b/a$, e que $B < 0$, pois temos uma reta decrescente. Assim,
+\begin{align}
+    x_{\text{CM}} &= \frac{\sigma}{M} \int_0^a \int_0^{y(x)} x \; dy\;dx \\
+    &= \frac{\sigma}{M} \int_0^a \int_0^{b(1-x/a)} x \; dy\;dx \\
+    &= \frac{a^2b\sigma}{6M}.
+\end{align}
+%
+Como $\sigma = M / (ab/2)$, obtemos finalmente
+\begin{equation}
+    x_{\text{CM}} = \frac{a}{3}.
+\end{equation}
+%
+A determinação da posição $y_{\text{CM}}$ do centro de massa no eixo vertical segue o mesmo raciocínio,\footnote{Se renomearmos as medidas como $a = b'$ e $b = a'$, e também os eixos como $x = y'$ e $y = x'$, fica claro que o resultado no eixo vertical seria $x'_{\text{CM}} = a'/3$, o que corresponde a $y_{\text{CM}} = b/3$.} resultando em
+\begin{equation}
+    y_{\text{CM}} = \frac{b}{3}.
+\end{equation}
+
+\begin{marginfigure}[1cm]
+\centering
+\begin{tikzpicture}[>=Stealth]
+
+    \draw[gray, pattern = north east lines, pattern color = lightgray] (0,0) -- (3,0) -- (0,2) -- cycle;
+    
+    \draw[dashed, ->] (-0.25,0) -- (3.75,0) node[below left]{$x$};
+    \draw[dashed, ->] (0,-0.25) --(0, 2.5) node[below left]{$y$};
+    
+    \draw[|<->|] (-0.5,0) -- node[left]{$b/3$} (-0.5, 0.667);
+    \draw[|<->|] (0,-0.5) -- node[below]{$a/3$} (1, -0.5);
+    \draw[thick, dotted] (1,0.667) +(-0.5,0) -- +(0.5,0);
+    \draw[thick, dotted] (1,0.667) +(0,-0.5) -- +(0,0.5);
+    \draw[draw = black, fill = white] (1,0.667) node[below right]{CM} circle (1pt);
+    
+\end{tikzpicture}
+\caption{Posição do centro de massa da placa triangular. \label{Fig:PlacaTriangularMomentoInercia3}}
+\end{marginfigure}
+
+Podemos realizar a determinação do momento de inércia em relação ao eixo que passa no centro de massa sem alterar o sistema de coordenadas ao notar que a posição em relação à origem (que será usada como variável de integração) pode ser escrita como (veja a Figura~\ref{Fig:PlacaTriangularMomentoInercia4})
+\begin{equation}
+    \vec{r} = \vec{r}_{\text{CM}} + \vec{r}_\perp,
+\end{equation}
+%
+de onde podemos escrever
+\begin{align}
+    \vec{r}_\perp &= \vec{r} - \vec{r}_{\text{CM}} \\
+    &= (x \,\versi + y\,\versj) - \left(\frac{a}{3} \versi + \frac{b}{3} \versj \right) \\
+    &= \left(x - \frac{a}{3}\right)\versi + \left(y - \frac{b}{3}\right)\versj.
+\end{align}
+
+\begin{marginfigure}[1cm]
+\centering
+\begin{tikzpicture}[>=Stealth, scale = 1.5]
+
+    \draw[fill] (0.65, 1.5) coordinate (P) circle (0.75pt);
+    \draw[->] (1,0.667) coordinate (CM) -- node[above right]{$\vec{r}_\perp$} (P);
+    \draw[->] (0,0) coordinate (O) -- node[below right]{$\vec{r}_{\text{CM}}$} (CM);
+    \draw[->] (O) -- node[left]{$\vec{r}$} (P);
+    \draw[draw = black, fill = white] (CM) node[below right]{CM} circle (0.75pt);
+    
+\end{tikzpicture}
+\caption{Relação entre os vetores $\vec{r}$, $\vec{r}_{\text{CM}}$, e $\vec{r}_\perp$. \label{Fig:PlacaTriangularMomentoInercia4}}
+\end{marginfigure}
+
+Podemos agora determinar o momento de inércia através da definição:
+\begin{align}
+    I &= \int r_{\perp}^2 \;dm \\
+    &= \sigma \int_{0}^{a} \int_{0}^{y(x)} r_\perp^2 \; dy\;dx.
+\end{align}
+%
+Note que
+\begin{align}
+    \vec{r}_\perp^2 &\equiv \vec{r}_\perp \cdot \vec{r}_\perp \\
+    &= \left(x - \frac{a}{3}\right)^2 + \left(y - \frac{b}{3}\right)^2,
+\end{align}
+%
+o que resulta em 
+\begin{align}
+    I &= \sigma \int_{0}^{a} \int_{0}^{y(x)} r_\perp^2 \; dy\;dx \\
+    &= \sigma \int_{0}^{a} \int_{0}^{b(1-x/a)} \left(x - \frac{a}{3}\right)^2 + \left(y - \frac{b}{3}\right)^2 \; dy\;dx \\
+    &= \sigma \frac{ab(a^2 + b^2)}{36}.
+\end{align}
+%
+Finalmente, substituindo $\sigma = M / (ab/2)$, obtemos
+\begin{equation}
+    I = M \frac{a^2 + b^2}{18}.
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
@@ -159,12 +288,13 @@ Finalmente, usando $\sigma = M/(ab)$, obtemos
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
+\label{Sec:ObjetivosPenduloFisico}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Resultados concretos que devemos conseguir;
-	\item Observar a relação de tal coisa com outra coisa;
-	\item Calcular a constante $x$.
+	\item Determinar o erro percentual entre os valores teórico e experimental do período de oscilação para os diferentes corpos/eixos de rotação;
+	\item Verificar a dependência do período de oscilação no momento de inércia;
+	\item Determinar o valor da aceleração da gravidade através do período de oscilação de um corpo extenso.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,8 +302,11 @@ Finalmente, usando $\sigma = M/(ab)$, obtemos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-	\item Item 1;
-	\item Item 2.
+	\item Aparato de pêndulo físico (suporte vertical, eixo com rolamentos, placas perfuradas);
+	\item Régua;
+	\item Paquímetro;
+	\item Cronômetro;
+	\item Balança digital.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,12 +314,23 @@ Finalmente, usando $\sigma = M/(ab)$, obtemos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%
-%\subsection{Parte A} % Se necessário
+\subsection{Medidas} % Se necessário
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-	\item Passo 1;
-	\item Passo 2;
-	\item Passo 3.
+	\item Para cada uma das placas, determine as dimensões e anote na Tabela~\ref{DadosPenduloFisico};
+	\item Afira as medidas de massa das placas e anote na mesma tabela em que foram anotadas as dimensões.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Medidas do período de oscilação} % Se necessário
+%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+    \item Escolha uma placa e um eixo de rotação. Anote na coluna C/E da Tabela~\ref{DadosPenduloFisico} qual das placas e eixo foi escolhido.\footnote{Por exemplo: retângulo/extremidade, retângulo/intermediário, triângulo/vér-\\tice, triângulo/aresta, etc.}
+    \item Determine as dimensões e massa da placa e anote na na Tabela~\ref{DadosPenduloFisico}
+	\item Determine a distância do centro de massa até o eixo de rotação. Anote o valor obtido na coluna $\ell$ da Tabela~\ref{DadosPenduloFisico};
+	\item Instale a placa no eixo de oscilação e a disponha na posição de equilíbrio;
+	\item Desloque a placa por um ângulo inferior a \degree{10} e cronometre o tempo de 10 oscilações completas. Anote o valor obtido na Tabela~\ref{DadosPenduloFisico};
+	\item Repita os passos acima para as demais placas e eixos, anotando os resultados na Tabela~\ref{DadosPenduloFisico}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -223,57 +367,75 @@ Finalmente, usando $\sigma = M/(ab)$, obtemos
 \vspace{5mm}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Determine os momentos de inércia teóricos $I_T$ e os períodos teóricos $T_T$ de cada corpo e complete a Tabela~\ref{DadosPenduloFisico}. Utilize o número adequado de algarismos significativos. Determine o erro percentual entre os valores experimental e teórico do período.
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{enumerate}[label=\roman*.]
+    \item Elabore um gráfico de $T^2 \times I/(m\ell)$ com os dados obtidos.
+    \item Faça uma regressão linear e a adicione ao gráfico.
+\end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+\begin{enumerate}[label=\roman*.]
+    \item Determine o significado físico do coeficiente angular, isto é, determine o que tal coeficiente representa.
+    \item Determine o valor da aceleração da gravidade usando o coeficiente angular e calcule o erro percentual em relação ao valor de referência.
+\end{enumerate}
 \end{question}
 
 \begin{question}[type={exam}]{2}
-Lorem ipsum dolor sit amet, consectetuer adi-
-piscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
-eget, consectetuer id, vulputate a, magna. Donec vehicula augue
-eu neque. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
-metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosPenduloFisico}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
+
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \section{Tabelas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{table*}[!ht]
+    \centering
+    \begin{tabular}{lp{30mm}p{19mm}p{19mm}p{19mm}p{19mm}p{19mm}p{19mm}l}
+    \toprule
+        & \multicolumn{6}{l}{\textbf{Dimensões e massas das placas}} \\
+    \cmidrule{2-6}
+        &\multicolumn{2}{l}{\textbf{Retângulo}} & & \multicolumn{2}{l}{\textbf{Disco}} & \\
+        \cmidrule{2-3} \cmidrule{5-6}
+        & $a$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & $R$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $b$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & $m$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $m$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & \\
+        \cmidrule{2-3} \cmidrule{5-6}
+        \\
+        &\multicolumn{2}{l}{\textbf{Triângulo}} & & \multicolumn{2}{l}{\textbf{Círculo}} \\
+        \cmidrule{2-3} \cmidrule{5-6}
+        & $a$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & $R_e$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $b$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & & $R_i$\cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $m$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & & $m$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        \cmidrule{2-3} \cmidrule{5-6}
+        \\
+        \\
+        &\multicolumn{4}{l}{\textbf{Dados Experimentais}} \\
+        \cmidrule{2-8}
+        & C/E & $T_{10}$ & $T$ & $\ell$ & $I_T$ & $T_T$ & $E_\%$ & \\
+        \cmidrule{2-8}
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+        & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+        \cmidrule{2-8}
+    \bottomrule
+    \end{tabular}
+    \caption[][5mm]{Dados para o pêndulo físico}
+    \label{DadosPenduloFisico}
+\end{table*}
