@@ -15,110 +15,139 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
 % Laboratório de Física 3 - CV
 %%%
 
-\begin{marginfigure}[4cm]
+\begin{marginfigure}[4.5cm]
+    \centering
+    Outubro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2024-10-01 to 2024-10-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (equals=2024-10-28)
+            [gray]
+        ;
+        %\draw[dotted] (mycal-2024-03-05) circle (6pt);
+        %\draw[dashed] (mycal-2024-03-12) circle (6pt);
+        %\draw[dashed] (mycal-2024-03-26) circle (6pt);
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Novembro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2024-11-01 to 2024-11-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (equals=2024-11-15,equals=2024-11-20)
+            [gray]
+        ;
+        %\draw[dashed] (mycal-2024-11-1) circle (6pt);
+        %\draw[dashed] (mycal-2024-04-23) circle (6pt);
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Dezembro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2024-12-01 to 2024-12-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (between=2024-12-23 and 2024-12-31)
+            [gray]
+        ;
+        %\draw[dashed] (mycal-2024-05-07) circle (6pt);
+        %\draw[dashed] (mycal-2024-05-21) circle (6pt);
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Janeiro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2025-01-01 to 2025-01-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (between=2025-01-01 and 2025-01-last)
+            [gray]
+        ;
+        %\draw[dotted] (mycal-2024-06-04) circle (6pt);
+        %\draw (mycal-2024-06-11) circle (6pt);
+        %\draw[dotted] (mycal-2024-06-18) circle (6pt);
+        %\draw[densely dotted] (mycal-2024-06-25) circle (6pt);
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Fevereiro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2025-02-01 to 2025-02-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        %if (between=2025-02-01 and 2025-02-last)
+        %    [gray]
+        ;
+        \draw[dotted] (mycal-2025-02-28) circle (6pt);
+        \draw (mycal-2025-02-10) circle (6pt);
+        \draw[dashed] (mycal-2025-02-17) circle (6pt);
+        %\draw[densely dotted] (mycal-2024-06-25) circle (6pt);
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
     \centering
     Março\\
     \begin{tikzpicture}
         \calendar (mycal)
         [
-            dates=2024-03-01 to 2024-03-last,
+            dates=2025-03-01 to 2025-03-last,
             week list,
             day headings=gray,
             day letter headings
         ]
         if (Saturday, Sunday)
             [gray]
-        if (equals=2024-03-01, equals=2024-03-29)
+        if (between=2025-03-03 and 2025-03-05)
+            [gray]
+        if (between=2025-03-08 and 2025-03-last)
             [gray]
         ;
-        \draw[dotted] (mycal-2024-03-05) circle (6pt);
-        \draw[dashed] (mycal-2024-03-12) circle (6pt);
-        \draw[dashed] (mycal-2024-03-26) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}[3mm]
-    \centering
-    Abril\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-04-01 to 2024-04-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        ;
-        \draw[dashed] (mycal-2024-04-09) circle (6pt);
-        \draw[dashed] (mycal-2024-04-23) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}
-    \centering
-    Maio\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-05-01 to 2024-05-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        if (equals=2024-05-01, equals=2024-05-30, equals=2024-05-31)
-            [gray]
-        ;
-        \draw[dashed] (mycal-2024-05-07) circle (6pt);
-        \draw[dashed] (mycal-2024-05-21) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}
-    \centering
-    Junho\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-06-01 to 2024-06-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        ;
-        \draw[dotted] (mycal-2024-06-04) circle (6pt);
-        \draw (mycal-2024-06-11) circle (6pt);
-        \draw[dotted] (mycal-2024-06-18) circle (6pt);
-        \draw[densely dotted] (mycal-2024-06-25) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}
-    \centering
-    Julho\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-07-01 to 2024-07-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        if (at most=2024-07-05)
-            {}
-        else
-            [gray]
-        ;
-        \draw[dotted] (mycal-2024-07-02) circle (6pt);
     \end{tikzpicture}
 \end{marginfigure}
+%
+%
+%
 \vspace{1cm}
 \begin{center}
 \Large\textsc{Laboratório de Física 3 - FI23NB-3EXTA (aulas nas terças 8:20 -- 10:00)}
@@ -132,24 +161,27 @@ Aula & Data & Conteúdo \\
 \endhead
 \bottomrule
 \endfoot
-1 & 05/03 & Apresentação da disciplina. \\
-2 & 12/03 & Exp. 1, Introdução ao eletromagnetismo. \\
-3 & 19/03 & --- \\
-4 & 26/03 & Exp. 2, Superfícies equipotenciais. \\
-5 & 02/04 & --- \\
-6 & 09/04 & Exp. 3, Capacitores de placas paralelas. \\
-7 & 16/04 & --- \\
-8 & 23/04 & Exp. 4, Lei de Ohm. \\
-9 & 30/04 & --- \\
-10 & 07/05 & Exp. 5, Circuito RC. \\
-11 & 14/05 & --- \\
-12 & 21/05 & Exp. 6, Campo magnético terrestre. \\
-13 & 28/05 & --- \\
-14 & 04/06 & Aula para dúvidas. \\
-15 & 11/06 & \textbf{Prova de laboratório}. \\
-16 & 18/06 & Entrega das notas da prova de laboratório. \\ 
-17 & 25/06 & 2\textordfeminine~chamada de experimentos. \\
-18 & 02/07 & Entrega das notas finais da disciplina. \\
+  1 & 07/10 & Apresentação da disciplina. \\
+  2 & 14/10 & Exp. 1, Medidas e algarismos significativos. \\
+  3 & 21/10 & Exp. 2, Movimento retilíneo uniforme (MRU) e uniformemente variado (MRUV). \\
+--- & 28/10 & --- \\
+  4 & 04/11 & Exp. 3, Lei de Hooke. \\
+  5 & 11/11 & Exp. 4, Leis de Newton. \\
+  6 & 18/11 & Exp. 5, Arrasto. \\
+  7 & 25/11 & Exp. 6, Atrito. \\
+  8 & 02/12 & Exp. 7, Roda de Maxwell. \\
+  9 & 09/12 & Exp. 8, Oscilações. \\
+ 10 & 16/12 & Exp. 9, Ondas estacionárias. \\
+--- & 23/12 & --- \\
+--- & 30/12 & --- \\
+--- & 06/01 & --- \\
+--- & 13/01 & --- \\
+--- & 20/01 & --- \\ 
+--- & 27/01 & --- \\
+ 13 & 03/02 & Dúvidas. \\
+ 14 & 10/02 & Prova.\\
+ 15 & 17/02 & Recuperação.\\
+ 16 & 24/02 & Entrega das notas finais.
 \end{longtable}
 \end{center}
 
