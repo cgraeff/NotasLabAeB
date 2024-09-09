@@ -118,7 +118,7 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
         %if (between=2025-02-01 and 2025-02-last)
         %    [gray]
         ;
-        \draw[dotted] (mycal-2025-02-28) circle (6pt);
+        %\draw[dotted] (mycal-2025-02-28) circle (6pt);
         \draw (mycal-2025-02-10) circle (6pt);
         \draw[dashed] (mycal-2025-02-17) circle (6pt);
         %\draw[densely dotted] (mycal-2024-06-25) circle (6pt);
@@ -150,7 +150,7 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
 %
 \vspace{1cm}
 \begin{center}
-\Large\textsc{Laboratório de Física 3 - FI23NB-3EXTA (aulas nas terças 8:20 -- 10:00)}
+\Large\textsc{Física Experimental A - Turmas FS42NB-3MC e FS42NB-4CV}
 \end{center}
 
 \begin{center}
@@ -185,144 +185,7 @@ Aula & Data & Conteúdo \\
 \end{longtable}
 \end{center}
 
-\clearpage
-
-%%%
-% Laboratório de Física 3 - MC
-%%%
-
-\begin{marginfigure}[1cm]
-    \centering
-    Março\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-03-01 to 2024-03-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        if (equals=2024-03-01, equals=2024-03-29)
-            [gray]
-        ;
-        \draw[dotted] (mycal-2024-03-08) circle (6pt);
-        \draw[dashed] (mycal-2024-03-15) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}[3mm]
-    \centering
-    Abril\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-04-01 to 2024-04-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        ;
-        \draw[dashed] (mycal-2024-04-05) circle (6pt);
-        \draw[dashed] (mycal-2024-04-19) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}
-    \centering
-    Maio\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-05-01 to 2024-05-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        if (equals=2024-05-01, equals=2024-05-30, equals=2024-05-31)
-            [gray]
-        ;
-        \draw[dashed] (mycal-2024-05-03) circle (6pt);
-        \draw[dashed] (mycal-2024-05-17) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}
-    \centering
-    Junho\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-06-01 to 2024-06-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        ;
-        \draw[dashed] (mycal-2024-06-07) circle (6pt);
-        \draw (mycal-2024-06-21) circle (6pt);
-        \draw[dotted] (mycal-2024-06-28) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure} %
-%
-\begin{marginfigure}
-    \centering
-    Julho\\
-    \begin{tikzpicture}
-        \calendar (mycal)
-        [
-            dates=2024-07-01 to 2024-07-last,
-            week list,
-            day headings=gray,
-            day letter headings
-        ]
-        if (Saturday, Sunday)
-            [gray]
-        if (at most=2024-07-05)
-            {}
-        else
-            [gray]
-        ;
-        \draw[dotted] (mycal-2024-07-05) circle (6pt);
-    \end{tikzpicture}
-\end{marginfigure}
-\vspace{1cm}
-\begin{center}
-\Large\textsc{Laboratório de Física 3 - FI23NB-2EXTA (aulas nas sextas 10:20 -- 12:00)}
-\end{center}
-
-\begin{center}
-\begin{longtable}{ccp{70mm}}
-\toprule
-Aula & Data & Conteúdo \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-1 & 08/03 & Apresentação da disciplina. \\
-2 & 15/03 & Exp. 1, Introdução ao eletromagnetismo. \\
-3 & 22/03 & --- \\
-4 & 05/04 & Exp. 2, Superfícies equipotenciais. \\
-5 & 12/04 & --- \\
-6 & 19/04 & Exp. 3, Capacitores de placas paralelas. \\
-7 & 26/04 & --- \\
-8 & 03/05 & Exp. 4, Lei de Ohm. \\
-9 & 10/05 & --- \\
-10 & 17/05 & Exp. 5, Circuito RC. \\
-11 & 24/05 & --- \\
-12 & 07/06 & Exp. 6, Campo magnético terrestre. \\
-13 & 14/06 & --- \\
-14 & 21/06 & \textbf{Prova de laboratório}. \\
-15 & 28/06 & Entrega das notas da prova de laboratório. \\ 
-16 & 05/07 & Entrega das notas finais da disciplina. \\
-\end{longtable}
-\end{center}
+%\clearpage
+% Calendário de outra turma, se houver
 
 \cleardoublepage
