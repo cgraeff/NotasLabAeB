@@ -12,7 +12,7 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
 \end{fullwidth}
 
 %%%
-% Laboratório de Física 3 - CV
+% Laboratório de Física A - 3MC 2024-2
 %%%
 
 \begin{marginfigure}[4.5cm]
@@ -31,9 +31,7 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
         if (equals=2024-10-28)
             [gray]
         ;
-        %\draw[dotted] (mycal-2024-03-05) circle (6pt);
-        %\draw[dashed] (mycal-2024-03-12) circle (6pt);
-        %\draw[dashed] (mycal-2024-03-26) circle (6pt);
+        \node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,thick] at (mycal-2024-10-01) {};
     \end{tikzpicture}
 \end{marginfigure} %
 %
@@ -53,8 +51,6 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
         if (equals=2024-11-15,equals=2024-11-20)
             [gray]
         ;
-        %\draw[dashed] (mycal-2024-11-1) circle (6pt);
-        %\draw[dashed] (mycal-2024-04-23) circle (6pt);
     \end{tikzpicture}
 \end{marginfigure} %
 %
@@ -74,8 +70,6 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
         if (between=2024-12-23 and 2024-12-31)
             [gray]
         ;
-        %\draw[dashed] (mycal-2024-05-07) circle (6pt);
-        %\draw[dashed] (mycal-2024-05-21) circle (6pt);
     \end{tikzpicture}
 \end{marginfigure} %
 %
@@ -95,10 +89,6 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
         if (between=2025-01-01 and 2025-01-last)
             [gray]
         ;
-        %\draw[dotted] (mycal-2024-06-04) circle (6pt);
-        %\draw (mycal-2024-06-11) circle (6pt);
-        %\draw[dotted] (mycal-2024-06-18) circle (6pt);
-        %\draw[densely dotted] (mycal-2024-06-25) circle (6pt);
     \end{tikzpicture}
 \end{marginfigure} %
 %
@@ -115,13 +105,10 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
         ]
         if (Saturday, Sunday)
             [gray]
-        %if (between=2025-02-01 and 2025-02-last)
-        %    [gray]
         ;
-        %\draw[dotted] (mycal-2025-02-28) circle (6pt);
         \draw (mycal-2025-02-10) circle (6pt);
         \draw[dashed] (mycal-2025-02-17) circle (6pt);
-        %\draw[densely dotted] (mycal-2024-06-25) circle (6pt);
+        \node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,thick] at (mycal-2025-02-28) {};
     \end{tikzpicture}
 \end{marginfigure} %
 %
@@ -150,7 +137,7 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
 %
 \vspace{1cm}
 \begin{center}
-\Large\textsc{Física Experimental A - Turmas FS42NB-3MC e FS42NB-4CV}
+\Large\textsc{Física Experimental A - Turma FS42NB-3MC}
 \end{center}
 
 \begin{center}
@@ -178,14 +165,170 @@ Aula & Data & Conteúdo \\
 --- & 13/01 & --- \\
 --- & 20/01 & --- \\ 
 --- & 27/01 & --- \\
- 13 & 03/02 & Dúvidas. \\
- 14 & 10/02 & Prova.\\
- 15 & 17/02 & Recuperação.\\
- 16 & 24/02 & Entrega das notas finais.
+ 11 & 03/02 & Dúvidas. \\
+ 12 & 10/02 & Prova.\\
+ 13 & 17/02 & Recuperação.\\
+ 14 & 24/02 & Entrega das notas finais.
 \end{longtable}
 \end{center}
 
-%\clearpage
+\clearpage
 % Calendário de outra turma, se houver
 
+\begin{marginfigure}[4.5cm]
+    \centering
+    Outubro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2024-10-01 to 2024-10-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (equals=2024-10-28)
+            [gray]
+        ;
+        \node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,thick] at (mycal-2024-10-01) {};
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Novembro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2024-11-01 to 2024-11-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (equals=2024-11-15,equals=2024-11-20)
+            [gray]
+        ;
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Dezembro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2024-12-01 to 2024-12-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (between=2024-12-23 and 2024-12-31)
+            [gray]
+        ;
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Janeiro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2025-01-01 to 2025-01-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (between=2025-01-01 and 2025-01-last)
+            [gray]
+        ;
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Fevereiro\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2025-02-01 to 2025-02-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        ;
+        \draw (mycal-2025-02-10) circle (6pt);
+        \draw[dashed] (mycal-2025-02-17) circle (6pt);
+        \node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,thick] at (mycal-2025-02-28) {};
+    \end{tikzpicture}
+\end{marginfigure} %
+%
+\begin{marginfigure}
+    \centering
+    Março\\
+    \begin{tikzpicture}
+        \calendar (mycal)
+        [
+            dates=2025-03-01 to 2025-03-last,
+            week list,
+            day headings=gray,
+            day letter headings
+        ]
+        if (Saturday, Sunday)
+            [gray]
+        if (between=2025-03-03 and 2025-03-05)
+            [gray]
+        if (between=2025-03-08 and 2025-03-last)
+            [gray]
+        ;
+    \end{tikzpicture}
+\end{marginfigure}
+%
+%
+%
+\vspace{1cm}
+\begin{center}
+\Large\textsc{Física Experimental A - Turma FS42NB-4CV}
+\end{center}
+
+\begin{center}
+\begin{longtable}{ccp{70mm}}
+\toprule
+Aula & Data & Conteúdo \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+  1 & 07/10 & Apresentação da disciplina. \\
+  2 & 14/10 & Exp. 1, Medidas e algarismos significativos. \\
+  3 & 21/10 & \emph{Semana Acadëmica de Eng. Civil} \\
+--- & 28/10 & --- \\
+  4 & 04/11 & Exp. 2, Movimento retilíneo uniforme (MRU) e uniformemente variado (MRUV). \\
+  5 & 11/11 & Exp. 3, Lei de Hooke. \\
+  6 & 18/11 & Exp. 4, Leis de Newton. \\
+  7 & 25/11 & Exp. 5, Arrasto. \\
+  8 & 02/12 & Exp. 6, Roda de Maxwell. \\
+  9 & 09/12 & Exp. 7, Oscilações. \\
+ 10 & 16/12 & Exp. 8, Ondas estacionárias. \\
+--- & 23/12 & --- \\
+--- & 30/12 & --- \\
+--- & 06/01 & --- \\
+--- & 13/01 & --- \\
+--- & 20/01 & --- \\ 
+--- & 27/01 & --- \\
+ 11 & 03/02 & Dúvidas. \\
+ 12 & 10/02 & Prova.\\
+ 13 & 17/02 & Recuperação.\\
+ 14 & 24/02 & Entrega das notas finais.
+\end{longtable}
+\end{center}
 \cleardoublepage
