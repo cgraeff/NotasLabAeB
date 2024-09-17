@@ -400,19 +400,31 @@ O valor de densidade de massa do fio utilizado pode ser determinado com a utiliz
 %
 O valor obtido dessa forma será considerado o \emph{valor de referência} na análise de dados.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Operação do gerador de funções AZBW-10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+    \item Ligue o gerador de funções através do botão \texttt{PWR};
+    \item Certifique-se de que o canal apropriado está selecionado: no visor, no canto superior esquerdo, deverá aparecer o mesmo canal onde o gerador de vibração está conectado (\texttt{CH1} ou \texttt{CH2}). Caso necessário, utilize o botão \texttt{PWR} para alterá-lo;
+    \item O botão \texttt{WAVE} pode ser utilizado para mudar a forma da função, vamos utilizar a função seno (\texttt{Sin}, no visor);
+    \item O botão \text{FREQ/AMP/VOL} pode ser girado para selecionar a frequência ou volume desejados, sendo que ele pode ser pressionado para alternar o controle desses dois parâmetros;
+    \item O botão \texttt{MUTE} habilita/desabilita a saída de sinal. Inicialmente ela estará desabilitada, sendo necessário pressionar o botão para habilitar o sinal. Note que os parâmetros de volume e frequência podem ser variados com a saída habilitada ou desabilitada.
+\end{enumerate}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Dependência da frequência de ressonância com a tensão aplicada}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{enumerate}
-\item Ligue o gerador de ondas ao oscilador eletromecânico, dispondo o segundo a uma distância de aproximadamente \np[m]{1,30} da extremidade da mesa;\label{Enum:iteminicio}
+\item Ligue o gerador de ondas ao oscilador eletromecânico, dispondo o segundo a uma distância de aproximadamente \np[m]{1,30} da extremidade da mesa;\label{EnumOndas:iteminicio}
 \item Prenda a polia ao suporte e a disponha de forma que fique para fora da mesa.
 \item Tome um segmento de fio com tamanho adequado e o prenda ao pino do oscilador. Anote na Tabela~\ref{Tab:FrequenciaFuncaoMassa} o valor de referência para densidade linear de massa $\mu$ do fio utilizado;
-\item Afira a massa do gancho, juntamente com uma anilha e os pendure na extremidade livre da corda, fazendo-a passar pela polia e deixando o gancho suspenso. Anote na Tabela~\ref{Tab:FrequenciaFuncaoMassa} o valor da massa $m$ suspensa na corda;\label{Enum:itemfim}
+\item Afira a massa do gancho, juntamente com uma anilha e os pendure na extremidade livre da corda, fazendo-a passar pela polia e deixando o gancho suspenso. Anote na Tabela~\ref{Tab:FrequenciaFuncaoMassa} o valor da massa $m$ suspensa na corda;\label{EnumOndas:itemfim}
 \item Ligue o gerador de ondas e varie a frequência até que se forme uma onda estacionária com dois\footnote{Esse harmônico foi escolhido por ser o de mais fácil visualização.} ventres ($n' =2$);
-\item Anote o valor da frequência $f$ em que a onda estacionária se forma na Tabela~\ref{Tab:FrequenciaFuncaoMassa}. \emph{Obs.: Em alguns equipamentos, a frequência pode variar constantemente. Nesse caso, anote os valores com uma casa após a vírgula e adote o valor de erro como sendo \np[Hz]{0,1}.}
+\item Anote o valor da frequência $f$ em que a onda estacionária se forma na Tabela~\ref{Tab:FrequenciaFuncaoMassa}. \emph{Obs.: Em alguns equipamentos, a frequência pode variar constantemente. Nesse caso, anote os valores com uma casa após a vírgula.}
 \item Utilize a trena/régua para medir a distância $L$ entre \emph{os nós das extremidades}\footnote{A distância deve ser medida entre o ponto em que a corda toca a polia (onde se localiza um dos nós) e o nó que deve se formar um pouco antes do pino do oscilador. Em muitos casos o nó se forma tão próximo do pino que não podemos distinguí-lo. Nesse caso meça a distância entre a polia e o próprio pino do oscilador. Este valor é, efetivamente, o comprimento da corda.}. Anote o valor obtido na Tabela~\ref{Tab:FrequenciaFuncaoMassa}. Esse valor será aproximadamente constante e não precisa ser medido novamente.
-\item Adicione mais uma anilha ao gancho e repita o processo a partir do item \ref{Enum:itemfim} até que a tabela seja completamente preenchida.
+\item Adicione mais uma anilha ao gancho e repita o processo a partir do item \ref{EnumOndas:itemfim} até que a tabela seja completamente preenchida.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
