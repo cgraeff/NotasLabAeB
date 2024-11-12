@@ -76,6 +76,26 @@ gnuplot-latex
 biber
 ```
 
+No Mac o TeXLive não tem o pacote `gnuplot-lua-tikz`, ele precisa ser gerado da seguinte maneira (assumindo que o gnuplot tenha sido instalado via `homebrew` e que a versão seja 6.0):
+```
+cd $(brew --prefix gnuplot)/share/gnuplot/6.0/lua
+```
+Gere os arquivos usando:
+```
+lua gnuplot-tikz.lua style
+```
+Copie os arquivos gerados para o diretório do TeXLive (provavelmente será necessário criar o diretório `gnuplot`):
+```
+sudo cp gnuplot-lua-tikz.sty /usr/local/texlive/texmf-local/tex/latex/gnuplot/
+sudo cp gnuplot-lua-tikz-common.tex /usr/local/texlive/texmf-local/tex/latex/gnuplot/
+```
+Finalmente, atualize o diretório do TeXLive para que os novos arquivos sejam reconhecidos:
+```
+sudo texhash
+```
+
+
+
 ### Como gerar o arquivo PDF
 Para gerar o arquivo PDF, é necessário executar o comando `pdflatex` com a opção `-shell-escape`:
 ```
