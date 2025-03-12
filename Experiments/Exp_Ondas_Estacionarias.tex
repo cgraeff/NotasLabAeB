@@ -340,10 +340,10 @@ O valor de $n' = 1, 2, 3, \dots$ designa o número\footnote{O número de ventres
 %
 para uma onda estacionária temos que,
 \begin{equation}\label{Eq:RelacaoVariaveisOndasEstacionarias}
-	f = \frac{n'}{2L}\sqrt{\frac{T}{\mu}},
+	f = \frac{n'}{2L}\sqrt{\frac{F_T}{\mu}},
 \end{equation}
 %
-onde utilizamos as Equações~\eqref{Eq:VelocidadeOndaEmUmaCorda} e~\eqref{Eq:RelComprimentoCordaEComprimentosDeOndaNaRessonancia}.\footnote{No aparato experimental adotado, a corda passa por uma polia e sustenta um conjunto de anilhas. A tensão na corda será então igual ao peso do conjunto, isto é, $T = mg$.}
+onde utilizamos as Equações~\eqref{Eq:VelocidadeOndaEmUmaCorda} e~\eqref{Eq:RelComprimentoCordaEComprimentosDeOndaNaRessonancia}.\footnote{No aparato experimental adotado, a corda passa por uma polia e sustenta um conjunto de anilhas. A tensão na corda será então igual ao peso do conjunto, isto é, $F_T = mg$.}
 
 Portanto, para uma corda cujas extremidades são fixas, existem múltiplos valores de frequência para os quais podemos ter uma onda estacionária. Essas frequências são denominadas \emph{frequências de ressonância}, sendo que a menor delas é denominada \emph{modo fundamental}, \emph{frequência fundamental}, ou \emph{primeiro harmônico}, e corresponde a um só ventre ($n'=1$). As demais são denominadas \emph{segundo harmônico} ($n'=2$), \emph{terceiro harmônico} ($n'=3$), etc.
 
@@ -351,7 +351,7 @@ Portanto, para uma corda cujas extremidades são fixas, existem múltiplos valor
 \section{Experimento}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Vamos submeter um fio disposto horizontalmente a uma oscilação forçada e que se propaga ao longo do fio como uma onda. Na extremidade oposta àquela que submetemos à oscilação, o fio passa por uma polia. Isso permite que a tensão no fio seja variada ao adicionarmos anilhas a um gancho afixado à extremidade do fio. Quando a onda que se propaga no fio chega à polia, ela sofre uma reflexão, passando a voltar e interferir com os pulsos de onda que se progapam no sentido original. Isso dará origem a ondas estacionárias, sendo que o número de nós de ventres formados está ligado à frequência de oscilação da onda, cujo valor podemos variar.
+Vamos submeter um fio disposto horizontalmente a uma oscilação forçada e que se propaga ao longo do fio como uma onda. Na extremidade oposta àquela que submetemos à oscilação, o fio passa por uma polia. Isso permite que a tensão no fio seja variada ao adicionarmos anilhas a um gancho afixado à extremidade do fio. Quando a onda que se propaga no fio chega à polia, ela sofre uma reflexão, passando a voltar e interferir com os pulsos de onda que se propagam no sentido original. Isso dará origem a ondas estacionárias, sendo que o número de nós de ventres formados está ligado à frequência de oscilação da onda, cujo valor podemos variar.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Objetivos}
@@ -359,11 +359,11 @@ Vamos submeter um fio disposto horizontalmente a uma oscilação forçada e que 
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{enumerate}
-	\item Verificar a proporcionalidade da frequência de ressonância $f$ com a raiz quadrada da tensão exercida pela corda, sendo que a tensão será variada ao se alterar a massa $m$ suspensa na extremidade livre;
+	\item Verificar a proporcionalidade da frequência de ressonância $f$ com a raiz quadrada da tensão $F_T$ exercida pela corda, sendo que a tensão será variada ao se alterar a massa $m$ suspensa na extremidade livre;
 	\item Linearizar a equação que relaciona a frequência à massa, determinando a função $F_1(m)$ de forma que um gráfico $f \times F_1(m)$ seja linear.
 	\item Verificar a proporcionalidade da frequência de ressonância $f$ com o inverso do comprimento $L$ da corda.
 	\item Linearizar a equação que relaciona a frequência ao comprimento, determinando a função $F_2(L)$ de forma que um gráfico $f \times F_2(L)$ seja linear.
-	\item Determinar o valor da densidade linear de massa através do coeficiente angular dos gráficos $f \times F_2(L)$.
+	\item Determinar o valor da densidade linear de massa através do coeficiente angular dos gráficos $f \times F_1(m)$.
 \end{enumerate}
 
 \begin{figure}\forcerectofloat
@@ -393,7 +393,8 @@ Vamos submeter um fio disposto horizontalmente a uma oscilação forçada e que 
 \subsection{Determinação da densidade linear de massa do fio (opcional)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-O valor de densidade de massa do fio utilizado pode ser determinado com a utilização de uma balança de alta precisão\footnote{Caso a determinação da densidade linear de massa $\mu$  não seja feita experimentalmente, utilize o valor de $\mu = (\np{9,010} \pm \np{0,002})\times 10^{-4} \rm{g/cm}$.} . Para isso basta tomarmos um segmento com um comprimento $L$ arbitrário, porém determinado, e verificarmos qual a massa $m$ correspondente. Obtemos a densidade linear de massa $\mu$ através da razão
+%$\mu = (\np{9,010} \pm \np{0,002})\times 10^{-4} \rm{g/cm}$.}
+O valor de densidade de massa do fio utilizado pode ser determinado com a utilização de uma balança de alta precisão.\footnote{Caso a determinação da densidade linear de massa $\mu$  não seja feita experimentalmente, utilize o valor de $\mu = \np[g/cm]{9,010E-4}$.} Para isso basta tomarmos um segmento com um comprimento $L$ arbitrário, porém determinado, e verificarmos qual a massa $m$ correspondente. Obtemos a densidade linear de massa $\mu$ através da razão
 \begin{equation}
 	\mu = \frac{m}{L}.
 \end{equation}
@@ -471,18 +472,18 @@ O valor obtido dessa forma será considerado o \emph{valor de referência} na an
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 Preencha as tabelas com o número adequado de algarismos significativos e unidades apropriadas. 
 \end{question}
 
-\begin{question}[type={exam}]{2}\label{Q:Ondas:GraficoFM}
+\begin{question}[type={exam}]\label{Q:Ondas:GraficoFM}
 \begin{enumerate}[label=\roman*.]
 \item Elabore um gráfico \textbf{linear} de $f$ em função da massa $m$ para os dados da Tabela~\ref{Tab:FrequenciaFuncaoMassa}. \emph{Será necessário efetuar uma mudança de variáveis}.
 \item Calcule a reta que melhor representa os dados experimentais utilizando o método dos mínimos quadrados e a adicione ao gráfico.
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 \begin{enumerate}[label=\roman*.]
 	\item Considerando a linearização adotada e a a Equação~\eqref{Eq:RelacaoVariaveisOndasEstacionarias}, identifique os coeficientes angular $B$ e linear $A$.
 	\item Utilizando a relação obtida para o coeficiente angular, determine a densidade linear de massa do fio a partir do valor obtido para $B$ na questão anterior.
@@ -493,25 +494,25 @@ Preencha as tabelas com o número adequado de algarismos significativos e unidad
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 \begin{enumerate}[label=\roman*.]
 \item Elabore um gráfico\footnote{Os dois conjuntos de dados devem estar contidos no mesmo gráfico.} \textbf{linear} de $f$ em função de $L$ para os dados das Tabelas~\ref{Tab:FrequenciaFuncaoComprimento2} e~\ref{Tab:FrequenciaFuncaoComprimento3}. \emph{Novamente, será necessário efetuar uma mudança de variáveis}.
 \item Calcule as retas que melhor representam os dados experimentais utilizando o método dos mínimos quadrados e as adicione ao gráfico.
 \end{enumerate}
 \end{question}
 
-%\begin{question}[type={exam}]{1}
+%\begin{question}[type={exam}]
 %Utilize a Equação~\eqref{Eq:RelacaoVariaveisOndasEstacionarias} para descrever a relação entre $f$ e $L$, identificando as variáveis dependente e independente, bem como os coeficientes angular e linear. A partir dos valores dos coeficientes angulares, determine os valores da aceleração da gravidade para cada conjunto de dados. Determine o erro percentual em relação ao valor de referência utilizando a expressão 
 %\begin{equation}
 %	E_{\%} = \left|\frac{x-x_{\textrm{ref}}}{x_{\textrm{ref}}}\right| \times 100.
 %\end{equation}
 %\end{question}
 
-%\begin{question}[type={exam}]{1}
+%\begin{question}[type={exam}]
 %Calcule o erro associado ao coeficiente angular obtido na questão anterior para a regressão linear dos dados da Tabela~\ref{Tab:FrequenciaFuncaoComprimento2}. Com esse resultado e com o valor do próprio coeficiente angular, determine o valor do erro associado à aceleração da gravidade. Nos cálculos, use o valor de $\mu$ de referência (incluindo o erro erro associado).
 %\end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosOndasEstacionarias}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 

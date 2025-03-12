@@ -201,15 +201,12 @@ Como podemos iniciar a cronometragem assim que o objeto começa a se mover, pode
 	\Delta x = \frac{1}{2} at^2.
 \end{equation}
 
-Podemos calcular a aceleração a partir de um valor qualquer de deslocamento e do tempo correspondente. No entanto, o mais adequado é realizar uma série de medidas e utilizar o método dos mínimos quadrados para o conjunto de dados linearizado. Fazendo uma linearização, obtemos a seguinte relação entre a equação da reta e a equação acima:
-\begin{align}
-	y &= \Delta x \\
-	A &= 0 \\
-	B &= a/2 \\
-	x &= t^2.
-\end{align}
+Podemos calcular a aceleração a partir de um valor qualquer de deslocamento e do tempo correspondente ao invertermos a relação acima:
+\begin{equation}\label{LeisDeNewton:Eq:AceleracaoCinematica}
+	a = \frac{2 \Delta x}{t^2}.
+\end{equation}
 %
-Podemos então calcular o coeficiente angular através de uma regressão linear dos dados obtidos para o deslocamento e para o tempo ao quadrado e obter um valor de aceleração independente daquele calculado através das leis de Newton. Isso possibilitará que comparemos os valores obtidos, testando assim a validade de tais leis.
+Para podermos comparar o valor da aceleração obtida através da cinemática, podemos determinar a aceleração para cada um dos deslocamentos e então fazer uma média dos valores obtidos, o que resultará em uma eliminação dos erros aleatórios associados à determinação dos valores da variável dependente. Veremos nos próximos experimentos um método melhor para determinar um parâmetro a partir de um conjunto de dados, uma vez que uma média simples está suscetível a desvios devido a pontos discrepantes e também corre o risco de amplificar ruídos nos valores do conjunto de dados.\footnote{A eliminação dos erros depende de uma dispersão aleatória das medidas em relação a um valor mais provável e a consequente eliminação devido a diferenças de sinal. No caso de calcularmos um parâmetro que envolva o quadrado das variáveis independente e dependente, por exemplo, essa eliminação não ocorre.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimento}
@@ -289,23 +286,19 @@ Vamos usar o aparato descrito na Seção~\ref{Sec:MaquinaDeAtwood} para determin
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 Preencha as colunas de dados das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Elabore\footnote{Na verdade, em ambos os casos o deslocamento $\Delta x$ é a variável independente. Por questões didáticas, no entanto, estamos optando por tratar o tempo como variável independente.} um gráfico $\Delta x \times t$ dos pontos experimentais e um gráfico $\Delta x \times \tau$, onde $\tau = t^2$.
+\begin{question}[type={exam}]
+Elabore\footnote{Na verdade, em ambos os casos o deslocamento $\Delta x$ é a variável independente. Por questões didáticas, no entanto, estamos optando por tratar o tempo como variável independente.} um gráfico $\Delta x \times t$.
 \end{question}
 
-\begin{question}[type={exam}]{4}
-\begin{enumerate}[label=\roman*.]
-\item Através dos gráficos da questão anterior, podemos verificar qual dos dois conjuntos de dados segue uma \emph{tendência linear}.
-\item Para o conjunto de dados linear, obtenha os valores de $A$, $B$ e $r^2$ da melhor reta correspondente, isto é, faça a regressão linear dos dados experimentais. Adicione essa reta ao gráfico correspondente e coloque a equação da reta, juntamente com o coeficiente $r^2$ na legenda.
-\item Relacione as variáveis cinemáticas às constantes da equação da reta e calcule a aceleração do sistema através do coeficiente angular $B$.
-\end{enumerate}
+\begin{question}[type={exam}]
+Para cada um dos pontos experimentais, determine a aceleração correspondente usando a Equação~\eqref{LeisDeNewton:Eq:AceleracaoCinematica} e preencha a seção de Dados Calculados da Tabela~\ref{TabelaDadosLeisDeNewton}. Ao final, determine o valor médio da aceleração.
 \end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 Compare o valor o valor obtido para a aceleração com o valor dado pelas leis de Newton através do \emph{erro percentual} dado pela expressão\footnote[][-5mm]{A expressão para o erro percentual é geral e costuma ser escrita como %
 \begin{minipage}{\linewidth} %
 \begin{align*} %
@@ -322,7 +315,7 @@ onde $x$ é uma medida qualquer que queremos comparar com um valor de referênci
 onde $a_{\textrm{Ref}}$ é o valor obtido para a aceleração através das Leis de Newton e $a$ é o valor obtido através do coeficiente $B$ da regressão linear.
 \end{question}
 
-%\begin{question}[type={exam}]{1}
+%\begin{question}[type={exam}]
 %Inverta a Equação~\eqref{Eq:MaquinaAtwoodHorizResultAcel} e isole a gravidade. Use o valor da aceleração obtido através dos dados cinemáticos e calcule o valor de $g$. Utilize a fórmula para o erro percentual e calcule $E_\%$ com relação ao valor $g=\np[m/s^2]{9,8}$.
 %\end{question}
 
@@ -365,25 +358,25 @@ onde $a_{\textrm{Ref}}$ é o valor obtido para a aceleração através das Leis 
 	\cmidrule{2-4}
 \\
 	& \multicolumn{3}{l}{\textbf{Valores calculados}} \\
-	\cmidrule{2-3}
-	& $\Delta x$ & $t^2$ \\
-	\cmidrule{2-3}
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+	\cmidrule{2-4}
+	& $\Delta x$ & $t^2$ & $a$\\
+	\cmidrule{2-4}
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
+	& \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} & \cellcolor[gray]{0.89} \\
+	& \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} & \cellcolor[gray]{0.95} \\
 	\cmidrule{2-3}
 \bottomrule
 \end{tabular}

@@ -401,6 +401,8 @@ Como no caso do cilíndro, verificamos que o termo entre colchetes corresponde a
 %%% Disco
 
 \draw (0,0) ellipse (1.25 and 0.75);
+\draw (0,-0.1) ellipse (0.35 and 0.20);
+\draw[fill=white] (0,0.05) ellipse (0.35 and 0.20);
 \draw (0,0) ellipse (1 and 0.5);
 \begin{scope}
     \clip (0,0) ellipse (1 and 0.5);
@@ -414,11 +416,13 @@ Como no caso do cilíndro, verificamos que o termo entre colchetes corresponde a
 %\draw[dotted] (-1.25,-0.4) arc (180:360:1.25 and -0.75);
 
 %%% Semieixo direito
-\fill[white] (0.125,-0.075) rectangle (-0.125,2);
-\draw (0.125,-0.075) -- +(0,2.075);
-\draw (-0.125,-0.075) -- +(0,2.075);
-\draw (0,2) ellipse (0.125 and 0.075);
-\draw (-0.125,-0.075) arc[start angle = 180, end angle = 360, x radius = 0.125, y radius = 0.075];
+\fill[white] (0.125,0.05) rectangle (-0.125,2);
+\draw (0.125,0.05) -- +(0,2.075);
+\draw (-0.125,0.05) -- +(0,2.075);
+\draw (0,2.125) ellipse (0.125 and 0.075);
+\draw (-0.125,0.05) arc[start angle = 180, end angle = 360, x radius = 0.125, y radius = 0.075];
+\draw (0.35,0.05) -- (0.35,-0.1);
+\draw (-0.35,0.05) -- (-0.35,-0.1);
 
 % Corda
 \draw (-0.125,1.75) arc[start angle = 180, end angle = 360, x radius = 0.125, y radius = 0.075];
@@ -467,16 +471,21 @@ Como no caso do cilíndro, verificamos que o termo entre colchetes corresponde a
     
     \draw (0,0) circle (2cm);
     \draw (0,0) circle (1.5cm);
-    \draw (0,0) circle (0.25cm);
+    \draw (0,0) circle (0.5cm);
+    \draw[thick] (0,0) circle (0.25cm);
     
     \draw (-0.25,0) -- (-0.25,3);
     \draw[interface] (2,3) -- (-2,3);
     
     \draw[dashdotted] (0,0) -- (3.75,0);
     
-    \draw[dotted] (0,0.25) -- (0.75,0.25);
-    \draw[|<-] (0.75,0.25) -- (0.75,0.75);
-    \draw[|<-] (0.75,0) -- node[below right]{$r$} (0.75,-0.5);
+    \draw[dotted] (0,0.25) -- (1.10,0.25);
+    \draw[|<-] (1.10,0.25) -- (1.10,0.75);
+    \draw[|<-] (1.10,0) -- node[below right]{$r$} (1.10,-0.5);
+    
+    \draw[dotted] (0,0.5) -- (0.75,0.5);
+    \draw[|<-] (0.75,0.5) -- node[left]{$r_\ell$} (0.75,1);
+    \draw[|<-] (0.75,0) -- (0.75,-0.5);
     
     \draw[dotted] (0,2) -- (3.5,2);
     \draw[|<->|] (2.5,1.5) -- node[right]{$R_i$} (2.5,0);
@@ -505,23 +514,26 @@ Note que as relações acima podem ou não ter um sinal negativo, dependendo da 
     \centering
     \begin{tikzpicture}[>=Stealth, scale = 0.8]
     
-        \draw[pattern = north west lines] (0,2) -- (0.5, 2) -- (0.5,1.5) -- (0.25,1.5) -- (0.25,0.25) -- (3,0.25) -- (3,-0.25) -- (0.25,-0.25) -- (0.25, -1.5) -- (0.5, -1.5) -- (0.5, -2) -- (-0.5, -2) -- (-0.5, -1.5) -- (-0.25, -1.5) -- (-0.25, -0.25) -- (-3, -0.25) -- (-3, 0.25) -- (-0.25, 0.25) -- (-0.25,1.5) --(-0.5,1.5) -- (-0.5, 2) -- cycle;
+        \draw[pattern = north west lines] (0, 2) -- (0.5, 2) -- (0.5, 1.5) -- (0.25, 1.5) -- (0.25, 0.5) -- (0.5, 0.5) -- (0.5, 0.25) -- (3, 0.25) -- (3, -0.25) -- (0.5, -0.25) -- (0.5, -0.5) -- (0.25, -0.5) -- (0.25, -1.5) -- (0.5, -1.5) -- (0.5, -2) -- (-0.5, -2) -- (-0.5, -1.5) -- (-0.25, -1.5) -- (-0.25, -0.5) -- (-0.5, -0.5) -- (-0.5, -0.25) -- (-3, -0.25) -- (-3, 0.25) -- (-0.5, 0.25) -- (-0.5, 0.5) -- (-0.25, 0.5) -- (-0.25, 1.5) -- (-0.5, 1.5) -- (-0.5, 2) -- cycle;
         
-        \draw[|<->|] (-3,0.875) -- node[above]{$L$} (-0.25,0.875);
-        \draw[|<->|] (3,0.875) -- node[above]{$L$} (0.25,0.875);
-        \draw[dotted] (-3,0.875) -- (-3,0.25);
-        \draw[dotted] (3,0.875) -- (3,0.25);
+        \draw[|<->|] (-3,-0.675) -- node[below]{$L$} (-0.5,-0.675);
+        \draw[|<->|] (3,-0.675) -- node[below]{$L$} (0.5,-0.675);
+        \draw[dotted] (-3,-0.675) -- (-3,-0.25);
+        \draw[dotted] (3,-0.675) -- (3,-0.25);
         
-        \draw[|<->|] (-0.5, 2.5) -- node[above]{$\ell_e$} (0.5,2.5);
+        \draw[->|] (-1.5,0.675) -- node[above]{$L_\ell$} (-0.5,0.675);
+        \draw[->|] (1.5,0.675) -- (0.5,0.675);
+        
+        \draw[|<->|] (-0.5, 2.5) -- node[above]{$L_e$} (0.5,2.5);
         \draw[dotted] (-0.5, 2) -- (-0.5, 2.5);
         \draw[dotted] (0.5, 2) -- (0.5, 2.5);
         
-        \draw[->] (-1,-0.875) -- node[below]{$\ell_i$} (-0.25,-0.875);
-        \draw[->] (1,-0.875) -- (0.25,-0.875);
-    
+        \draw[->] (-1,-1.25) -- node[below left]{$L_i$} (-0.25,-1.25);
+        \draw[->] (1,-1.25) -- (0.25,-1.255);
+        
     \end{tikzpicture}
     \caption{Roda de Maxwell, seção frontal.\label{Fig:RodaDeMaxwellSecaoFrontal}}
-    \end{marginfigure}
+\end{marginfigure}
 
 Aplicando a Segunda Lei de Newton para translação ao centro de massa, obtemos
 \begin{description}
@@ -555,26 +567,42 @@ cuja solução é
     &= \frac{1}{1+\frac{I}{m_t r^2}} \cdot g. \label{Eq:AcelRodaDeMaxwellGenerica}
 \end{align}
 
-Para determinar o momento de inércia total, podemos dividir a roda de Maxwell em três partes: os dois semieixos, o disco central, e o ``tubo'' externo. Como não sabemos a massa de cada uma das partes separadamente, teremos que determiná-la através da densidade e do volume de cada uma das partes. Assim, obtemos
+Para determinar o momento de inércia total, podemos dividir a roda de Maxwell em cinco partes: os dois semieixos, o disco central, dois discos laterais, e o ``tubo'' externo. Como não sabemos a massa de cada uma das partes separadamente, teremos que determiná-la através da densidade e do volume de cada uma das partes. Assim, obtemos
+\begin{marginfigure}
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale = 0.8]
+    
+        \draw[pattern = north east lines] (0.5, 2) rectangle (-0.5, 1.5) (0.5, -2) rectangle (-0.5, -1.5);
+        \draw[pattern = north west lines] (-0.25,-1.5) rectangle (0.25,1.5);
+        \draw[pattern = north east lines] (-0.5,0.5) rectangle (-0.25,-0.5) (0.5,0.5) rectangle (0.25,-0.5);
+        \draw[pattern = north west lines] (-3,0.25) rectangle (-0.5,-0.25) (3,0.25) rectangle (0.5,-0.25);
+    
+    \end{tikzpicture}
+    \caption{Uma vez que o momento de inércia é aditivo, podemos dividir a roda em três discos centrais, dois semieixos e um tubo na região externa de maneira a facilitar o cálculo.\label{Fig:RodaDeMaxwellDecomposicao}}
+\end{marginfigure}
+%
 \begin{align}
     I_{\text{eixos}} &= 2\cdot\frac{1}{2} MR^2 \\
     &=2\cdot \frac{1}{2} \rho V_e \cdot r^2 \\
-    I_{\text{disco}} &= \frac{1}{2} \cdot MR^2 \\
+    I_{\text{disco central}} &= \frac{1}{2} \cdot MR^2 \\
     &= \frac{1}{2} \cdot\rho V_d \cdot R_i^2 \\
-    I_{\text{tubo}} &= \frac{1}{2} \cdot M (R_e^2 - R_i^2) \\
-    &= \frac{1}{2} \cdot \rho V_t \cdot (R_e^2 - R_i^2),
+    I_{\text{discos laterais}} &= \frac{1}{2} \cdot MR^2 \\
+    &= \frac{1}{2} \cdot\rho V_{d\ell} \cdot r_{\ell}^2 \\
+    I_{\text{tubo}} &= \frac{1}{2} \cdot M (R_e^2 + R_i^2) \\
+    &= \frac{1}{2} \cdot \rho V_t \cdot (R_e^2 + R_i^2),
 \end{align}
 %
 onde os volumes são dados por
 \begin{align}
     V_e &= \pi r^2 L \\
     V_d &= \pi R_i^2 \ell_i \\
-    V_t &= \pi (R_e^2 - R_i^2)\ell_e.
+    V_{d\ell} &= \pi r_\ell^2 L_\ell\\
+    V_t &= \pi (R_e^2 - R_i^2)L_e.
 \end{align}
 %
 Somando as expressões acima, obtemos o momento de inércia total:
 \begin{equation}\label{eq:MomentoDeInerciaTotal}
-    I = \frac{1}{2} \rho [V_e r^2 + V_d R_i^2 + V_t (R_e^2 - R_i^2)].
+    I = \frac{1}{2} \rho [2V_e r^2 + V_d R_i^2 + 2 V_{d\ell} r_ \ell^2+ V_t (R_e^2 + R_i^2)].
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -614,8 +642,8 @@ Somando as expressões acima, obtemos o momento de inércia total:
 %%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
 	\item Afira o valor da massa total $m_t$ da roda de Maxwell usando a balança. Anote o valor obtido na Tabela~\ref{DadosRodaDeMaxwell};
-	\item Meça os valores de $r$, $R_i$, $R_e$, $L$, $\ell_i$, e $\ell_e$ e os anote na Tabela~\ref{DadosRodaDeMaxwell};
-	\item Determine os resultados para os volumes $V_e$, $V_d$, e $V_t$. Anote os resultados na Tabela~\ref{DadosRodaDeMaxwell}.
+	\item Meça os valores de $r$, $r_\ell$, $R_i$, $R_e$, $L$, $L_i$, $L_e$, e $L_\ell$ e os anote na Tabela~\ref{DadosRodaDeMaxwell};
+	\item Determine os resultados para os volumes $V_e$, $V_d$, $V_{d\ell}$, e $V_t$. Anote os resultados na Tabela~\ref{DadosRodaDeMaxwell}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -661,29 +689,29 @@ Somando as expressões acima, obtemos o momento de inércia total:
 \section{Questionário}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 Preencha as colunas de dados experimentais das tabelas com o número adequado de algarismos significativos e unidades.
 \end{question}
 
-\begin{question}[type={exam}]{2}
-Determine os volumes $V_e$, $V_c$ e $V_t$ e os dados calculados $\Delta y$ e $t^2$, completando a Tabela~\ref{DadosRodaDeMaxwell}. Utilize o número adequado de algarismos significativos.
+\begin{question}[type={exam}]
+Determine os volumes $V_e$, $V_d$, $V_{d\ell}$, $V_t$ e os dados calculados $\Delta y$ e $t^2$, completando a Tabela~\ref{DadosRodaDeMaxwell}. Utilize o número adequado de algarismos significativos.
 \end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 \begin{enumerate}[label=\roman*.]
     \item Elabore um gráfico de $\Delta y \times t^2$ com os dados obtidos.
     \item Faça uma regressão linear e a adicione ao gráfico.
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 \begin{enumerate}[label=\roman*.]
     \item Determine o significado físico do coeficiente angular, isto é, determine o que tal coeficiente representa.
     \item Determine o valor da aceleração do centro de massa usando o coeficiente angular e calcule o erro percentual em relação ao valor determinado através das Equações~\eqref{Eq:AcelRodaDeMaxwellGenerica} e~\eqref{eq:MomentoDeInerciaTotal}.
 \end{enumerate}
 \end{question}
 
-\begin{question}[type={exam}]{2}
+\begin{question}[type={exam}]
 Considerando os objetivos do experimento, listados na Seção~\ref{Sec:ObjetivosRodaDeMaxwell}, e os resultados obtidos nas questões anteriores, discuta quais objetivos foram atingidos com sucesso, justificando suas conclusões. Se algum objetivo não foi atingido, discuta quais são os possíveis motivos do insucesso e que providências podem ser tomadas para que eles sejam alcançados.
 \end{question}
 
@@ -697,21 +725,25 @@ Considerando os objetivos do experimento, listados na Seção~\ref{Sec:Objetivos
     \centering
     \begin{tabular}{lp{25mm}p{25mm}p{25mm}l}
     \toprule
-        &\multicolumn{4}{l}{\textbf{Raios e Comprimentos}} \\
+        &\multicolumn{4}{l}{\textbf{Parâmetros da Roda}} \\
         \cmidrule{2-3}
-        & $r$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $r$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $r_\ell$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
         & $R_i$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
         & $R_e$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
         & $L$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-        & $\ell_i$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
-        & $\ell_e$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $L_i$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $L_e$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
+        & $L_\ell$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $m$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
         \cmidrule{2-3}
         \\
         &\multicolumn{4}{l}{\textbf{Volumes}} \\
         \cmidrule{2-3}
         & $V_e$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
         & $V_d$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
-        & $V_t$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $V_{d\ell}$ \cellcolor[gray]{0.89} & \cellcolor[gray]{0.92} \\
+        & $V_t$ \cellcolor[gray]{0.95} & \cellcolor[gray]{0.97} \\
         \cmidrule{2-3}
         \\
         &\multicolumn{4}{l}{\textbf{Dados Experimentais}} \\
