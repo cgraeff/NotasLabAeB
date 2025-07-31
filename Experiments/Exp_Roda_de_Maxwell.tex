@@ -522,7 +522,7 @@ Note que as relações acima podem ou não ter um sinal negativo, dependendo da 
         \draw[dotted] (3,-0.675) -- (3,-0.25);
         
         \draw[->|] (-1.5,0.675) -- node[above]{$L_\ell$} (-0.5,0.675);
-        \draw[->|] (1.5,0.675) -- (0.5,0.675);
+        %\draw[|<-] (-0.25,0.675) -- (0.75,0.675);
         
         \draw[|<->|] (-0.5, 2.5) -- node[above]{$L_e$} (0.5,2.5);
         \draw[dotted] (-0.5, 2) -- (-0.5, 2.5);
@@ -572,11 +572,26 @@ Para determinar o momento de inércia total, podemos dividir a roda de Maxwell e
     \centering
     \begin{tikzpicture}[>=Stealth, scale = 0.8]
     
-        \draw[pattern = north east lines] (0.5, 2) rectangle (-0.5, 1.5) (0.5, -2) rectangle (-0.5, -1.5);
-        \draw[pattern = north west lines] (-0.25,-1.5) rectangle (0.25,1.5);
-        \draw[pattern = north east lines] (-0.5,0.5) rectangle (-0.25,-0.5) (0.5,0.5) rectangle (0.25,-0.5);
-        \draw[pattern = north west lines] (-3,0.25) rectangle (-0.5,-0.25) (3,0.25) rectangle (0.5,-0.25);
+        \draw[gray, pattern color=gray, pattern = north east lines] (0.5, 2) rectangle (-0.5, 1.5) (0.5, -2) rectangle (-0.5, -1.5);
+        \draw[gray, pattern color=gray, pattern = north west lines] (-0.25,-1.5) rectangle (0.25,1.5);
+        \draw[gray, pattern color=gray, pattern = north east lines] (-0.5,0.5) rectangle (-0.25,-0.5) (0.5,0.5) rectangle (0.25,-0.5);
+        \draw[gray, pattern color=gray, pattern = north west lines] (-3,0.25) rectangle (-0.5,-0.25) (3,0.25) rectangle (0.5,-0.25);
     
+        \draw[|<->|] (-3,-0.675) -- node[below]{$L$} (-0.5,-0.675);
+        \draw[|<->|] (3,-0.675) -- node[below]{$L$} (0.5,-0.675);
+        \draw[dotted] (-3,-0.675) -- (-3,-0.25);
+        \draw[dotted] (3,-0.675) -- (3,-0.25);
+        
+        \draw[->|] (-1.5,0.675) -- node[above]{$L_\ell$} (-0.5,0.675);
+        \draw[|<-] (-0.25,0.675) -- (0.75,0.675);
+        
+        \draw[|<->|] (-0.5, 2.5) -- node[above]{$L_e$} (0.5,2.5);
+        \draw[dotted] (-0.5, 2) -- (-0.5, 2.5);
+        \draw[dotted] (0.5, 2) -- (0.5, 2.5);
+        
+        \draw[->] (-1,-1.25) -- node[below left]{$L_i$} (-0.25,-1.25);
+        \draw[->] (1,-1.25) -- (0.25,-1.255);
+        
     \end{tikzpicture}
     \caption{Uma vez que o momento de inércia é aditivo, podemos dividir a roda em três discos centrais, dois semieixos e um tubo na região externa de maneira a facilitar o cálculo.\label{Fig:RodaDeMaxwellDecomposicao}}
 \end{marginfigure}

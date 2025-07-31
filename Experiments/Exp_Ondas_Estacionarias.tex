@@ -31,11 +31,11 @@ Submeteremos um fio a uma tensão e a uma vibração, com a consequente formaç�
 \begin{tikzpicture}[>=Stealth,domain=0:3.1415,samples=50]
 	\draw[->] (-0.5,0) -- (4,0) node[below]{$t$};
 	\draw[<-] (0,1.5) node[left]{$y$} -- (0,-1.5);
-	\draw[color = black,smooth] plot (\x,{sin(2 * \x r)});
+	\draw[color = black,smooth] plot (\x,{-sin(2 * \x r)});
 	
 	\draw[dotted] (3.1415,-1.2) -- (3.1415,0);
 	\draw[<->] (0,-1.2) -- node[below]{$T$} (3.1415,-1.2);
-	\draw[<->] (0.7854,0) -- node[right]{$A$} (0.7854,1);
+	\draw[<->] (0.7854,0) -- node[right]{$A$} (0.7854,-1);
 \end{tikzpicture}
 \caption{Parâmetros temporais de uma onda transversal.}
 \label{Fig:OscilacaoPontoOnda}
@@ -50,7 +50,7 @@ onde $A$ é a amplitude da onda ---~isto é, o valor máximo atingido pela vari�
 
 Tal expressão pode ser entendida de maneira simples se considerarmos dois casos especiais: $x = 0$ para qualquer $t$ e $t = 0$ para qualquer $x$. Isso resulta nas expressões
 \begin{equation}
-	y(t) = A \sen (\omega t),
+	y(t) = A \sen (-\omega t),
 \end{equation}
 %
 e

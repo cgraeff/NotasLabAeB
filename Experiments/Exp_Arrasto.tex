@@ -7,6 +7,43 @@
 	Realizaremos um experimento para a determinação da velocidade terminal de uma esfera que se move em um fluido dentro de um tubo que faz um ângulo com a horizontal. Através de uma análise dos dados obtidos, verificaremos qual é a dependência da força de arrasto na velocidade. Para isso, veremos as expressões para a força de arrasto com dependência linear e quadrática na velocidade, verificando também como obter a expressão para a velocidade terminal em função do ângulo de inclinação. Utilizaremos os conceitos de medidas, algarismos significativos, gráficos, regressão linear, e linearização.
 \end{fullwidth}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linearização}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+É comum realizarmos um experimento e obtermos um conjunto de dados que não segue uma tendência linear. Em um experimento de queda livre, por exemplo, a distância percorrida pelo objeto que cai está ligada ao tempo através de
+\begin{equation}
+	\Delta y = v_0^y t + \frac{a_yt^2}{2}.
+\end{equation}
+%
+Como em geral estamos interessados em extrair dos dados experimentais informações acerca de constantes físicas, podemos recorrer a um processo de regressão. No entanto, não podemos utilizar uma regressão linear neste caso, pois os dados claramente não seguirão uma tendência linear. Podemos recorrer a uma regressão quadrática ou realizar uma \emph{linearização}.
+
+Realizar uma linearização nada mais é do que fazer uma mudança de variáveis. No entanto, nem todos os casos são passíveis de serem linearizados. No caso da queda livre, por exemplo, precisamos garantir que $v_0$ seja muito próxiimo de zero. Nesse caso, podemos escrever
+\begin{equation}
+	\Delta y = \frac{a_yt^2}{2}.
+\end{equation}
+%
+Fazendo agora a mudança de variáveis $\tau = t^2$, obtemos
+\begin{equation}
+	\Delta y = \frac{a_y}{2}\tau.
+\end{equation}
+
+Comparando a equação acima com a equação da reta $y = A + Bx$, vefificamos as seguintes relações, se considerarmos que o tempo é a variável independente:\footnote{Veja que aqui estamos usando $y$ para duas coisas distintas: um eixo vertical através do qual calculamos o deslocamento $\Delta y$ de um corpo sujeito à gravidade, e o eixo da variável dependente de um gráfico (que é representado no sentido ``da parte inferior da página, para a parte superior'').}
+\begin{align}
+	y &= \Delta y \\
+	A &= 0 \\
+	B &= a/2 \\
+	x &= \tau.
+\end{align}
+%
+Podemos, portanto, utilizar o processo de linearização associado ao processo de regressão linear para obtermos informações a respeito de constantes físicas mesmo que o conjunto de dados experimentais obtidos não siga uma tendência linear.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linearização e teste de hipóteses}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Nos casos em que um fenômeno não segue uma tendência linear, se tivermos um modelo do fenômeno físico considerado, podemos empregar o processo da linearização com o intuito de transformar o conjunto de dados de forma que ele passe a representar uma reta. O sucesso desse procedimento, no entanto, depende de a teoria usada como referência estar correta. Muitas vezes ocorre que não temos conhecimento acerca da teoria que descreve um fenômeno ou temos mais de uma teoria, sem ter certeza de qual é a mais adequada. Podemos então utilizar uma regressão linear como um método de teste, validando uma ou outra teoria com base nos valores obtidos para o coeficiente de dispersão linear $r^2$.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Força de Arrasto}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

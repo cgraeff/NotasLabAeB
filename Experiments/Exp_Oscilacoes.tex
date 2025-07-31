@@ -11,27 +11,78 @@
 \section{Sistema massa-mola}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{marginfigure}[8cm]
+\centering
+\begin{tikzpicture}[>=Stealth,
+     interface/.style={
+        % superfície
+        postaction={draw,decorate,decoration={border,angle=-45,
+                    amplitude=0.2cm,segment length=2mm}}},
+    ]
+       
+    \draw[interface] (0,-1) -- (0,-2.5);
+    \draw[interface] (0,-2.5) -- (4.8, -2.5);
+    
+    \draw (0,-2) -- (0.2,-2);
+    \draw[decoration={aspect=0.3, segment length=2.5625mm, amplitude=2mm,coil},decorate] (0.2,-2) -- (3.3,-2);
+    \draw (3.3, -2) -- (3.5,-2);
+    
+    \draw[pattern = north west lines, pattern color = gray] (3.5,-2.5) rectangle (4.5,-1.5);
+    \draw[dotted, pattern = north west lines, pattern color = gray] (2,-2.5) rectangle (3,-1.5);
+    
+    \draw[fill] (4,-2) circle (1pt);
+    \draw[->, thick] (4,-2) -- +(0,-1) node[right]{$\vec{P}$};
+    \draw[->, thick] (4,-1.5) -- node [right]{$\vec{N}$} +(0,1);
+    \draw[->, thick] (3.5, -2) -- node[below right]{$\vec{F}_e$} +(-1,0);
+    
+    \draw[->] (0,-3.3) -- (4.8,-3.3) node[below left]{$x$};
+    \draw[|-|] (2.5,-3.3) node[below]{$x_i$} -- (4,-3.3) node[below]{$x_f$};
+    
+    \begin{scope}[shift={(0,-3.5)}]
+        \draw[interface] (0,-1) -- (0,-2.5);
+        \draw[interface] (0,-2.5) -- (4.8, -2.5);
+        
+        \draw (0,-2) -- (0.2,-2);
+        \draw[decoration={aspect=0.3, segment length=0.6mm, amplitude=2mm,coil},decorate] (0.2,-2) -- (0.7,-2);
+        \draw (0.7, -2) -- (0.9,-2);
+        
+        \draw[pattern = north west lines, pattern color = gray] (0.9,-2.5) rectangle (1.9,-1.5);
+        \draw[dotted, pattern = north west lines, pattern color = gray] (2,-2.5) rectangle (3,-1.5);
+        
+        \draw[fill] (1.4,-2) circle (1pt);
+        \draw[->, thick] (1.4,-2) -- +(0,-1) node[right]{$\vec{P}$};
+        \draw[->, thick] (1.4,-1.5) -- node [right]{$\vec{N}$} +(0,1);
+        \draw[->, thick] (1.9, -2) -- node[below right]{$\vec{F}_e$} +(1,0);
+        
+        \draw[->] (0,-3.3) -- (4.8,-3.3) node[below left]{$x$};
+        \draw[|-|] (2.5,-3.3) node[below]{$x_i$} -- (1.4,-3.3) node[below]{$x_f$};
+    \end{scope}
+        
+\end{tikzpicture}
+\caption{Utilizando um eixo coordenado $x$ na direção da mola, podemos descrever o sentido das distensões/compressões e das forças através de um sinal.\label{Fig:SentidoLeiDeHooke}}
+\end{marginfigure}
+
 Sabemos que a força exercida por uma mola é proporcional à sua distensão $\ell$:
 \begin{equation}
 	|F| = k \ell,
 \end{equation}
 %
-onde $k$ é uma constante de proporcionalidade cujo valor varia de mola para mola. Adotando um sistema de referência cujo eixo $x$ aponta verticalmente para cima, podemos escrever a expressão para a força como
+onde $k$ é uma constante de proporcionalidade cujo valor varia de mola para mola. Adotando um sistema de referência cujo eixo $x$ aponta para a direita na Figura~\ref{Fig:SentidoLeiDeHooke}, podemos escrever a expressão para a a componente da força elástica no eixo $x$ como
 \begin{equation}
-    F = -k \Delta x,
+    F_x = -k \Delta x,
 \end{equation}
 %
-onde o sinal negativo significa que a força é no sentido contrário à distensão da mola. Note que $x$ representa a posição do bloco, de forma que $\delta x$ corresponde à distensão $\ell$. Se adotarmos a origem do eixo $x$ na posição inicial do bloco, temos que $x_i = 0$ e $x_f = x$, o que nos permite escrever a expressão para a força como
+onde o sinal negativo significa que a força é no sentido contrário à distensão da mola. Note que $x$ representa a posição do bloco, de forma que $\Delta x$ corresponde à distensão $\ell$ da mola. Se notarmos que $|F| = F_x$ e adotarmos a origem do eixo $x$ na posição inicial do bloco, temos que $x_i = 0$ e $x_f = x$, o que nos permite escrever a expressão para a força como
 \begin{equation}
     F = -kx.
 \end{equation}
 
-\begin{marginfigure}[-2cm]
-	\includegraphics[width=\textwidth]{Ilustrations/Massa-Mola.png}
-	\caption{Sistema massa-mola.}
-\end{marginfigure}
+%\begin{marginfigure}[-2cm]
+%	\includegraphics[width=\textwidth]{Ilustrations/Massa-Mola.png}
+%	\caption{Sistema massa-mola.}
+%\end{marginfigure}
 
-\begin{marginfigure}
+\begin{marginfigure}[1cm]
 \centering
 \begin{tikzpicture}[>=Stealth,
      interface/.style={
@@ -50,23 +101,33 @@ onde o sinal negativo significa que a força é no sentido contrário à distens
     
     \draw[fill] (0,-2.9) circle (1pt);
     \draw[->, thick] (0, -2.9) -- +(0,-1) node[right]{$\vec{P}$};
-    \draw[->, thick] (0, -2.4) -- +(0,1) node[right]{$\vec{F}_e$};
+    \draw[->, thick] (0, -2.4) -- +(0,1.5) node[right]{$\vec{F}_e$};
     
-    \draw[<-] (1,-1.9)node[below right]{$x$} -- (1,-3.9);
+    \draw[->] (1,-1.0) -- (1,-3.9) node[below right]{$x$};
+    \draw (0.9,-2) -- (1.1,-2) node[right]{0};
 \end{tikzpicture}
-\caption{Direção e sentido das forças em um sistema massa-mola em equilíbrio.\label{Fig:BlocoEquilDevidoForcaElastica}}
+\caption{Direção e sentido das forças em um sistema massa-mola.\label{Fig:MassaMolaEqDif}}
 \end{marginfigure}
 
-Vamos considerar um sistema onde penduramos uma mola em um suporte, de forma que ela se disponha verticalmente, e prendemos um corpo de massa $m$ à extremidade inferior. Deixamos o corpo descer até que a força exercida pela mola equilibre o peso. A partir dessa posição de equilíbrio, qualquer deslocamento exercido fará com que atue sobre o corpo uma força proporcional ao deslocamento, porém com sentido contrário a ele, tendendo a restaurá-lo à posição de equilíbrio. Utilizando a segunda lei de Newton, podemos descrever a dinâmica do corpo através de
+Vamos agora considerar um sistema onde penduramos uma mola em um suporte, de forma que ela se disponha verticalmente, e prendemos um corpo de massa $m$ à sua extremidade inferior (Figura~\ref{Fig:MassaMolaEqDif}). Soltamos o corpo a partir da posição onde a mola está relaxada, e que corresponde à coordenada $x = 0$. Utilizando a segunda lei de Newton, podemos descrever a dinâmica do corpo através de
 \begin{align}
     F_R^x &= m a_x \\
 	P^x + F_e^x &= ma_x \\
-	-P + (-kx) &= m a_x \\
-	-k \left(x + \frac{mg}{k}\right) &= ma_x \\
-	-kx' &= ma_x,
+	P - kx &= m a_x \\
+	-k \left(x - \frac{mg}{k}\right) &= ma_x.
 \end{align}
 %
-onde o eixo $x$ aponta verticalmente para cima e $x' \equiv x + mg/k$. A constante $mg/k$ na expressão acima representa a distensão da mola após a adição da massa $m$ em relação relação ao tamanho que ela tinha quando relaxada. Note também que
+Definindo uma variável $x'$ tal que\footnote{A constante $mg/k$ na expressão acima representa a distensão da mola após a adição da massa $m$ em relação relação ao tamanho que ela tinha quando relaxada.}
+\begin{equation}\label{eq:MassaMolaDefXPrime}
+	x' = x - \frac{mg}{k},
+\end{equation}
+%
+podemos escrever
+\begin{equation}
+	-kx' = ma_x,
+\end{equation}
+%
+Note também que
 \begin{align}
     a_x &= \frac{d^2}{dt^2}x \\
     a'_x &= \frac{d^2}{dt^2}x',
@@ -278,22 +339,21 @@ ou, rearranjando os termos,
 \caption{Evolução da posição do bloco em função do tempo.\label{Fig:BlocoOscilando}}
 \end{figure*}
 
-Através da equação acima, percebemos que a posição $x$' como função do tempo satisfaz uma condição curiosa: a posição vezes uma constante positiva somada à  sua derivada segunda resulta em zero, ou seja, a função $x'(t)$ é tal que sua derivada é igual a ela mesma, vezes uma constante negativa. Existem duas funções que satisfazem essa condição: as funções trigonométricas seno e cosseno. Se supusermos que $x'(t)$ possui a forma
+Através da equação acima, percebemos que a posição $x$' como função do tempo satisfaz uma condição curiosa: a posição vezes uma constante positiva somada à  sua derivada segunda resulta em zero, ou seja, a função $x'(t)$ é tal que sua derivada é igual a ela mesma, vezes uma constante negativa. Existem duas funções que satisfazem essa condição: as funções trigonométricas seno e cosseno. Se supusermos que $x'(t)$ possui a forma\footnote{Tanto faz usar seno ou cosseno, a diferença entre essas duas funções pode ser ajustada através da adição ou subtração de \degree{90} ao ângulo $\phi$. Vou usar cosseno pois na condição $x(t=0) = 0$ teremos $\phi = 0$.}
 \begin{equation}
-	x'(t) = A\sen(\omega t + \phi),
+	x'(t) = A\cos(\omega t + \phi),
 \end{equation}
 %
 verificamos que
 \begin{align}
-	\frac{d}{dt}x'(t) &= v'(t) = A\omega\cos(\omega t + \phi) \\
-	\frac{d^2}{dt^2} x'(t) &= a'(t) = -A\omega^2\sen(\omega t + \phi).
+	\frac{d}{dt}x'(t) &= v'(t) = -A\omega\sen(\omega t + \phi) \\
+	\frac{d^2}{dt^2} x'(t) &= a'(t) = -A\omega^2\cos(\omega t + \phi).
 \end{align}
-
 
 %
 Substituindo as expressões para a posição e para a aceleração na Equação~\eqref{Eq:EquacaoDiferencialOHS}, obtemos
 \begin{equation}
-	-A\omega^2\sen(\omega t + \phi) + \frac{k}{m}A\sen(\omega t + \phi) = 0
+	-A\omega^2\cos(\omega t + \phi) + \frac{k}{m}A\cos(\omega t + \phi) = 0
 \end{equation}
 %
 o que pode ser simplificado a
@@ -301,22 +361,60 @@ o que pode ser simplificado a
 	\omega^2 = \frac{k}{m}.
 \end{equation}
 
+Verificamos então que a forma suposta para $x'(t)$ é solução da Equação~\eqref{Eq:EquacaoDiferencialOHS} se $\omega = \sqrt{k/m}$. Para determinarmos as constantes $A$ e $\phi$, precisamos usar a Equação~\eqref{eq:MassaMolaDefXPrime} para escrever $x$ em função de $x'$, obtendo
+\begin{align}
+	x &= x' + \frac{mg}{k} \\
+	&= A \cos(\omega t + \phi) + \frac{mg}{k}.
+\end{align}
+
+Sabemos que o bloco será solto a partir da posição $x = 0$, e por isso essa será o menor valor de $x$ possível. Portanto, tal posição é um ponto de mínimo da função $x(t)$. Derivando a expressão acima e igualando a zero, obtemos
+\begin{equation}
+	\frac{d}{dt} x(t) = -A\sen(\omega t + \phi) = 0,
+\end{equation}
+%
+o que implica em $\phi = 0$. Além disso, sabemos que $x(t = 0) = 0$, logo
+\begin{align}
+	A \cos(\omega \cdot 0) + \frac{mg}{k} &= 0\\
+	A \cos (0) + \frac{mg}{k} &= 0 \\
+	A + \frac{mg}{k} &= 0,
+\end{align}
+%
+de onde obtemos
+\begin{equation}
+	A = - \frac{mg}{k}.
+\end{equation}
+
 \begin{marginfigure}
 \centering
 \begin{tikzpicture}[>=Stealth]
 
-    \draw[->] (0,-1.5) -- (0,1.5);
+    \draw[->] (0,-1.5) -- (0,2.5);
     \draw[->] (0,0) -- (4.8,0) node[below left]{$t$};
     
-    \draw[smooth, samples=1000, domain=0:3.6] plot (\x, {sin(3*\x r)})  node[right]{$x(t)$};
-    \draw[dashed, smooth, samples=1000, domain=0:3.6] plot (\x, {cos(3*\x r)}) node[right]{$v(t)$};
-    \draw[dotted, smooth, samples=1000, domain=0:3.6] plot (\x, {-sin(3*\x r)}) node[right]{$a(t)$};
+    \draw[smooth, samples=1000, domain=0:3.6] plot (\x, {1 - cos(3*\x r)})  node[right]{$x(t)$};
+    \draw[dashed, smooth, samples=1000, domain=0:3.6] plot (\x, {sin(3*\x r)}) node[right]{$v(t)$};
+    \draw[dotted, smooth, samples=1000, domain=0:3.6] plot (\x, {cos(3*\x r)}) node[right]{$a(t)$};
             
 \end{tikzpicture}
 \caption{Gráfico da posição (linha contínua), velocidade (linha tracejada), e aceleração (linha pontilhada) como funções do tempo para um sistema massa-mola. (As escalas dos eixos verticais das três funções são diferentes para que os três gráficos possam ser comparados qualitativamente.)}
 \end{marginfigure}
 
-Verificamos então que a forma suposta para $x'(t)$ é solução da Equação~\eqref{Eq:EquacaoDiferencialOHS} se $\omega = \sqrt{k/m}$, sendo que as constantes $A$ e $\phi$ podem assumir quaisquer valores. Claramente $A$ representa os valores máximos de deslocamento do corpo em relação à posição de equilíbrio, e é denominada \emph{amplitude} do movimento. Já a constante $\phi$ nos permite mudar o valor de $x(t=0)$, e em geral escolhemos $\phi = 0$, o que implica em $x(0) = 0$. Portanto, concluímos que a posição do objeto descreve uma curva senoidal em um gráfico da posição em função do tempo. Além disso, a velocidade e a aceleração também dependem do tempo através de funções trigonométricas seno e cosseno.
+Finalmente, a expressão para $x(t)$ é
+\begin{equation}
+	x(t) = \frac{mg}{k} \cdot [1 - \cos(\omega t)],
+\end{equation}
+%
+cujas derivadas são
+\begin{align}
+	v(t) = \frac{d}{dt} &= \frac{mg}{k} \cdot \omega\sen(\omega t)\\
+	a(t) = \frac{d^2}{dt^2} &= \frac{mg}{k} \cdot \omega^2\cos(\omega t).
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Interpretação de $\omega$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Concluímos, portanto, que a posição do objeto descreve uma curva senoidal em um gráfico da posição em função do tempo. Além disso, a velocidade e a aceleração também dependem do tempo através de funções trigonométricas seno e cosseno.
 \begin{marginfigure}
 \centering
 \begin{tikzpicture}[>=Stealth]
