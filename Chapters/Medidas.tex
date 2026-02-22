@@ -310,9 +310,21 @@ No caso de equipamentos dotados de escalas auxiliares, apesar de não realizarmo
 \end{marginfigure}
 
 
-Em um equipamento dotado de uma escala auxiliar ---~como um paquímetro, por exemplo~---, as medidas devem ser feitas utilizando-se a posição do zero da escala auxiliar na escala principal. Na Figura~\eqref{Fig:NonioFechado} vemos uma representação das escalas de leitura típicas de um equipamento dotado de escala auxiliar: a escala maior, superior, é a principal, enquanto a menor, inferior, é a auxiliar.
+Em um equipamento dotado de uma escala auxiliar ---~como um paquímetro, por exemplo~---, as medidas devem ser feitas utilizando-se a posição na escala principal do zero da escala auxiliar. Na Figura~\ref{Fig:NonioFechado} vemos uma representação das escalas de leitura típicas de um equipamento dotado de escala auxiliar: a escala maior é a principal, enquanto a menor, móvel, é a auxiliar.
 
-A ideia por trás da escala auxiliar é bastante simples: tomamos a menor divisão da escala principal, a subdividimos em $n$ partes. Fazemos então uma escala auxiliar onde a menor divisão é a largura de $n-1$ partes. Assim se a marca do zero da escala auxiliar estiver deslocado para a direita de uma marca $i$ qualquer da escala principal pela largura da $n$-ésima parte, a marca imediatamente à direita do zero da escala auxiliar estará alinhado com a marca imediatamente à direita da $i$-ésima. Se a marca do zero estiver deslocada por duas vezes a largura da $n$-ésima parte, a segunda marca à direita do zero se alinhará à segunda marca à direita da $i$-ésima marca, e assim por diante. Dessa forma, podemos realizar uma leitura em que a menor divisão da escala é a largura da $n$-ésima parte.
+A ideia por trás da escala auxiliar é bastante simples: 
+\begin{itemize}
+	\item Tomamos a menor divisão da escala principal e a subdividimos em $n$ partes;
+	\item Fazemos uma escala auxiliar onde a menor divisão é a largura de $n-1$ partes;
+\end{itemize}
+%
+Assim, temos que\footnote{Considerando que as escalas principal e auxiliar estão ligadas à pinça do paquímetro, o deslocamento da escala auxiliar equivale à medida da distância entre as faces de medição.}
+\begin{itemize}
+	\item se a escala auxiliar estiver deslocada para a direita pela largura de uma parte, a marca imediatamente à direita do zero da escala auxiliar estará alinhado com a marca imediatamente à direita da do zero da escala principal;
+	\item se a marca do zero estiver deslocada por duas vezes a largura de uma parte, a segunda marca à direita do zero da escala auxiliar se alinhará à segunda marca à direita do zero da escala principal;
+\end{itemize}
+%
+e assim por diante. Dessa forma, podemos realizar uma leitura em que a resolução é uma subdivisão da menor divisão da escala principal, bastando verificar o alinhamento entre as marcas das escalas.
 
 \begin{marginfigure}
 \centering
@@ -352,7 +364,11 @@ A ideia por trás da escala auxiliar é bastante simples: tomamos a menor divis�
 \caption{Escala auxiliar deslocada por 6 décimos da largura da menor divisão da escala superior. Note o alinhamento da marca número 6.\label{Fig:NonioAbertoSeisPartes}}
 \end{marginfigure}
 
-Nas Figuras \ref{Fig:NonioAbertoUmaParte} e \ref{Fig:NonioAbertoSeisPartes} temos dois deslocamentos diferentes para a escala auxiliar da Figura~\ref{Fig:NonioFechado}. A escala auxiliar de tais figuras foi construída de forma que a menor divisão da escala principal foi subdividida em 10 partes. Tomando 9 partes, construímos a menor divisão da escala auxiliar. Assim, se o zero da escala auxiliar for deslocado ---~em relação ao zero da escala principal~--- para a direita por uma distância equivalente a um décimo da largura da menor divisão da escala principal, temos que a marca à direita do zero da escala auxiliar se alinhará à marca à direita do zero da escala principal (situação da Figura~\ref{Fig:NonioAbertoUmaParte}). Na Figura~\ref{Fig:NonioAbertoSeisPartes} o zero da escala auxiliar está deslocado em seis partes para a direita, o que leva ao alinhamento da marca número 6 da escala auxiliar com a sexta marca à direita do zero da escala principal.
+Nas Figuras \ref{Fig:NonioAbertoUmaParte} e \ref{Fig:NonioAbertoSeisPartes} temos dois exemplos concretos de medidas utilizando a escala auxiliar da Figura~\ref{Fig:NonioFechado}. A escala auxiliar de tais figuras foi construída de forma que a menor divisão da escala principal foi subdividida em 10 partes. Tomando 9 partes, construímos a menor divisão da escala auxiliar. Assim, 
+\begin{itemize}
+	\item se a escala auxiliar for deslocada para a direita por uma distância equivalente a um décimo da largura da menor divisão da escala principal, temos que a marca à direita do zero da escala auxiliar se alinhará à marca à direita do zero da escala principal, que é situação da Figura~\ref{Fig:NonioAbertoUmaParte};
+	\item na Figura~\ref{Fig:NonioAbertoSeisPartes} o zero da escala auxiliar está deslocado em seis partes para a direita, o que leva ao alinhamento da marca número 6 da escala auxiliar com a sexta marca à direita do zero da escala principal.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Tomando medidas utilizando a escala auxiliar}
@@ -389,7 +405,7 @@ A Figura~\ref{Fig:NonioMedida} retrata uma medida tomada com um paquímetro cuja
 	\item Somando essas duas contribuições, temos que a medida é \np[mm]{35,6}.
 \end{enumerate}
 %
-Veja que na prática basta \emph{ler a escala principal através do zero da escala auxiliar, inserir uma vírgula, e anotar o número da marca na escala auxiliar que está alinhada à marca da escala principal}. Note ainda que o zero da direita na escala auxiliar serve para ajudar a verificar o alinhamento do zero da esquerda, pois ambos ficam alinhados ao mesmo tempo.
+Veja que, na prática, \emph{basta ler a escala principal através do zero da escala auxiliar, inserir uma vírgula, e anotar o número da marca na escala auxiliar que está alinhada à marca da escala principal}. Note ainda que o zero da direita na escala auxiliar serve para ajudar a verificar o alinhamento do zero da esquerda, pois ambos ficam alinhados ao mesmo tempo.
 
 \begin{figure*}\forcerectofloat
 \centering
@@ -429,22 +445,16 @@ Veja que na prática basta \emph{ler a escala principal através do zero da esca
 	\caption{Detalhe mostrando a escala auxiliar de um paquímetro em que \np[mm]{1,0} é dividido em 50 partes.}
 \end{marginfigure}
 
-Na Figura~\ref{Fig:Paquimetro}, temos a representação das escalas de um paquímetro no qual a menor divisão da escala principal foi subdividida em 50 partes para elaborar a escala auxiliar. Portanto, verificamos que a menor divisão da escala é de \np[mm]{0,02} (1/50 de um milímetro). Se tivermos uma leitura como a da Figura~\ref{Fig:PaquimetroLeitura} em um instrumento desse tipo, procedemos a leitura através das seguintes etapas:
+Na Figura~\ref{Fig:Paquimetro}, temos a representação das escalas de um paquímetro no qual a menor divisão da escala principal foi subdividida em 50 partes para elaborar a escala auxiliar. Portanto, verificamos que a menor divisão da escala auxiliar é de $\np[mm]{1}/50 = \np[mm]{0,02}$.
+
+Se tivermos uma leitura como a da Figura~\ref{Fig:PaquimetroLeitura} em um instrumento desse tipo, procedemos através das seguintes etapas:
 \begin{enumerate}
 	\item Verificamos qual a leitura na escala principal da marca imediatamente à esquerda da marca do zero da escala auxiliar. Nesse caso temos \np[mm]{47}.
-	\item Na escala auxiliar, procuramos a marca que está mais bem alinhada com alguma das marcas da escala principal. Em muitos casos, ficamos em dúvidas sobre qual é a marca mais bem alinhada, como duas ou três candidatas. No caso de termos três, escolha a central. No caso em questão, vemos que a primeira, a segunda e a terceira marcas à direita da marca 2 da escala auxiliar estão bem alinhadas. Escolhendo a central, temos $12 \times \np[mm]{0,02} = \np[mm]{0,24}$.
-	\item A medida será composta pela soma dos dois resultados, isto é, \np[mm]{47,24}.
-\end{enumerate}
-%
-Na prática, a leitura é bastante simples: 
-\begin{enumerate}
-	\item Determinamos a leitura da escala principal ---~\np[mm]{47}~---;
-	\item Colocamos uma vírgula após o valor dessa leitura ---~\np[mm]{47,}~---;
-	\item Verificamos a marca numerada imediatamente à esquerda da marca melhor alinhada e anotamos seu dígito ---~\np[mm]{47,2}~---; \hyphenation{mul-ti-pli-ca-mos}
-	\item Finalmente, verificamos a posição da marca melhor alinhada a partir da última numerada ---~nesse caso, a segunda posição~---. Como cada marca da escala auxiliar corresponde a \np[mm]{0,02}, ``multiplicamos'' por dois o ``valor'' da posição e anotamos o resultado ao fim ---~\np[mm]{47,24}~---.
+	\item Na escala auxiliar, procuramos a marca que está mais bem alinhada com alguma das marcas da escala principal. Em muitos casos, ficamos em dúvidas sobre qual é a marca mais bem alinhada, como duas ou três candidatas. No caso de termos três, escolha a central. No caso em questão, vemos que a primeira, a segunda e a terceira marcas à direita da marca 2 da escala auxiliar estão bem alinhadas. Escolhendo a central, temos $12 \times \np[mm]{0,02} = \np[mm]{0,24}$. Caso sejam duas marcas aparentemente alinhadas, podemos escolher qualquer uma das duas.\footnote{Note que esse tipo de paquímetro só faz medidas com final par, talvez a melhor medida seria o número ímpar entre as duas marcas, mas usualmente não fazemos esse tipo de interpolação.}
+	\item Finalmente, a medida será composta pela soma dos dois resultados, isto é, \np[mm]{47,24}.
 \end{enumerate}
 
-\begin{figure*}
+\begin{figure*}\forceversofloat
 \centering
 \begin{tikzpicture}
 
@@ -473,7 +483,18 @@ Na prática, a leitura é bastante simples:
 \caption{Leitura de \np[mm]{47,24}. Note o entre alinhamento a segunda marca após a marca ``2'' na escala auxiliar e a marca da escala principal.\label{Fig:PaquimetroLeitura}}
 \end{figure*}
 
-Uma observação importante ao se utilizar equipamentos dotados de escala auxiliar é a realização de medidas que coincidem com as marcas maiores da escala auxiliar. Na Figura~\ref{Fig:PaquimetroLeituraZero}, por exemplo, tempos uma medida em que a marca da escala auxiliar que está alinhada à da escala principal é a denotada pelo número 2. Efetuando a leitura, temos \np[mm]{33,2}. No entanto, temos o último dígito, dado pela ``posição'' da marca alinhada ``multiplicada'' por dois. Se a marca alinhada é a numerada, então a posição é zero. Logo, devemos adicionar um zero ao final da medida: \np[mm]{33,20}. Uma maneira mais simples de interpretar essa questão é verificarmos que o número de algarismos após a vírgula em uma dada unidade para um instrumento qualquer é sempre o mesmo. Assim, temos que no caso do paquímetro dos exemplos acima o número é sempre de duas casas após a vírgula ao se efetuar medidas em milímetros.
+\pagebreak
+Na prática, a leitura é bastante simples: 
+\begin{enumerate}
+	\item Determinamos a leitura da escala principal ---~\np[mm]{47}~---;
+	\item Colocamos uma vírgula após o valor dessa leitura ---~\np[mm]{47,}~---;
+	\item Verificamos a marca numerada imediatamente à esquerda da marca melhor alinhada e anotamos seu dígito ---~\np[mm]{47,2}~---; \hyphenation{mul-ti-pli-ca-mos}
+	\item Finalmente, verificamos a posição da marca melhor alinhada a partir da última numerada ---~nesse caso, a segunda posição~---. Como cada marca da escala auxiliar corresponde a \np[mm]{0,02}, ``multiplicamos'' por dois o ``valor'' da posição e anotamos o resultado ao fim ---~\np[mm]{47,24}~---.
+\end{enumerate}
+%
+Note que nem todas as marcas da escala auxiliar são numeradas, por questão de espaço. Além disso, como a resolução da escala auxiliar é de \np[mm]{0,02}, só é possível obter medidas pares com essa configuração das escalas.
+
+Uma observação importante ao se utilizar equipamentos dotados de escala auxiliar é a realização de medidas que coincidem com as marcas maiores da escala auxiliar. Na Figura~\ref{Fig:PaquimetroLeituraZero}, por exemplo, tempos uma medida em que a marca da escala auxiliar que está alinhada à da escala principal é a denotada pelo número 2. Efetuando a leitura, temos \np[mm]{33,2}. No entanto, temos o último dígito, dado pela ``posição'' da marca alinhada ``multiplicada'' por dois. Se a marca alinhada é a numerada, então a posição é zero. Logo, devemos adicionar um zero ao final da medida: \np[mm]{33,20}. Uma maneira mais simples de interpretar essa questão é verificarmos que \emph{o número de algarismos após a vírgula em uma dada unidade para um instrumento qualquer é sempre o mesmo.} No caso do paquímetro $\np[mm]{1}/50$ dos exemplos acima, o número é sempre de duas casas após a vírgula ao se efetuar medidas em milímetros.
 \begin{figure*}
 \centering
 \begin{tikzpicture}
@@ -504,11 +525,89 @@ Uma observação importante ao se utilizar equipamentos dotados de escala auxili
 \end{figure*}
 %A invenção da escala auxiliar ... \comment{fazer}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Paquímetro com divisão de 1 mm em 20 partes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{marginfigure}[3cm]
+\centering
+\begin{tikzpicture}
+
+    \clip (-0.5,-0.6) rectangle (4.5,1.5);
+    
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=0.0mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\caption{Escala auxiliar 1/20 mm.\label{Fig:Paquimetro20LeituraZero}}
+\end{marginfigure}
+
+Para um micrômetro em que dividimos um milímetro em 20 partes o fabricante geralmente escolhe aumentar o espaçamento entre as marcas para facilitar a leitura. O raciocínio, no entanto, é muito similar aos casos anteriores:
+\begin{itemize}
+	\item Dividimos um milímetro em $n = 20$ partes, obtendo \np[mm]{0.05};
+	\item Agora, ao invés elaborar a escala usando $n - 1$ partes, são usadas $2n - 1$ partes, ou seja, a largura entre as marcas da escala auxiliar é de \np[mm]{1,95};
+	\item Consequentemente, ao deslocarmos a escala auxiliar para a direita por \np[mm]{0,05}, ocorre o alinhamento entre a primeira marca não numerada da escala auxiliar e a marca de \np[mm]{2,0} na escala principal. Para deslocamentos maiores, temos o alinhamento das marcas subsequentes.
+\end{itemize}
+%
+Novamente, o processo de leitura consiste ---~na prática~--- em:
+\begin{itemize}
+	\item usar o zero da escala auxiliar para ler a medida da escala principal;
+	\item colocar uma vírgula;
+	\item verificar qual marca da escala auxiliar tem o melhor alinhamento com uma marca da escala principal. Se for uma das marcas numeradas, temos ``{,}10'', ``{,}20'', ``{,}30'', etc. Se for uma das marcas não numeradas, temos ``{,}15'', ``{,}25'', ``{,}35'', etc.
+\end{itemize}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=33.20mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\caption{A mesma leitura de \np[mm]{33,20} da Figura~\ref{Fig:PaquimetroLeituraZero}, porém em um paquímetro 1/20 mm. Novamente, note o entre alinhamento a  marca ``2'' na escala auxiliar e a marca da escala principal.\label{Fig:Paquimetro20Leitura33mm20}}
+\end{figure*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Micrômetro com escala auxiliar}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Micrômetros também podem utilizar escalas auxiliares. Quando elas são utilizadas, não fazemos uma estimativa para obter o um dígito para a indicação feita pela linha central entre duas marcações do tambor, mas sim uma leitura da escala auxiliar. Nas Figuras~\ref{Fig:MicrometroComEscalaAuxiliar} e~\ref{Fig:DetalheEscalaAuxiliarMicrometro} podemos ver um micrometro dotado de escala auxiliar e o detalhe da escala, respectivamente. Note também que as marcações de milímetros inteiros e meios-milímetros estão ambas na parte inferior da linha central, uma vez que a escala auxiliar toma todo o espaço acima dela. 
+Micrômetros também podem utilizar escalas auxiliares. Quando elas são utilizadas, não fazemos uma estimativa para obter o último dígito, mas sim uma leitura da escala auxiliar. Nas Figuras~\ref{Fig:MicrometroComEscalaAuxiliar} e~\ref{Fig:DetalheEscalaAuxiliarMicrometro} podemos ver um micrometro dotado de escala auxiliar e o detalhe da escala, respectivamente. Note também que as marcações de milímetros inteiros e meios-milímetros estão ambas na parte inferior da linha central, uma vez que a escala auxiliar toma todo o espaço acima dela. 
 
 \begin{figure}
 \centering
@@ -516,12 +615,13 @@ Micrômetros também podem utilizar escalas auxiliares. Quando elas são utiliza
 \caption{Micrômetro com escala auxiliar: as marcas à esquerda podem se alinhar com as marcas do tambor (região numerada de 0 a 15 na figura e que pode girar), indicando a leitura apropriada para o último dígito (aquele que é estimado em um micrômetro sem escala auxiliar).\label{Fig:MicrometroComEscalaAuxiliar}}
 \end{figure}
 
-\begin{figure}\forcerectofloat
+\begin{figure}\forceversofloat
 \centering
 \includegraphics[width=0.75\linewidth]{Ilustrations/Micrometro_com_escala_auxiliar_detalhe.png}
 \caption{Detalhe da escala auxiliar de um micrômetro.\label{Fig:DetalheEscalaAuxiliarMicrometro}}
 \end{figure}
 
+\pagebreak
 Na Figura~\ref{Fig:EscalaMicrometroComEscalaAuxiliar} temos uma representação da escala de um micrômetro com escala auxiliar. A medida da escala principal é feita da mesma maneira que no caso de um micrômetro sem escala auxiliar, isto é, verificamos a marca mais à direita visível. No caso da figura temos \np[mm]{32,5}. Na escala do tambor podemos ver que a linha central passa da marca 19, portanto temos $0{,}19\_\,\text{mm}$, onde `\_' representa o dígito que ainda precisamos determinar através da escala auxiliar. Verificando tal escala, observamos que a primeira linha acima da linha central está alinhada com a marcação do tambor. Logo, o temos $\np[mm]{0,191}$. Finalmente, temos
 \begin{align}
 	\ell &= \np[mm]{32,5} + \np[mm]{0,191} \\
@@ -734,6 +834,29 @@ onde $x$ é um ângulo expresso em radianos.
 \end{align}
 \end{description}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Número de algarismos significativos de uma média}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ao realizarmos uma média, somamos $n$ medidas e então dividimos por $n$. Através das regras apresentadas acima, ao somarmos, temos um possível aumento do número de algarismos significativos. Como $n$ é uma contagem e não uma medida, ao realizarmos a divsião, obtemos um valor \emph{com mais algarismos significativos que as parcelas da soma}. Por exemplo, se temos as medidas
+\begin{align}
+	\ell_1 &= \np[cm]{32,5} \\
+	\ell_2 &= \np[cm]{33,8} \\
+	\ell_3 &= \np[cm]{37,3},
+\end{align}
+%
+ao somarmos obtemos
+\begin{equation}
+	\ell_S = \np[cm]{103,6}.
+\end{equation}
+%
+Finalmente, ao realizarmos a divisão, temos
+\begin{equation}
+	\mean{\ell} = \np[cm]{34,55}.
+\end{equation}
+
+Embora esse resultado pareça estranho, de acordo com as regras de algarismos significativos, ele faz sentido de um ponto de vista estatístico, onde é possível mostrar que o erro da média é inversamente proporcional à raiz quadrada do número de medidas. Na verdade, os algarismos significativos são apenas uma regra simples para tratar as medidas sem que seja necessário utilizar uma matemática mais robusta, porém trabalhosa.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Arredondamento}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -761,7 +884,7 @@ Esse critério de arredondamento não é único. Em algumas situações se utili
 \begin{question}[type={exam}]
 Determine o resultado das somas e subtrações abaixo com o número adequado de algarismos significativos.
 \begin{multicols}{2}
-\begin{enumerate}[label=\alph*.]
+\begin{enumerate}
 \item $12{,}45\ \text{cm} + 3{,}2\ \text{cm}$
 \item $0{,}0045\ \text{m} - 0{,}003\ \text{m}$
 \item $5{,}67\ \text{kg} + 2{,}1\ \text{kg}$
@@ -790,7 +913,7 @@ Determine o resultado das somas e subtrações abaixo com o número adequado de 
 \begin{question}[type={exam}]
 Determine o resultado das multiplicações e divisões abaixo com o número adequado de algarismos significativos.
 \begin{multicols}{2}
-\begin{enumerate}[label=\alph*.]
+\begin{enumerate}
 \item $3{,}2\,\text{m} \times 2{,}1\,\text{m}$
 \item $6{,}40\,\text{s} \div 2{,}0\,\text{s}$
 \item $8{,}55\,\text{kg} \times 3{,}1$
@@ -805,9 +928,9 @@ Determine o resultado das multiplicações e divisões abaixo com o número adeq
 \item $6{,}78\,\text{cm} \div 2{,}1\,\text{s}$
 \item $50{,}25\,\text{kg} \times 2{,}0\,\text{m/s}^2$
 \item $9{,}60\,\text{m} \div 3{,}2\,\text{m}$
-\item $2{,}20\,\text{L} \times 1{,}50\,\text{L}$
+\item $2{,}20\,\text{L} \times 1{,}50$
 \item $3{,}45 \cdot 10^5\,\text{m} \div 1{,}5 \cdot 10^2\,\text{s}$
-\item $6{,}40 \cdot 10^{3}\,\text{m}^2 \times 1{,}67 \cdot 10^{-2}\,\text{kg}$
+\item $1{,}67 \cdot 10^{-2}\,\text{kg} \times 6{,}40 \cdot 10^{3}\,\text{m}^2$
 \item $9{,}1 \cdot 10^{-31}\,\text{kg} \div 3{,}0 \cdot 10^{8}\,\text{m/s}$
 \item $3{,}00 \cdot 10^8\,\text{m/s} \times 2{,}0 \cdot 10^{-6}\,\text{s}$
 \item $5{,}523 \cdot 10^2\,\text{kg} \div 2{,}2 \cdot 10^{-1}\,\text{m}^3$
@@ -819,14 +942,14 @@ Determine o resultado das multiplicações e divisões abaixo com o número adeq
 \begin{question}[type={exam}]
 Determine o resultado das funções abaixo com o número adequado de algarismos significativos. Nos casos em que possa haver alguma ambiguidade, as medidas foram postas entre parêntesis.
 \begin{multicols}{2}
-\begin{enumerate}[label=\alph*.]
+\begin{enumerate}
 \item $\sin(10{,}48)$
 \item $\cos(5{,}25)$
 \item $\tan(0{,}78)$
 \item $\log(100{,}0)$
 \item $\ln(2{,}71)$
 \item $\mathrm{e}^{1{,}23}$
-\item $\sqrt{3{,}60}$
+\item $\sqrt{3{,}60\,\text{m}}$
 \item $(5{,}21)^2$
 \item $10^{(3{,}4)}$
 \item $(0{,}4500)^{-1}$
@@ -838,7 +961,7 @@ Determine o resultado das funções abaixo com o número adequado de algarismos 
 \begin{question}[type={exam}]
 Determine o resultado das multiplicações e divisões por constantes abaixo com o número adequado de algarismos significativos.
 \begin{multicols}{2}
-\begin{enumerate}[label=\alph*.]
+\begin{enumerate}
 \item $5{,}0\,\text{m} \times 2$
 \item $12{,}4\,\text{s} \div 4$
 \item $3{,}5\,\text{kg} \times \pi$
@@ -857,7 +980,7 @@ Determine o resultado das multiplicações e divisões por constantes abaixo com
 \begin{question}[type={exam}]
 Determine o resultado das operações abaixo com o número adequado de algarismos significativos.
 \begin{multicols}{2}
-\begin{enumerate}[label=\alph*.]
+\begin{enumerate}
 \item $\sqrt{(2{,}5\,\text{m})^2 + (4{,}0\,\text{m})^2}$
 \item $(5{,}0\,\text{s} + 2{,}75\,\text{s}) \times 3$
 \item $\dfrac{10{,}0\,\text{kg} \times 9{,}81\,\text{m/s}^2}{\pi}$
@@ -876,7 +999,7 @@ Determine o resultado das operações abaixo com o número adequado de algarismo
 \item $\dfrac{1}{\sqrt{0{,}25\,\text{s}^2}}$
 \item $(5{,}25\,\text{m/s}) \times \mathrm{e}^{-0{,}5}$
 \item $10{,}0\,\text{m} - \dfrac{3{,}00\,\text{m}}{\pi}$
-\item $\dfrac{4{,}0\,\text{m}}{2{,}0} + \sqrt{9{,}0\,\text{m}^2}$
+\item $\dfrac{4{,}0\,\text{m}}{2{,}0} + \dfrac{\sqrt{9{,}0\,\text{m}^2}}{1{,}01\,\text{s}}$
 \item $3{,}0\,\text{kg} \times \left( 9{,}81\,\text{m/s}^2 \times \cos(30^\circ) \right)$
 \end{enumerate}
 
@@ -892,6 +1015,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}
 
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 1};
+
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
 		\draw (\x,0) -- (\x,0.5);
@@ -904,7 +1029,7 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
 
 % Escala auxiliar
-\begin{scope}[xshift=4.724cm]
+\begin{scope}[xshift=47.24mm]
 	\foreach \x in {0.000, 0.098, ..., 4.9}
 		\draw (\x,-0.03) -- (\x,-0.2);
 
@@ -919,6 +1044,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \begin{figure*}
 \centering
 \begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 2};
 
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
@@ -948,6 +1075,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}
 
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 3};
+
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
 		\draw (\x,0) -- (\x,0.5);
@@ -975,6 +1104,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \begin{figure*}
 \centering
 \begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 4};
 
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
@@ -1004,6 +1135,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}
 
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 5};
+
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
 		\draw (\x,0) -- (\x,0.5);
@@ -1031,6 +1164,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \begin{figure*}
 \centering
 \begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 6};
 
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
@@ -1060,6 +1195,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}
 
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 7};
+
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
 		\draw (\x,0) -- (\x,0.5);
@@ -1087,6 +1224,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \begin{figure*}
 \centering
 \begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 8};
 
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
@@ -1116,6 +1255,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}
 
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 9};
+
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
 		\draw (\x,0) -- (\x,0.5);
@@ -1144,6 +1285,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}
 
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 10};
+
 % Escala principal
 	\foreach \x in {0.0, 0.1, ..., 13.7}
 		\draw (\x,0) -- (\x,0.5);
@@ -1168,11 +1311,313 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \end{tikzpicture}
 \end{figure*}
 
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 11};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=33.20mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 12};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=3.20mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 13};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=12.45mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 14};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=21.80mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 15};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=8.50mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 16};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=15.75mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 17};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=9.35mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 18};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=27.05mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 19};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=26.55mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+
+\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.5,0) {\small 20};
+
+% Escala principal
+	\foreach \x in {0.0, 0.1, ..., 13.7}
+		\draw (\x,0) -- (\x,0.5);
+
+	\foreach \x in {0, 0.5, ..., 13.5}
+		\draw (\x,0) -- (\x,0.7);
+
+	\draw (0,0) -- (0,1) node[anchor=south] {0};
+	\foreach \x in {1, 2, ..., 13}
+		\draw (\x,0) -- (\x,1) node[anchor=south] {\x0};
+
+% Escala auxiliar
+\begin{scope}[xshift=7.10mm]
+	\foreach \x in {0.000, 0.195, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.2);
+
+	\foreach \x [count=\xi from 0] in {0, 0.39, ..., 3.89}
+		\draw (\x,-0.03) -- (\x,-0.3) node[anchor=north] {\tiny \xi};
+	
+	\draw (3.9,-0.03) -- (3.9,-0.3) node[anchor=north] {\tiny 0};
+\end{scope}
+\end{tikzpicture}
+\end{figure*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure*}
 \centering
 \begin{tikzpicture}[scale=1.7]
+
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 21};
 
 	\pgfmathsetmacro{\reading}{5.731} % leitura em mm
 	
@@ -1241,6 +1686,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 22};
+	
 	\pgfmathsetmacro{\reading}{68.204} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1308,6 +1755,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 23};
+	
 	\pgfmathsetmacro{\reading}{42.987} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1375,6 +1824,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 24};
+	
 	\pgfmathsetmacro{\reading}{11.356} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1442,6 +1893,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 25};
+	
 	\pgfmathsetmacro{\reading}{27.843} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1509,6 +1962,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 26};
+	
 	\pgfmathsetmacro{\reading}{59.120} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1576,6 +2031,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 27};
+	
 	\pgfmathsetmacro{\reading}{36.478} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1643,6 +2100,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 28};
+	
 	\pgfmathsetmacro{\reading}{2.019} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1710,6 +2169,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 29};
+	
 	\pgfmathsetmacro{\reading}{64.705} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1777,6 +2238,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 30};
+	
 	\pgfmathsetmacro{\reading}{19.666} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1846,6 +2309,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 31};
+	
 	\pgfmathsetmacro{\reading}{13.492} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1919,6 +2384,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 32};
+	
 	\pgfmathsetmacro{\reading}{47.816} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -1992,6 +2459,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 33};
+	
 	\pgfmathsetmacro{\reading}{6.203} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2065,6 +2534,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 34};
+	
 	\pgfmathsetmacro{\reading}{69.774} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2138,6 +2609,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 35};
+	
 	\pgfmathsetmacro{\reading}{31.158} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2211,6 +2684,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 36};
+	
 	\pgfmathsetmacro{\reading}{22.947} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2284,6 +2759,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 37};
+	
 	\pgfmathsetmacro{\reading}{55.320} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2357,6 +2834,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 38};
+	
 	\pgfmathsetmacro{\reading}{9.681} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2430,6 +2909,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 39};
+	
 	\pgfmathsetmacro{\reading}{38.506} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2503,6 +2984,8 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \centering
 \begin{tikzpicture}[scale=1.7]
 
+	\node[circle, draw, minimum size=5mm, inner sep=0pt] (N) at (-0.75,0) {\small 40};
+	
 	\pgfmathsetmacro{\reading}{63.029} % leitura em mm
 	
 	\pgfmathsetmacro{\decimalpart}{\reading - int(\reading)}  % Extract decimal part
@@ -2572,3 +3055,103 @@ Faça a leitura das medidas mostradas nas figuras abaixo.
 \end{tikzpicture}
 \end{figure*}
 
+\FloatBarrier
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Respostas dos exercícios ímpares}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\emph{Questão 1}
+\begin{multicols}{2}
+\begin{description}
+	\item[1.] \np[cm]{15.7}
+	\item[3.] \np[kg]{7.8}
+	\item[5.] \np[m]{3,58}
+	\item[7.] \np[L]{0.008}
+	\item[9.] \np[m]{3.3}
+	\item[11.] \np[m]{0.0042}
+	\item[13.] \np[g]{3.13}
+	\item[15.] \np[kg]{0.00057}
+	\item[17.] \np[cm]{8,01}
+	\item[19.] \np[g]{6,9E5}
+\end{description}
+\end{multicols}
+
+\noindent\emph{Questão 2}
+\begin{multicols}{2}
+\begin{description}
+	\item[1.] \np[m^2]{6.7}
+	\item[3.] \np[kg]{27}
+	\item[5.] \np[m]{15}
+	\item[7.] \np[m/s^2]{0,70}
+	\item[9.] \np[m/s^2]{2.55}
+	\item[11.] \np[m]{0,75}
+	\item[13.] \np[kg \cdot m/s^2]{1,0E2}
+	\item[15.] \np[L]{3,30}
+	\item[17.] \np[kg \cdot m^2]{107}
+	\item[19.] \np[m]{6,0E2}
+\end{description}
+\end{multicols}
+
+\noindent\emph{Questão 3}
+\begin{multicols}{2}
+\begin{description}
+	\item[1.] \np{0,1819}
+	\item[3.] \np{1,4E-2}
+	\item[5.] \np{0,997}
+	\item[7.] \np[m^{\nicefrac{1}{2}}]{1,9}
+	\item[9.] \np{2.5E3}
+\end{description}
+\end{multicols}
+
+\noindent\emph{Questão 4}
+\begin{multicols}{2}
+\begin{description}
+	\item[1.] \np[m]{10}
+	\item[3.] \np[kg]{11}
+	\item[5.] \np[L]{5,4}
+	\item[7.] \np[m/s^2]{29,4}
+	\item[9.] \np[cm]{3,00}
+\end{description}
+\end{multicols}
+
+\noindent\emph{Questão 5}
+\begin{multicols}{2}
+\begin{description}
+	\item[1.] \np[m]{4,7}
+	\item[3.] \np[kg \cdot m/s^2]{31,2}
+	\item[5.] \np[L]{5,0}
+	\item[7.] \np[m/s]{3,0}
+	\item[9.] \np[cm]{9,42}
+	\item[11.] \np[s]{1,9}
+	\item[13.] \np[m]{4,50}
+	\item[15.] \np[m]{3.6}
+	\item[17.] \np[m^{-1}]{2,0}
+	\item[19.] \np[m/s]{5,0}
+\end{description}
+\end{multicols}
+
+\noindent\emph{Questão 6}
+\begin{multicols}{2}
+\begin{description}
+	\item[1.] \np[mm]{47,24}
+	\item[3.] \np[mm]{76.83}
+	\item[5.] \np[mm]{58,16}
+	\item[7.] \np[mm]{49,51}
+	\item[9.] \np[mm]{65,72}
+	\item[11.] \np[mm]{33.20}
+	\item[13.] \np[mm]{12.45}
+	\item[15.] \np[mm]{21.80}
+	\item[17.] \np[mm]{9.35}
+	\item[19.] \np[mm]{26.55}
+	\item[21.] \np[mm]{5,731}
+	\item[23.] \np[mm]{42,987}
+	\item[25.] \np[mm]{27,843}
+	\item[27.] \np[mm]{36,478}
+	\item[29.] \np[mm]{64,705}
+	\item[31.] \np[mm]{13,492}
+	\item[33.] \np[mm]{6,203}
+	\item[35.] \np[mm]{31,158}
+	\item[37.] \np[mm]{55,320}
+	\item[39.] \np[mm]{38,506}
+\end{description}
+\end{multicols}
