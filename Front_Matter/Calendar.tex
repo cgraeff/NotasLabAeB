@@ -17,18 +17,18 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
 
 \begin{marginfigure}[4.5cm]
     \centering
-    Março\\
+    Agosto\\
     \begin{tikzpicture}
         \calendar (mycal)
         [
-            dates=2026-03-01 to 2026-03-last,
+            dates=2026-08-01 to 2026-08-last,
             week list,
             day headings=gray,
             day letter headings
         ]
         if (Saturday, Sunday)
             [gray!50]
-        if (between=2026-03-01 and 2026-03-09)
+        if (between=2026-08-01 and 2026-08-17)
             [gray!50]
         ;
         %\node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,thick] at (mycal-2025-03-31) {};
@@ -37,19 +37,19 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
 %
 \begin{marginfigure}
     \centering
-    Abril\\
+    Setembro\\
     \begin{tikzpicture}
         \calendar (mycal)
         [
-            dates=2026-04-01 to 2026-04-last,
+            dates=2026-09-01 to 2026-09-last,
             week list,
             day headings=gray,
             day letter headings
         ]
         if (Saturday, Sunday)
             [gray!50]
-        if (equals=2026-04-03,equals=2026-04-20,equals=2026-04-21)
-            [gray!50]
+        %if (equals=2026-09-03,equals=2026-04-20,equals=2026-04-21)
+        %    [gray!50]
         ;
         %\draw (mycal-2025-09-29) circle (6pt);
     \end{tikzpicture}
@@ -57,67 +57,68 @@ As aulas seguirão o planejamento abaixo. No calendário ao lado, estão circula
 %
 \begin{marginfigure}
     \centering
-    Maio\\
+    Outubro\\
     \begin{tikzpicture}
         \calendar (mycal)
         [
-            dates=2026-05-01 to 2026-05-last,
+            dates=2026-10-01 to 2026-10-last,
             week list,
             day headings=gray,
             day letter headings
         ]
         if (Saturday, Sunday)
             [gray!50]
-        if (equals=2026-05-01)
-            [gray!50]
+        %if (equals=2026-05-01)
+        %    [gray!50]
         %if (between=2026-05-27 and 2026-05-29)
         %    [gray]
         ;
-        \draw (mycal-2026-05-04) circle (6pt);
+        \draw (mycal-2026-10-26) circle (6pt);
     \end{tikzpicture}
 \end{marginfigure} %
 %
 \begin{marginfigure}
     \centering
-    Junho\\
+    Novembro\\
     \begin{tikzpicture}
         \calendar (mycal)
         [
-            dates=2026-06-01 to 2026-06-last,
+            dates=2026-11-01 to 2026-11-last,
             week list,
             day headings=gray,
             day letter headings
         ]
         if (Saturday, Sunday)
             [gray!50]
-        if (between=2026-06-04 and 2026-06-05)
-            [gray!50]
-        if (equals=2026-06-29)
-        		[gray]
+        %if (between=2026-06-04 and 2026-06-05)
+        %    [gray!50]
+        %if (equals=2026-06-29)
+        %    [gray]
     		;
-        \draw (mycal-2026-06-15) circle (6pt);
-        %\draw[dashed] (mycal-2025-06-30) circle (6pt);
+        %\draw (mycal-2026-06-15) circle (6pt);
+        \draw (mycal-2026-11-30) circle (6pt);
     \end{tikzpicture}
 \end{marginfigure} %
 %
 \begin{marginfigure}
     \centering
-    Julho\\
+    Dezembro\\
     \begin{tikzpicture}
         \calendar (mycal)
         [
-            dates=2026-07-01 to 2026-07-last,
+            dates=2026-12-01 to 2026-12-last,
             week list,
             day headings=gray,
             day letter headings
         ]
         if (Saturday, Sunday)
             [gray!50]
-        if (between=2026-07-14 and 2026-07-last)
+        if (between=2026-12-21 and 2026-12-last)
             [gray!50]
         ;
-        \node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,densely dotted] at (mycal-2026-07-06) {};
-        %\node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,thick] at (mycal-2025-12-08) {};
+        \draw[dashed] (mycal-2026-12-07) circle (6pt);
+        %\node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,densely dotted] at (mycal-2026-07-06) {};
+        %\node [draw, rounded corners, minimum size = 4mm, inner sep=0pt,outer sep=0pt,thick] at (mycal-2026-12-08) {};
     \end{tikzpicture}
 \end{marginfigure} %
 %
@@ -134,25 +135,29 @@ Aula & Data & Conteúdo \\
 \endhead
 \bottomrule
 \endfoot
-  1 & 16/03 & Apresentação da disciplina. \\
-  2 & 23/03 & Exp. 1, Medidas e algarismos significativos. \\
-  3 & 30/03 & Exp. 2, Movimento retilíneo uniforme (MRU) e uniformemente variado (MRUV). \\
-  4 & 06/04 & Exp. 3, Leis de Newton. \\
-  5 & 13/04 & Exp. 4, Lei de Hooke. \\
- -- & 20/04 & \emph{Recesso.} \\
-  6 & 27/04 & Exp. 5, Arrasto. \\
-  7 & 04/05 & \textbf{Prova 1:} Algarismos significativos e elaboração de gráficos. \\
-  8 & 11/05 & Exp. 6, Atrito. \\
- %10 & 20/10 & Exp. 7, Energia mecânica. \\
-  9 & 18/05 & Exp. 7, Roda de Maxwell. \\
- 10 & 25/05 & Exp. 8, Oscilações. \\
- 11 & 01/06 & Exp. 9, Pêndulo Físico. \\
- 12 & 08/06 & Exp. 10, Ondas estacionárias. \\
- 13 & 15/06 & \textbf{Prova 2:} Algarismos significativos, regressão linear, e linearização. \\
- 14 & 22/06 & Entrega das notas finais pré-recuperação, dúvidas para a prova de recuperação. \\
- -- & 29/06 & \emph{Recesso.} \\
- 15 & 06/07 & \textbf{Recuperação.}\\
- 16 & 13/07 & Entrega das notas finais.
+  1 & 24/08 & Apresentação da disciplina. \\
+  2 & 31/08 & Exp. 1, Medidas e algarismos significativos. \\
+ -- & 07/09 & \emph{Feriado.} \\
+  3 & 14/09 & Exp. 2, Movimento retilíneo uniforme (MRU) e uniformemente variado (MRUV). \\
+  4 & 21/09 & Exp. 3, Leis de Newton. \\
+  5 & 28/09 & Exp. 4, Lei de Hooke. \\
+  6 & 05/10 & Exp. 5, Arrasto. \\
+ -- & 12/10 & \emph{Feriado.} \\
+  7 & 19/10 & Exp. 6, Atrito. SICITE. \\
+  8 & 26/10 & \textbf{Prova 1:} Algarismos significativos e elaboração de gráficos. \\
+ %?? & 20/10 & Exp. 7, Energia mecânica. \\
+ -- & 02/11 & \emph{Feriado.} \\ 
+  9 & 09/11 & Exp. 7, Roda de Maxwell. \\
+ 10 & 16/11 & Exp. 8, Oscilações. \\
+ %?? & ??/?? & Exp. ??, Pêndulo Físico. \\
+ 11 & 23/11 & Exp. 9, Ondas estacionárias. \\
+ 12 & 30/11 & \textbf{Prova 2:} Algarismos significativos, regressão linear, e linearização. \\
+ 13 & 07/12 & \textbf{Recuperação}. \\
+ -- & 14/12 & \emph{Feriado.}\\
+%  & 22/06 & Entrega das notas finais pré-recuperação, dúvidas para a prova de recuperação. \\
+% -- & 29/06 & \emph{Recesso.} \\
+%  & 06/07 & \textbf{Recuperação.}\\
+%  & 13/07 & Entrega das notas finais.
 \end{longtable}
 \end{center}
 
