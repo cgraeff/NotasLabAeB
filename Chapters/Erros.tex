@@ -380,6 +380,102 @@ temos:
 %
 que é exatamente a expressão que encontramos quando analisamos os valores máximo e mínimo para a área do retângulo. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Erros nos parâmetros de uma regressão linear}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{Chap:ErrosCoefAB}
+
+Diferentemente da parte teórica, onde assumimos o conhecimento de constantes como a aceleração da gravidade $g$ e calculamos o deslocamento de uma partícula com o passar do tempo, no laboratório podemos medir o tempo e o deslocamento facilmente. O valor da gravidade, por outro lado, é mais difícil de ser determinado. Utilizando uma regressão linear, podemos identificar a relação entre o coeficiente $B$ da equação da reta e $g$. Sabemos, no entanto, que a toda medida temos um erro associado. Qual seria, nesse caso, o erro associado ao valor de $g$? 
+
+Utilizando algumas considerações\cite{Taylor} acerca da distribuição das medidas $y_i$ em torno de seus valores ideais correspondentes, temos que os erros associados aos parâmetros $A$ e $B$ são dados por
+\begin{align}
+	\delta A &= \xi_y\sqrt{\frac{\sum x_i^2}{\Delta}} \label{Eq:ErrosCoeficientesRegLinear1}\\
+	\delta B &= \xi_y\sqrt{\frac{N}{\Delta}}
+\end{align}
+%
+onde $N$ é o número de pontos experimentais e a soma se dá sobre todos os pontos experimentais. Além disso,
+\begin{align}
+	\xi_y &= \sqrt{\frac{1}{N-2}\sum(y_i-A-B\,x_i)^2} \\
+	\Delta &= N\sum x_i^2 - \left(\sum x_i\right)^2. \label{Eq:ErrosCoeficientesRegLinear4}
+\end{align}
+
+Podemos então calcular não só o melhor valor associado a uma constante física através dos coeficientes $A$ e $B$ da melhor reta, mas também determinar qual o erro associado a cada uma dessas constantes. Nem sempre temos uma correspondência simples entre uma constante física e um dos parâmetros da equação da reta, nesses casos, ao calcular o valor da constante física, precisamos calcular o erro propagado através da fórmula geral discutida no Capítulo~\ref{Chap:Erros}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Exemplo: Cálculo dos erros dos coeficientes $A$ e $B$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{margintable}[-7cm]
+\centering
+\begin{tabular}{cccc}
+\toprule
+$i$	& $x_i$	& $y_{1,i}$	& $(\Xi_i)^2$ \\
+\midrule
+1	&	\np{0.714}	&	\np{14.577}	&	\np{0.0934} \\ 
+2	&	\np{2.693}	&	\np{20.696}	&	\np{0.2687} \\ 
+3	&	\np{4.389}	&	\np{25.226}	&	\np{0.0002} \\ 
+4	&	\np{4.960}	&	\np{27.449}	&	\np{0.2555} \\ 
+5	&	\np{6.245}	&	\np{30.242}	&	\np{0.2879} \\ 
+6	&	\np{7.277}	&	\np{33.378}	&	\np{0.2309} \\ 
+7	&	\np{7.579}	&	\np{34.195}	&	\np{0.3190} \\ 
+8	&	\np{7.719}	&	\np{35.715}	&	\np{0.2887} \\ 
+9	&	\np{7.912}	&	\np{35.011}	&	\np{0.5516} \\ 
+10	&	\np{8.280}	&	\np{37.529}	&	\np{0.4584} \\ 
+11	&	\np{9.034}	&	\np{40.590}	&	\np{2.2134} \\ 
+12	&	\np{9.442}	&	\np{39.156}	&	\np{1.3547} \\ 
+13	&	\np{10.306}	&	\np{43.238}	&	\np{0.1152} \\ 
+14	&	\np{10.572}	&	\np{42.406}	&	\np{1.6548} \\ 
+15	&	\np{11.177}	&	\np{44.796}	&	\np{0.4928} \\ 
+16	&	\np{15.335}	&	\np{57.611}	&	\np{0.0879} \\ 
+17	&	\np{17.023}	&	\np{63.832}	&	\np{0.7863} \\ 
+18	&	\np{18.926}	&	\np{68.063}	&	\np{0.3156} \\ 
+19	&	\np{20.608}	&	\np{74.408}	&	\np{0.5827} \\ 
+20	&	\np{20.876}	&	\np{75.083}	&	\np{0.4077} \\ 
+21	&	\np{21.095}	&	\np{75.248}	&	\np{0.0225} \\ 
+22	&	\np{22.225}	&	\np{77.243}	&	\np{1.5069} \\ 
+23	&	\np{22.407}	&	\np{81.058}	&	\np{4.1791} \\ 
+24	&	\np{22.469}	&	\np{78.821}	&	\np{0.1427} \\ 
+25	&	\np{23.077}	&	\np{80.714}	&	\np{0.0896} \\ 
+26	&	\np{26.421}	&	\np{91.433}	&	\np{0.1932} \\ 
+27	&	\np{26.863}	&	\np{91.777}	&	\np{0.2868} \\ 
+28	&	\np{27.360}	&	\np{93.291}	&	\np{0.2549} \\
+\midrule
+\multicolumn{3}{r}{$\sum_i (y_{1,i} - A - B x_i)^2$:} & \np{17.4411} \\ 
+\bottomrule
+\end{tabular}
+\vspace{1mm}
+\caption{Tabela com os valores de $(\Xi_i)^2 = (y_{1,i} - A - B x_i)^2$ e da soma $\sum_i (y_{1,i} - A - B x_i)^2$. \label{Tab:DadosDeterminacaoErrosCoeficientesAeB}}
+\end{margintable}
+
+Vamos determinar os erros associados aos coeficientes da regressão linear apresentada no exemplo da Seção~\ref{Sec:RegressaoLinear}. Note que os termos $\sum x_i$ e $\sum x_i^2$ que aparecem nas Equações~\eqref{Eq:ErrosCoeficientesRegLinear1} e~\eqref{Eq:ErrosCoeficientesRegLinear4} estão disponíveis na Tabela~\eqref{Tab:TabelaExemploCalculoRegressaoLinear}, porém na prática utilizamos uma calculadora ou um programa de computador para realizar o cálculo dos coeficientes da regressão linear, e por isso não temos de antemão tais valores\footnote{Algumas calculadoras disponibilizam os valores de $\sum x_i$ e $\sum x_i^2$ juntamente com os valores de $A$, $B$, e $r$.}. Nesse caso, será necessário determinar os valores de $\sum x_i$ e de $\sum x_i^2$, além do valor de $\sum (y_{1,i} - A - Bx_i)^2$ ---~novamente, a elaboração de uma tabela ajuda na determinação de tal valor, como mostrado na Tabela~\ref{Tab:DadosDeterminacaoErrosCoeficientesAeB}. Uma vez determinados tais valores, determinar os erros $\delta A$ e $\delta B$ é relativamente simples:
+\begin{align}
+	\xi_y &= \sqrt{\frac{1}{N-2}\sum(y_i-A-B\,x_i)^2} \\
+	&= \sqrt{\frac{\np{17.4411}}{28-2}} \\
+	&= \np{0.05814}, \\
+	\Delta &= N\sum x_i^2 - \left(\sum x_i\right)^2 \\
+	&= 28\cdot\np{7295,757} - (\np{392,984})^2 \\
+	&= \np{49844.766}, \\
+	\delta A &= \xi_y\sqrt{\frac{\sum x_i^2}{\Delta}} \\
+	&= \np{0.05814} \cdot \sqrt{\frac{\np{7295,757}}{\np{49844.766}}} \\
+	&= \np{0.022244}, \\
+	\delta B &= \xi_y\sqrt{\frac{N}{\Delta}} \\
+	&= \np{0.05814} \cdot \sqrt{\frac{28}{\np{49844.766}}} \\
+	&= \np{0.001378}.
+\end{align}
+
+Assim, podemos denotar os coeficientes linear e angular com seus devidos erros:
+\begin{align}
+	A &= (\np{12.140462642} \pm \np{0.022244})~{\rm{Un}}_y\\
+	B &= (\np{2.984480401} \pm \np{0.001378})~{\rm{Un}}_{\nicefrac{y}{x}}.
+\end{align}
+%
+Note que, como discutido anteriormente, a unidade do coeficiente angular é a mesma que a da variável dependente, enquanto a unidade do coeficiente angular é dada pela razão entre as unidades da variável dependente e da variável independente. Acima denotamos conceitualmente tais unidades como ${\rm{Un}}_{y}$ e ${\rm{Un}}_{\nicefrac{y}{x}}$, respectivamente. Resta ainda notar que não devemos carregar dígitos cuja ordem de grandeza é menor que a do erro, assim obtemos finalmente
+\begin{align}
+	A &= (\np{12.14} \pm \np{0.02})~{\rm{Un}}_y\\
+	B &= (\np{2.984} \pm \np{0.0014})~{\rm{Un}}_{\nicefrac{y}{x}}.
+\end{align}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Representando erros em gráficos}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
